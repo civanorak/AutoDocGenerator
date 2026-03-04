@@ -60,6 +60,15 @@ while(true) {
 
 ---
 
+## Table of Contents
+
+- [Tutorial: Your First Game — Green Shooter](#tutorial-your-first-game-green-shooter)
+- [Tutorial: Space Shooter — Keyboard & Physics](#tutorial-space-shooter-keyboard-physics)
+- [Core Concepts Reference](#core-concepts-reference)
+- [What to Build Next](#what-to-build-next)
+
+---
+
 ## Tutorial: Your First Game — Green Shooter
 
 This tutorial recreates the bundled **Green Shooter** example step by step. The game spawns colored squares on screen; click the green ones to score points.
@@ -191,6 +200,88 @@ while(true) {
 
     // End frame (render + ~60 FPS cap + OS events)
     Gorgon::NextFrame();
+}
+```
+
+---
+
+## Tutorial: Space Shooter — Keyboard & Physics
+
+In this tutorial, we descend into the void of space. Unlike the click-based Green Shooter, this game uses **keyboard controls** for movement and shooting.
+
+### Step 1 — Handling Keyboard Input
+
+While `Mouse` is for clicking, `Keyboard` is for continuous action. We'll use the A/D keys to move and Space to fire.
+
+```cpp
+#include <Gorgon/Input/Keyboard.h>
+
+float shipX = 200.0f;
+float speed = 0.3f; // pixels per millisecond
+
+// In the game loop:
+if (Gorgon::Input::Keyboard::IsDown(Gorgon::Input::Keyboard::Key::A)) {
+    shipX -= speed * delta;
+}
+if (Gorgon::Input::Keyboard::IsDown(Gorgon::Input::Keyboard::Key::D)) {
+    shipX += speed * delta;
+}
+
+// Shooting with a cooldown
+static float shootTimer = 0;
+shootTimer -= delta;
+
+if (Gorgon::Input::Keyboard::IsDown(Gorgon::Input::Keyboard::Key::Space) && shootTimer <= 0) {
+    bullets.push_back({shipX + 15, 380}); // spawn bullet at ship's nose
+    shootTimer = 200; // 5 bullets per second
+}
+```
+
+### Step 2 — Physics and Lifetimes
+
+In a space shooter, objects move on their own. We update their Y-position every frame.
+
+```cpp
+struct Bullet {
+    float x, y;
+    void Update(float delta) { y -= 0.5f * delta; } // move up
+};
+
+struct Enemy {
+    float x, y;
+    void Update(float delta) { y += 0.1f * delta; } // move down
+};
+
+// Update loop:
+for(auto &b : bullets) b.Update(delta);
+for(auto &e : enemies) e.Update(delta);
+
+// Cleanup: Remove bullets that fly off-screen
+bullets.erase(std::remove_if(bullets.begin(), bullets.end(), 
+    [](auto &b){ return b.y < 0; }), bullets.end());
+```
+
+### Step 3 — Collision Detection
+
+Using `Geometry::IsInside` to check if a bullet hits an enemy.
+
+```cpp
+for (auto itB = bullets.begin(); itB != bullets.end(); ) {
+    bool hit = false;
+    for (auto itE = enemies.begin(); itE != enemies.end(); ) {
+        // Simple bounding box check
+        Gorgon::Geometry::Bounds enemyBounds({itE->x, itE->y}, {30, 30});
+        if (Gorgon::Geometry::IsInside(enemyBounds, {itB->x, itB->y})) {
+            itE = enemies.erase(itE); // enemy destroyed!
+            hit = true;
+            score += 10;
+            break;
+        } else {
+            ++itE;
+        }
+    }
+    if (hit) itB = bullets.erase(itB); // bullet disappeared
+    else ++itB;
 }
 ```
 
