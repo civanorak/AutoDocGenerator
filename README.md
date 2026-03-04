@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gorgon Game Engine & Auto-Doc Generator
 
 Bu depo, **Gorgon C++ Oyun Kütüphanesi** ve bu kütüphane için geliştirilmiş olan **AutoDocGenerator** aracını içermektedir.
@@ -18,3 +19,7 @@ Detaylı kullanım talimatları için [AutoDocGenerator/README.md](./AutoDocGene
 
 ## Lisans
 ISC
+=======
+# AutoDocGenerator
+A basic Doc Generator For C++ projects
+>>>>>>> 90da127189cac084a14b259c8bb4df8976bf711a

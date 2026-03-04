@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'Gorgon Game Engine',
   description: 'C++ Oyun Kütüphanesi Dokümantasyonu',
+  base: '/AutoDocGenerator/',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
@@ -309,7 +310,7 @@ export default defineConfig({
       }
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/YOUR_USERNAME/gorgon-docs' }
+      { icon: 'github', link: 'https://github.com/civanorak/AutoDocGenerator' }
     ],
     search: {
       provider: 'local'
