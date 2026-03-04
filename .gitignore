@@ -17,7 +17,21 @@ Thumbs.db
 .idea/
 *.suo
 *.user
+.vs/
 
-# Temp
+# C++ / Visual Studio / CMake
+build/
+out/
+bin/
+obj/
+*.exe
+*.dll
+*.so
+*.dylib
+*.lib
+*.pdb
+*.ilk
+*.exp
 *.log
 *.tmp
+Doxyfile.bak
