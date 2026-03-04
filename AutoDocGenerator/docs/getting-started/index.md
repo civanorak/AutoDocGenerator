@@ -205,83 +205,142 @@ while(true) {
 
 ---
 
-## Tutorial: Space Shooter — Keyboard & Physics
+---
 
-In this tutorial, we descend into the void of space. Unlike the click-based Green Shooter, this game uses **keyboard controls** for movement and shooting.
+## Tutorial: Space Shooter — Full-scale Game
 
-### Step 1 — Handling Keyboard Input
+In this expanded tutorial, we create a complete **Space Shooter** with parallax backgrounds, sprite animations, and explosion effects.
 
-While `Mouse` is for clicking, `Keyboard` is for continuous action. We'll use the A/D keys to move and Space to fire.
+### Step 1 — Advanced Initialization & Layers
+
+For a full-scale game, we need separate layers for depth.
 
 ```cpp
-#include <Gorgon/Input/Keyboard.h>
+#include <Gorgon/Main.h>
+#include <Gorgon/Graphics/Layer.h>
+#include <Gorgon/Graphics/TextureAnimation.h>
 
-float shipX = 200.0f;
-float speed = 0.3f; // pixels per millisecond
+Gorgon::Window window({800, 600}, "Space Shooter Pro");
 
-// In the game loop:
-if (Gorgon::Input::Keyboard::IsDown(Gorgon::Input::Keyboard::Key::A)) {
-    shipX -= speed * delta;
-}
-if (Gorgon::Input::Keyboard::IsDown(Gorgon::Input::Keyboard::Key::D)) {
-    shipX += speed * delta;
-}
+Gorgon::Graphics::Layer starfieldLayer; // Background
+Gorgon::Graphics::Layer gameLayer;      // Ships and Bullets
+Gorgon::Graphics::Layer fxLayer;        // Explosions and particles
+Gorgon::Graphics::Layer uiLayer;        // Score and UI
 
-// Shooting with a cooldown
-static float shootTimer = 0;
-shootTimer -= delta;
+window.Add(starfieldLayer);
+window.Add(gameLayer);
+window.Add(fxLayer);
+window.Add(uiLayer);
+```
 
-if (Gorgon::Input::Keyboard::IsDown(Gorgon::Input::Keyboard::Key::Space) && shootTimer <= 0) {
-    bullets.push_back({shipX + 15, 380}); // spawn bullet at ship's nose
-    shootTimer = 200; // 5 bullets per second
+### Step 2 — Animated Sprites & Background
+
+We use `TextureAnimation` to handle multiple frames for the ship and the starfield.
+
+```cpp
+// 1. Loading an animated ship
+Gorgon::Graphics::TextureAnimation shipAnim;
+shipAnim.LoadFile("ship_spritesheet.png", 64, 64); // sprite size
+shipAnim.SetSpeed(100); // 100ms per frame
+
+// 2. Scrolling Background (Parallax)
+float bgOffset = 0;
+void DrawBackground(float delta) {
+    bgOffset += 0.05f * delta;
+    if (bgOffset > 600) bgOffset = 0;
+    
+    starfieldLayer.Clear();
+    starTexture.Draw(starfieldLayer, {0, bgOffset});
+    starTexture.Draw(starfieldLayer, {0, bgOffset - 600});
 }
 ```
 
-### Step 2 — Physics and Lifetimes
+### Step 3 — Full Ship Control (2D Movement)
 
-In a space shooter, objects move on their own. We update their Y-position every frame.
-
-```cpp
-struct Bullet {
-    float x, y;
-    void Update(float delta) { y -= 0.5f * delta; } // move up
-};
-
-struct Enemy {
-    float x, y;
-    void Update(float delta) { y += 0.1f * delta; } // move down
-};
-
-// Update loop:
-for(auto &b : bullets) b.Update(delta);
-for(auto &e : enemies) e.Update(delta);
-
-// Cleanup: Remove bullets that fly off-screen
-bullets.erase(std::remove_if(bullets.begin(), bullets.end(), 
-    [](auto &b){ return b.y < 0; }), bullets.end());
-```
-
-### Step 3 — Collision Detection
-
-Using `Geometry::IsInside` to check if a bullet hits an enemy.
+We check for WASD or Arrow keys to move the ship in any direction.
 
 ```cpp
-for (auto itB = bullets.begin(); itB != bullets.end(); ) {
-    bool hit = false;
-    for (auto itE = enemies.begin(); itE != enemies.end(); ) {
-        // Simple bounding box check
-        Gorgon::Geometry::Bounds enemyBounds({itE->x, itE->y}, {30, 30});
-        if (Gorgon::Geometry::IsInside(enemyBounds, {itB->x, itB->y})) {
-            itE = enemies.erase(itE); // enemy destroyed!
-            hit = true;
-            score += 10;
-            break;
-        } else {
-            ++itE;
-        }
+Gorgon::Geometry::Pointf shipPos = {400, 500};
+float speed = 0.4f;
+
+void UpdateInput(float delta) {
+    using namespace Gorgon::Input;
+    if (Keyboard::IsDown(Keyboard::Key::W)) shipPos.y -= speed * delta;
+    if (Keyboard::IsDown(Keyboard::Key::S)) shipPos.y += speed * delta;
+    if (Keyboard::IsDown(Keyboard::Key::A)) shipPos.x -= speed * delta;
+    if (Keyboard::IsDown(Keyboard::Key::D)) shipPos.x += speed * delta;
+    
+    // Fire weapon
+    if (Keyboard::IsDown(Keyboard::Key::Space)) {
+        Shoot();
     }
-    if (hit) itB = bullets.erase(itB); // bullet disappeared
-    else ++itB;
+}
+```
+
+### Step 4 — Explosions & Enemy Animations
+
+When an enemy is hit, we spawn an explosion object that plays its animation once and then disappears.
+
+```cpp
+struct Explosion {
+    Gorgon::Geometry::Pointf pos;
+    Gorgon::Graphics::TextureAnimation anim;
+    bool finished = false;
+
+    Explosion(Gorgon::Geometry::Pointf p) : pos(p) {
+        anim.LoadFile("explosion.png", 32, 32);
+        anim.SetLoop(false); // plays once
+    }
+
+    void Update(float delta) {
+        anim.Elapsed(delta);
+        if (anim.IsFinished()) finished = true;
+    }
+
+    void Draw(Gorgon::Graphics::Layer &l) {
+        anim.Draw(l, pos);
+    }
+};
+
+// Global list for FX
+std::vector<Explosion> effects;
+
+// Inside collision detection:
+if (HitDetection(bullet, enemy)) {
+    effects.emplace_back(enemy.pos); // Create explosion
+    Destroy(enemy);
+}
+```
+
+### Step 5 — The Main Loop
+
+Everything comes together in the loop.
+
+```cpp
+while(true) {
+    auto delta = Gorgon::Time::DeltaTime();
+
+    UpdateInput(delta);
+    DrawBackground(delta);
+
+    gameLayer.Clear();
+    fxLayer.Clear();
+
+    // Draw Ship
+    shipAnim.Elapsed(delta);
+    shipAnim.Draw(gameLayer, shipPos);
+
+    // Update & Draw FX
+    for(auto &fx : effects) {
+        fx.Update(delta);
+        fx.Draw(fxLayer);
+    }
+
+    // Cleanup finished FX
+    effects.erase(std::remove_if(effects.begin(), effects.end(), 
+        [](auto &fx){ return fx.finished; }), effects.end());
+
+    Gorgon::NextFrame();
 }
 ```
 
