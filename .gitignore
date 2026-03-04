@@ -1,0 +1,23 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VitePress build output
+AutoDocGenerator/docs/.vitepress/dist/
+AutoDocGenerator/docs/.vitepress/cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Temp
+*.log
+*.tmp
