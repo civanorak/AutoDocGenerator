@@ -1,6 +1,6 @@
 # StackedObject
 
-> Auto-generated documentation for the **StackedObject** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **StackedObject** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>BitmapFont — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="../getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Base.html">Base</a></li>
+    <li><a href="Basic.html">Basic</a></li>
+    <li><a href="Common.html">Common</a></li>
+    <li><a href="Config.html">Config</a></li>
+    <li><a href="Definitions.html">Definitions</a></li>
+    <li><a href="Environment.html">Environment</a></li>
+    <li><a href="OS.html">OS</a></li>
+    <li><a href="Runtime.html">Runtime</a></li>
+    <li><a href="Types.html">Types</a></li>
+    <li><a href="Utils.html">Utils</a></li>
+    <li><a href="UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Bitmap.html">Bitmap</a></li>
+    <li><a href="BitmapFont.html" class="active">BitmapFont</a></li>
+    <li><a href="BlankImage.html">BlankImage</a></li>
+    <li><a href="Color.html">Color</a></li>
+    <li><a href="ColorPicker.html">ColorPicker</a></li>
+    <li><a href="ColorPlane.html">ColorPlane</a></li>
+    <li><a href="ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="Drawables.html">Drawables</a></li>
+    <li><a href="EmptyImage.html">EmptyImage</a></li>
+    <li><a href="Filters.html">Filters</a></li>
+    <li><a href="Flip.html">Flip</a></li>
+    <li><a href="Font.html">Font</a></li>
+    <li><a href="FontTheme.html">FontTheme</a></li>
+    <li><a href="FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="FreeType.html">FreeType</a></li>
+    <li><a href="GID.html">GID</a></li>
+    <li><a href="GL.html">GL</a></li>
+    <li><a href="Graphics.html">Graphics</a></li>
+    <li><a href="HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="IL.html">IL</a></li>
+    <li><a href="Image.html">Image</a></li>
+    <li><a href="JPEG.html">JPEG</a></li>
+    <li><a href="OpenGL.html">OpenGL</a></li>
+    <li><a href="PNG.html">PNG</a></li>
+    <li><a href="Renderer.html">Renderer</a></li>
+    <li><a href="ScalableObject.html">ScalableObject</a></li>
+    <li><a href="Shader.html">Shader</a></li>
+    <li><a href="Shaders.html">Shaders</a></li>
+    <li><a href="Texture.html">Texture</a></li>
+    <li><a href="TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="TextureTargets.html">TextureTargets</a></li>
+    <li><a href="TintedObject.html">TintedObject</a></li>
+    <li><a href="Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="AnimationServices.html">AnimationServices</a></li>
+    <li><a href="AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="Animations.html">Animations</a></li>
+    <li><a href="ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="DnD.html">DnD</a></li>
+    <li><a href="Input.html">Input</a></li>
+    <li><a href="KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="Keyboard.html">Keyboard</a></li>
+    <li><a href="Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Button.html">Button</a></li>
+    <li><a href="Checkbox.html">Checkbox</a></li>
+    <li><a href="CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="Combobox.html">Combobox</a></li>
+    <li><a href="ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="CountingText.html">CountingText</a></li>
+    <li><a href="Dialog.html">Dialog</a></li>
+    <li><a href="DialogWindow.html">DialogWindow</a></li>
+    <li><a href="Dropdown.html">Dropdown</a></li>
+    <li><a href="Filler.html">Filler</a></li>
+    <li><a href="IButton.html">IButton</a></li>
+    <li><a href="ICheckbox.html">ICheckbox</a></li>
+    <li><a href="ILabel.html">ILabel</a></li>
+    <li><a href="IListItem.html">IListItem</a></li>
+    <li><a href="INumberbox.html">INumberbox</a></li>
+    <li><a href="IOption.html">IOption</a></li>
+    <li><a href="IProgressor.html">IProgressor</a></li>
+    <li><a href="IScroller.html">IScroller</a></li>
+    <li><a href="ISlider.html">ISlider</a></li>
+    <li><a href="ITextbox.html">ITextbox</a></li>
+    <li><a href="Inputbox.html">Inputbox</a></li>
+    <li><a href="Label.html">Label</a></li>
+    <li><a href="Listbox.html">Listbox</a></li>
+    <li><a href="ListboxBase.html">ListboxBase</a></li>
+    <li><a href="ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="NumberInput.html">NumberInput</a></li>
+    <li><a href="Numberbox.html">Numberbox</a></li>
+    <li><a href="Panel.html">Panel</a></li>
+    <li><a href="PanelBase.html">PanelBase</a></li>
+    <li><a href="PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="Percentbar.html">Percentbar</a></li>
+    <li><a href="PetContainer.html">PetContainer</a></li>
+    <li><a href="PetTextbox.html">PetTextbox</a></li>
+    <li><a href="Placeholder.html">Placeholder</a></li>
+    <li><a href="Progressbar.html">Progressbar</a></li>
+    <li><a href="RadioButton.html">RadioButton</a></li>
+    <li><a href="RadioButtons.html">RadioButtons</a></li>
+    <li><a href="RadioControl.html">RadioControl</a></li>
+    <li><a href="Scrollbar.html">Scrollbar</a></li>
+    <li><a href="ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="Slider.html">Slider</a></li>
+    <li><a href="SliderBase.html">SliderBase</a></li>
+    <li><a href="SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="Spinner.html">Spinner</a></li>
+    <li><a href="StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="Tabpanel.html">Tabpanel</a></li>
+    <li><a href="TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="TextInput.html">TextInput</a></li>
+    <li><a href="Textarea.html">Textarea</a></li>
+    <li><a href="Textbox.html">Textbox</a></li>
+    <li><a href="TextboxBase.html">TextboxBase</a></li>
+    <li><a href="TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="TooltipManager.html">TooltipManager</a></li>
+    <li><a href="TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="UI.html">UI</a></li>
+    <li><a href="Widget.html">Widget</a></li>
+    <li><a href="WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Alignment.html">Alignment</a></li>
+    <li><a href="Bezier.html">Bezier</a></li>
+    <li><a href="Bounds.html">Bounds</a></li>
+    <li><a href="Circle.html">Circle</a></li>
+    <li><a href="Dimension.html">Dimension</a></li>
+    <li><a href="Geometry.html">Geometry</a></li>
+    <li><a href="GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="Line.html">Line</a></li>
+    <li><a href="Margin.html">Margin</a></li>
+    <li><a href="Point.html">Point</a></li>
+    <li><a href="Point3D.html">Point3D</a></li>
+    <li><a href="PointList.html">PointList</a></li>
+    <li><a href="PointProperty.html">PointProperty</a></li>
+    <li><a href="Polygon.html">Polygon</a></li>
+    <li><a href="Rectangle.html">Rectangle</a></li>
+    <li><a href="Region.html">Region</a></li>
+    <li><a href="Size.html">Size</a></li>
+    <li><a href="SizeProperty.html">SizeProperty</a></li>
+    <li><a href="Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Audio.html">Audio</a></li>
+    <li><a href="AudioStream.html">AudioStream</a></li>
+    <li><a href="FLAC.html">FLAC</a></li>
+    <li><a href="Multimedia.html">Multimedia</a></li>
+    <li><a href="PulseAudio.html">PulseAudio</a></li>
+    <li><a href="PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="Sound.html">Sound</a></li>
+    <li><a href="Source.html">Source</a></li>
+    <li><a href="Vorbis.html">Vorbis</a></li>
+    <li><a href="WASAPI.html">WASAPI</a></li>
+    <li><a href="WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Blob.html">Blob</a></li>
+    <li><a href="CGI.html">CGI</a></li>
+    <li><a href="Clipboard.html">Clipboard</a></li>
+    <li><a href="Data.html">Data</a></li>
+    <li><a href="DataExchange.html">DataExchange</a></li>
+    <li><a href="DataItems.html">DataItems</a></li>
+    <li><a href="File.html">File</a></li>
+    <li><a href="FileDialog.html">FileDialog</a></li>
+    <li><a href="Filesystem.html">Filesystem</a></li>
+    <li><a href="Folder.html">Folder</a></li>
+    <li><a href="HTTP.html">HTTP</a></li>
+    <li><a href="LZMA.html">LZMA</a></li>
+    <li><a href="Markdown.html">Markdown</a></li>
+    <li><a href="MemoryStream.html">MemoryStream</a></li>
+    <li><a href="Parse.html">Parse</a></li>
+    <li><a href="Query.html">Query</a></li>
+    <li><a href="Reader.html">Reader</a></li>
+    <li><a href="Storage.html">Storage</a></li>
+    <li><a href="Stream.html">Stream</a></li>
+    <li><a href="Tokenizer.html">Tokenizer</a></li>
+    <li><a href="URI.html">URI</a></li>
+    <li><a href="Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Array.html">Array</a></li>
+    <li><a href="Collection.html">Collection</a></li>
+    <li><a href="Container.html">Container</a></li>
+    <li><a href="Hashmap.html">Hashmap</a></li>
+    <li><a href="Iterator.html">Iterator</a></li>
+    <li><a href="LinkNode.html">LinkNode</a></li>
+    <li><a href="List.html">List</a></li>
+    <li><a href="ListItem.html">ListItem</a></li>
+    <li><a href="Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BorderData.html">BorderData</a></li>
+    <li><a href="ComponentStack.html">ComponentStack</a></li>
+    <li><a href="ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="CustomLayer.html">CustomLayer</a></li>
+    <li><a href="DWM.html">DWM</a></li>
+    <li><a href="ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="Flow.html">Flow</a></li>
+    <li><a href="FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="InlinePanel.html">InlinePanel</a></li>
+    <li><a href="Layer.html">Layer</a></li>
+    <li><a href="LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="LayerMover.html">LayerMover</a></li>
+    <li><a href="LayerResizer.html">LayerResizer</a></li>
+    <li><a href="LayerWidget.html">LayerWidget</a></li>
+    <li><a href="Layerbox.html">Layerbox</a></li>
+    <li><a href="LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="MaskedObject.html">MaskedObject</a></li>
+    <li><a href="Monitor.html">Monitor</a></li>
+    <li><a href="MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="Organizer.html">Organizer</a></li>
+    <li><a href="StackedObject.html">StackedObject</a></li>
+    <li><a href="VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="Window.html">Window</a></li>
+    <li><a href="WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Assert.html">Assert</a></li>
+    <li><a href="Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="CaptionValue.html">CaptionValue</a></li>
+    <li><a href="Console.html">Console</a></li>
+    <li><a href="Console_Nix.html">Console_Nix</a></li>
+    <li><a href="Console_Win32.html">Console_Win32</a></li>
+    <li><a href="ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="Event.html">Event</a></li>
+    <li><a href="Exception.html">Exception</a></li>
+    <li><a href="Exceptions.html">Exceptions</a></li>
+    <li><a href="GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="Logging.html">Logging</a></li>
+    <li><a href="Null.html">Null</a></li>
+    <li><a href="Nullable.html">Nullable</a></li>
+    <li><a href="Pointer.html">Pointer</a></li>
+    <li><a href="Property.html">Property</a></li>
+    <li><a href="Random.html">Random</a></li>
+    <li><a href="RefCounter.html">RefCounter</a></li>
+    <li><a href="Registry.html">Registry</a></li>
+    <li><a href="SGuid.html">SGuid</a></li>
+    <li><a href="Scope.html">Scope</a></li>
+    <li><a href="ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="Threading.html">Threading</a></li>
+    <li><a href="Time.html">Time</a></li>
+    <li><a href="Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AST.html">AST</a></li>
+    <li><a href="AStar.html">AStar</a></li>
+    <li><a href="Blueprint.html">Blueprint</a></li>
+    <li><a href="Compiler.html">Compiler</a></li>
+    <li><a href="Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="Compilers.html">Compilers</a></li>
+    <li><a href="Component.html">Component</a></li>
+    <li><a href="Composer.html">Composer</a></li>
+    <li><a href="Discrete.html">Discrete</a></li>
+    <li><a href="Embedding.html">Embedding</a></li>
+    <li><a href="Enum.html">Enum</a></li>
+    <li><a href="Generator.html">Generator</a></li>
+    <li><a href="Instruction.html">Instruction</a></li>
+    <li><a href="Language.html">Language</a></li>
+    <li><a href="Message.html">Message</a></li>
+    <li><a href="Pathfinders.html">Pathfinders</a></li>
+    <li><a href="Reflection.html">Reflection</a></li>
+    <li><a href="RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="Scene.html">Scene</a></li>
+    <li><a href="Scripting.html">Scripting</a></li>
+    <li><a href="Simple.html">Simple</a></li>
+    <li><a href="String.html">String</a></li>
+    <li><a href="Struct.html">Struct</a></li>
+    <li><a href="TMP.html">TMP</a></li>
+    <li><a href="Template.html">Template</a></li>
+    <li><a href="TiledMap.html">TiledMap</a></li>
+    <li><a href="Validators.html">Validators</a></li>
+    <li><a href="VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Linux.html">Linux</a></li>
+    <li><a href="Win32.html">Win32</a></li>
+    <li><a href="Windows.html">Windows</a></li>
+    <li><a href="X11.html">X11</a></li>
+    <li><a href="X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Any.html">Any</a></li>
+    <li><a href="Builtin.html">Builtin</a></li>
+    <li><a href="FindObject.html">FindObject</a></li>
+    <li><a href="Helpers.html">Helpers</a></li>
+    <li><a href="Instance.html">Instance</a></li>
+    <li><a href="ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="PD.html">PD</a></li>
+    <li><a href="ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BasicMath.html">BasicMath</a></li>
+    <li><a href="Kernel.html">Kernel</a></li>
+    <li><a href="main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">BitmapFont</span>
+    </nav>
+    
+        <h1 id="bitmapfont" class="doc-heading">BitmapFont</h1>
+<p class="doc-paragraph">> Auto-generated documentation for the <strong>BitmapFont</strong> module of the Gorgon C++ Game Engine.</p>
+<h2 id="contents" class="doc-heading">Contents</h2>
+<ul class="md-list">
+<li><a href="#classes">Classes</a></li>
+<li><a href="#enums">Enums</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="classes" class="doc-heading">Classes</h2>
+<h3 id="glyphdata" class="doc-heading"><code class="inline-code">glyphdata</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h3 id="bitmapfont" class="doc-heading"><code class="inline-code">BitmapFont</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h3 id="glyphdescriptor" class="doc-heading"><code class="inline-code">GlyphDescriptor</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">to be used internally.</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="glyphdescriptor" class="doc-heading"><code class="inline-code">GlyphDescriptor(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="importoptions" class="doc-heading"><code class="inline-code">ImportOptions</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">Use this structure to specify options for import operations</p>
+<h3 id="gtog" class="doc-heading"><code class="inline-code">gtog</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<hr class="doc-divider">
+<h2 id="enums" class="doc-heading">Enums</h2>
+<h3 id="importnamingtemplate" class="doc-heading"><code class="inline-code">ImportNamingTemplate</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h3 id="deleteconstants" class="doc-heading"><code class="inline-code">DeleteConstants</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">Filenames will be examined to determine the template. When this is set and prefix is empty, prefix is also tried to be determined Characters are the filenames, not recommended as some symbols will not be accepted as filename Decimal code of the character is used as filename Hexadecimal code of the character is used as filename</p>
+<hr class="doc-divider">
+<h2 id="functions" class="doc-heading">Functions</h2>
+<h3 id="swapglyphmap-otherglyphmap" class="doc-heading"><code class="inline-code">swap(glyphmap, other.glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swapdestroylist-otherdestroylist" class="doc-heading"><code class="inline-code">swap(destroylist, other.destroylist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swapkerning-otherkerning" class="doc-heading"><code class="inline-code">swap(kerning, other.kerning)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-g--glyphmap" class="doc-heading"><code class="inline-code">for(auto &g : glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifmaxwidth--0" class="doc-heading"><code class="inline-code">if(maxwidth == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbaseline--0" class="doc-heading"><code class="inline-code">if(baseline == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="catch" class="doc-heading"><code class="inline-code">catch(...)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="for-dirisvalid" class="doc-heading"><code class="inline-code">for(; dir.IsValid()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifprefix--" class="doc-heading"><code class="inline-code">if(prefix != "")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="catch" class="doc-heading"><code class="inline-code">catch(...)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifnaming--automatic" class="doc-heading"><code class="inline-code">if(naming == Automatic)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-p--files" class="doc-heading"><code class="inline-code">for(auto p : files)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifnamei--prefixi" class="doc-heading"><code class="inline-code">if(name[i] != prefix[i])</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifi--0" class="doc-heading"><code class="inline-code">if(i == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-p--files" class="doc-heading"><code class="inline-code">for(auto p : files)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-c--name" class="doc-heading"><code class="inline-code">for(auto c : name)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdigitonly" class="doc-heading"><code class="inline-code">if(digitonly)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdigitonly" class="doc-heading"><code class="inline-code">if(digitonly)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifhexonly" class="doc-heading"><code class="inline-code">if(hexonly)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifmultichar" class="doc-heading"><code class="inline-code">if(!multichar)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdigitonly" class="doc-heading"><code class="inline-code">if(digitonly)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifhexonly" class="doc-heading"><code class="inline-code">if(hexonly)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="forauto-p--files" class="doc-heading"><code class="inline-code">for(auto p : files)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstart--0--minval--0" class="doc-heading"><code class="inline-code">if(start == 0 && minval == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifoptionsconverttoalpha--yesnoautoauto" class="doc-heading"><code class="inline-code">if(options.converttoalpha == YesNoAuto::Auto)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-p--files" class="doc-heading"><code class="inline-code">for(auto p : files)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifprevcolora--0" class="doc-heading"><code class="inline-code">if(prevcolor.A == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-p--files" class="doc-heading"><code class="inline-code">for(auto p : files)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifnaming--alpha" class="doc-heading"><code class="inline-code">if(naming == Alpha)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifnaming--decimal" class="doc-heading"><code class="inline-code">if(naming == Decimal)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifg---" class="doc-heading"><code class="inline-code">if(g == ' ')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifoptionstrim" class="doc-heading"><code class="inline-code">if(options.trim)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifg--" class="doc-heading"><code class="inline-code">if(g == '_')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifoptionsbaseline---1" class="doc-heading"><code class="inline-code">if(options.baseline == -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbmp" class="doc-heading"><code class="inline-code">if(bmp)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifa---1" class="doc-heading"><code class="inline-code">if(a != -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-x0-xbmp-getwidth" class="doc-heading"><code class="inline-code">for(int x=0; x<bmp->GetWidth()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifoptionsbaseline---1" class="doc-heading"><code class="inline-code">if(options.baseline == -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifoptionstrim--spim--maxwidth--spw" class="doc-heading"><code class="inline-code">if(options.trim && spim && maxwidth == spw)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifalphaloc---1" class="doc-heading"><code class="inline-code">if(alphaloc != -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifisempty" class="doc-heading"><code class="inline-code">if(isempty)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifoptionsprepare--optionspack" class="doc-heading"><code class="inline-code">if(options.prepare && !options.pack)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifoptionstrim--uh" class="doc-heading"><code class="inline-code">if(options.trim && uh)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifoptionstrim--spacing0" class="doc-heading"><code class="inline-code">if(options.trim && spacing==0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="autokern64-optionsautomatickerningreduction" class="doc-heading"><code class="inline-code">AutoKern(64, options.automatickerningreduction)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="pack" class="doc-heading"><code class="inline-code">Pack()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-y0-ysearchsizeheight-y-gridheight" class="doc-heading"><code class="inline-code">for(int y=0; y<=searchsize.Height; y+= grid.Height)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-x0-xsearchsizewidth-x-gridwidth" class="doc-heading"><code class="inline-code">for(int x=0; x<=searchsize.Width; x+= grid.Width)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-y0-ybmpgetheight" class="doc-heading"><code class="inline-code">for(int y=0; y<=bmp.GetHeight()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-x0-xbmpgetwidth" class="doc-heading"><code class="inline-code">for(int x=0; x<bmp.GetWidth()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iflastempty--empty" class="doc-heading"><code class="inline-code">if(lastempty && !empty)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iflastempty--empty" class="doc-heading"><code class="inline-code">if(!lastempty && empty)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="forauto-row--rows" class="doc-heading"><code class="inline-code">for(auto row : rows)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-x0-xbmpgetwidth" class="doc-heading"><code class="inline-code">for(int x=0; x<=bmp.GetWidth()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-yrowfirst-yrowsecond-y" class="doc-heading"><code class="inline-code">for(int y=row.first; y<row.second; y++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iflastempty--empty" class="doc-heading"><code class="inline-code">if(lastempty && !empty)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iflastempty--empty" class="doc-heading"><code class="inline-code">if(!lastempty && empty)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifoptionsspacing---1" class="doc-heading"><code class="inline-code">if(options.spacing == -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifoptionsconverttoalpha--yesnoautoauto" class="doc-heading"><code class="inline-code">if(options.converttoalpha == YesNoAuto::Auto)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifca" class="doc-heading"><code class="inline-code">if(c.A)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifprevcolora--0" class="doc-heading"><code class="inline-code">if(prevcolor.A == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifprevcolor--c" class="doc-heading"><code class="inline-code">if(prevcolor != c)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifoptionstrim" class="doc-heading"><code class="inline-code">if(options.trim)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-b--bounds" class="doc-heading"><code class="inline-code">for(auto &b : bounds)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifexpand" class="doc-heading"><code class="inline-code">if(expand)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifoptionsconverttoalpha--yesnoautoyes" class="doc-heading"><code class="inline-code">if(options.converttoalpha == YesNoAuto::Yes)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-b--bounds" class="doc-heading"><code class="inline-code">for(auto b : bounds)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstart--" class="doc-heading"><code class="inline-code">if(start == '_')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifoptionsconverttoalpha--yesnoautoyes" class="doc-heading"><code class="inline-code">if(options.converttoalpha == YesNoAuto::Yes)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-b--bounds" class="doc-heading"><code class="inline-code">for(auto b : bounds)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstart--" class="doc-heading"><code class="inline-code">if(start == '_')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifoptionsbaseline---1" class="doc-heading"><code class="inline-code">if(options.baseline == -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifoptionstrim" class="doc-heading"><code class="inline-code">if(options.trim)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifuh" class="doc-heading"><code class="inline-code">if(uh)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="autokern64-optionsautomatickerningreduction" class="doc-heading"><code class="inline-code">AutoKern(64, options.automatickerningreduction)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifexpand" class="doc-heading"><code class="inline-code">if(expand)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="pack" class="doc-heading"><code class="inline-code">Pack()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcapitaloffset---1" class="doc-heading"><code class="inline-code">if(capitaloffset == -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbmp" class="doc-heading"><code class="inline-code">if(bmp)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-y0-ybgetheight" class="doc-heading"><code class="inline-code">for(int y=0; y<b.GetHeight()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-x0-xbgetwidth" class="doc-heading"><code class="inline-code">for(int x=0; x<b.GetWidth()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifempty" class="doc-heading"><code class="inline-code">if(!empty)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-g--glyphmap" class="doc-heading"><code class="inline-code">for(auto &g : glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="fory0-yyoff-y" class="doc-heading"><code class="inline-code">for(y=0; y<yoff; y++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="for-yyoff--h-y" class="doc-heading"><code class="inline-code">for(; y<yoff + h; y++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="for-yheight-y" class="doc-heading"><code class="inline-code">for(; y<height; y++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-ystdmax0--yoff" class="doc-heading"><code class="inline-code">for(int y=std::max(0, -yoff)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forx0-xw-x" class="doc-heading"><code class="inline-code">for(x=0; x<w; x++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forx0-xw-x" class="doc-heading"><code class="inline-code">for(x=0; x<w; x++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="fory0-yyoffh-y" class="doc-heading"><code class="inline-code">for(y=0; y<yoff+h; y++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-l--glyphmap" class="doc-heading"><code class="inline-code">for(auto &l : glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-r--glyphmap" class="doc-heading"><code class="inline-code">for(auto &r : glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-y0-yheight-y" class="doc-heading"><code class="inline-code">for(int y=0; y<height; y++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-yy--stdmax0-y-spacing" class="doc-heading"><code class="inline-code">for(int yy = std::max(0, y-spacing)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-p--glyphmap" class="doc-heading"><code class="inline-code">for(auto &p : glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbmp" class="doc-heading"><code class="inline-code">if(bmp)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-g--packing" class="doc-heading"><code class="inline-code">for(auto g : packing)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-p--glyphmap" class="doc-heading"><code class="inline-code">for(auto &p : glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbmp" class="doc-heading"><code class="inline-code">if(bmp)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swapbounds-ret" class="doc-heading"><code class="inline-code">swap(bounds, ret)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcount--1" class="doc-heading"><code class="inline-code">if(count == 1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifasciionly" class="doc-heading"><code class="inline-code">if(asciionly)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i--0-i3-i" class="doc-heading"><code class="inline-code">for(int i = 0; i<3; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i--0-i3-i" class="doc-heading"><code class="inline-code">for(int i = 0; i<3; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-y0-ybmp-getheight" class="doc-heading"><code class="inline-code">for(int y=0; y<bmp->GetHeight()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-x0-xbmp-getwidth" class="doc-heading"><code class="inline-code">for(int x=0; x<bmp->GetWidth()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iffoundfirst--found" class="doc-heading"><code class="inline-code">if(!foundfirst && !found)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iffound" class="doc-heading"><code class="inline-code">if(found)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="floats--spacing" class="doc-heading"><code class="inline-code">float(s + spacing)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="swapglyphmap-otherglyphmap" class="doc-heading"><code class="inline-code">swap(glyphmap, other.glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swapdestroylist-otherdestroylist" class="doc-heading"><code class="inline-code">swap(destroylist, other.destroylist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swapkerning-otherkerning" class="doc-heading"><code class="inline-code">swap(kerning, other.kerning)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="duplicate" class="doc-heading"><code class="inline-code">Duplicate()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">BitmapFont</code></p>
+<p class="doc-paragraph">Packs the bitmap font. This is optimal for rendering. However, packed fonts cannot be saved as resource. Set baseline to specific height. Use of non-integer values may caused blurriness in font rendering. Value of -1 means automatically detect according to estimatebaseline option. Whether to trim whitespace around the glyphs. This will also trigger automatic advance calculation. It is best to set this to true if using automatic kerning Whether to convert imported images to alpha only images. Conversion to alpha only is helpful to speed up text rendering, allows fonts that are represented with a different color than white to work properly. However, colored fonts will not work. Setting this to Auto will detect if conversion is safe by checking whether all pixels have the same color. However, this process is very slow. Prepares the loaded bitmaps. If pack option is set, this option is ignored. If baseline is set to -1 (auto), setting this to true will use cheap baseline calculation instead of searching it in letter A. If letter A does not exists, this option is enforced. Whether to apply automatic kerning after import is completed. If automatic kerning is applied, this value will be used to reduce the kerning amount. Removing kerning reduction will cause tighter kerning, increasing it will reduce the effect of kerning. Spaces between characters, -1 activates auto detection.</p>
+<h3 id="bitmapfontbitmapfont-other" class="doc-heading"><code class="inline-code">BitmapFont(BitmapFont &&other)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addglyphglyph-glyph-const-rectangulardrawable-bitmap-int-baseline--0" class="doc-heading"><code class="inline-code">AddGlyph(Glyph glyph, const RectangularDrawable &bitmap, int baseline = 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Moves another bitmap font into this one. This font will be destroyed in this process Adds a new glyph bitmap to the list. If a previous one exists, it will be replaced. Ownership of bitmap is not transferred. TODO: better baseline handling</p>
+<h3 id="addglyphglyph-glyph-const-rectangulardrawable-bitmap-geometrypointf-offset-float-advance" class="doc-heading"><code class="inline-code">AddGlyph(Glyph glyph, const RectangularDrawable &bitmap, Geometry::Pointf offset, float advance)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds a new glyph bitmap to the list. If a previous one exists, it will be replaced. Ownership of bitmap is not transferred.</p>
+<h3 id="assumeglyphglyph-glyph-const-rectangulardrawable-bitmap-int-baseline--0" class="doc-heading"><code class="inline-code">AssumeGlyph(Glyph glyph, const RectangularDrawable &bitmap, int baseline = 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds a new glyph bitmap to the list. If a previous one exists, it will be replaced. Ownership of bitmap is not transferred.</p>
+<h3 id="addglyphglyph-bitmap-baseline" class="doc-heading"><code class="inline-code">AddGlyph(glyph, bitmap, baseline)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="assumeglyphglyph-glyph-const-rectangulardrawable-bitmap-geometrypointf-offset-float-advance" class="doc-heading"><code class="inline-code">AssumeGlyph(Glyph glyph, const RectangularDrawable &bitmap, Geometry::Pointf offset, float advance)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds a new glyph bitmap to the list. If a previous one exists, it will be replaced. Ownership of bitmap is not transferred.</p>
+<h3 id="addglyphglyph-bitmap-offset-advance" class="doc-heading"><code class="inline-code">AddGlyph(glyph, bitmap, offset, advance)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setkerningglyph-left-glyph-right-geometrypointf-kern" class="doc-heading"><code class="inline-code">SetKerning(Glyph left, Glyph right, Geometry::Pointf kern)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="setkerningglyph-left-glyph-right-float-x" class="doc-heading"><code class="inline-code">SetKerning(Glyph left, Glyph right, float x)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="packbool-tight--false-deleteconstants-del--owned" class="doc-heading"><code class="inline-code">Pack(bool tight = false, DeleteConstants del = Owned)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Converts individual glyphs to a single atlas. Only the glyphs that are registered as bitmaps can be packed. This function will automatically detect types and act accordingly. If the ownership of the packed images belong to the font and del parameter is set to owned, owned images that are created either by import or a previous pack will be destroyed. If it is set to all, all images that took part in packing will be destroyed If tight packing is set, glyphs will be placed next to each other, saving space. However, if resized, they will have artifacts.</p>
+<h3 id="createatlasstdvectorgeometrybounds-bounds-bool-tight--false" class="doc-heading"><code class="inline-code">CreateAtlas(std::vector<Geometry::Bounds> &bounds, bool tight = false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Graphics::Bitmap</code></p>
+<p class="doc-paragraph">Performs packing without changing the font itself</p>
+<h3 id="setheightint-value" class="doc-heading"><code class="inline-code">SetHeight(int value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the line height of the font. Adding glyphs may override this value.</p>
+<h3 id="setmaxwidthint-value" class="doc-heading"><code class="inline-code">SetMaxWidth(int value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the maximum width for a character. Adding glyphs may override this value.</p>
+<h3 id="determinedimensions" class="doc-heading"><code class="inline-code">DetermineDimensions()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Searches through the currently registered glyphs to determine dimensions. This function will calculate following values: height, max width, underline offset. Baseline is set to 0.7 * height if it is 0.</p>
+<h3 id="setglyphspacingint-value" class="doc-heading"><code class="inline-code">SetGlyphSpacing(int value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the spacing between glyphs</p>
+<h3 id="getglyphspacing" class="doc-heading"><code class="inline-code">GetGlyphSpacing()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns the spacing between glyphs</p>
+<h3 id="setlinethicknessint-value" class="doc-heading"><code class="inline-code">SetLineThickness(int value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the line thickness to the specified value.</p>
+<h3 id="setunderlineoffsetint-value" class="doc-heading"><code class="inline-code">SetUnderlineOffset(int value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the underline position to the specified value.</p>
+<h3 id="setbaselinefloat-value" class="doc-heading"><code class="inline-code">SetBaseline(float value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the baseline. Might cause problems if the font already has glyphs in it.</p>
+<h3 id="setlinegapfloat-value" class="doc-heading"><code class="inline-code">SetLineGap(float value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the distance between two lines. Non-integer values are not recommended.</p>
+<h3 id="importatlasbitmap-bmp-geometrysize-grid--0-0-glyph-start--0x20-bool-expand--false-importoptions-options--importoptions" class="doc-heading"><code class="inline-code">ImportAtlas(Bitmap &&bmp, Geometry::Size grid = {0, 0}, Glyph start = 0x20, bool expand = false, ImportOptions options = ImportOptions{})</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Imports bitmap font images from a folder with the specified file naming template. Automatic detection will only work if there is a single bitmap font set in the folder. If baseline is set to a negative value, it would be calculated as 70% of the font height. Only png files are considered for import. If converttoalpha is set, then the images read will be converted to alpha only images. Import will import separate images, you may use Pack function to pack them to an image atlas. If prepare is set, the imported images will be prepared and font will be ready to be used. As of now, this function cannot deal with animated fonts. start parameter can be used for adjusting numeric offset. If template naming is automatic and the value is left as 0, it will be determined automatically so that the imported images will be matched with printable characters. Any files that start with . and _ is ignored, unless it is the name of the file. This function will return the number of images imported. Imported images will be destroyed by this object. Automatic conversion can cause issues with suffixes, however, if naming is set, any additional text after the number or character is ignored. This function calculates the line thickness using trimmed height of the underscore. If trimming is not set, this functionality will not work. Additionally, this function will set underline position to halfway between baseline and bottom. If estimatebaseline is set, then the baseline position is a simple estimate instead of a search. The search will look at A to find the lowest pixel to declare it baseline. Returns number of glyphs that are imported. Imports the given bitmap as atlas image. The bitmap data will be copied out of the given bitmap. If grid is not specified or specified as zero size, glyph locations will be determined automatically. This automatic detection requires glyphs to be arranged in lines and there must be at least 1px space between the lines and the glyphs. If saved, atlas images packed loosely by bitmap font will work with ImportAtlas function. However, packing algorithm of FreeType produces atlases with variable line height, making it impossible to determine glyph locations. packing options can be used to control the final result of glyphs. If you intend to save this font as a resource, you need to set expand to true. Space characters cannot be detected in automatic mode, thus they will be skipped. However, renderer has default space widths generated from font height.  Automatic detection can fail for double quotes and any other glyphs that are horizontally separate. Using ImportAtlas with automatic detection is difficult. you may need to modify atlas images to suit the function. Make sure there is at least 1px space between rows and glyphs are ordered as they should.</p>
+<h3 id="importatlasconst-bitmap-bmp-geometrysize-grid--0-0-glyph-start--0x20-bool-expand--false-importoptions-options--importoptions" class="doc-heading"><code class="inline-code">ImportAtlas(const Bitmap &bmp, Geometry::Size grid = {0, 0}, Glyph start = 0x20, bool expand = false, ImportOptions options = ImportOptions{})</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Imports the given bitmap as atlas image. The given bitmap will be duplicated. See ImportAtlas(Bitmap &&) for details.</p>
+<h3 id="importatlasconst-stdstring-filename-geometrysize-grid--0-0-glyph-start--0x20-bool-expand--false-importoptions-options--importoptions" class="doc-heading"><code class="inline-code">ImportAtlas(const std::string &filename, Geometry::Size grid = {0, 0}, Glyph start = 0x20, bool expand = false, ImportOptions options = ImportOptions{})</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Imports the given file as atlas image. See ImportAtlas(Bitmap &&) for details.</p>
+<h3 id="autokernbyte-opaquelevel--64-int-reduce--1-int-capitaloffset---1" class="doc-heading"><code class="inline-code">AutoKern(Byte opaquelevel = 64, int reduce = 1, int capitaloffset = -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Automatically calculates kerning distances between glyphs. This operation might take a while depending on the number of glyphs that are loaded. This function uses glyph spacing. This function is optimized for pixel fonts without fractional alpha. Glyphs should be bitmaps for this function to work properly. Additionally, this function either needs the Y-offset of capital letters, or the letter A should be present. This data will be used to determine accent symbols which should not be kerned. A value of -1 means use A to determine. If A is not present or the value is 0, this feature is disabled. The function takes glyph offsets into account. However, x offsets can cause issues.</p>
+<h3 id="removeglyph-g" class="doc-heading"><code class="inline-code">Remove(Glyph g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Returns the image that represents a glyph Removes a glyph from the bitmap font. If this glyph is created by font object and this glyph is the last user of that resource, it will be destroyed. Use Release to prevent this from happening.</p>
+<h3 id="releaserectangulardrawable-img" class="doc-heading"><code class="inline-code">Release(RectangularDrawable &img)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">If the given resource is owned by this bitmap font, its ownership will be released.</p>
+<h3 id="isownedconst-rectangulardrawable-img" class="doc-heading"><code class="inline-code">IsOwned(const RectangularDrawable &img)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if the given image is owned by this bitmap font.</p>
+<h3 id="adoptconst-rectangulardrawable-img" class="doc-heading"><code class="inline-code">Adopt(const RectangularDrawable &img)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">This will add the given image to the list of images that will be destroyed with this object.</p>
+<h3 id="begin" class="doc-heading"><code class="inline-code">begin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::map<Glyph, GlyphDescriptor>::iterator</code></p>
+<p class="doc-paragraph">@see Gorgon::Graphics::GlyphRenderer::GetLetterHeight. This function may produce incorrect values if the bitmap data for the used letters are not present.</p>
+<h3 id="end" class="doc-heading"><code class="inline-code">end()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::map<Glyph, GlyphDescriptor>::iterator</code></p>
+<h3 id="begin" class="doc-heading"><code class="inline-code">begin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::map<Glyph, GlyphDescriptor>::const_iterator</code></p>
+<h3 id="end" class="doc-heading"><code class="inline-code">end()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::map<Glyph, GlyphDescriptor>::const_iterator</code></p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

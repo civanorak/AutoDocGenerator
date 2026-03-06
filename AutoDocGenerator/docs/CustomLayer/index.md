@@ -1,6 +1,6 @@
 # CustomLayer
 
-> Auto-generated documentation for the **CustomLayer** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **CustomLayer** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

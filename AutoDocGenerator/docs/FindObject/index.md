@@ -1,6 +1,6 @@
 # FindObject
 
-> Auto-generated documentation for the **FindObject** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **FindObject** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

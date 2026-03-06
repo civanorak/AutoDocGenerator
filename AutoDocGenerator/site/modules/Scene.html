@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>Scene — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="../getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Base.html">Base</a></li>
+    <li><a href="Basic.html">Basic</a></li>
+    <li><a href="Common.html">Common</a></li>
+    <li><a href="Config.html">Config</a></li>
+    <li><a href="Definitions.html">Definitions</a></li>
+    <li><a href="Environment.html">Environment</a></li>
+    <li><a href="OS.html">OS</a></li>
+    <li><a href="Runtime.html">Runtime</a></li>
+    <li><a href="Types.html">Types</a></li>
+    <li><a href="Utils.html">Utils</a></li>
+    <li><a href="UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Bitmap.html">Bitmap</a></li>
+    <li><a href="BitmapFont.html">BitmapFont</a></li>
+    <li><a href="BlankImage.html">BlankImage</a></li>
+    <li><a href="Color.html">Color</a></li>
+    <li><a href="ColorPicker.html">ColorPicker</a></li>
+    <li><a href="ColorPlane.html">ColorPlane</a></li>
+    <li><a href="ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="Drawables.html">Drawables</a></li>
+    <li><a href="EmptyImage.html">EmptyImage</a></li>
+    <li><a href="Filters.html">Filters</a></li>
+    <li><a href="Flip.html">Flip</a></li>
+    <li><a href="Font.html">Font</a></li>
+    <li><a href="FontTheme.html">FontTheme</a></li>
+    <li><a href="FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="FreeType.html">FreeType</a></li>
+    <li><a href="GID.html">GID</a></li>
+    <li><a href="GL.html">GL</a></li>
+    <li><a href="Graphics.html">Graphics</a></li>
+    <li><a href="HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="IL.html">IL</a></li>
+    <li><a href="Image.html">Image</a></li>
+    <li><a href="JPEG.html">JPEG</a></li>
+    <li><a href="OpenGL.html">OpenGL</a></li>
+    <li><a href="PNG.html">PNG</a></li>
+    <li><a href="Renderer.html">Renderer</a></li>
+    <li><a href="ScalableObject.html">ScalableObject</a></li>
+    <li><a href="Shader.html">Shader</a></li>
+    <li><a href="Shaders.html">Shaders</a></li>
+    <li><a href="Texture.html">Texture</a></li>
+    <li><a href="TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="TextureTargets.html">TextureTargets</a></li>
+    <li><a href="TintedObject.html">TintedObject</a></li>
+    <li><a href="Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="AnimationServices.html">AnimationServices</a></li>
+    <li><a href="AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="Animations.html">Animations</a></li>
+    <li><a href="ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="DnD.html">DnD</a></li>
+    <li><a href="Input.html">Input</a></li>
+    <li><a href="KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="Keyboard.html">Keyboard</a></li>
+    <li><a href="Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Button.html">Button</a></li>
+    <li><a href="Checkbox.html">Checkbox</a></li>
+    <li><a href="CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="Combobox.html">Combobox</a></li>
+    <li><a href="ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="CountingText.html">CountingText</a></li>
+    <li><a href="Dialog.html">Dialog</a></li>
+    <li><a href="DialogWindow.html">DialogWindow</a></li>
+    <li><a href="Dropdown.html">Dropdown</a></li>
+    <li><a href="Filler.html">Filler</a></li>
+    <li><a href="IButton.html">IButton</a></li>
+    <li><a href="ICheckbox.html">ICheckbox</a></li>
+    <li><a href="ILabel.html">ILabel</a></li>
+    <li><a href="IListItem.html">IListItem</a></li>
+    <li><a href="INumberbox.html">INumberbox</a></li>
+    <li><a href="IOption.html">IOption</a></li>
+    <li><a href="IProgressor.html">IProgressor</a></li>
+    <li><a href="IScroller.html">IScroller</a></li>
+    <li><a href="ISlider.html">ISlider</a></li>
+    <li><a href="ITextbox.html">ITextbox</a></li>
+    <li><a href="Inputbox.html">Inputbox</a></li>
+    <li><a href="Label.html">Label</a></li>
+    <li><a href="Listbox.html">Listbox</a></li>
+    <li><a href="ListboxBase.html">ListboxBase</a></li>
+    <li><a href="ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="NumberInput.html">NumberInput</a></li>
+    <li><a href="Numberbox.html">Numberbox</a></li>
+    <li><a href="Panel.html">Panel</a></li>
+    <li><a href="PanelBase.html">PanelBase</a></li>
+    <li><a href="PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="Percentbar.html">Percentbar</a></li>
+    <li><a href="PetContainer.html">PetContainer</a></li>
+    <li><a href="PetTextbox.html">PetTextbox</a></li>
+    <li><a href="Placeholder.html">Placeholder</a></li>
+    <li><a href="Progressbar.html">Progressbar</a></li>
+    <li><a href="RadioButton.html">RadioButton</a></li>
+    <li><a href="RadioButtons.html">RadioButtons</a></li>
+    <li><a href="RadioControl.html">RadioControl</a></li>
+    <li><a href="Scrollbar.html">Scrollbar</a></li>
+    <li><a href="ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="Slider.html">Slider</a></li>
+    <li><a href="SliderBase.html">SliderBase</a></li>
+    <li><a href="SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="Spinner.html">Spinner</a></li>
+    <li><a href="StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="Tabpanel.html">Tabpanel</a></li>
+    <li><a href="TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="TextInput.html">TextInput</a></li>
+    <li><a href="Textarea.html">Textarea</a></li>
+    <li><a href="Textbox.html">Textbox</a></li>
+    <li><a href="TextboxBase.html">TextboxBase</a></li>
+    <li><a href="TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="TooltipManager.html">TooltipManager</a></li>
+    <li><a href="TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="UI.html">UI</a></li>
+    <li><a href="Widget.html">Widget</a></li>
+    <li><a href="WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Alignment.html">Alignment</a></li>
+    <li><a href="Bezier.html">Bezier</a></li>
+    <li><a href="Bounds.html">Bounds</a></li>
+    <li><a href="Circle.html">Circle</a></li>
+    <li><a href="Dimension.html">Dimension</a></li>
+    <li><a href="Geometry.html">Geometry</a></li>
+    <li><a href="GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="Line.html">Line</a></li>
+    <li><a href="Margin.html">Margin</a></li>
+    <li><a href="Point.html">Point</a></li>
+    <li><a href="Point3D.html">Point3D</a></li>
+    <li><a href="PointList.html">PointList</a></li>
+    <li><a href="PointProperty.html">PointProperty</a></li>
+    <li><a href="Polygon.html">Polygon</a></li>
+    <li><a href="Rectangle.html">Rectangle</a></li>
+    <li><a href="Region.html">Region</a></li>
+    <li><a href="Size.html">Size</a></li>
+    <li><a href="SizeProperty.html">SizeProperty</a></li>
+    <li><a href="Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Audio.html">Audio</a></li>
+    <li><a href="AudioStream.html">AudioStream</a></li>
+    <li><a href="FLAC.html">FLAC</a></li>
+    <li><a href="Multimedia.html">Multimedia</a></li>
+    <li><a href="PulseAudio.html">PulseAudio</a></li>
+    <li><a href="PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="Sound.html">Sound</a></li>
+    <li><a href="Source.html">Source</a></li>
+    <li><a href="Vorbis.html">Vorbis</a></li>
+    <li><a href="WASAPI.html">WASAPI</a></li>
+    <li><a href="WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Blob.html">Blob</a></li>
+    <li><a href="CGI.html">CGI</a></li>
+    <li><a href="Clipboard.html">Clipboard</a></li>
+    <li><a href="Data.html">Data</a></li>
+    <li><a href="DataExchange.html">DataExchange</a></li>
+    <li><a href="DataItems.html">DataItems</a></li>
+    <li><a href="File.html">File</a></li>
+    <li><a href="FileDialog.html">FileDialog</a></li>
+    <li><a href="Filesystem.html">Filesystem</a></li>
+    <li><a href="Folder.html">Folder</a></li>
+    <li><a href="HTTP.html">HTTP</a></li>
+    <li><a href="LZMA.html">LZMA</a></li>
+    <li><a href="Markdown.html">Markdown</a></li>
+    <li><a href="MemoryStream.html">MemoryStream</a></li>
+    <li><a href="Parse.html">Parse</a></li>
+    <li><a href="Query.html">Query</a></li>
+    <li><a href="Reader.html">Reader</a></li>
+    <li><a href="Storage.html">Storage</a></li>
+    <li><a href="Stream.html">Stream</a></li>
+    <li><a href="Tokenizer.html">Tokenizer</a></li>
+    <li><a href="URI.html">URI</a></li>
+    <li><a href="Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Array.html">Array</a></li>
+    <li><a href="Collection.html">Collection</a></li>
+    <li><a href="Container.html">Container</a></li>
+    <li><a href="Hashmap.html">Hashmap</a></li>
+    <li><a href="Iterator.html">Iterator</a></li>
+    <li><a href="LinkNode.html">LinkNode</a></li>
+    <li><a href="List.html">List</a></li>
+    <li><a href="ListItem.html">ListItem</a></li>
+    <li><a href="Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BorderData.html">BorderData</a></li>
+    <li><a href="ComponentStack.html">ComponentStack</a></li>
+    <li><a href="ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="CustomLayer.html">CustomLayer</a></li>
+    <li><a href="DWM.html">DWM</a></li>
+    <li><a href="ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="Flow.html">Flow</a></li>
+    <li><a href="FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="InlinePanel.html">InlinePanel</a></li>
+    <li><a href="Layer.html">Layer</a></li>
+    <li><a href="LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="LayerMover.html">LayerMover</a></li>
+    <li><a href="LayerResizer.html">LayerResizer</a></li>
+    <li><a href="LayerWidget.html">LayerWidget</a></li>
+    <li><a href="Layerbox.html">Layerbox</a></li>
+    <li><a href="LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="MaskedObject.html">MaskedObject</a></li>
+    <li><a href="Monitor.html">Monitor</a></li>
+    <li><a href="MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="Organizer.html">Organizer</a></li>
+    <li><a href="StackedObject.html">StackedObject</a></li>
+    <li><a href="VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="Window.html">Window</a></li>
+    <li><a href="WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Assert.html">Assert</a></li>
+    <li><a href="Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="CaptionValue.html">CaptionValue</a></li>
+    <li><a href="Console.html">Console</a></li>
+    <li><a href="Console_Nix.html">Console_Nix</a></li>
+    <li><a href="Console_Win32.html">Console_Win32</a></li>
+    <li><a href="ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="Event.html">Event</a></li>
+    <li><a href="Exception.html">Exception</a></li>
+    <li><a href="Exceptions.html">Exceptions</a></li>
+    <li><a href="GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="Logging.html">Logging</a></li>
+    <li><a href="Null.html">Null</a></li>
+    <li><a href="Nullable.html">Nullable</a></li>
+    <li><a href="Pointer.html">Pointer</a></li>
+    <li><a href="Property.html">Property</a></li>
+    <li><a href="Random.html">Random</a></li>
+    <li><a href="RefCounter.html">RefCounter</a></li>
+    <li><a href="Registry.html">Registry</a></li>
+    <li><a href="SGuid.html">SGuid</a></li>
+    <li><a href="Scope.html">Scope</a></li>
+    <li><a href="ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="Threading.html">Threading</a></li>
+    <li><a href="Time.html">Time</a></li>
+    <li><a href="Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AST.html">AST</a></li>
+    <li><a href="AStar.html">AStar</a></li>
+    <li><a href="Blueprint.html">Blueprint</a></li>
+    <li><a href="Compiler.html">Compiler</a></li>
+    <li><a href="Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="Compilers.html">Compilers</a></li>
+    <li><a href="Component.html">Component</a></li>
+    <li><a href="Composer.html">Composer</a></li>
+    <li><a href="Discrete.html">Discrete</a></li>
+    <li><a href="Embedding.html">Embedding</a></li>
+    <li><a href="Enum.html">Enum</a></li>
+    <li><a href="Generator.html">Generator</a></li>
+    <li><a href="Instruction.html">Instruction</a></li>
+    <li><a href="Language.html">Language</a></li>
+    <li><a href="Message.html">Message</a></li>
+    <li><a href="Pathfinders.html">Pathfinders</a></li>
+    <li><a href="Reflection.html">Reflection</a></li>
+    <li><a href="RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="Scene.html" class="active">Scene</a></li>
+    <li><a href="Scripting.html">Scripting</a></li>
+    <li><a href="Simple.html">Simple</a></li>
+    <li><a href="String.html">String</a></li>
+    <li><a href="Struct.html">Struct</a></li>
+    <li><a href="TMP.html">TMP</a></li>
+    <li><a href="Template.html">Template</a></li>
+    <li><a href="TiledMap.html">TiledMap</a></li>
+    <li><a href="Validators.html">Validators</a></li>
+    <li><a href="VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Linux.html">Linux</a></li>
+    <li><a href="Win32.html">Win32</a></li>
+    <li><a href="Windows.html">Windows</a></li>
+    <li><a href="X11.html">X11</a></li>
+    <li><a href="X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Any.html">Any</a></li>
+    <li><a href="Builtin.html">Builtin</a></li>
+    <li><a href="FindObject.html">FindObject</a></li>
+    <li><a href="Helpers.html">Helpers</a></li>
+    <li><a href="Instance.html">Instance</a></li>
+    <li><a href="ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="PD.html">PD</a></li>
+    <li><a href="ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BasicMath.html">BasicMath</a></li>
+    <li><a href="Kernel.html">Kernel</a></li>
+    <li><a href="main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">Scene</span>
+    </nav>
+    
+        <h1 id="scene" class="doc-heading">Scene</h1>
+<p class="doc-paragraph">> Auto-generated documentation for the <strong>Scene</strong> module of the Gorgon C++ Game Engine.</p>
+<h2 id="contents" class="doc-heading">Contents</h2>
+<ul class="md-list">
+<li><a href="#classes">Classes</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="classes" class="doc-heading">Classes</h2>
+<h3 id="none" class="doc-heading"><code class="inline-code">None</code></h3>
+<p class="doc-paragraph">Used to denote there is no explicit scene id given to a scene.</p>
+<h3 id="scene" class="doc-heading"><code class="inline-code">Scene</code></h3>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="scenesceneid-id--nosceneid-bool-mouseinput--true" class="doc-heading"><code class="inline-code">Scene(SceneID id = NoSceneID, bool mouseinput = true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">explicit</code></p>
+<p class="doc-paragraph">Empty constructor. After this constructor, the scene cannot be activated.</p>
+<h5 id="scenescenemanager-parent-sceneid-id--nosceneid-bool-mouseinput--true" class="doc-heading"><code class="inline-code">Scene(SceneManager &parent, SceneID id = NoSceneID, bool mouseinput = true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">explicit</code></p>
+<p class="doc-paragraph">Sets the parent layer so that the scene can be activated.</p>
+<h5 id="virtual-requireskeyinput" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">RequiresKeyInput(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">Whether this scene requires keyboard input.</p>
+<h5 id="getid" class="doc-heading"><code class="inline-code">GetID(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">SceneID</code></p>
+<p class="doc-paragraph">Activates the current scene Returns the ID of the current scene</p>
+<h5 id="virtual-keyeventgorgoninputkey-float" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">KeyEvent(Gorgon::Input::Key, float)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Called when the scene receives a key</p>
+<h5 id="virtual-firstactivation" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">first_activation(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Fires whenever activation of this layer is completed. Will not be fired if the layer is already active and Activate function is called. Fires whenever deactivation of this layer is completed. Will not be fired if the layer is already inactive and Deactivate function is called. Called only for the first time this scene is activated. Allocate your resources here.</p>
+<h5 id="virtual-activate" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">activate(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Called after very activation. first_activation will be called before activate.</p>
+<h5 id="virtual-deactivate" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">deactivate(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Called <em>before</em> deactivation</p>
+<h5 id="virtual-doframeunsigned-int-delta" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">doframe(unsigned int delta)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Scene should perform its frame based operations in this function</p>
+<h5 id="virtual-render" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">render(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">This is called after doframe to perform rendering operation. It is possible to receive render without receiving doframe, thus they should not be co-dependent.</p>
+<h5 id="setlayerboundsconst-geometrybounds-bounds" class="doc-heading"><code class="inline-code">setlayerbounds(const Geometry::Bounds &bounds)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the boundaries of the main layer</p>
+<h5 id="activatescene" class="doc-heading"><code class="inline-code">activate_scene(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">ID of the current scene Graphics layer that can be drawn on Mouse layer that can be used to receive mouse events. If the mouseinput parameter of the constructor is set to true, this layer will be attached, otherwise it will not be functional. The parent window for the scene. Unless you are explicitly requesting a parent, this member could be nullptr. This panel covers the entire area of the window. You may place your widgets on top of this panel. They will be displayed above drawing layer</p>
+<h5 id="deactivatescene" class="doc-heading"><code class="inline-code">deactivate_scene(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="scenemanager" class="doc-heading"><code class="inline-code">SceneManager</code></h3>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="switchscenesceneid-scene" class="doc-heading"><code class="inline-code">SwitchScene(SceneID scene)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Switches the current scene to the scene with the given id. Will throw std::runtime_error if scene is not found. If given id is NoSceneID, all scenes will be deactivated.</p>
+<h5 id="deactivate" class="doc-heading"><code class="inline-code">Deactivate(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Deactivates all scenes</p>
+<h5 id="activatekeyboard" class="doc-heading"><code class="inline-code">ActivateKeyboard(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Moves keyboard input event to the top if there is a layer that accepts keyboard input.</p>
+<h5 id="ifactive" class="doc-heading"><code class="inline-code">if(active)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Runs the application by running the active scene, progressing OS events and rendering mechanism. This function will run until Quit is called. Steps the application by running the active scene, progressing OS events and rendering mechanism.</p>
+<h5 id="getscenecount" class="doc-heading"><code class="inline-code">GetSceneCount(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns the number of scenes registered</p>
+<h5 id="sceneexistssceneid-id" class="doc-heading"><code class="inline-code">SceneExists(SceneID id)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if the given scene exists</p>
+<h5 id="deletescenesceneid-scene" class="doc-heading"><code class="inline-code">DeleteScene(SceneID scene)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Returns the requested scene. If it does not exist, this function will throw runtime error. Deletes the given scene, nothing is done if the scene is not found</p>
+<h5 id="assumescene-scene" class="doc-heading"><code class="inline-code">Assume(Scene<> &scene)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Releases the ownership of the scene with the given ID, removing it from the manager. Using scene while it does not have parent might cause problems. Assumes the ownership of the the given scene, adding it to the list of scenes.</p>
+<h5 id="begin" class="doc-heading"><code class="inline-code">begin(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<p class="doc-paragraph">Returns iterator to the first scene.</p>
+<h5 id="begin" class="doc-heading"><code class="inline-code">begin(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<p class="doc-paragraph">Returns iterator to the first scene.</p>
+<h5 id="end" class="doc-heading"><code class="inline-code">end(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<p class="doc-paragraph">Returns iterator to the end of scenes.</p>
+<h5 id="end" class="doc-heading"><code class="inline-code">end(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<p class="doc-paragraph">Returns iterator to the end of scenes.</p>
+<h5 id="init" class="doc-heading"><code class="inline-code">init(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">EventToken</code></p>
+<p class="doc-paragraph">Quits the scene manager, returning the execution to the point where Run function is called. It allows current frame to be completed before quiting. It also deactives the current scene. Creates a new scene using the given type and parameters. Scene class should always take parent layer first, then id and then the other parameters if they exists. When using this function, only specify the class as template parameter, the others will be resolved. If a scene with the same id exists, it will be deleted. It is advisable to add new scenes at the start without activating any scene.  @code enum SceneIDs { SCENE_MENU, SCENE_GAME };  //...  class GameScene : public Scene { public: GameScene(Gorgon::SceneManager &parent, SceneID id, int players);  //... };  //...  //Create the game scene with a single player. manager.NewScene<GameScene>(SCENE_GAME, 1);  manager.SwitchScene(SCENE_GAME);  @endcode This event will be fired whenever a scene is activated.</p>
+<h3 id="scene" class="doc-heading"><code class="inline-code">Scene</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="scenesceneid-id--nosceneid-bool-mouseinput--true" class="doc-heading"><code class="inline-code">Scene(SceneID id = NoSceneID, bool mouseinput = true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">explicit</code></p>
+<p class="doc-paragraph">Empty constructor. After this constructor, the scene cannot be activated.</p>
+<h5 id="scenescenemanager-parent-sceneid-id--nosceneid-bool-mouseinput--true" class="doc-heading"><code class="inline-code">Scene(SceneManager &parent, SceneID id = NoSceneID, bool mouseinput = true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">explicit</code></p>
+<p class="doc-paragraph">Sets the parent layer so that the scene can be activated.</p>
+<h5 id="virtual-requireskeyinput" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">RequiresKeyInput(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">Whether this scene requires keyboard input.</p>
+<h5 id="getid" class="doc-heading"><code class="inline-code">GetID(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">SceneID</code></p>
+<p class="doc-paragraph">Activates the current scene Returns the ID of the current scene</p>
+<h5 id="virtual-keyeventgorgoninputkey-float" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">KeyEvent(Gorgon::Input::Key, float)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Called when the scene receives a key</p>
+<h5 id="virtual-firstactivation" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">first_activation(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Fires whenever activation of this layer is completed. Will not be fired if the layer is already active and Activate function is called. Fires whenever deactivation of this layer is completed. Will not be fired if the layer is already inactive and Deactivate function is called. Called only for the first time this scene is activated. Allocate your resources here.</p>
+<h5 id="virtual-activate" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">activate(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Called after very activation. first_activation will be called before activate.</p>
+<h5 id="virtual-deactivate" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">deactivate(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Called <em>before</em> deactivation</p>
+<h5 id="virtual-doframeunsigned-int-delta" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">doframe(unsigned int delta)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Scene should perform its frame based operations in this function</p>
+<h5 id="virtual-render" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">render(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">This is called after doframe to perform rendering operation. It is possible to receive render without receiving doframe, thus they should not be co-dependent.</p>
+<h5 id="setlayerboundsconst-geometrybounds-bounds" class="doc-heading"><code class="inline-code">setlayerbounds(const Geometry::Bounds &bounds)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the boundaries of the main layer</p>
+<h5 id="activatescene" class="doc-heading"><code class="inline-code">activate_scene(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">ID of the current scene Graphics layer that can be drawn on Mouse layer that can be used to receive mouse events. If the mouseinput parameter of the constructor is set to true, this layer will be attached, otherwise it will not be functional. The parent window for the scene. Unless you are explicitly requesting a parent, this member could be nullptr. This panel covers the entire area of the window. You may place your widgets on top of this panel. They will be displayed above drawing layer</p>
+<h5 id="deactivatescene" class="doc-heading"><code class="inline-code">deactivate_scene(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="scenemanager" class="doc-heading"><code class="inline-code">SceneManager</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="switchscenesceneid-scene" class="doc-heading"><code class="inline-code">SwitchScene(SceneID scene)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Switches the current scene to the scene with the given id. Will throw std::runtime_error if scene is not found. If given id is NoSceneID, all scenes will be deactivated.</p>
+<h5 id="deactivate" class="doc-heading"><code class="inline-code">Deactivate(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Deactivates all scenes</p>
+<h5 id="activatekeyboard" class="doc-heading"><code class="inline-code">ActivateKeyboard(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Moves keyboard input event to the top if there is a layer that accepts keyboard input.</p>
+<h5 id="ifactive" class="doc-heading"><code class="inline-code">if(active)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Runs the application by running the active scene, progressing OS events and rendering mechanism. This function will run until Quit is called. Steps the application by running the active scene, progressing OS events and rendering mechanism.</p>
+<h5 id="getscenecount" class="doc-heading"><code class="inline-code">GetSceneCount(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns the number of scenes registered</p>
+<h5 id="sceneexistssceneid-id" class="doc-heading"><code class="inline-code">SceneExists(SceneID id)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if the given scene exists</p>
+<h5 id="deletescenesceneid-scene" class="doc-heading"><code class="inline-code">DeleteScene(SceneID scene)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Returns the requested scene. If it does not exist, this function will throw runtime error. Deletes the given scene, nothing is done if the scene is not found</p>
+<h5 id="assumescene-scene" class="doc-heading"><code class="inline-code">Assume(Scene &scene)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Releases the ownership of the scene with the given ID, removing it from the manager. Using scene while it does not have parent might cause problems. Assumes the ownership of the the given scene, adding it to the list of scenes.</p>
+<h5 id="begin" class="doc-heading"><code class="inline-code">begin(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<p class="doc-paragraph">Returns iterator to the first scene.</p>
+<h5 id="begin" class="doc-heading"><code class="inline-code">begin(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<p class="doc-paragraph">Returns iterator to the first scene.</p>
+<h5 id="end" class="doc-heading"><code class="inline-code">end(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<p class="doc-paragraph">Returns iterator to the end of scenes.</p>
+<h5 id="end" class="doc-heading"><code class="inline-code">end(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<p class="doc-paragraph">Returns iterator to the end of scenes.</p>
+<h5 id="init" class="doc-heading"><code class="inline-code">init(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">EventToken</code></p>
+<p class="doc-paragraph">Quits the scene manager, returning the execution to the point where Run function is called. It allows current frame to be completed before quiting. It also deactives the current scene. Creates a new scene using the given type and parameters. Scene class should always take parent layer first, then id and then the other parameters if they exists. When using this function, only specify the class as template parameter, the others will be resolved. If a scene with the same id exists, it will be deleted. It is advisable to add new scenes at the start without activating any scene.  @code enum SceneIDs { SCENE_MENU, SCENE_GAME };  //...  class GameScene : public Scene { public: GameScene(Gorgon::SceneManager &parent, SceneID id, int players);  //... };  //...  //Create the game scene with a single player. manager.NewScene<GameScene>(SCENE_GAME, 1);  manager.SwitchScene(SCENE_GAME);  @endcode This event will be fired whenever a scene is activated.</p>
+<hr class="doc-divider">
+<h2 id="functions" class="doc-heading">Functions</h2>
+<h3 id="iffirst" class="doc-heading"><code class="inline-code">if(first)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="firstactivation" class="doc-heading"><code class="inline-code">first_activation()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="activate" class="doc-heading"><code class="inline-code">activate()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="activatedevent" class="doc-heading"><code class="inline-code">ActivatedEvent()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="deactivate" class="doc-heading"><code class="inline-code">deactivate()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="deactivatedevent" class="doc-heading"><code class="inline-code">DeactivatedEvent()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="deactivate" class="doc-heading"><code class="inline-code">Deactivate()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifscene--nosceneid" class="doc-heading"><code class="inline-code">if(scene == NoSceneID)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="activatedeventactive" class="doc-heading"><code class="inline-code">ActivatedEvent(*active)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifactive" class="doc-heading"><code class="inline-code">if(active)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="whilequiting" class="doc-heading"><code class="inline-code">while(!quiting)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifactive" class="doc-heading"><code class="inline-code">if(active)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchscenenosceneid" class="doc-heading"><code class="inline-code">SwitchScene(NoSceneID)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setfocusstrategystrict" class="doc-heading"><code class="inline-code">SetFocusStrategy(Strict)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

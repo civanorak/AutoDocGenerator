@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>URI — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="../getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Base.html">Base</a></li>
+    <li><a href="Basic.html">Basic</a></li>
+    <li><a href="Common.html">Common</a></li>
+    <li><a href="Config.html">Config</a></li>
+    <li><a href="Definitions.html">Definitions</a></li>
+    <li><a href="Environment.html">Environment</a></li>
+    <li><a href="OS.html">OS</a></li>
+    <li><a href="Runtime.html">Runtime</a></li>
+    <li><a href="Types.html">Types</a></li>
+    <li><a href="Utils.html">Utils</a></li>
+    <li><a href="UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Bitmap.html">Bitmap</a></li>
+    <li><a href="BitmapFont.html">BitmapFont</a></li>
+    <li><a href="BlankImage.html">BlankImage</a></li>
+    <li><a href="Color.html">Color</a></li>
+    <li><a href="ColorPicker.html">ColorPicker</a></li>
+    <li><a href="ColorPlane.html">ColorPlane</a></li>
+    <li><a href="ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="Drawables.html">Drawables</a></li>
+    <li><a href="EmptyImage.html">EmptyImage</a></li>
+    <li><a href="Filters.html">Filters</a></li>
+    <li><a href="Flip.html">Flip</a></li>
+    <li><a href="Font.html">Font</a></li>
+    <li><a href="FontTheme.html">FontTheme</a></li>
+    <li><a href="FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="FreeType.html">FreeType</a></li>
+    <li><a href="GID.html">GID</a></li>
+    <li><a href="GL.html">GL</a></li>
+    <li><a href="Graphics.html">Graphics</a></li>
+    <li><a href="HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="IL.html">IL</a></li>
+    <li><a href="Image.html">Image</a></li>
+    <li><a href="JPEG.html">JPEG</a></li>
+    <li><a href="OpenGL.html">OpenGL</a></li>
+    <li><a href="PNG.html">PNG</a></li>
+    <li><a href="Renderer.html">Renderer</a></li>
+    <li><a href="ScalableObject.html">ScalableObject</a></li>
+    <li><a href="Shader.html">Shader</a></li>
+    <li><a href="Shaders.html">Shaders</a></li>
+    <li><a href="Texture.html">Texture</a></li>
+    <li><a href="TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="TextureTargets.html">TextureTargets</a></li>
+    <li><a href="TintedObject.html">TintedObject</a></li>
+    <li><a href="Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="AnimationServices.html">AnimationServices</a></li>
+    <li><a href="AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="Animations.html">Animations</a></li>
+    <li><a href="ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="DnD.html">DnD</a></li>
+    <li><a href="Input.html">Input</a></li>
+    <li><a href="KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="Keyboard.html">Keyboard</a></li>
+    <li><a href="Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Button.html">Button</a></li>
+    <li><a href="Checkbox.html">Checkbox</a></li>
+    <li><a href="CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="Combobox.html">Combobox</a></li>
+    <li><a href="ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="CountingText.html">CountingText</a></li>
+    <li><a href="Dialog.html">Dialog</a></li>
+    <li><a href="DialogWindow.html">DialogWindow</a></li>
+    <li><a href="Dropdown.html">Dropdown</a></li>
+    <li><a href="Filler.html">Filler</a></li>
+    <li><a href="IButton.html">IButton</a></li>
+    <li><a href="ICheckbox.html">ICheckbox</a></li>
+    <li><a href="ILabel.html">ILabel</a></li>
+    <li><a href="IListItem.html">IListItem</a></li>
+    <li><a href="INumberbox.html">INumberbox</a></li>
+    <li><a href="IOption.html">IOption</a></li>
+    <li><a href="IProgressor.html">IProgressor</a></li>
+    <li><a href="IScroller.html">IScroller</a></li>
+    <li><a href="ISlider.html">ISlider</a></li>
+    <li><a href="ITextbox.html">ITextbox</a></li>
+    <li><a href="Inputbox.html">Inputbox</a></li>
+    <li><a href="Label.html">Label</a></li>
+    <li><a href="Listbox.html">Listbox</a></li>
+    <li><a href="ListboxBase.html">ListboxBase</a></li>
+    <li><a href="ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="NumberInput.html">NumberInput</a></li>
+    <li><a href="Numberbox.html">Numberbox</a></li>
+    <li><a href="Panel.html">Panel</a></li>
+    <li><a href="PanelBase.html">PanelBase</a></li>
+    <li><a href="PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="Percentbar.html">Percentbar</a></li>
+    <li><a href="PetContainer.html">PetContainer</a></li>
+    <li><a href="PetTextbox.html">PetTextbox</a></li>
+    <li><a href="Placeholder.html">Placeholder</a></li>
+    <li><a href="Progressbar.html">Progressbar</a></li>
+    <li><a href="RadioButton.html">RadioButton</a></li>
+    <li><a href="RadioButtons.html">RadioButtons</a></li>
+    <li><a href="RadioControl.html">RadioControl</a></li>
+    <li><a href="Scrollbar.html">Scrollbar</a></li>
+    <li><a href="ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="Slider.html">Slider</a></li>
+    <li><a href="SliderBase.html">SliderBase</a></li>
+    <li><a href="SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="Spinner.html">Spinner</a></li>
+    <li><a href="StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="Tabpanel.html">Tabpanel</a></li>
+    <li><a href="TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="TextInput.html">TextInput</a></li>
+    <li><a href="Textarea.html">Textarea</a></li>
+    <li><a href="Textbox.html">Textbox</a></li>
+    <li><a href="TextboxBase.html">TextboxBase</a></li>
+    <li><a href="TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="TooltipManager.html">TooltipManager</a></li>
+    <li><a href="TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="UI.html">UI</a></li>
+    <li><a href="Widget.html">Widget</a></li>
+    <li><a href="WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Alignment.html">Alignment</a></li>
+    <li><a href="Bezier.html">Bezier</a></li>
+    <li><a href="Bounds.html">Bounds</a></li>
+    <li><a href="Circle.html">Circle</a></li>
+    <li><a href="Dimension.html">Dimension</a></li>
+    <li><a href="Geometry.html">Geometry</a></li>
+    <li><a href="GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="Line.html">Line</a></li>
+    <li><a href="Margin.html">Margin</a></li>
+    <li><a href="Point.html">Point</a></li>
+    <li><a href="Point3D.html">Point3D</a></li>
+    <li><a href="PointList.html">PointList</a></li>
+    <li><a href="PointProperty.html">PointProperty</a></li>
+    <li><a href="Polygon.html">Polygon</a></li>
+    <li><a href="Rectangle.html">Rectangle</a></li>
+    <li><a href="Region.html">Region</a></li>
+    <li><a href="Size.html">Size</a></li>
+    <li><a href="SizeProperty.html">SizeProperty</a></li>
+    <li><a href="Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Audio.html">Audio</a></li>
+    <li><a href="AudioStream.html">AudioStream</a></li>
+    <li><a href="FLAC.html">FLAC</a></li>
+    <li><a href="Multimedia.html">Multimedia</a></li>
+    <li><a href="PulseAudio.html">PulseAudio</a></li>
+    <li><a href="PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="Sound.html">Sound</a></li>
+    <li><a href="Source.html">Source</a></li>
+    <li><a href="Vorbis.html">Vorbis</a></li>
+    <li><a href="WASAPI.html">WASAPI</a></li>
+    <li><a href="WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Blob.html">Blob</a></li>
+    <li><a href="CGI.html">CGI</a></li>
+    <li><a href="Clipboard.html">Clipboard</a></li>
+    <li><a href="Data.html">Data</a></li>
+    <li><a href="DataExchange.html">DataExchange</a></li>
+    <li><a href="DataItems.html">DataItems</a></li>
+    <li><a href="File.html">File</a></li>
+    <li><a href="FileDialog.html">FileDialog</a></li>
+    <li><a href="Filesystem.html">Filesystem</a></li>
+    <li><a href="Folder.html">Folder</a></li>
+    <li><a href="HTTP.html">HTTP</a></li>
+    <li><a href="LZMA.html">LZMA</a></li>
+    <li><a href="Markdown.html">Markdown</a></li>
+    <li><a href="MemoryStream.html">MemoryStream</a></li>
+    <li><a href="Parse.html">Parse</a></li>
+    <li><a href="Query.html">Query</a></li>
+    <li><a href="Reader.html">Reader</a></li>
+    <li><a href="Storage.html">Storage</a></li>
+    <li><a href="Stream.html">Stream</a></li>
+    <li><a href="Tokenizer.html">Tokenizer</a></li>
+    <li><a href="URI.html" class="active">URI</a></li>
+    <li><a href="Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Array.html">Array</a></li>
+    <li><a href="Collection.html">Collection</a></li>
+    <li><a href="Container.html">Container</a></li>
+    <li><a href="Hashmap.html">Hashmap</a></li>
+    <li><a href="Iterator.html">Iterator</a></li>
+    <li><a href="LinkNode.html">LinkNode</a></li>
+    <li><a href="List.html">List</a></li>
+    <li><a href="ListItem.html">ListItem</a></li>
+    <li><a href="Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BorderData.html">BorderData</a></li>
+    <li><a href="ComponentStack.html">ComponentStack</a></li>
+    <li><a href="ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="CustomLayer.html">CustomLayer</a></li>
+    <li><a href="DWM.html">DWM</a></li>
+    <li><a href="ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="Flow.html">Flow</a></li>
+    <li><a href="FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="InlinePanel.html">InlinePanel</a></li>
+    <li><a href="Layer.html">Layer</a></li>
+    <li><a href="LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="LayerMover.html">LayerMover</a></li>
+    <li><a href="LayerResizer.html">LayerResizer</a></li>
+    <li><a href="LayerWidget.html">LayerWidget</a></li>
+    <li><a href="Layerbox.html">Layerbox</a></li>
+    <li><a href="LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="MaskedObject.html">MaskedObject</a></li>
+    <li><a href="Monitor.html">Monitor</a></li>
+    <li><a href="MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="Organizer.html">Organizer</a></li>
+    <li><a href="StackedObject.html">StackedObject</a></li>
+    <li><a href="VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="Window.html">Window</a></li>
+    <li><a href="WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Assert.html">Assert</a></li>
+    <li><a href="Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="CaptionValue.html">CaptionValue</a></li>
+    <li><a href="Console.html">Console</a></li>
+    <li><a href="Console_Nix.html">Console_Nix</a></li>
+    <li><a href="Console_Win32.html">Console_Win32</a></li>
+    <li><a href="ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="Event.html">Event</a></li>
+    <li><a href="Exception.html">Exception</a></li>
+    <li><a href="Exceptions.html">Exceptions</a></li>
+    <li><a href="GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="Logging.html">Logging</a></li>
+    <li><a href="Null.html">Null</a></li>
+    <li><a href="Nullable.html">Nullable</a></li>
+    <li><a href="Pointer.html">Pointer</a></li>
+    <li><a href="Property.html">Property</a></li>
+    <li><a href="Random.html">Random</a></li>
+    <li><a href="RefCounter.html">RefCounter</a></li>
+    <li><a href="Registry.html">Registry</a></li>
+    <li><a href="SGuid.html">SGuid</a></li>
+    <li><a href="Scope.html">Scope</a></li>
+    <li><a href="ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="Threading.html">Threading</a></li>
+    <li><a href="Time.html">Time</a></li>
+    <li><a href="Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AST.html">AST</a></li>
+    <li><a href="AStar.html">AStar</a></li>
+    <li><a href="Blueprint.html">Blueprint</a></li>
+    <li><a href="Compiler.html">Compiler</a></li>
+    <li><a href="Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="Compilers.html">Compilers</a></li>
+    <li><a href="Component.html">Component</a></li>
+    <li><a href="Composer.html">Composer</a></li>
+    <li><a href="Discrete.html">Discrete</a></li>
+    <li><a href="Embedding.html">Embedding</a></li>
+    <li><a href="Enum.html">Enum</a></li>
+    <li><a href="Generator.html">Generator</a></li>
+    <li><a href="Instruction.html">Instruction</a></li>
+    <li><a href="Language.html">Language</a></li>
+    <li><a href="Message.html">Message</a></li>
+    <li><a href="Pathfinders.html">Pathfinders</a></li>
+    <li><a href="Reflection.html">Reflection</a></li>
+    <li><a href="RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="Scene.html">Scene</a></li>
+    <li><a href="Scripting.html">Scripting</a></li>
+    <li><a href="Simple.html">Simple</a></li>
+    <li><a href="String.html">String</a></li>
+    <li><a href="Struct.html">Struct</a></li>
+    <li><a href="TMP.html">TMP</a></li>
+    <li><a href="Template.html">Template</a></li>
+    <li><a href="TiledMap.html">TiledMap</a></li>
+    <li><a href="Validators.html">Validators</a></li>
+    <li><a href="VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Linux.html">Linux</a></li>
+    <li><a href="Win32.html">Win32</a></li>
+    <li><a href="Windows.html">Windows</a></li>
+    <li><a href="X11.html">X11</a></li>
+    <li><a href="X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Any.html">Any</a></li>
+    <li><a href="Builtin.html">Builtin</a></li>
+    <li><a href="FindObject.html">FindObject</a></li>
+    <li><a href="Helpers.html">Helpers</a></li>
+    <li><a href="Instance.html">Instance</a></li>
+    <li><a href="ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="PD.html">PD</a></li>
+    <li><a href="ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BasicMath.html">BasicMath</a></li>
+    <li><a href="Kernel.html">Kernel</a></li>
+    <li><a href="main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">URI</span>
+    </nav>
+    
+        <h1 id="uri" class="doc-heading">URI</h1>
+<p class="doc-paragraph">> Auto-generated documentation for the <strong>URI</strong> module of the Gorgon C++ Game Engine.</p>
+<h2 id="contents" class="doc-heading">Contents</h2>
+<ul class="md-list">
+<li><a href="#classes">Classes</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="classes" class="doc-heading">Classes</h2>
+<h3 id="urierror" class="doc-heading"><code class="inline-code">URIError</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">This error is thrown while URI decoding and building.</p>
+<h3 id="uri" class="doc-heading"><code class="inline-code">URI</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">Represents an unfolded URI. Can be used to parse a URI string or build one according to RFC 3986. @code #include <Gorgon/Network/HTTP.h> ... std::cout<<Gorgon::Network::HTTP::BlockingGetText(URI("http", "darkgaze.org", "path/to/data.php"))<<std::endl; @endcode</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="uriconst-stdstring-scheme-const-stdstring-host-const-stdstring-path-const-stdstring-query---const-stdstring-fragment" class="doc-heading"><code class="inline-code">URI(const std::string &scheme, const std::string &host, const std::string &path, const std::string &query = "", const std::string &fragment="")</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Empty constructor. Does not set scheme thus would not be a valid URI Creates a new URI by filling in fields</p>
+<h5 id="uriconst-stdstring-scheme-const-stdstring-host-int-port-const-stdstring-path-const-stdstring-query---const-stdstring-fragment" class="doc-heading"><code class="inline-code">URI(const std::string &scheme, const std::string &host, int port, const std::string &path, const std::string &query = "", const std::string &fragment="")</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Creates a new URI by filling in fields</p>
+<h5 id="uriconst-stdstring-str-bool-inpagelink--false" class="doc-heading"><code class="inline-code">URI(const std::string &str, bool inpagelink = false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Builds a new URI from the given string. May throw URIError. This constructor will not check if the URI is really valid. Use IsValid function for this purpose. If this URI is embedded inside another URI and possibly a relative link, set inpagelink to true. Otherwise, URIs without scheme will be treated having a host. For instance when inpagelink is false, in URI darkgaze.org/my/path darkgaze.org would be treated as host name.</p>
+<h5 id="convert" class="doc-heading"><code class="inline-code">Convert(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<p class="doc-paragraph">Builds a new URI from the given string. May throw URIError. This constructor will not check if the URI is really valid. Use IsValid function for this purpose. Converts this URI to a properly encoded string Converts this URI to a properly encoded string</p>
+<h5 id="isvalid" class="doc-heading"><code class="inline-code">IsValid(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if this URI is valid. This function checks if scheme is valid in format. Additionally, if the scheme is http, https and ftp, checks if the host is set.</p>
+<h5 id="bool" class="doc-heading"><code class="inline-code">bool(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">operator</code></p>
+<p class="doc-paragraph">Returns if this URI is valid.</p>
+<h5 id="isvalid" class="doc-heading"><code class="inline-code">IsValid(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="combineconst-stdstring-link" class="doc-heading"><code class="inline-code">Combine(const std::string &link)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Compares two URIs in their simplest forms. Note that URIs with different fragments point to different places in the same resource and will not be used in comparison. This is also recommended by RFC 3986 Compares two URIs in their simplest forms. Note that URIs with different fragments point to different places in the same resource and will not be used in comparison. This is also recommended by RFC 3986 Combines a relative URI into this URI. Can be used to normalize links in a document. Care should be taken while using URIPath with this function as URIPath cannot represent relative paths.</p>
+<h3 id="httpquery" class="doc-heading"><code class="inline-code">HTTPQuery</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">Scheme of the URI, ex: http. Scheme cannot be encoded, thus should only start with an alpha character and should only contain Alphanumeric characters as well as +, - and . Host address, either IP/domain name or empty, ex: darkgaze.org User information. Use : to separate password. Use of password is no longer recommended by RFC unless it is empty. The port number, 0 means it is not defined. Path of the resource. Segments must be separated by /. You may use URIPath to construct a path Query for the resource, must be properly escaped and encoded, you may use HTTPQuery to build http query string. Fragment of the resource (anchor in HTML) Represents and HTTP query that might be send to page using POST or embedded in URI</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="httpquerystdinitializerliststdpairconst-stdstring-stdstring-init" class="doc-heading"><code class="inline-code">HTTPQuery(std::initializer_list<std::pair<const std::string, std::string>> init)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Empty constructor Creates a new HTTP query using the given pairs</p>
+<h5 id="httpqueryconst-stdstring-query" class="doc-heading"><code class="inline-code">HTTPQuery(const std::string &query)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Parses the given query</p>
+<h5 id="convert" class="doc-heading"><code class="inline-code">Convert(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<p class="doc-paragraph">Converts this query system to string Converts this query system to string</p>
+<h5 id="getconst-stdstring-key" class="doc-heading"><code class="inline-code">Get(const std::string &key)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<p class="doc-paragraph">Returns the value that is stored within key. If key does not exist, an empty string will be returned.</p>
+<h5 id="existsconst-stdstring-key" class="doc-heading"><code class="inline-code">Exists(const std::string &key)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns the value that is stored within key. If key does not exist, an empty value with the given key is created. Returns if the given key exists</p>
+<h3 id="uripath" class="doc-heading"><code class="inline-code">URIPath</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">Key-value pairs for this HTTP query Helps to manage URIPaths. Note that the URI paths are always absolute. Allows normalization as well as remapping, which would be useful to convert URI paths to file system paths.</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="uripathstdinitializerliststdstring-init" class="doc-heading"><code class="inline-code">URIPath(std::initializer_list<std::string> init)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Empty constructor Initializes the path by the given segments</p>
+<h5 id="uripathconst-stdstring-path" class="doc-heading"><code class="inline-code">URIPath(const std::string &path)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Parses the given path.</p>
+<h5 id="getsize" class="doc-heading"><code class="inline-code">GetSize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Parses the given path. Converts the path to string properly escaping for URI Compares two paths after normalization Compares two paths after normalization</p>
+<h5 id="getint-ind" class="doc-heading"><code class="inline-code">Get(int ind)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<p class="doc-paragraph">Returns the segment at the given index Returns the segment at the given index. Index 0 will never cause an error, if does not exists, it will be empty string.</p>
+<h5 id="stripfirst" class="doc-heading"><code class="inline-code">StripFirst(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<p class="doc-paragraph">Returns the first segment and removes it from the list of segments. This function will never fire error. If there are no segments it will return empty string</p>
+<h5 id="convert" class="doc-heading"><code class="inline-code">Convert(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<p class="doc-paragraph">Returns the segment at the given index Converts the path to string properly escaping for URI</p>
+<h5 id="combineconst-uripath-another" class="doc-heading"><code class="inline-code">Combine(const URIPath &another)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Combines another URIPath using this one as the root</p>
+<h5 id="combineanother" class="doc-heading"><code class="inline-code">Combine(another)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Combines this path with another, using this path as the root Combines another URIPath into this one, using this path as the root</p>
+<h5 id="normalize" class="doc-heading"><code class="inline-code">Normalize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Normalizes any relative references in the path. May throw URIError</p>
+<hr class="doc-divider">
+<h2 id="functions" class="doc-heading">Functions</h2>
+<h3 id="appendtosetstdsetchar-base-stdinitializerlistchar-chars" class="doc-heading"><code class="inline-code">appendtoset(std::set<char> base, std::initializer_list<char> chars)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static std::set<char></code></p>
+<h3 id="appendtosetstdsetchar-base-stdsetchar-second" class="doc-heading"><code class="inline-code">appendtoset(std::set<char> base, std::set<char> second)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static std::set<char></code></p>
+<h3 id="uridecodeconst-stdstring-src" class="doc-heading"><code class="inline-code">URIDecode(const std::string &src)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<h3 id="forauto-c--src" class="doc-heading"><code class="inline-code">for(auto c : src)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifpcte" class="doc-heading"><code class="inline-code">if(pcte)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdigit-1" class="doc-heading"><code class="inline-code">if(digit==-1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="if--pcte0" class="doc-heading"><code class="inline-code">if(--pcte==0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifpcte" class="doc-heading"><code class="inline-code">if(pcte)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="urierrorunterminated-escape-sequence-in-uri" class="doc-heading"><code class="inline-code">URIError("Unterminated escape sequence in URI")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="pctencodeconst-stdstring-src-const-stdsetchar-allowed-bool-allowalpha-bool-allownum" class="doc-heading"><code class="inline-code">PCTEncode(const std::string &src, const std::set<char> &allowed, bool allowalpha, bool allownum)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<h3 id="forauto-c--src" class="doc-heading"><code class="inline-code">for(auto c : src)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="uriencodeconst-stdstring-src" class="doc-heading"><code class="inline-code">URIEncode(const std::string &src)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<h3 id="pctencodesrc-unreservedchars" class="doc-heading"><code class="inline-code">PCTEncode(src, unreservedchars)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="ifhasscheme" class="doc-heading"><code class="inline-code">if(hasscheme)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifit" class="doc-heading"><code class="inline-code">if(*it==':')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifit" class="doc-heading"><code class="inline-code">if(*it=='/')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifit--noslash" class="doc-heading"><code class="inline-code">if(*it=='/' || noslash)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iffirst--c" class="doc-heading"><code class="inline-code">if(first && c=='[')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdoingipv6" class="doc-heading"><code class="inline-code">if(doingipv6)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifc" class="doc-heading"><code class="inline-code">if(c==']')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifc" class="doc-heading"><code class="inline-code">if(c==':')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifc--c--c" class="doc-heading"><code class="inline-code">if(c=='/' || c=='?' || c=='#')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="urierrorscrap-after-ipv6" class="doc-heading"><code class="inline-code">URIError("Scrap after IPv6.")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="ifunknownipformat" class="doc-heading"><code class="inline-code">if(unknownipformat)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="urierroripv6-format-error" class="doc-heading"><code class="inline-code">URIError("IPv6 format error")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="ifc--c--c" class="doc-heading"><code class="inline-code">if(c=='/' || c=='?' || c=='#')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifmustbeuserinfo" class="doc-heading"><code class="inline-code">if(mustbeuserinfo)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="urierrorport-number-should-be-numeric" class="doc-heading"><code class="inline-code">URIError("Port number should be numeric")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="ifdoingport" class="doc-heading"><code class="inline-code">if(doingport)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdoingport" class="doc-heading"><code class="inline-code">if(doingport)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="urierrorport-number-should-be-numeric" class="doc-heading"><code class="inline-code">URIError("Port number should be numeric")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="ifc--" class="doc-heading"><code class="inline-code">if(c == '@')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="urierrormultiple-userinfo-in-authority" class="doc-heading"><code class="inline-code">URIError("Multiple userinfo in authority")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="ifc--mustbeuserinfo" class="doc-heading"><code class="inline-code">if(c==':' && !mustbeuserinfo)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifdoingipv6--finishedipv6" class="doc-heading"><code class="inline-code">if(doingipv6 && !finishedipv6)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="urierroripv6-is-not-finished-with-" class="doc-heading"><code class="inline-code">URIError("IPv6 is not finished with ]")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="iftemp" class="doc-heading"><code class="inline-code">if(temp!="")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdoingport" class="doc-heading"><code class="inline-code">if(doingport)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifc--c" class="doc-heading"><code class="inline-code">if(c=='#' || c=='?')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifit" class="doc-heading"><code class="inline-code">if(*it=='?')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifhost--userinfo" class="doc-heading"><code class="inline-code">if(host!="" || userinfo!="")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifpath" class="doc-heading"><code class="inline-code">if(path!="")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifuriformscheme" class="doc-heading"><code class="inline-code">if(uriform.scheme!="")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifuriformhost" class="doc-heading"><code class="inline-code">if(uriform.host!="")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifuriformpath" class="doc-heading"><code class="inline-code">if(uriform.path=="")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifuriformpath0" class="doc-heading"><code class="inline-code">if(uriform.path[0]=='/')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifrelative" class="doc-heading"><code class="inline-code">if(relative)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifschemehttp" class="doc-heading"><code class="inline-code">if(scheme=="http")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifschemehttps" class="doc-heading"><code class="inline-code">if(scheme=="https")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifschemeftp" class="doc-heading"><code class="inline-code">if(scheme=="ftp")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifschemesftp--schemessh" class="doc-heading"><code class="inline-code">if(scheme=="sftp" || scheme=="ssh")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifschemessh" class="doc-heading"><code class="inline-code">if(scheme=="ssh")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="forauto-p--data" class="doc-heading"><code class="inline-code">for(auto p : data)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-c--query" class="doc-heading"><code class="inline-code">for(auto c : query)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifc--c" class="doc-heading"><code class="inline-code">if(c=='&' || c==';')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifinvalue" class="doc-heading"><code class="inline-code">if(!invalue)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifinvalue--c" class="doc-heading"><code class="inline-code">if(!invalue && c=='=')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftemp--key" class="doc-heading"><code class="inline-code">if(temp!="" || key!="")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifinvalue" class="doc-heading"><code class="inline-code">if(!invalue)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-c--path" class="doc-heading"><code class="inline-code">for(auto c : path)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifc" class="doc-heading"><code class="inline-code">if(c=='/')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forunsigned-i--0-isegmentssize" class="doc-heading"><code class="inline-code">for(unsigned i = 0; i<segments.size()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifseg" class="doc-heading"><code class="inline-code">if(seg==".")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifseg" class="doc-heading"><code class="inline-code">if(seg=="..")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifi0" class="doc-heading"><code class="inline-code">if(i==0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="urierrorparent-directory-directive-at-the-top-segment" class="doc-heading"><code class="inline-code">URIError("Parent directory directive at the top segment.")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="forauto-seg--segments" class="doc-heading"><code class="inline-code">for(auto seg : segments)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-p--querydata" class="doc-heading"><code class="inline-code">for(auto p : query.data)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="uridecodeconst-stdstring-str" class="doc-heading"><code class="inline-code">URIDecode(const std::string &str)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<p class="doc-paragraph">List of segments Decodes a given URI string according to RFC 3986. May throw URIError.</p>
+<h3 id="uriencodeconst-stdstring-str" class="doc-heading"><code class="inline-code">URIEncode(const std::string &str)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<p class="doc-paragraph">Encodes a given URI string according to RFC 3986.</p>
+<h3 id="pctencodeconst-stdstring-str-const-stdsetchar-allowed-bool-allowalphatrue-bool-allownumtrue" class="doc-heading"><code class="inline-code">PCTEncode(const std::string &str, const std::set<char> &allowed, bool allowalpha=true, bool allownum=true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<p class="doc-paragraph">Customized percentage encoding. Some URI components have different characters that are allowed</p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

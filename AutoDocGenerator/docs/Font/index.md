@@ -1,6 +1,6 @@
 # Font
 
-> Auto-generated documentation for the **Font** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Font** module of the Gorgon C++ Game Engine.
 
 
 ## Contents
@@ -310,13 +310,13 @@ Returns the character index of glyph immediately after the given location. This 
 
 **Returns:** `virtual Geometry::Rectangle`
 
-Returns the position of the glyph at the character index. If the character is not found, this will return std::numeric_limit<int>::min for x and y position. Size could be 0 if it cannot be determined.
+Returns the position of the glyph at the character index. If the character is not found, this will return std::numeric_limit&lt;int&gt;::min for x and y position. Size could be 0 if it cannot be determined.
 
 ##### `virtual` `GetPosition(const std::string &text, int w, int index, bool wrap = true)`
 
 **Returns:** `virtual Geometry::Rectangle`
 
-Returns the position of the glyph at the character index. If the character is not found, this will return std::numeric_limit<int>::min for x and y position. Size could be 0 if it cannot be determined.
+Returns the position of the glyph at the character index. If the character is not found, this will return std::numeric_limit&lt;int&gt;::min for x and y position. Size could be 0 if it cannot be determined.
 
 ##### `virtual` `print(TextureTarget &target, const std::string &text, Geometry::Point location)`
 

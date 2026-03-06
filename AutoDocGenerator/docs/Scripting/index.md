@@ -1,6 +1,6 @@
 # Scripting
 
-> Auto-generated documentation for the **Scripting** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Scripting** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

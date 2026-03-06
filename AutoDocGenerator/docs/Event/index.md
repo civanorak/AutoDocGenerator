@@ -1,6 +1,6 @@
 # Event
 
-> Auto-generated documentation for the **Event** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Event** module of the Gorgon C++ Game Engine.
 
 
 ## Contents
@@ -64,7 +64,7 @@
 
 **Namespace:** `event`
 
-This class provides event mechanism. Different function signatures are allowed to as event handlers. These are:  * <b>`void fn()`</b> neither event source nor event parameters are supplied. * <b>`void fn(Params_... params)`</b> parameters will be passed * <b>`void fn(Source_ &source, Params_... params)`</b> the source and parameters will be passed  Class members or lambda functions can also be used as event handlers. An event handler can be registered using Register function.
+This class provides event mechanism. Different function signatures are allowed to as event handlers. These are:  * &lt;b&gt;`void fn()`&lt;/b&gt; neither event source nor event parameters are supplied. * &lt;b&gt;`void fn(Params_... params)`&lt;/b&gt; parameters will be passed * &lt;b&gt;`void fn(Source_ &source, Params_... params)`&lt;/b&gt; the source and parameters will be passed  Class members or lambda functions can also be used as event handlers. An event handler can be registered using Register function.
 
 #### Methods
 

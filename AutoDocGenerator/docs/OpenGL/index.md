@@ -1,6 +1,6 @@
 # OpenGL
 
-> Auto-generated documentation for the **OpenGL** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **OpenGL** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

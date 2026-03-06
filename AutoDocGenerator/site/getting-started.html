@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>Getting Started — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="index.html">Home</a>
+            <a href="getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Base.html">Base</a></li>
+    <li><a href="modules/Basic.html">Basic</a></li>
+    <li><a href="modules/Common.html">Common</a></li>
+    <li><a href="modules/Config.html">Config</a></li>
+    <li><a href="modules/Definitions.html">Definitions</a></li>
+    <li><a href="modules/Environment.html">Environment</a></li>
+    <li><a href="modules/OS.html">OS</a></li>
+    <li><a href="modules/Runtime.html">Runtime</a></li>
+    <li><a href="modules/Types.html">Types</a></li>
+    <li><a href="modules/Utils.html">Utils</a></li>
+    <li><a href="modules/UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Bitmap.html">Bitmap</a></li>
+    <li><a href="modules/BitmapFont.html">BitmapFont</a></li>
+    <li><a href="modules/BlankImage.html">BlankImage</a></li>
+    <li><a href="modules/Color.html">Color</a></li>
+    <li><a href="modules/ColorPicker.html">ColorPicker</a></li>
+    <li><a href="modules/ColorPlane.html">ColorPlane</a></li>
+    <li><a href="modules/ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="modules/Drawables.html">Drawables</a></li>
+    <li><a href="modules/EmptyImage.html">EmptyImage</a></li>
+    <li><a href="modules/Filters.html">Filters</a></li>
+    <li><a href="modules/Flip.html">Flip</a></li>
+    <li><a href="modules/Font.html">Font</a></li>
+    <li><a href="modules/FontTheme.html">FontTheme</a></li>
+    <li><a href="modules/FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="modules/FreeType.html">FreeType</a></li>
+    <li><a href="modules/GID.html">GID</a></li>
+    <li><a href="modules/GL.html">GL</a></li>
+    <li><a href="modules/Graphics.html">Graphics</a></li>
+    <li><a href="modules/HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="modules/IL.html">IL</a></li>
+    <li><a href="modules/Image.html">Image</a></li>
+    <li><a href="modules/JPEG.html">JPEG</a></li>
+    <li><a href="modules/OpenGL.html">OpenGL</a></li>
+    <li><a href="modules/PNG.html">PNG</a></li>
+    <li><a href="modules/Renderer.html">Renderer</a></li>
+    <li><a href="modules/ScalableObject.html">ScalableObject</a></li>
+    <li><a href="modules/Shader.html">Shader</a></li>
+    <li><a href="modules/Shaders.html">Shaders</a></li>
+    <li><a href="modules/Texture.html">Texture</a></li>
+    <li><a href="modules/TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="modules/TextureTargets.html">TextureTargets</a></li>
+    <li><a href="modules/TintedObject.html">TintedObject</a></li>
+    <li><a href="modules/Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Animation.html">Animation</a></li>
+    <li><a href="modules/AnimationServices.html">AnimationServices</a></li>
+    <li><a href="modules/AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="modules/Animations.html">Animations</a></li>
+    <li><a href="modules/ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="modules/Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/DnD.html">DnD</a></li>
+    <li><a href="modules/Input.html">Input</a></li>
+    <li><a href="modules/KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="modules/Keyboard.html">Keyboard</a></li>
+    <li><a href="modules/Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Button.html">Button</a></li>
+    <li><a href="modules/Checkbox.html">Checkbox</a></li>
+    <li><a href="modules/CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="modules/CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="modules/Combobox.html">Combobox</a></li>
+    <li><a href="modules/ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="modules/ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="modules/CountingText.html">CountingText</a></li>
+    <li><a href="modules/Dialog.html">Dialog</a></li>
+    <li><a href="modules/DialogWindow.html">DialogWindow</a></li>
+    <li><a href="modules/Dropdown.html">Dropdown</a></li>
+    <li><a href="modules/Filler.html">Filler</a></li>
+    <li><a href="modules/IButton.html">IButton</a></li>
+    <li><a href="modules/ICheckbox.html">ICheckbox</a></li>
+    <li><a href="modules/ILabel.html">ILabel</a></li>
+    <li><a href="modules/IListItem.html">IListItem</a></li>
+    <li><a href="modules/INumberbox.html">INumberbox</a></li>
+    <li><a href="modules/IOption.html">IOption</a></li>
+    <li><a href="modules/IProgressor.html">IProgressor</a></li>
+    <li><a href="modules/IScroller.html">IScroller</a></li>
+    <li><a href="modules/ISlider.html">ISlider</a></li>
+    <li><a href="modules/ITextbox.html">ITextbox</a></li>
+    <li><a href="modules/Inputbox.html">Inputbox</a></li>
+    <li><a href="modules/Label.html">Label</a></li>
+    <li><a href="modules/Listbox.html">Listbox</a></li>
+    <li><a href="modules/ListboxBase.html">ListboxBase</a></li>
+    <li><a href="modules/ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="modules/NumberInput.html">NumberInput</a></li>
+    <li><a href="modules/Numberbox.html">Numberbox</a></li>
+    <li><a href="modules/Panel.html">Panel</a></li>
+    <li><a href="modules/PanelBase.html">PanelBase</a></li>
+    <li><a href="modules/PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="modules/Percentbar.html">Percentbar</a></li>
+    <li><a href="modules/PetContainer.html">PetContainer</a></li>
+    <li><a href="modules/PetTextbox.html">PetTextbox</a></li>
+    <li><a href="modules/Placeholder.html">Placeholder</a></li>
+    <li><a href="modules/Progressbar.html">Progressbar</a></li>
+    <li><a href="modules/RadioButton.html">RadioButton</a></li>
+    <li><a href="modules/RadioButtons.html">RadioButtons</a></li>
+    <li><a href="modules/RadioControl.html">RadioControl</a></li>
+    <li><a href="modules/Scrollbar.html">Scrollbar</a></li>
+    <li><a href="modules/ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="modules/Slider.html">Slider</a></li>
+    <li><a href="modules/SliderBase.html">SliderBase</a></li>
+    <li><a href="modules/SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="modules/Spinner.html">Spinner</a></li>
+    <li><a href="modules/StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="modules/TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="modules/Tabpanel.html">Tabpanel</a></li>
+    <li><a href="modules/TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="modules/TextInput.html">TextInput</a></li>
+    <li><a href="modules/Textarea.html">Textarea</a></li>
+    <li><a href="modules/Textbox.html">Textbox</a></li>
+    <li><a href="modules/TextboxBase.html">TextboxBase</a></li>
+    <li><a href="modules/TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="modules/TooltipManager.html">TooltipManager</a></li>
+    <li><a href="modules/TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="modules/UI.html">UI</a></li>
+    <li><a href="modules/Widget.html">Widget</a></li>
+    <li><a href="modules/WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="modules/WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="modules/WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Alignment.html">Alignment</a></li>
+    <li><a href="modules/Bezier.html">Bezier</a></li>
+    <li><a href="modules/Bounds.html">Bounds</a></li>
+    <li><a href="modules/Circle.html">Circle</a></li>
+    <li><a href="modules/Dimension.html">Dimension</a></li>
+    <li><a href="modules/Geometry.html">Geometry</a></li>
+    <li><a href="modules/GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="modules/Line.html">Line</a></li>
+    <li><a href="modules/Margin.html">Margin</a></li>
+    <li><a href="modules/Point.html">Point</a></li>
+    <li><a href="modules/Point3D.html">Point3D</a></li>
+    <li><a href="modules/PointList.html">PointList</a></li>
+    <li><a href="modules/PointProperty.html">PointProperty</a></li>
+    <li><a href="modules/Polygon.html">Polygon</a></li>
+    <li><a href="modules/Rectangle.html">Rectangle</a></li>
+    <li><a href="modules/Region.html">Region</a></li>
+    <li><a href="modules/Size.html">Size</a></li>
+    <li><a href="modules/SizeProperty.html">SizeProperty</a></li>
+    <li><a href="modules/Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Audio.html">Audio</a></li>
+    <li><a href="modules/AudioStream.html">AudioStream</a></li>
+    <li><a href="modules/FLAC.html">FLAC</a></li>
+    <li><a href="modules/Multimedia.html">Multimedia</a></li>
+    <li><a href="modules/PulseAudio.html">PulseAudio</a></li>
+    <li><a href="modules/PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="modules/Sound.html">Sound</a></li>
+    <li><a href="modules/Source.html">Source</a></li>
+    <li><a href="modules/Vorbis.html">Vorbis</a></li>
+    <li><a href="modules/WASAPI.html">WASAPI</a></li>
+    <li><a href="modules/WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="modules/Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Blob.html">Blob</a></li>
+    <li><a href="modules/CGI.html">CGI</a></li>
+    <li><a href="modules/Clipboard.html">Clipboard</a></li>
+    <li><a href="modules/Data.html">Data</a></li>
+    <li><a href="modules/DataExchange.html">DataExchange</a></li>
+    <li><a href="modules/DataItems.html">DataItems</a></li>
+    <li><a href="modules/File.html">File</a></li>
+    <li><a href="modules/FileDialog.html">FileDialog</a></li>
+    <li><a href="modules/Filesystem.html">Filesystem</a></li>
+    <li><a href="modules/Folder.html">Folder</a></li>
+    <li><a href="modules/HTTP.html">HTTP</a></li>
+    <li><a href="modules/LZMA.html">LZMA</a></li>
+    <li><a href="modules/Markdown.html">Markdown</a></li>
+    <li><a href="modules/MemoryStream.html">MemoryStream</a></li>
+    <li><a href="modules/Parse.html">Parse</a></li>
+    <li><a href="modules/Query.html">Query</a></li>
+    <li><a href="modules/Reader.html">Reader</a></li>
+    <li><a href="modules/Storage.html">Storage</a></li>
+    <li><a href="modules/Stream.html">Stream</a></li>
+    <li><a href="modules/Tokenizer.html">Tokenizer</a></li>
+    <li><a href="modules/URI.html">URI</a></li>
+    <li><a href="modules/Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Array.html">Array</a></li>
+    <li><a href="modules/Collection.html">Collection</a></li>
+    <li><a href="modules/Container.html">Container</a></li>
+    <li><a href="modules/Hashmap.html">Hashmap</a></li>
+    <li><a href="modules/Iterator.html">Iterator</a></li>
+    <li><a href="modules/LinkNode.html">LinkNode</a></li>
+    <li><a href="modules/List.html">List</a></li>
+    <li><a href="modules/ListItem.html">ListItem</a></li>
+    <li><a href="modules/Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/BorderData.html">BorderData</a></li>
+    <li><a href="modules/ComponentStack.html">ComponentStack</a></li>
+    <li><a href="modules/ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="modules/ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="modules/CustomLayer.html">CustomLayer</a></li>
+    <li><a href="modules/DWM.html">DWM</a></li>
+    <li><a href="modules/ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="modules/Flow.html">Flow</a></li>
+    <li><a href="modules/FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="modules/InlinePanel.html">InlinePanel</a></li>
+    <li><a href="modules/Layer.html">Layer</a></li>
+    <li><a href="modules/LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="modules/LayerMover.html">LayerMover</a></li>
+    <li><a href="modules/LayerResizer.html">LayerResizer</a></li>
+    <li><a href="modules/LayerWidget.html">LayerWidget</a></li>
+    <li><a href="modules/Layerbox.html">Layerbox</a></li>
+    <li><a href="modules/LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="modules/ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="modules/MaskedObject.html">MaskedObject</a></li>
+    <li><a href="modules/Monitor.html">Monitor</a></li>
+    <li><a href="modules/MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="modules/Organizer.html">Organizer</a></li>
+    <li><a href="modules/StackedObject.html">StackedObject</a></li>
+    <li><a href="modules/VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="modules/Window.html">Window</a></li>
+    <li><a href="modules/WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Assert.html">Assert</a></li>
+    <li><a href="modules/Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="modules/Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="modules/CaptionValue.html">CaptionValue</a></li>
+    <li><a href="modules/Console.html">Console</a></li>
+    <li><a href="modules/Console_Nix.html">Console_Nix</a></li>
+    <li><a href="modules/Console_Win32.html">Console_Win32</a></li>
+    <li><a href="modules/ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="modules/Event.html">Event</a></li>
+    <li><a href="modules/Exception.html">Exception</a></li>
+    <li><a href="modules/Exceptions.html">Exceptions</a></li>
+    <li><a href="modules/GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="modules/Logging.html">Logging</a></li>
+    <li><a href="modules/Null.html">Null</a></li>
+    <li><a href="modules/Nullable.html">Nullable</a></li>
+    <li><a href="modules/Pointer.html">Pointer</a></li>
+    <li><a href="modules/Property.html">Property</a></li>
+    <li><a href="modules/Random.html">Random</a></li>
+    <li><a href="modules/RefCounter.html">RefCounter</a></li>
+    <li><a href="modules/Registry.html">Registry</a></li>
+    <li><a href="modules/SGuid.html">SGuid</a></li>
+    <li><a href="modules/Scope.html">Scope</a></li>
+    <li><a href="modules/ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="modules/Threading.html">Threading</a></li>
+    <li><a href="modules/Time.html">Time</a></li>
+    <li><a href="modules/Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/AST.html">AST</a></li>
+    <li><a href="modules/AStar.html">AStar</a></li>
+    <li><a href="modules/Blueprint.html">Blueprint</a></li>
+    <li><a href="modules/Compiler.html">Compiler</a></li>
+    <li><a href="modules/Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="modules/Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="modules/Compilers.html">Compilers</a></li>
+    <li><a href="modules/Component.html">Component</a></li>
+    <li><a href="modules/Composer.html">Composer</a></li>
+    <li><a href="modules/Discrete.html">Discrete</a></li>
+    <li><a href="modules/Embedding.html">Embedding</a></li>
+    <li><a href="modules/Enum.html">Enum</a></li>
+    <li><a href="modules/Generator.html">Generator</a></li>
+    <li><a href="modules/Instruction.html">Instruction</a></li>
+    <li><a href="modules/Language.html">Language</a></li>
+    <li><a href="modules/Message.html">Message</a></li>
+    <li><a href="modules/Pathfinders.html">Pathfinders</a></li>
+    <li><a href="modules/Reflection.html">Reflection</a></li>
+    <li><a href="modules/RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="modules/Scene.html">Scene</a></li>
+    <li><a href="modules/Scripting.html">Scripting</a></li>
+    <li><a href="modules/Simple.html">Simple</a></li>
+    <li><a href="modules/String.html">String</a></li>
+    <li><a href="modules/Struct.html">Struct</a></li>
+    <li><a href="modules/TMP.html">TMP</a></li>
+    <li><a href="modules/Template.html">Template</a></li>
+    <li><a href="modules/TiledMap.html">TiledMap</a></li>
+    <li><a href="modules/Validators.html">Validators</a></li>
+    <li><a href="modules/VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="modules/World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Linux.html">Linux</a></li>
+    <li><a href="modules/Win32.html">Win32</a></li>
+    <li><a href="modules/Windows.html">Windows</a></li>
+    <li><a href="modules/X11.html">X11</a></li>
+    <li><a href="modules/X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="modules/AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="modules/AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="modules/AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="modules/CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="modules/Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Any.html">Any</a></li>
+    <li><a href="modules/Builtin.html">Builtin</a></li>
+    <li><a href="modules/FindObject.html">FindObject</a></li>
+    <li><a href="modules/Helpers.html">Helpers</a></li>
+    <li><a href="modules/Instance.html">Instance</a></li>
+    <li><a href="modules/ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="modules/PD.html">PD</a></li>
+    <li><a href="modules/ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="modules/Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/BasicMath.html">BasicMath</a></li>
+    <li><a href="modules/Kernel.html">Kernel</a></li>
+    <li><a href="modules/main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">Getting Started</span>
+    </nav>
+    
+        <h1 id="getting-started-with-gorgon" class="doc-heading">Getting Started with Gorgon</h1>
+<p class="doc-paragraph">> This guide will walk you through creating your first game using the Gorgon C++ Game Engine. In about 50 lines of code, you'll have a working window with graphics and mouse input.</p>
+<h2 id="prerequisites" class="doc-heading">Prerequisites</h2>
+<ul class="md-list">
+<li>A C++ compiler (MSVC on Windows, GCC/Clang on Linux)</li>
+<li>CMake 3.16+</li>
+<li>Gorgon library built and linked to your project</li>
+</ul>
+<hr class="doc-divider">
+<h2 id="essential-header-files" class="doc-heading">Essential Header Files</h2>
+<p class="doc-paragraph">Every Gorgon game is built around a small set of core includes. Here's what each one does:</p>
+<div class="table-wrapper"><table>
+<tr class="thead-row">
+<th>Header</th>
+<th>Purpose</th>
+</tr>
+<tr class="">
+<td><code class="inline-code"><Gorgon/Main.h></code></td>
+<td><strong>Engine core</strong> — <code class="inline-code">Initialize()</code>, <code class="inline-code">NextFrame()</code>, <code class="inline-code">Tick()</code></td>
+</tr>
+<tr class="">
+<td><code class="inline-code"><Gorgon/Window.h></code></td>
+<td><strong>Window creation</strong> — opens the OS window</td>
+</tr>
+<tr class="">
+<td><code class="inline-code"><Gorgon/WindowManager.h></code></td>
+<td><strong>OS integration</strong> — icons, monitor info</td>
+</tr>
+<tr class="">
+<td><code class="inline-code"><Gorgon/Graphics/Layer.h></code></td>
+<td><strong>Rendering</strong> — draw surfaces (like canvas layers in Photoshop)</td>
+</tr>
+<tr class="">
+<td><code class="inline-code"><Gorgon/Graphics/BlankImage.h></code></td>
+<td><strong>Solid color shapes</strong> — rectangles, backgrounds</td>
+</tr>
+<tr class="">
+<td><code class="inline-code"><Gorgon/Graphics/FreeType.h></code></td>
+<td><strong>Text rendering</strong> — load TTF fonts and print text</td>
+</tr>
+<tr class="">
+<td><code class="inline-code"><Gorgon/Graphics/Bitmap.h></code></td>
+<td><strong>Image loading</strong> — PNG/JPG textures</td>
+</tr>
+<tr class="">
+<td><code class="inline-code"><Gorgon/Input/Mouse.h></code></td>
+<td><strong>Mouse input</strong> — click, move, scroll events</td>
+</tr>
+<tr class="">
+<td><code class="inline-code"><Gorgon/Input/Layer.h></code></td>
+<td><strong>Input regions</strong> — bind mouse input to a specific area</td>
+</tr>
+<tr class="">
+<td><code class="inline-code"><Gorgon/Time.h></code></td>
+<td><strong>Delta time</strong> — frame-accurate time for smooth movement</td>
+</tr>
+<tr class="">
+<td><code class="inline-code"><Gorgon/Geometry/Point.h></code></td>
+<td><strong>2D position</strong> — <code class="inline-code">Point{x, y}</code></td>
+</tr>
+<tr class="">
+<td><code class="inline-code"><Gorgon/Geometry/Size.h></code></td>
+<td><strong>Dimensions</strong> — <code class="inline-code">Size{width, height}</code></td>
+</tr>
+<tr class="">
+<td><code class="inline-code"><Gorgon/Geometry/Bounds.h></code></td>
+<td><strong>Collision boxes</strong> — rectangle-point intersection</td>
+</tr>
+</table></div>
+<hr class="doc-divider">
+<h2 id="the-game-loop-pattern" class="doc-heading">The Game Loop Pattern</h2>
+<p class="doc-paragraph">Every Gorgon game follows the same three-step loop:</p>
+<pre class="code-block" data-lang="cpp"><code>// Step 1: Initialize the engine once
+Gorgon::Initialize(&quot;MyGame&quot;);
+
+// Step 2: Create a window
+Gorgon::Window window({800, 600}, &quot;My First Game&quot;);
+
+// Step 3: Run the game loop
+while(true) {
+    // --- UPDATE ---
+    auto delta = Gorgon::Time::DeltaTime();  // ms since last frame
+    // move your objects using delta...
+
+    // --- RENDER ---
+    gameLayer.Clear();
+    // draw your objects...
+
+    // --- NEXT FRAME (handles OS events, limits to ~60 FPS) ---
+    Gorgon::NextFrame();
+}</code></pre>
+<hr class="doc-divider">
+<h2 id="table-of-contents" class="doc-heading">Table of Contents</h2>
+<ul class="md-list">
+<li><a href="#tutorial-your-first-game-green-shooter">Tutorial: Your First Game — Green Shooter</a></li>
+<li><a href="#tutorial-space-shooter-keyboard-physics">Tutorial: Space Shooter — Keyboard & Physics</a></li>
+<li><a href="#core-concepts-reference">Core Concepts Reference</a></li>
+<li><a href="#what-to-build-next">What to Build Next</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="tutorial-your-first-game--green-shooter" class="doc-heading">Tutorial: Your First Game — Green Shooter</h2>
+<p class="doc-paragraph">This tutorial recreates the bundled <strong>Green Shooter</strong> example step by step. The game spawns colored squares on screen; click the green ones to score points.</p>
+<h3 id="step-1--includes-and-setup" class="doc-heading">Step 1 — Includes and Setup</h3>
+<pre class="code-block" data-lang="cpp"><code>#include &lt;Gorgon/Main.h&gt;
+#include &lt;Gorgon/Window.h&gt;
+#include &lt;Gorgon/WindowManager.h&gt;
+#include &lt;Gorgon/Graphics/Layer.h&gt;
+#include &lt;Gorgon/Graphics/FreeType.h&gt;
+#include &lt;Gorgon/Graphics/BlankImage.h&gt;
+#include &lt;Gorgon/Input/Mouse.h&gt;
+#include &lt;Gorgon/Input/Layer.h&gt;
+
+// Game state
+int score = 0;
+int lives = 3;</code></pre>
+<h3 id="step-2--creating-a-window-and-layers" class="doc-heading">Step 2 — Creating a Window and Layers</h3>
+<p class="doc-paragraph">Gorgon uses <strong>Layers</strong> as rendering surfaces. Think of them like layers in an image editor — they stack on top of each other.</p>
+<pre class="code-block" data-lang="cpp"><code>// Initialize the engine with a system name
+Gorgon::Initialize(&quot;GreenShooter&quot;);
+
+// Create the window (size, title)
+Gorgon::Window window({404, 444}, &quot;Green Shooter&quot;);
+
+// Create rendering layers
+Gorgon::Graphics::Layer backgroundLayer; // bottom: static background
+Gorgon::Graphics::Layer uiLayer;         // middle: score / UI text
+Gorgon::Graphics::Layer gameLayer;       // top: game objects
+
+// Add layers to the window (order = draw order, last is on top)
+window.Add(backgroundLayer);
+
+uiLayer.Move(2, 2);
+uiLayer.Resize(400, 38);
+window.Add(uiLayer);
+
+gameLayer.EnableClipping();   // prevents drawing outside the area
+gameLayer.Move(2, 42);
+gameLayer.Resize(400, 400);
+window.Add(gameLayer);</code></pre>
+<h3 id="step-3--drawing-backgrounds" class="doc-heading">Step 3 — Drawing Backgrounds</h3>
+<p class="doc-paragraph"><code class="inline-code">BlankImage</code> is a solid-color rectangle — the simplest drawable in Gorgon.</p>
+<pre class="code-block" data-lang="cpp"><code>// Create solid-color backgrounds (float = lightness 0.0–1.0)
+Gorgon::Graphics::BlankImage appBg(0.22f);  // dark gray
+Gorgon::Graphics::BlankImage gameBg(0.85f); // light gray
+Gorgon::Graphics::BlankImage uiBg(0.32f);   // medium gray
+
+// DrawIn fills the entire layer (drawn once — no need to redraw)
+appBg.DrawIn(backgroundLayer);
+gameBg.DrawIn(backgroundLayer, 2, 42, 400, 400);
+uiBg.DrawIn(backgroundLayer, 2, 2, 400, 38);</code></pre>
+<h3 id="step-4--loading-a-font" class="doc-heading">Step 4 — Loading a Font</h3>
+<pre class="code-block" data-lang="cpp"><code>Gorgon::Graphics::FreeType font;
+font.DisableAntiAliasing();       // pixel-art style
+font.LoadFile(&quot;Boxy-Bold.ttf&quot;, 20); // filename, size in px</code></pre>
+<h3 id="step-5--handling-mouse-clicks" class="doc-heading">Step 5 — Handling Mouse Clicks</h3>
+<p class="doc-paragraph"><code class="inline-code">Input::Layer</code> binds mouse events to a region. Register a lambda to handle clicks:</p>
+<pre class="code-block" data-lang="cpp"><code>Gorgon::Input::Layer inputLayer;
+gameLayer.Add(inputLayer);  // attach to game area
+
+inputLayer.SetClick([](Gorgon::Geometry::Point location) {
+    for(auto &amp;obj : objects) {
+        // Check if click is inside this object&#x27;s bounding box
+        Gorgon::Geometry::Bounds bounds(obj.location, {40, 40});
+        if(IsInside(bounds, location)) {
+            obj.Hit();
+            return;
+        }
+    }
+    score--;  // missed, penalty
+});</code></pre>
+<h3 id="step-6--the-game-loop" class="doc-heading">Step 6 — The Game Loop</h3>
+<pre class="code-block" data-lang="cpp"><code>// Close window → quit app
+window.DestroyedEvent.Register([]() { exit(0); });
+
+while(true) {
+    // Delta time in milliseconds since last frame
+    auto delta = Gorgon::Time::DeltaTime();
+
+    // Update all game objects
+    for(auto &amp;obj : objects) {
+        obj.Elapsed(delta);
+    }
+
+    // Remove expired objects
+    objects.erase(
+        std::remove_if(objects.begin(), objects.end(),
+            [](const Object &amp;o) { return o.lifetime &lt;= 0; }),
+        objects.end()
+    );
+
+    // Render frame
+    gameLayer.Clear();
+    for(auto &amp;obj : objects) {
+        obj.Draw(gameLayer);
+    }
+
+    // Draw UI text
+    ui_layer.Clear();
+    font.Print(uiLayer, Gorgon::String::Concat(&quot;Score: &quot;, score), 11, 11, 378, 0.0f);
+    font.Print(uiLayer, Gorgon::String::Concat(&quot;Lives: &quot;, lives), 11, 11, 378,
+               Gorgon::Graphics::TextAlignment::Right, 0.0f);
+
+    // End frame (render + ~60 FPS cap + OS events)
+    Gorgon::NextFrame();
+}</code></pre>
+<hr class="doc-divider">
+<hr class="doc-divider">
+<h2 id="tutorial-space-shooter--full-scale-game" class="doc-heading">Tutorial: Space Shooter — Full-scale Game</h2>
+<p class="doc-paragraph">In this expanded tutorial, we create a complete <strong>Space Shooter</strong> with parallax backgrounds, sprite animations, and explosion effects.</p>
+<h3 id="step-1--advanced-initialization--layers" class="doc-heading">Step 1 — Advanced Initialization & Layers</h3>
+<p class="doc-paragraph">For a full-scale game, we need separate layers for depth.</p>
+<pre class="code-block" data-lang="cpp"><code>#include &lt;Gorgon/Main.h&gt;
+#include &lt;Gorgon/Graphics/Layer.h&gt;
+#include &lt;Gorgon/Graphics/TextureAnimation.h&gt;
+
+Gorgon::Window window({800, 600}, &quot;Space Shooter Pro&quot;);
+
+Gorgon::Graphics::Layer starfieldLayer; // Background
+Gorgon::Graphics::Layer gameLayer;      // Ships and Bullets
+Gorgon::Graphics::Layer fxLayer;        // Explosions and particles
+Gorgon::Graphics::Layer uiLayer;        // Score and UI
+
+window.Add(starfieldLayer);
+window.Add(gameLayer);
+window.Add(fxLayer);
+window.Add(uiLayer);</code></pre>
+<h3 id="step-2--animated-sprites--background" class="doc-heading">Step 2 — Animated Sprites & Background</h3>
+<p class="doc-paragraph">We use <code class="inline-code">TextureAnimation</code> to handle multiple frames for the ship and the starfield.</p>
+<pre class="code-block" data-lang="cpp"><code>// 1. Loading an animated ship
+Gorgon::Graphics::TextureAnimation shipAnim;
+shipAnim.LoadFile(&quot;ship_spritesheet.png&quot;, 64, 64); // sprite size
+shipAnim.SetSpeed(100); // 100ms per frame
+
+// 2. Scrolling Background (Parallax)
+float bgOffset = 0;
+void DrawBackground(float delta) {
+    bgOffset += 0.05f * delta;
+    if (bgOffset &gt; 600) bgOffset = 0;
+    
+    starfieldLayer.Clear();
+    starTexture.Draw(starfieldLayer, {0, bgOffset});
+    starTexture.Draw(starfieldLayer, {0, bgOffset - 600});
+}</code></pre>
+<h3 id="step-3--full-ship-control-2d-movement" class="doc-heading">Step 3 — Full Ship Control (2D Movement)</h3>
+<p class="doc-paragraph">We check for WASD or Arrow keys to move the ship in any direction.</p>
+<pre class="code-block" data-lang="cpp"><code>Gorgon::Geometry::Pointf shipPos = {400, 500};
+float speed = 0.4f;
+
+void UpdateInput(float delta) {
+    using namespace Gorgon::Input;
+    if (Keyboard::IsDown(Keyboard::Key::W)) shipPos.y -= speed * delta;
+    if (Keyboard::IsDown(Keyboard::Key::S)) shipPos.y += speed * delta;
+    if (Keyboard::IsDown(Keyboard::Key::A)) shipPos.x -= speed * delta;
+    if (Keyboard::IsDown(Keyboard::Key::D)) shipPos.x += speed * delta;
+    
+    // Fire weapon
+    if (Keyboard::IsDown(Keyboard::Key::Space)) {
+        Shoot();
+    }
+}</code></pre>
+<h3 id="step-4--explosions--enemy-animations" class="doc-heading">Step 4 — Explosions & Enemy Animations</h3>
+<p class="doc-paragraph">When an enemy is hit, we spawn an explosion object that plays its animation once and then disappears.</p>
+<pre class="code-block" data-lang="cpp"><code>struct Explosion {
+    Gorgon::Geometry::Pointf pos;
+    Gorgon::Graphics::TextureAnimation anim;
+    bool finished = false;
+
+    Explosion(Gorgon::Geometry::Pointf p) : pos(p) {
+        anim.LoadFile(&quot;explosion.png&quot;, 32, 32);
+        anim.SetLoop(false); // plays once
+    }
+
+    void Update(float delta) {
+        anim.Elapsed(delta);
+        if (anim.IsFinished()) finished = true;
+    }
+
+    void Draw(Gorgon::Graphics::Layer &amp;l) {
+        anim.Draw(l, pos);
+    }
+};
+
+// Global list for FX
+std::vector&lt;Explosion&gt; effects;
+
+// Inside collision detection:
+if (HitDetection(bullet, enemy)) {
+    effects.emplace_back(enemy.pos); // Create explosion
+    Destroy(enemy);
+}</code></pre>
+<h3 id="step-5--the-main-loop" class="doc-heading">Step 5 — The Main Loop</h3>
+<p class="doc-paragraph">Everything comes together in the loop.</p>
+<pre class="code-block" data-lang="cpp"><code>while(true) {
+    auto delta = Gorgon::Time::DeltaTime();
+
+    UpdateInput(delta);
+    DrawBackground(delta);
+
+    gameLayer.Clear();
+    fxLayer.Clear();
+
+    // Draw Ship
+    shipAnim.Elapsed(delta);
+    shipAnim.Draw(gameLayer, shipPos);
+
+    // Update &amp; Draw FX
+    for(auto &amp;fx : effects) {
+        fx.Update(delta);
+        fx.Draw(fxLayer);
+    }
+
+    // Cleanup finished FX
+    effects.erase(std::remove_if(effects.begin(), effects.end(), 
+        [](auto &amp;fx){ return fx.finished; }), effects.end());
+
+    Gorgon::NextFrame();
+}</code></pre>
+<hr class="doc-divider">
+<h2 id="core-concepts-reference" class="doc-heading">Core Concepts Reference</h2>
+<h3 id="geometry-types" class="doc-heading">Geometry Types</h3>
+<pre class="code-block" data-lang="cpp"><code>Gorgon::Geometry::Point  p  = {100, 200};     // x, y position
+Gorgon::Geometry::Size   sz = {400, 300};     // width, height
+Gorgon::Geometry::Bounds b  = {p, sz};        // rectangle starting at p
+
+bool hit = Gorgon::Geometry::IsInside(b, clickPoint); // collision check</code></pre>
+<h3 id="drawing-images" class="doc-heading">Drawing Images</h3>
+<pre class="code-block" data-lang="cpp"><code>// BlankImage: solid-color rectangle
+Gorgon::Graphics::BlankImage rect(40, 40, 0xff193d19); // w, h, ARGB color
+
+// Draw at position on a layer
+rect.Draw(layer, {x, y});
+
+// Draw with alpha fade (lightness, alpha)
+rect.Draw(layer, {x, y}, {1.0f, 0.5f});  // 50% transparent</code></pre>
+<h3 id="time-and-delta-time" class="doc-heading">Time and Delta Time</h3>
+<pre class="code-block" data-lang="cpp"><code>// Returns milliseconds elapsed since last frame
+auto delta = Gorgon::Time::DeltaTime();
+
+// Move an object at 200 pixels/second
+object.x += 200.0f * (delta / 1000.0f);</code></pre>
+<h3 id="text-rendering" class="doc-heading">Text Rendering</h3>
+<pre class="code-block" data-lang="cpp"><code>// Print text at position (layer, text, x, y, maxWidth, color)
+font.Print(layer, &quot;Hello World!&quot;, 10, 10, 300, 0.0f);  // 0.0f = black
+
+// Right-aligned
+font.Print(layer, &quot;Score: 42&quot;, 10, 10, 300,
+           Gorgon::Graphics::TextAlignment::Right, 0.0f);</code></pre>
+<hr class="doc-divider">
+<h2 id="what-to-build-next" class="doc-heading">What to Build Next</h2>
+<div class="table-wrapper"><table>
+<tr class="thead-row">
+<th>Idea</th>
+<th>New Concepts</th>
+</tr>
+<tr class="">
+<td>Moving character</td>
+<td><code class="inline-code">Input::Keyboard</code>, frame-based position update</td>
+</tr>
+<tr class="">
+<td>Platformer physics</td>
+<td><code class="inline-code">Geometry::Bounds</code> collision, gravity via delta time</td>
+</tr>
+<tr class="">
+<td>Sound effects</td>
+<td><code class="inline-code">Audio::Source</code>, <code class="inline-code">Encoding::FLAC</code> / <code class="inline-code">Vorbis</code></td>
+</tr>
+<tr class="">
+<td>Tiled map</td>
+<td><code class="inline-code">Game::Map::TiledMap</code></td>
+</tr>
+<tr class="">
+<td>A\* pathfinding</td>
+<td><code class="inline-code">Game::Pathfinding::AStar</code></td>
+</tr>
+<tr class="">
+<td>Animated sprites</td>
+<td><code class="inline-code">Animation</code>, <code class="inline-code">Graphics::TextureAnimation</code></td>
+</tr>
+</table></div>
+<p class="doc-paragraph">See the sidebar for the full API reference of each module. Good luck! 🎮</p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

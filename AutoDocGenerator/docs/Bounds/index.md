@@ -1,6 +1,6 @@
 # Bounds
 
-> Auto-generated documentation for the **Bounds** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Bounds** module of the Gorgon C++ Game Engine.
 
 
 ## Contents
@@ -16,7 +16,7 @@
 
 **Namespace:** `Gorgon`
 
-This class represents boundaries of 2D objects. A bounds object contains the starting boundary but not the ending boundary. Therefore, a bounds that has a Width() of 100 and Left of 0, has Right value as 100, not 99.  A Bounds object that has Left<Right and Top<Bottom is called normalized. Bounds should be normalized for its methods to work properly. Constructors normalizes input values, most methods leave bounds in normal state.
+This class represents boundaries of 2D objects. A bounds object contains the starting boundary but not the ending boundary. Therefore, a bounds that has a Width() of 100 and Left of 0, has Right value as 100, not 99.  A Bounds object that has Left&lt;Right and Top&lt;Bottom is called normalized. Bounds should be normalized for its methods to work properly. Constructors normalizes input values, most methods leave bounds in normal state.
 
 #### Methods
 
@@ -128,13 +128,13 @@ Returns the size of the bounds object
 
 **Returns:** ``
 
-Performs union operation. Returns a bounds that contains this bounds object as well as the given bounds Performs intersect operation. Returns a bounds that contains the region that this bounds and the given bounds covers. If they do not interact, an empty bounds <0-0, 0-0> is returned.
+Performs union operation. Returns a bounds that contains this bounds object as well as the given bounds Performs intersect operation. Returns a bounds that contains the region that this bounds and the given bounds covers. If they do not interact, an empty bounds &lt;0-0, 0-0&gt; is returned.
 
 ##### `SetWidth(const T_ &width)`
 
 **Returns:** `void`
 
-Performs union operation. Returns a bounds that contains this bounds object as well as the given bounds Performs intersect operation. Returns a bounds that contains the region that this bounds and the given bounds covers. If they do not interact, an empty bounds <0-0, 0-0> is returned. Changes the width of the bounds, anchor is the topleft
+Performs union operation. Returns a bounds that contains this bounds object as well as the given bounds Performs intersect operation. Returns a bounds that contains the region that this bounds and the given bounds covers. If they do not interact, an empty bounds &lt;0-0, 0-0&gt; is returned. Changes the width of the bounds, anchor is the topleft
 
 ##### `SetHeight(const T_ &height)`
 

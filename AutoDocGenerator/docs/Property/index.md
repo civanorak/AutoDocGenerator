@@ -1,6 +1,6 @@
 # Property
 
-> Auto-generated documentation for the **Property** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Property** module of the Gorgon C++ Game Engine.
 
 
 ## Contents
@@ -40,7 +40,7 @@ This is generic property that can be set and retrieved good for enums mostly, it
 
 **Namespace:** `Gorgon`
 
-Supports arithmetic operators including +, * ..., +=, ... ==, <, > but not &, && float, int, double, math/Complex
+Supports arithmetic operators including +, * ..., +=, ... ==, &lt;, &gt; but not &, && float, int, double, math/Complex
 
 
 ### `BooleanProperty`
@@ -75,7 +75,7 @@ Object property allows the consumers of the property to be able to access object
 
 **Namespace:** `internal`
 
-Reference property allows clients to access a reference object within the class. This property does not have a setter, but instead it uses update function that is called whenever reference object is accessed by using -> operator. The client can call update function manually.
+Reference property allows clients to access a reference object within the class. This property does not have a setter, but instead it uses update function that is called whenever reference object is accessed by using -&gt; operator. The client can call update function manually.
 
 #### Methods
 

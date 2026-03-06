@@ -1,6 +1,6 @@
 # PulseAudio.inc
 
-> Auto-generated documentation for the **PulseAudio.inc** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **PulseAudio.inc** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>DnD — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="../getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Base.html">Base</a></li>
+    <li><a href="Basic.html">Basic</a></li>
+    <li><a href="Common.html">Common</a></li>
+    <li><a href="Config.html">Config</a></li>
+    <li><a href="Definitions.html">Definitions</a></li>
+    <li><a href="Environment.html">Environment</a></li>
+    <li><a href="OS.html">OS</a></li>
+    <li><a href="Runtime.html">Runtime</a></li>
+    <li><a href="Types.html">Types</a></li>
+    <li><a href="Utils.html">Utils</a></li>
+    <li><a href="UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Bitmap.html">Bitmap</a></li>
+    <li><a href="BitmapFont.html">BitmapFont</a></li>
+    <li><a href="BlankImage.html">BlankImage</a></li>
+    <li><a href="Color.html">Color</a></li>
+    <li><a href="ColorPicker.html">ColorPicker</a></li>
+    <li><a href="ColorPlane.html">ColorPlane</a></li>
+    <li><a href="ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="Drawables.html">Drawables</a></li>
+    <li><a href="EmptyImage.html">EmptyImage</a></li>
+    <li><a href="Filters.html">Filters</a></li>
+    <li><a href="Flip.html">Flip</a></li>
+    <li><a href="Font.html">Font</a></li>
+    <li><a href="FontTheme.html">FontTheme</a></li>
+    <li><a href="FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="FreeType.html">FreeType</a></li>
+    <li><a href="GID.html">GID</a></li>
+    <li><a href="GL.html">GL</a></li>
+    <li><a href="Graphics.html">Graphics</a></li>
+    <li><a href="HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="IL.html">IL</a></li>
+    <li><a href="Image.html">Image</a></li>
+    <li><a href="JPEG.html">JPEG</a></li>
+    <li><a href="OpenGL.html">OpenGL</a></li>
+    <li><a href="PNG.html">PNG</a></li>
+    <li><a href="Renderer.html">Renderer</a></li>
+    <li><a href="ScalableObject.html">ScalableObject</a></li>
+    <li><a href="Shader.html">Shader</a></li>
+    <li><a href="Shaders.html">Shaders</a></li>
+    <li><a href="Texture.html">Texture</a></li>
+    <li><a href="TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="TextureTargets.html">TextureTargets</a></li>
+    <li><a href="TintedObject.html">TintedObject</a></li>
+    <li><a href="Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="AnimationServices.html">AnimationServices</a></li>
+    <li><a href="AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="Animations.html">Animations</a></li>
+    <li><a href="ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="DnD.html" class="active">DnD</a></li>
+    <li><a href="Input.html">Input</a></li>
+    <li><a href="KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="Keyboard.html">Keyboard</a></li>
+    <li><a href="Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Button.html">Button</a></li>
+    <li><a href="Checkbox.html">Checkbox</a></li>
+    <li><a href="CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="Combobox.html">Combobox</a></li>
+    <li><a href="ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="CountingText.html">CountingText</a></li>
+    <li><a href="Dialog.html">Dialog</a></li>
+    <li><a href="DialogWindow.html">DialogWindow</a></li>
+    <li><a href="Dropdown.html">Dropdown</a></li>
+    <li><a href="Filler.html">Filler</a></li>
+    <li><a href="IButton.html">IButton</a></li>
+    <li><a href="ICheckbox.html">ICheckbox</a></li>
+    <li><a href="ILabel.html">ILabel</a></li>
+    <li><a href="IListItem.html">IListItem</a></li>
+    <li><a href="INumberbox.html">INumberbox</a></li>
+    <li><a href="IOption.html">IOption</a></li>
+    <li><a href="IProgressor.html">IProgressor</a></li>
+    <li><a href="IScroller.html">IScroller</a></li>
+    <li><a href="ISlider.html">ISlider</a></li>
+    <li><a href="ITextbox.html">ITextbox</a></li>
+    <li><a href="Inputbox.html">Inputbox</a></li>
+    <li><a href="Label.html">Label</a></li>
+    <li><a href="Listbox.html">Listbox</a></li>
+    <li><a href="ListboxBase.html">ListboxBase</a></li>
+    <li><a href="ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="NumberInput.html">NumberInput</a></li>
+    <li><a href="Numberbox.html">Numberbox</a></li>
+    <li><a href="Panel.html">Panel</a></li>
+    <li><a href="PanelBase.html">PanelBase</a></li>
+    <li><a href="PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="Percentbar.html">Percentbar</a></li>
+    <li><a href="PetContainer.html">PetContainer</a></li>
+    <li><a href="PetTextbox.html">PetTextbox</a></li>
+    <li><a href="Placeholder.html">Placeholder</a></li>
+    <li><a href="Progressbar.html">Progressbar</a></li>
+    <li><a href="RadioButton.html">RadioButton</a></li>
+    <li><a href="RadioButtons.html">RadioButtons</a></li>
+    <li><a href="RadioControl.html">RadioControl</a></li>
+    <li><a href="Scrollbar.html">Scrollbar</a></li>
+    <li><a href="ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="Slider.html">Slider</a></li>
+    <li><a href="SliderBase.html">SliderBase</a></li>
+    <li><a href="SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="Spinner.html">Spinner</a></li>
+    <li><a href="StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="Tabpanel.html">Tabpanel</a></li>
+    <li><a href="TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="TextInput.html">TextInput</a></li>
+    <li><a href="Textarea.html">Textarea</a></li>
+    <li><a href="Textbox.html">Textbox</a></li>
+    <li><a href="TextboxBase.html">TextboxBase</a></li>
+    <li><a href="TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="TooltipManager.html">TooltipManager</a></li>
+    <li><a href="TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="UI.html">UI</a></li>
+    <li><a href="Widget.html">Widget</a></li>
+    <li><a href="WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Alignment.html">Alignment</a></li>
+    <li><a href="Bezier.html">Bezier</a></li>
+    <li><a href="Bounds.html">Bounds</a></li>
+    <li><a href="Circle.html">Circle</a></li>
+    <li><a href="Dimension.html">Dimension</a></li>
+    <li><a href="Geometry.html">Geometry</a></li>
+    <li><a href="GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="Line.html">Line</a></li>
+    <li><a href="Margin.html">Margin</a></li>
+    <li><a href="Point.html">Point</a></li>
+    <li><a href="Point3D.html">Point3D</a></li>
+    <li><a href="PointList.html">PointList</a></li>
+    <li><a href="PointProperty.html">PointProperty</a></li>
+    <li><a href="Polygon.html">Polygon</a></li>
+    <li><a href="Rectangle.html">Rectangle</a></li>
+    <li><a href="Region.html">Region</a></li>
+    <li><a href="Size.html">Size</a></li>
+    <li><a href="SizeProperty.html">SizeProperty</a></li>
+    <li><a href="Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Audio.html">Audio</a></li>
+    <li><a href="AudioStream.html">AudioStream</a></li>
+    <li><a href="FLAC.html">FLAC</a></li>
+    <li><a href="Multimedia.html">Multimedia</a></li>
+    <li><a href="PulseAudio.html">PulseAudio</a></li>
+    <li><a href="PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="Sound.html">Sound</a></li>
+    <li><a href="Source.html">Source</a></li>
+    <li><a href="Vorbis.html">Vorbis</a></li>
+    <li><a href="WASAPI.html">WASAPI</a></li>
+    <li><a href="WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Blob.html">Blob</a></li>
+    <li><a href="CGI.html">CGI</a></li>
+    <li><a href="Clipboard.html">Clipboard</a></li>
+    <li><a href="Data.html">Data</a></li>
+    <li><a href="DataExchange.html">DataExchange</a></li>
+    <li><a href="DataItems.html">DataItems</a></li>
+    <li><a href="File.html">File</a></li>
+    <li><a href="FileDialog.html">FileDialog</a></li>
+    <li><a href="Filesystem.html">Filesystem</a></li>
+    <li><a href="Folder.html">Folder</a></li>
+    <li><a href="HTTP.html">HTTP</a></li>
+    <li><a href="LZMA.html">LZMA</a></li>
+    <li><a href="Markdown.html">Markdown</a></li>
+    <li><a href="MemoryStream.html">MemoryStream</a></li>
+    <li><a href="Parse.html">Parse</a></li>
+    <li><a href="Query.html">Query</a></li>
+    <li><a href="Reader.html">Reader</a></li>
+    <li><a href="Storage.html">Storage</a></li>
+    <li><a href="Stream.html">Stream</a></li>
+    <li><a href="Tokenizer.html">Tokenizer</a></li>
+    <li><a href="URI.html">URI</a></li>
+    <li><a href="Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Array.html">Array</a></li>
+    <li><a href="Collection.html">Collection</a></li>
+    <li><a href="Container.html">Container</a></li>
+    <li><a href="Hashmap.html">Hashmap</a></li>
+    <li><a href="Iterator.html">Iterator</a></li>
+    <li><a href="LinkNode.html">LinkNode</a></li>
+    <li><a href="List.html">List</a></li>
+    <li><a href="ListItem.html">ListItem</a></li>
+    <li><a href="Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BorderData.html">BorderData</a></li>
+    <li><a href="ComponentStack.html">ComponentStack</a></li>
+    <li><a href="ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="CustomLayer.html">CustomLayer</a></li>
+    <li><a href="DWM.html">DWM</a></li>
+    <li><a href="ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="Flow.html">Flow</a></li>
+    <li><a href="FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="InlinePanel.html">InlinePanel</a></li>
+    <li><a href="Layer.html">Layer</a></li>
+    <li><a href="LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="LayerMover.html">LayerMover</a></li>
+    <li><a href="LayerResizer.html">LayerResizer</a></li>
+    <li><a href="LayerWidget.html">LayerWidget</a></li>
+    <li><a href="Layerbox.html">Layerbox</a></li>
+    <li><a href="LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="MaskedObject.html">MaskedObject</a></li>
+    <li><a href="Monitor.html">Monitor</a></li>
+    <li><a href="MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="Organizer.html">Organizer</a></li>
+    <li><a href="StackedObject.html">StackedObject</a></li>
+    <li><a href="VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="Window.html">Window</a></li>
+    <li><a href="WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Assert.html">Assert</a></li>
+    <li><a href="Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="CaptionValue.html">CaptionValue</a></li>
+    <li><a href="Console.html">Console</a></li>
+    <li><a href="Console_Nix.html">Console_Nix</a></li>
+    <li><a href="Console_Win32.html">Console_Win32</a></li>
+    <li><a href="ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="Event.html">Event</a></li>
+    <li><a href="Exception.html">Exception</a></li>
+    <li><a href="Exceptions.html">Exceptions</a></li>
+    <li><a href="GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="Logging.html">Logging</a></li>
+    <li><a href="Null.html">Null</a></li>
+    <li><a href="Nullable.html">Nullable</a></li>
+    <li><a href="Pointer.html">Pointer</a></li>
+    <li><a href="Property.html">Property</a></li>
+    <li><a href="Random.html">Random</a></li>
+    <li><a href="RefCounter.html">RefCounter</a></li>
+    <li><a href="Registry.html">Registry</a></li>
+    <li><a href="SGuid.html">SGuid</a></li>
+    <li><a href="Scope.html">Scope</a></li>
+    <li><a href="ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="Threading.html">Threading</a></li>
+    <li><a href="Time.html">Time</a></li>
+    <li><a href="Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AST.html">AST</a></li>
+    <li><a href="AStar.html">AStar</a></li>
+    <li><a href="Blueprint.html">Blueprint</a></li>
+    <li><a href="Compiler.html">Compiler</a></li>
+    <li><a href="Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="Compilers.html">Compilers</a></li>
+    <li><a href="Component.html">Component</a></li>
+    <li><a href="Composer.html">Composer</a></li>
+    <li><a href="Discrete.html">Discrete</a></li>
+    <li><a href="Embedding.html">Embedding</a></li>
+    <li><a href="Enum.html">Enum</a></li>
+    <li><a href="Generator.html">Generator</a></li>
+    <li><a href="Instruction.html">Instruction</a></li>
+    <li><a href="Language.html">Language</a></li>
+    <li><a href="Message.html">Message</a></li>
+    <li><a href="Pathfinders.html">Pathfinders</a></li>
+    <li><a href="Reflection.html">Reflection</a></li>
+    <li><a href="RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="Scene.html">Scene</a></li>
+    <li><a href="Scripting.html">Scripting</a></li>
+    <li><a href="Simple.html">Simple</a></li>
+    <li><a href="String.html">String</a></li>
+    <li><a href="Struct.html">Struct</a></li>
+    <li><a href="TMP.html">TMP</a></li>
+    <li><a href="Template.html">Template</a></li>
+    <li><a href="TiledMap.html">TiledMap</a></li>
+    <li><a href="Validators.html">Validators</a></li>
+    <li><a href="VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Linux.html">Linux</a></li>
+    <li><a href="Win32.html">Win32</a></li>
+    <li><a href="Windows.html">Windows</a></li>
+    <li><a href="X11.html">X11</a></li>
+    <li><a href="X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Any.html">Any</a></li>
+    <li><a href="Builtin.html">Builtin</a></li>
+    <li><a href="FindObject.html">FindObject</a></li>
+    <li><a href="Helpers.html">Helpers</a></li>
+    <li><a href="Instance.html">Instance</a></li>
+    <li><a href="ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="PD.html">PD</a></li>
+    <li><a href="ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BasicMath.html">BasicMath</a></li>
+    <li><a href="Kernel.html">Kernel</a></li>
+    <li><a href="main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">DnD</span>
+    </nav>
+    
+        <h1 id="dnd" class="doc-heading">DnD</h1>
+<p class="doc-paragraph">> Auto-generated documentation for the <strong>DnD</strong> module of the Gorgon C++ Game Engine.</p>
+<h2 id="contents" class="doc-heading">Contents</h2>
+<ul class="md-list">
+<li><a href="#classes">Classes</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="classes" class="doc-heading">Classes</h2>
+<h3 id="droptarget" class="doc-heading"><code class="inline-code">DropTarget</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="dropgeometrypoint-location" class="doc-heading"><code class="inline-code">Drop(Geometry::Point location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">friend void</code></p>
+<h5 id="canceldrag" class="doc-heading"><code class="inline-code">CancelDrag(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">friend void</code></p>
+<h5 id="resethitcheck" class="doc-heading"><code class="inline-code">ResetHitCheck(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">@name Event handling @{ Sets hit check function. When set, events only occur if hit check returns true. Events follow hit check in a sequential manner, thus, if a handler is called, this means hit check has already succeeded in the current layout. Sets hit check function. When set, events only occur if hit check returns true. Events follow hit check in a sequential manner, thus, if a handler is called, this means hit check has already succeeded in the current layout. Sets hit check function. When set, events only occur if hit check returns true. Events follow hit check in a sequential manner, thus, if a handler is called, this means hit check has already succeeded in the current layout. This variant accepts class member function. Sets hit check function. When set, events only occur if hit check returns true. Events follow hit check in a sequential manner, thus, if a handler is called, this means hit check has already succeeded in the current layout. This variant accepts class member function. Sets hit check function. When set, events only occur if hit check returns true. Events follow hit check in a sequential manner, thus, if a handler is called, this means hit check has already succeeded in the current layout. This variant accepts class member function. Sets hit check function. When set, events only occur if hit check returns true. Events follow hit check in a sequential manner, thus, if a handler is called, this means hit check has already succeeded in the current layout. This variant accepts class member function. Removes hit check handler, default action for hit check is to return true.</p>
+<h5 id="resetover" class="doc-heading"><code class="inline-code">ResetOver(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets over function. If set, called whenever an object is dragged over this layer. If event handler returns true, source will receive over event as well. Sets over function. If set, called whenever an object is dragged over this layer. If event handler returns true, source will receive over event as well. Sets over function. If set, called whenever an object is dragged over this layer. If event handler returns true, source will receive over event as well. This variant accepts class member function. Sets over function. If set, called whenever an object is dragged over this layer. If event handler returns true, source will receive over event as well. This variant accepts class member function. Sets over function. If set, called whenever an object is dragged over this layer. If event handler returns true, source will receive over event as well. This variant accepts class member function. Sets over function. If set, called whenever an object is dragged over this layer. If event handler returns true, source will receive over event as well. This variant accepts class member function. Removes over handler, default action for over is to return true.</p>
+<h5 id="resetout" class="doc-heading"><code class="inline-code">ResetOut(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets out function. If set, called whenever an object is dragged out of this layer. This event is called even if over returns false. Sets out function. If set, called whenever an object is dragged out of this layer. This event is called even if over returns false. Sets out function. If set, called whenever an object is dragged out of this layer. This event is called even if over returns false. This variant accepts class member function. Sets out function. If set, called whenever an object is dragged out of this layer. This event is called even if over returns false. This variant accepts class member function. Sets out function. If set, called whenever an object is dragged out of this layer. This event is called even if over returns false. This variant accepts class member function. Sets out function. If set, called whenever an object is dragged out of this layer. This event is called even if over returns false. This variant accepts class member function. Removes out handler.</p>
+<h5 id="resetmove" class="doc-heading"><code class="inline-code">ResetMove(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets move function. If set, called repeatedly as long as the object is over this layer. Returning false from this event's handler will cause drag operation to move out of this layer. Sets move function. If set, called repeatedly as long as the object is over this layer. Returning false from this event's handler will cause drag operation to move out of this layer. Sets move function. If set, called repeatedly as long as the object is over this layer. Returning false from this event's handler will cause drag operation to move out of this layer. This variant accepts class member function. Sets move function. If set, called repeatedly as long as the object is over this layer. Returning false from this event's handler will cause drag operation to move out of this layer. This variant accepts class member function. Sets move function. If set, called repeatedly as long as the object is over this layer. Returning false from this event's handler will cause drag operation to move out of this layer. This variant accepts class member function. Sets move function. If set, called repeatedly as long as the object is over this layer. Returning false from this event's handler will cause drag operation to move out of this layer. This variant accepts class member function. Sets move function. If set, called repeatedly as long as the object is over this layer. Returning false from this event's handler will cause drag operation to move out of this layer. Sets move function. If set, called repeatedly as long as the object is over this layer. Returning false from this event's handler will cause drag operation to move out of this layer. Sets move function. If set, called repeatedly as long as the object is over this layer. Returning false from this event's handler will cause drag operation to move out of this layer. This variant accepts class member function. Sets move function. If set, called repeatedly as long as the object is over this layer. Returning false from this event's handler will cause drag operation to move out of this layer. This variant accepts class member function. Sets move function. If set, called repeatedly as long as the object is over this layer. Returning false from this event's handler will cause drag operation to move out of this layer. This variant accepts class member function. Sets move function. If set, called repeatedly as long as the object is over this layer. Returning false from this event's handler will cause drag operation to move out of this layer. This variant accepts class member function. Removes move handler, default is to continue the drag operation.</p>
+<h5 id="resetdrop" class="doc-heading"><code class="inline-code">ResetDrop(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets drop function. If set, called whenever an object is dropped to this layer. Returning false from this event's handler will cause drag operation to be canceled. Sets drop function. If set, called whenever an object is dropped to this layer. Returning false from this event's handler will cause drag operation to be canceled. Sets drop function. If set, called whenever an object is dropped to this layer. Returning false from this event's handler will cause drag operation to be canceled. This variant accepts class member function. Sets drop function. If set, called whenever an object is dropped to this layer. Returning false from this event's handler will cause drag operation to be canceled. This variant accepts class member function. Sets drop function. If set, called whenever an object is dropped to this layer. Returning false from this event's handler will cause drag operation to be canceled. This variant accepts class member function. Sets drop function. If set, called whenever an object is dropped to this layer. Returning false from this event's handler will cause drag operation to be canceled. This variant accepts class member function. Sets drop function. If set, called whenever an object is dropped to this layer. Returning false from this event's handler will cause drag operation to be canceled. Sets drop function. If set, called whenever an object is dropped to this layer. Returning false from this event's handler will cause drag operation to be canceled. Sets drop function. If set, called whenever an object is dropped to this layer. Returning false from this event's handler will cause drag operation to be canceled. This variant accepts class member function. Sets drop function. If set, called whenever an object is dropped to this layer. Returning false from this event's handler will cause drag operation to be canceled. This variant accepts class member function. Sets drop function. If set, called whenever an object is dropped to this layer. Returning false from this event's handler will cause drag operation to be canceled. This variant accepts class member function. Sets drop function. If set, called whenever an object is dropped to this layer. Returning false from this event's handler will cause drag operation to be canceled. This variant accepts class member function. Removes drop handler, default is to cancel the drag operation.</p>
+<h5 id="resetcancel" class="doc-heading"><code class="inline-code">ResetCancel(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets cancel function. If set, called whenever the DnD event that is accepted to be over this layer is canceled. Sets cancel function. If set, called whenever the DnD event that is accepted to be over this layer is canceled. Sets cancel function. If set, called whenever the DnD event that is accepted to be over this layer is canceled. This variant accepts class member function. Sets cancel function. If set, called whenever the DnD event that is accepted to be over this layer is canceled. This variant accepts class member function. Sets cancel function. If set, called whenever the DnD event that is accepted to be over this layer is canceled. This variant accepts class member function. Sets cancel function. If set, called whenever the DnD event that is accepted to be over this layer is canceled. This variant accepts class member function. Removes cancel handler.</p>
+<h3 id="dragsource" class="doc-heading"><code class="inline-code">DragSource</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">@} Propagates a mouse event. Some events will be called directly.</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="dropgeometrypoint-location" class="doc-heading"><code class="inline-code">Drop(Geometry::Point location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">friend void</code></p>
+<h5 id="canceldrag" class="doc-heading"><code class="inline-code">CancelDrag(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">friend void</code></p>
+<h5 id="resetover" class="doc-heading"><code class="inline-code">ResetOver(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">@name Event handling @{ Sets over function. If set, called whenever an object is dragged over to a target and the target accepts over event. Sets over function. If set, called whenever an object is dragged over to a target and the target accepts over event. Sets over function. If set, called whenever an object is dragged over to a target and the target accepts over event. This variant accepts class member function. Sets over function. If set, called whenever an object is dragged over to a target and the target accepts over event. This variant accepts class member function. Sets over function. If set, called whenever an object is dragged over to a target and the target accepts over event. This variant accepts class member function. Sets over function. If set, called whenever an object is dragged over to a target and the target accepts over event. This variant accepts class member function. Removes over handler, default action for over is to return true.</p>
+<h5 id="resetout" class="doc-heading"><code class="inline-code">ResetOut(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets out function. If set, called whenever an object is dragged out of the layer that accepted over event. Sets out function. If set, called whenever an object is dragged out of the layer that accepted over event. Sets out function. If set, called whenever an object is dragged out of the layer that accepted over event. This variant accepts class member function. Sets out function. If set, called whenever an object is dragged out of the layer that accepted over event. This variant accepts class member function. Sets out function. If set, called whenever an object is dragged out of the layer that accepted over event. This variant accepts class member function. Sets out function. If set, called whenever an object is dragged out of the layer that accepted over event. This variant accepts class member function. Removes out handler.</p>
+<h5 id="resetmove" class="doc-heading"><code class="inline-code">ResetMove(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets move handler. If set, called continuously until the drag operation is complete. Sets move handler. If set, called continuously until the drag operation is complete. Sets move handler. If set, called continuously until the drag operation is complete. This variant accepts class member function. Sets move handler. If set, called continuously until the drag operation is complete. This variant accepts class member function. Sets move handler. If set, called continuously until the drag operation is complete. This variant accepts class member function. Sets move handler. If set, called continuously until the drag operation is complete. This variant accepts class member function. Sets move handler. If set, called continuously until the drag operation is complete. Sets move handler. If set, called continuously until the drag operation is complete. Sets move handler. If set, called continuously until the drag operation is complete. This variant accepts class member function. Sets move handler. If set, called continuously until the drag operation is complete. This variant accepts class member function. Sets move handler. If set, called continuously until the drag operation is complete. This variant accepts class member function. Sets move handler. If set, called continuously until the drag operation is complete. This variant accepts class member function. Removes move handler, default is to continue the drag operation.</p>
+<h5 id="resetaccept" class="doc-heading"><code class="inline-code">ResetAccept(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets accept function. If set, called whenever drag operation is accepted. Sets accept function. If set, called whenever drag operation is accepted. Sets accept function. If set, called whenever drag operation is accepted. This variant accepts class member function. Sets accept function. If set, called whenever drag operation is accepted. This variant accepts class member function. Sets accept function. If set, called whenever drag operation is accepted. This variant accepts class member function. Sets accept function. If set, called whenever drag operation is accepted. This variant accepts class member function. Removes accept handler.</p>
+<h5 id="resetcancel" class="doc-heading"><code class="inline-code">ResetCancel(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets accept function. If set, called whenever drag operation is canceled. Sets accept function. If set, called whenever drag operation is canceled. Sets accept function. If set, called whenever drag operation is canceled. This variant accepts class member function. Sets accept function. If set, called whenever drag operation is canceled. This variant accepts class member function. Sets accept function. If set, called whenever drag operation is canceled. This variant accepts class member function. Sets accept function. If set, called whenever drag operation is canceled. This variant accepts class member function. Removes cancel handler.</p>
+<h3 id="draginfo" class="doc-heading"><code class="inline-code">DragInfo</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">@}</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="draginfo" class="doc-heading"><code class="inline-code">DragInfo(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Constructor, requires the source for drag operation Constructor, requires the source for drag operation</p>
+<h5 id="addtextdataconst-stdstring-text" class="doc-heading"><code class="inline-code">AddTextData(const std::string &text)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds text data to this info object</p>
+<h5 id="addfiledataconst-stdstring-text" class="doc-heading"><code class="inline-code">AddFileData(const std::string &text)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds file data to this info object</p>
+<h5 id="adddataexchangedata-data" class="doc-heading"><code class="inline-code">AddData(ExchangeData &data)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds data to this info object, ownership of the data is not transfered</p>
+<h5 id="assumedataexchangedata-data" class="doc-heading"><code class="inline-code">AssumeData(ExchangeData &data)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds data to this info object, ownership of the data is transfered</p>
+<h5 id="hasdataresourcegidtype-type" class="doc-heading"><code class="inline-code">HasData(Resource::GID::Type type)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Check whether this drag info has the given data</p>
+<h5 id="dataready" class="doc-heading"><code class="inline-code">DataReady(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Marks drag data as ready.</p>
+<h5 id="isdataready" class="doc-heading"><code class="inline-code">IsDataReady(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Check wheather the drag data is ready</p>
+<h5 id="begin" class="doc-heading"><code class="inline-code">begin(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Containers::Collection<ExchangeData>::Iterator</code></p>
+<p class="doc-paragraph">For range based iteration</p>
+<h5 id="end" class="doc-heading"><code class="inline-code">end(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Containers::Collection<ExchangeData>::Iterator</code></p>
+<p class="doc-paragraph">For range based iteration</p>
+<h5 id="getsize" class="doc-heading"><code class="inline-code">GetSize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns the data associated with the given type, throws runtime_error if data does not exists. Returns the data at the given index Returns the number of data stored in this object</p>
+<h5 id="hastarget" class="doc-heading"><code class="inline-code">HasTarget(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">If this drag operation has a target. The target should accept drag over event for it to be registered</p>
+<h5 id="settargetdroptarget-value" class="doc-heading"><code class="inline-code">SetTarget(DropTarget &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Returns the target of the drag operation. The target should accept drag over event for it to be registered. Throws runtime_error if target does not exists Sets the target of the drag operation. This function is automatically called. Manually calling this function might have unintended consequences.</p>
+<h5 id="removetarget" class="doc-heading"><code class="inline-code">RemoveTarget(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes the target of the drag operation. This function is automatically called. Manually calling this function might have unintended consequences.</p>
+<h5 id="hassource" class="doc-heading"><code class="inline-code">HasSource(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Whether this object has a source.</p>
+<h5 id="markasos" class="doc-heading"><code class="inline-code">MarkAsOS(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Returns the drag source. Throws runtime_error if source does not exists Marks this DnD operation coming from OS</p>
+<h5 id="isfromos" class="doc-heading"><code class="inline-code">IsFromOS(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns whether the DnD operation is coming from OS.</p>
+<h3 id="windaccess" class="doc-heading"><code class="inline-code">windaccess</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<hr class="doc-divider">
+<h2 id="functions" class="doc-heading">Functions</h2>
+<h3 id="needsclipinputmouseeventtype-event" class="doc-heading"><code class="inline-code">needsclip(Input::Mouse::EventType event)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="forauto-d--data" class="doc-heading"><code class="inline-code">for(auto &d : data)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-d--data" class="doc-heading"><code class="inline-code">for(auto &d : data)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="initdrag" class="doc-heading"><code class="inline-code">initdrag()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="startdrag" class="doc-heading"><code class="inline-code">startdrag()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="dragstarteddragoperation" class="doc-heading"><code class="inline-code">DragStarted(*DragOperation)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="begindrag" class="doc-heading"><code class="inline-code">begindrag()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="initdrag" class="doc-heading"><code class="inline-code">initdrag()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="begindragdragsource-source" class="doc-heading"><code class="inline-code">begindrag(DragSource &source)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="initdrag" class="doc-heading"><code class="inline-code">initdrag()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifevent--inputmouseeventtypehitcheck" class="doc-heading"><code class="inline-code">if(event == Input::Mouse::EventType::HitCheck)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="dotransformandcliptrue" class="doc-heading"><code class="inline-code">dotransformandclip(true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="reverttransformandclip" class="doc-heading"><code class="inline-code">reverttransformandclip()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="dotransformandcliptrue" class="doc-heading"><code class="inline-code">dotransformandclip(true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="reverttransformandclip" class="doc-heading"><code class="inline-code">reverttransformandclip()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifevent--inputmouseeventtypeover" class="doc-heading"><code class="inline-code">if(event == Input::Mouse::EventType::Over)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifover" class="doc-heading"><code class="inline-code">if(over)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifevent--inputmouseeventtypeout" class="doc-heading"><code class="inline-code">if(event == Input::Mouse::EventType::Out)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="outthis-op" class="doc-heading"><code class="inline-code">out(*this, op)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifevent--inputmouseeventtypemove" class="doc-heading"><code class="inline-code">if(event == Input::Mouse::EventType::Move)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifret" class="doc-heading"><code class="inline-code">if(ret)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="propagatemouseeventmouseeventtypeout-location-button-amount-handlers" class="doc-heading"><code class="inline-code">propagate_mouseevent(Mouse::EventType::Out, location, button, amount, handlers)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifevent--inputmouseeventtypeup" class="doc-heading"><code class="inline-code">if(event == Input::Mouse::EventType::Up)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="dropcurlocation" class="doc-heading"><code class="inline-code">Drop(curlocation)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifevent--inputmouseeventtypedown" class="doc-heading"><code class="inline-code">if(event == Input::Mouse::EventType::Down)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifevent--inputmouseeventtypehitcheck" class="doc-heading"><code class="inline-code">if(event == Input::Mouse::EventType::HitCheck)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="finishdragbool-success" class="doc-heading"><code class="inline-code">finishdrag(bool success)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="dragendedop-success" class="doc-heading"><code class="inline-code">DragEnded(op, success)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="dropgeometrypoint-location" class="doc-heading"><code class="inline-code">Drop(Geometry::Point location)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="canceldrag" class="doc-heading"><code class="inline-code">CancelDrag()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifret" class="doc-heading"><code class="inline-code">if(ret)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="finishdragtrue" class="doc-heading"><code class="inline-code">finishdrag(true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="canceldrag" class="doc-heading"><code class="inline-code">CancelDrag()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="canceldrag" class="doc-heading"><code class="inline-code">CancelDrag()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="finishdragfalse" class="doc-heading"><code class="inline-code">finishdrag(false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="begindragdragsource-source" class="doc-heading"><code class="inline-code">begindrag(DragSource &source)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Destructor Current Drag operation, could be nullptr, denoting there is none. It is better to use GetDragOperation function. This event is fired whenever a drag operation begins This event is fired whenever a drag operation ends. Second parameter is set to true if the drag is accepted, if canceled it will be set to false. First parameter might not be reliable as this event is called after cancel/accept events. @cond never</p>
+<h3 id="begindrag" class="doc-heading"><code class="inline-code">begindrag()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="begindragd-data-a--rest" class="doc-heading"><code class="inline-code">begindrag(D_ &&data, A_&& ... rest)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="begindragconst-stdstring-data-a--rest" class="doc-heading"><code class="inline-code">begindrag(const std::string &data, A_&& ... rest)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="begindragconst-char-data-a--rest" class="doc-heading"><code class="inline-code">begindrag(const char *data, A_&& ... rest)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="begindragstdstring-data-a--rest" class="doc-heading"><code class="inline-code">begindrag(std::string &data, A_&& ... rest)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="begindragchar-data-a--rest" class="doc-heading"><code class="inline-code">begindrag(char *data, A_&& ... rest)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="begindragdragsource-source-d-data-a--rest" class="doc-heading"><code class="inline-code">begindrag(DragSource &source, D_ &&data, A_&& ... rest)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="begindragdragsource-source-const-stdstring-data-a--rest" class="doc-heading"><code class="inline-code">begindrag(DragSource &source, const std::string &data, A_&& ... rest)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="begindragdragsource-source-stdstring-data-a--rest" class="doc-heading"><code class="inline-code">begindrag(DragSource &source, std::string &data, A_&& ... rest)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="begindragdragsource-source-char-data-a--rest" class="doc-heading"><code class="inline-code">begindrag(DragSource &source, char *data, A_&& ... rest)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="begindragdragsource-source-const-char-data-a--rest" class="doc-heading"><code class="inline-code">begindrag(DragSource &source, const char *data, A_&& ... rest)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="startdrag" class="doc-heading"><code class="inline-code">startdrag()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">@endcond @cond internal</p>
+<h3 id="startdrag" class="doc-heading"><code class="inline-code">startdrag()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">@endcond Begins a drag operation using the given source and data. Data will be assigned immediately for events to work properly. Additional data items can be added later if additional data become available at a later time.</p>
+<h3 id="startdrag" class="doc-heading"><code class="inline-code">startdrag()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Begins a drag operation using the given data, without a source. Data will be assigned immediately for events to work properly. Additional data items can be added later if additional data become available at a later time. It is not possible to receive any drag related events without a source.</p>
+<h3 id="initdrag" class="doc-heading"><code class="inline-code">initdrag()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="initdrag" class="doc-heading"><code class="inline-code">initdrag()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Prepares the drag operation. This function does not fully start the drag operation. You should call StartDrag after setting the data of the drag object</p>
+<h3 id="initdrag" class="doc-heading"><code class="inline-code">initdrag()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Prepares the drag operation. This function does not fully start the drag operation. You should call StartDrag after setting the data of the drag object</p>
+<h3 id="startdrag" class="doc-heading"><code class="inline-code">startdrag()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Starts the drag operation. You should first call PrepareDrag and set the data before starting the drag operation.</p>
+<h3 id="isdragging" class="doc-heading"><code class="inline-code">IsDragging()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline bool</code></p>
+<p class="doc-paragraph">@cond internal @endcond Returns whether a drag operation is in progress</p>
+<h3 id="isdragprepared" class="doc-heading"><code class="inline-code">IsDragPrepared()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline bool</code></p>
+<p class="doc-paragraph">Returns whether a drag operation is available</p>
+<h3 id="canceldrag" class="doc-heading"><code class="inline-code">CancelDrag()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Returns the current drag operation, throws if IsDragPrepared is false Cancel the current drag operation.</p>
+<h3 id="dropgeometrypoint-location--0-0" class="doc-heading"><code class="inline-code">Drop(Geometry::Point location = {0, 0})</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Drop the current drag object. If there is no target receiving it, it will be canceled</p>
+<h3 id="whilewidetext0" class="doc-heading"><code class="inline-code">while(widetext[0])</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="globalunlockstgmedhglobal" class="doc-heading"><code class="inline-code">GlobalUnlock(stgmed.hGlobal)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="releasestgmediumstgmed" class="doc-heading"><code class="inline-code">ReleaseStgMedium(&stgmed)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="globalunlockstgmedhglobal" class="doc-heading"><code class="inline-code">GlobalUnlock(stgmed.hGlobal)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="releasestgmediumstgmed" class="doc-heading"><code class="inline-code">ReleaseStgMedium(&stgmed)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="handledndenterxevent-event-window-wind" class="doc-heading"><code class="inline-code">handledndenter(XEvent event, Window &wind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="windpwind" class="doc-heading"><code class="inline-code">windp(wind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">windaccess</code></p>
+<h3 id="ifeventxclientdatal1--1" class="doc-heading"><code class="inline-code">if(event.xclient.data.l[1] & 1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-atom--atoms" class="doc-heading"><code class="inline-code">for(auto atom : atoms)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="handledndleavexevent-window-wind" class="doc-heading"><code class="inline-code">handledndleave(XEvent, Window &wind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="windpwind" class="doc-heading"><code class="inline-code">windp(wind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">windaccess</code></p>
+<h3 id="handlednddropxevent-event-window-wind" class="doc-heading"><code class="inline-code">handlednddrop(XEvent event, Window &wind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="windpwind" class="doc-heading"><code class="inline-code">windp(wind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">windaccess</code></p>
+<h3 id="ifdata-xdndfilelist" class="doc-heading"><code class="inline-code">if(data->xdnd.filelist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata-xdndutf8--data-xdndstring" class="doc-heading"><code class="inline-code">if(data->xdnd.utf8 || data->xdnd.string)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="handledndpositionxevent-event-window-wind" class="doc-heading"><code class="inline-code">handledndposition(XEvent event, Window &wind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="ifdata-xdndfilelist" class="doc-heading"><code class="inline-code">if(data->xdnd.filelist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata-xdndutf8--data-xdndstring" class="doc-heading"><code class="inline-code">if(data->xdnd.utf8 || data->xdnd.string)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="handledndselectionnotifyxevent-event-window-wind" class="doc-heading"><code class="inline-code">handledndselectionnotify(XEvent event, Window &wind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="windpwind" class="doc-heading"><code class="inline-code">windp(wind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">windaccess</code></p>
+<h3 id="ifdata-xdndfilelist" class="doc-heading"><code class="inline-code">if(data->xdnd.filelist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xgetwindowpropertywindowmanagerdisplay-data-handle-eventxselectionproperty-0-0-0-anypropertytype-type-format-len-bytes-dat" class="doc-heading"><code class="inline-code">XGetWindowProperty(WindowManager::display, data->handle, event.xselection.property, 0, 0, 0, AnyPropertyType, &type, &format, &len, &bytes, &dat)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbytes" class="doc-heading"><code class="inline-code">if(bytes)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifi-p1" class="doc-heading"><code class="inline-code">if(i-p>1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xfreedat" class="doc-heading"><code class="inline-code">XFree(dat)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xdeletepropertywindowmanagerdisplay-data-handle-eventxselectionproperty" class="doc-heading"><code class="inline-code">XDeleteProperty(WindowManager::display, data->handle, event.xselection.property)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata-xdndutf8--data-xdndstring" class="doc-heading"><code class="inline-code">if(data->xdnd.utf8 || data->xdnd.string)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="xgetwindowpropertywindowmanagerdisplay-data-handle-eventxselectionproperty-0-0-0-anypropertytype-type-format-len-bytes-dat" class="doc-heading"><code class="inline-code">XGetWindowProperty(WindowManager::display, data->handle, event.xselection.property, 0, 0, 0, AnyPropertyType, &type, &format, &len, &bytes, &dat)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbytes" class="doc-heading"><code class="inline-code">if(bytes)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xfreedat" class="doc-heading"><code class="inline-code">XFree(dat)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xdeletepropertywindowmanagerdisplay-data-handle-eventxselectionproperty" class="doc-heading"><code class="inline-code">XDeleteProperty(WindowManager::display, data->handle, event.xselection.property)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata-xdnddrop--1" class="doc-heading"><code class="inline-code">if(data->xdnd.drop == 1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="handledndeventxevent-event-window-wind" class="doc-heading"><code class="inline-code">handledndevent(XEvent event, Window &wind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="switcheventtype" class="doc-heading"><code class="inline-code">switch(event.type)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifeventxclientmessagetypewindowmanagerxdndenter" class="doc-heading"><code class="inline-code">if(event.xclient.message_type==WindowManager::XdndEnter)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="handledndenterevent-wind" class="doc-heading"><code class="inline-code">handledndenter(event, wind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifeventxclientmessagetypewindowmanagerxdndposition" class="doc-heading"><code class="inline-code">if(event.xclient.message_type==WindowManager::XdndPosition)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="handledndpositionevent-wind" class="doc-heading"><code class="inline-code">handledndposition(event, wind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifeventxclientmessagetypewindowmanagerxdndleave" class="doc-heading"><code class="inline-code">if(event.xclient.message_type==WindowManager::XdndLeave)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="handledndleaveevent-wind" class="doc-heading"><code class="inline-code">handledndleave(event, wind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifeventxclientmessagetypewindowmanagerxdnddrop" class="doc-heading"><code class="inline-code">if(event.xclient.message_type==WindowManager::XdndDrop)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="handlednddropevent-wind" class="doc-heading"><code class="inline-code">handlednddrop(event, wind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="handledndselectionnotifyevent-wind" class="doc-heading"><code class="inline-code">handledndselectionnotify(event, wind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

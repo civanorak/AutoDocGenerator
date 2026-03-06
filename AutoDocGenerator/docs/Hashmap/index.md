@@ -1,6 +1,6 @@
 # Hashmap
 
-> Auto-generated documentation for the **Hashmap** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Hashmap** module of the Gorgon C++ Game Engine.
 
 
 ## Contents
@@ -143,7 +143,7 @@ Default constructor
 **Returns:** ``
 
 
-Filling constructor. This constructor uses initializer list of std::pair<K_, T_*>. This function works faster by forwarding the lsit to underlying storage. However, it cannot deal with nullptr entries, thus can leave the container in undefined state. A test agains this case is performed for debug builds.
+Filling constructor. This constructor uses initializer list of std::pair&lt;K_, T_*&gt;. This function works faster by forwarding the lsit to underlying storage. However, it cannot deal with nullptr entries, thus can leave the container in undefined state. A test agains this case is performed for debug builds.
 
 
 ### `assert(p.second && "Element is nullptr")`
@@ -157,7 +157,7 @@ Filling constructor. This constructor uses initializer list of std::pair<K_, T_*
 **Returns:** ``
 
 
-Filling constructor. This constructor uses initializer list of std::pair<K_, T_&>
+Filling constructor. This constructor uses initializer list of std::pair&lt;K_, T_&&gt;
 
 
 ### `for(auto &p : list)`

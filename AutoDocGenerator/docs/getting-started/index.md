@@ -1,6 +1,6 @@
 # Getting Started with Gorgon
 
-> This guide will walk you through creating your first game using the Gorgon C++ Game Engine. In about 50 lines of code, you'll have a working window with graphics and mouse input.
+&gt; This guide will walk you through creating your first game using the Gorgon C++ Game Engine. In about 50 lines of code, you'll have a working window with graphics and mouse input.
 
 ## Prerequisites
 

@@ -1,6 +1,6 @@
 # Markdown
 
-> Auto-generated documentation for the **Markdown** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Markdown** module of the Gorgon C++ Game Engine.
 
 
 ## Contents
@@ -351,13 +351,13 @@
 
 
 
-### `if(g == '*' && emcnt < 3)`
+### `if(g == '*' && emcnt &lt; 3)`
 
 **Returns:** ``
 
 
 
-### `if(g == '~' && tildecnt < 2)`
+### `if(g == '~' && tildecnt &lt; 2)`
 
 **Returns:** ``
 
@@ -365,6 +365,6 @@
 
 ### `ParseMarkdown(const std::string &markdown, bool useinfofont = false)`
 
-**Returns:** `std::pair<std::string, std::vector<MarkdownLink>>`
+**Returns:** `std::pair&lt;std::string, std::vector&lt;MarkdownLink&gt;&gt;`
 
 

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>AST — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="../getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Base.html">Base</a></li>
+    <li><a href="Basic.html">Basic</a></li>
+    <li><a href="Common.html">Common</a></li>
+    <li><a href="Config.html">Config</a></li>
+    <li><a href="Definitions.html">Definitions</a></li>
+    <li><a href="Environment.html">Environment</a></li>
+    <li><a href="OS.html">OS</a></li>
+    <li><a href="Runtime.html">Runtime</a></li>
+    <li><a href="Types.html">Types</a></li>
+    <li><a href="Utils.html">Utils</a></li>
+    <li><a href="UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Bitmap.html">Bitmap</a></li>
+    <li><a href="BitmapFont.html">BitmapFont</a></li>
+    <li><a href="BlankImage.html">BlankImage</a></li>
+    <li><a href="Color.html">Color</a></li>
+    <li><a href="ColorPicker.html">ColorPicker</a></li>
+    <li><a href="ColorPlane.html">ColorPlane</a></li>
+    <li><a href="ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="Drawables.html">Drawables</a></li>
+    <li><a href="EmptyImage.html">EmptyImage</a></li>
+    <li><a href="Filters.html">Filters</a></li>
+    <li><a href="Flip.html">Flip</a></li>
+    <li><a href="Font.html">Font</a></li>
+    <li><a href="FontTheme.html">FontTheme</a></li>
+    <li><a href="FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="FreeType.html">FreeType</a></li>
+    <li><a href="GID.html">GID</a></li>
+    <li><a href="GL.html">GL</a></li>
+    <li><a href="Graphics.html">Graphics</a></li>
+    <li><a href="HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="IL.html">IL</a></li>
+    <li><a href="Image.html">Image</a></li>
+    <li><a href="JPEG.html">JPEG</a></li>
+    <li><a href="OpenGL.html">OpenGL</a></li>
+    <li><a href="PNG.html">PNG</a></li>
+    <li><a href="Renderer.html">Renderer</a></li>
+    <li><a href="ScalableObject.html">ScalableObject</a></li>
+    <li><a href="Shader.html">Shader</a></li>
+    <li><a href="Shaders.html">Shaders</a></li>
+    <li><a href="Texture.html">Texture</a></li>
+    <li><a href="TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="TextureTargets.html">TextureTargets</a></li>
+    <li><a href="TintedObject.html">TintedObject</a></li>
+    <li><a href="Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="AnimationServices.html">AnimationServices</a></li>
+    <li><a href="AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="Animations.html">Animations</a></li>
+    <li><a href="ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="DnD.html">DnD</a></li>
+    <li><a href="Input.html">Input</a></li>
+    <li><a href="KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="Keyboard.html">Keyboard</a></li>
+    <li><a href="Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Button.html">Button</a></li>
+    <li><a href="Checkbox.html">Checkbox</a></li>
+    <li><a href="CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="Combobox.html">Combobox</a></li>
+    <li><a href="ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="CountingText.html">CountingText</a></li>
+    <li><a href="Dialog.html">Dialog</a></li>
+    <li><a href="DialogWindow.html">DialogWindow</a></li>
+    <li><a href="Dropdown.html">Dropdown</a></li>
+    <li><a href="Filler.html">Filler</a></li>
+    <li><a href="IButton.html">IButton</a></li>
+    <li><a href="ICheckbox.html">ICheckbox</a></li>
+    <li><a href="ILabel.html">ILabel</a></li>
+    <li><a href="IListItem.html">IListItem</a></li>
+    <li><a href="INumberbox.html">INumberbox</a></li>
+    <li><a href="IOption.html">IOption</a></li>
+    <li><a href="IProgressor.html">IProgressor</a></li>
+    <li><a href="IScroller.html">IScroller</a></li>
+    <li><a href="ISlider.html">ISlider</a></li>
+    <li><a href="ITextbox.html">ITextbox</a></li>
+    <li><a href="Inputbox.html">Inputbox</a></li>
+    <li><a href="Label.html">Label</a></li>
+    <li><a href="Listbox.html">Listbox</a></li>
+    <li><a href="ListboxBase.html">ListboxBase</a></li>
+    <li><a href="ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="NumberInput.html">NumberInput</a></li>
+    <li><a href="Numberbox.html">Numberbox</a></li>
+    <li><a href="Panel.html">Panel</a></li>
+    <li><a href="PanelBase.html">PanelBase</a></li>
+    <li><a href="PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="Percentbar.html">Percentbar</a></li>
+    <li><a href="PetContainer.html">PetContainer</a></li>
+    <li><a href="PetTextbox.html">PetTextbox</a></li>
+    <li><a href="Placeholder.html">Placeholder</a></li>
+    <li><a href="Progressbar.html">Progressbar</a></li>
+    <li><a href="RadioButton.html">RadioButton</a></li>
+    <li><a href="RadioButtons.html">RadioButtons</a></li>
+    <li><a href="RadioControl.html">RadioControl</a></li>
+    <li><a href="Scrollbar.html">Scrollbar</a></li>
+    <li><a href="ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="Slider.html">Slider</a></li>
+    <li><a href="SliderBase.html">SliderBase</a></li>
+    <li><a href="SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="Spinner.html">Spinner</a></li>
+    <li><a href="StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="Tabpanel.html">Tabpanel</a></li>
+    <li><a href="TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="TextInput.html">TextInput</a></li>
+    <li><a href="Textarea.html">Textarea</a></li>
+    <li><a href="Textbox.html">Textbox</a></li>
+    <li><a href="TextboxBase.html">TextboxBase</a></li>
+    <li><a href="TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="TooltipManager.html">TooltipManager</a></li>
+    <li><a href="TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="UI.html">UI</a></li>
+    <li><a href="Widget.html">Widget</a></li>
+    <li><a href="WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Alignment.html">Alignment</a></li>
+    <li><a href="Bezier.html">Bezier</a></li>
+    <li><a href="Bounds.html">Bounds</a></li>
+    <li><a href="Circle.html">Circle</a></li>
+    <li><a href="Dimension.html">Dimension</a></li>
+    <li><a href="Geometry.html">Geometry</a></li>
+    <li><a href="GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="Line.html">Line</a></li>
+    <li><a href="Margin.html">Margin</a></li>
+    <li><a href="Point.html">Point</a></li>
+    <li><a href="Point3D.html">Point3D</a></li>
+    <li><a href="PointList.html">PointList</a></li>
+    <li><a href="PointProperty.html">PointProperty</a></li>
+    <li><a href="Polygon.html">Polygon</a></li>
+    <li><a href="Rectangle.html">Rectangle</a></li>
+    <li><a href="Region.html">Region</a></li>
+    <li><a href="Size.html">Size</a></li>
+    <li><a href="SizeProperty.html">SizeProperty</a></li>
+    <li><a href="Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Audio.html">Audio</a></li>
+    <li><a href="AudioStream.html">AudioStream</a></li>
+    <li><a href="FLAC.html">FLAC</a></li>
+    <li><a href="Multimedia.html">Multimedia</a></li>
+    <li><a href="PulseAudio.html">PulseAudio</a></li>
+    <li><a href="PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="Sound.html">Sound</a></li>
+    <li><a href="Source.html">Source</a></li>
+    <li><a href="Vorbis.html">Vorbis</a></li>
+    <li><a href="WASAPI.html">WASAPI</a></li>
+    <li><a href="WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Blob.html">Blob</a></li>
+    <li><a href="CGI.html">CGI</a></li>
+    <li><a href="Clipboard.html">Clipboard</a></li>
+    <li><a href="Data.html">Data</a></li>
+    <li><a href="DataExchange.html">DataExchange</a></li>
+    <li><a href="DataItems.html">DataItems</a></li>
+    <li><a href="File.html">File</a></li>
+    <li><a href="FileDialog.html">FileDialog</a></li>
+    <li><a href="Filesystem.html">Filesystem</a></li>
+    <li><a href="Folder.html">Folder</a></li>
+    <li><a href="HTTP.html">HTTP</a></li>
+    <li><a href="LZMA.html">LZMA</a></li>
+    <li><a href="Markdown.html">Markdown</a></li>
+    <li><a href="MemoryStream.html">MemoryStream</a></li>
+    <li><a href="Parse.html">Parse</a></li>
+    <li><a href="Query.html">Query</a></li>
+    <li><a href="Reader.html">Reader</a></li>
+    <li><a href="Storage.html">Storage</a></li>
+    <li><a href="Stream.html">Stream</a></li>
+    <li><a href="Tokenizer.html">Tokenizer</a></li>
+    <li><a href="URI.html">URI</a></li>
+    <li><a href="Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Array.html">Array</a></li>
+    <li><a href="Collection.html">Collection</a></li>
+    <li><a href="Container.html">Container</a></li>
+    <li><a href="Hashmap.html">Hashmap</a></li>
+    <li><a href="Iterator.html">Iterator</a></li>
+    <li><a href="LinkNode.html">LinkNode</a></li>
+    <li><a href="List.html">List</a></li>
+    <li><a href="ListItem.html">ListItem</a></li>
+    <li><a href="Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BorderData.html">BorderData</a></li>
+    <li><a href="ComponentStack.html">ComponentStack</a></li>
+    <li><a href="ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="CustomLayer.html">CustomLayer</a></li>
+    <li><a href="DWM.html">DWM</a></li>
+    <li><a href="ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="Flow.html">Flow</a></li>
+    <li><a href="FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="InlinePanel.html">InlinePanel</a></li>
+    <li><a href="Layer.html">Layer</a></li>
+    <li><a href="LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="LayerMover.html">LayerMover</a></li>
+    <li><a href="LayerResizer.html">LayerResizer</a></li>
+    <li><a href="LayerWidget.html">LayerWidget</a></li>
+    <li><a href="Layerbox.html">Layerbox</a></li>
+    <li><a href="LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="MaskedObject.html">MaskedObject</a></li>
+    <li><a href="Monitor.html">Monitor</a></li>
+    <li><a href="MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="Organizer.html">Organizer</a></li>
+    <li><a href="StackedObject.html">StackedObject</a></li>
+    <li><a href="VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="Window.html">Window</a></li>
+    <li><a href="WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Assert.html">Assert</a></li>
+    <li><a href="Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="CaptionValue.html">CaptionValue</a></li>
+    <li><a href="Console.html">Console</a></li>
+    <li><a href="Console_Nix.html">Console_Nix</a></li>
+    <li><a href="Console_Win32.html">Console_Win32</a></li>
+    <li><a href="ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="Event.html">Event</a></li>
+    <li><a href="Exception.html">Exception</a></li>
+    <li><a href="Exceptions.html">Exceptions</a></li>
+    <li><a href="GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="Logging.html">Logging</a></li>
+    <li><a href="Null.html">Null</a></li>
+    <li><a href="Nullable.html">Nullable</a></li>
+    <li><a href="Pointer.html">Pointer</a></li>
+    <li><a href="Property.html">Property</a></li>
+    <li><a href="Random.html">Random</a></li>
+    <li><a href="RefCounter.html">RefCounter</a></li>
+    <li><a href="Registry.html">Registry</a></li>
+    <li><a href="SGuid.html">SGuid</a></li>
+    <li><a href="Scope.html">Scope</a></li>
+    <li><a href="ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="Threading.html">Threading</a></li>
+    <li><a href="Time.html">Time</a></li>
+    <li><a href="Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AST.html" class="active">AST</a></li>
+    <li><a href="AStar.html">AStar</a></li>
+    <li><a href="Blueprint.html">Blueprint</a></li>
+    <li><a href="Compiler.html">Compiler</a></li>
+    <li><a href="Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="Compilers.html">Compilers</a></li>
+    <li><a href="Component.html">Component</a></li>
+    <li><a href="Composer.html">Composer</a></li>
+    <li><a href="Discrete.html">Discrete</a></li>
+    <li><a href="Embedding.html">Embedding</a></li>
+    <li><a href="Enum.html">Enum</a></li>
+    <li><a href="Generator.html">Generator</a></li>
+    <li><a href="Instruction.html">Instruction</a></li>
+    <li><a href="Language.html">Language</a></li>
+    <li><a href="Message.html">Message</a></li>
+    <li><a href="Pathfinders.html">Pathfinders</a></li>
+    <li><a href="Reflection.html">Reflection</a></li>
+    <li><a href="RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="Scene.html">Scene</a></li>
+    <li><a href="Scripting.html">Scripting</a></li>
+    <li><a href="Simple.html">Simple</a></li>
+    <li><a href="String.html">String</a></li>
+    <li><a href="Struct.html">Struct</a></li>
+    <li><a href="TMP.html">TMP</a></li>
+    <li><a href="Template.html">Template</a></li>
+    <li><a href="TiledMap.html">TiledMap</a></li>
+    <li><a href="Validators.html">Validators</a></li>
+    <li><a href="VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Linux.html">Linux</a></li>
+    <li><a href="Win32.html">Win32</a></li>
+    <li><a href="Windows.html">Windows</a></li>
+    <li><a href="X11.html">X11</a></li>
+    <li><a href="X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Any.html">Any</a></li>
+    <li><a href="Builtin.html">Builtin</a></li>
+    <li><a href="FindObject.html">FindObject</a></li>
+    <li><a href="Helpers.html">Helpers</a></li>
+    <li><a href="Instance.html">Instance</a></li>
+    <li><a href="ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="PD.html">PD</a></li>
+    <li><a href="ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BasicMath.html">BasicMath</a></li>
+    <li><a href="Kernel.html">Kernel</a></li>
+    <li><a href="main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">AST</span>
+    </nav>
+    
+        <h1 id="ast" class="doc-heading">AST</h1>
+<p class="doc-paragraph">> Auto-generated documentation for the <strong>AST</strong> module of the Gorgon C++ Game Engine.</p>
+<h2 id="contents" class="doc-heading">Contents</h2>
+<ul class="md-list">
+<li><a href="#classes">Classes</a></li>
+<li><a href="#enums">Enums</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="classes" class="doc-heading">Classes</h2>
+<h3 id="astnode" class="doc-heading"><code class="inline-code">ASTNode</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h3 id="astcompiler" class="doc-heading"><code class="inline-code">ASTCompiler</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">This node represents a literal. Literal member of ASTNode should be set. This node represents a function call. First element of the tree is the function to be called. Rest of the elements are used as parameter. If this is a member function call then the first child of this node should be a member node. Same as function call, this just calls method variant if it exists, if not it will print out return value of the function call. This node represents a membership. Membership should be parsed as left associative. This node is an identifier. This node represents a variable identifier This node represents an operator. All operators in GorgonScript are left associative and binary This node represents an indexing operation. Indexing operation can construct a new array if the first child is a type, otherwise it will return or assign to that index This node is a constructor node. The type of the object to be constructed can be set as Empty if the constructor is inside an Index node This node is a keyword call This node is an assignment. This node should be top level This node is empty, possibly a placeholder for an identifier List of expressions to be compiled Constructor requires the node type Duplicates this node Destroying a node destroys its children Type of the node Starting character of the node. Used for error locating Starting line of this ASTNode Textual data held by this node If node type is literal, this value will be used Leaves of this node</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="compileastnode-tree" class="doc-heading"><code class="inline-code">Compile(ASTNode *tree)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">unsigned</code></p>
+<p class="doc-paragraph">AST compiler requires a vector of instructions. The compiler appends elements to the end of the list. However, it is important not to modify the list while IsReady function returns false. This function compiles given abstract syntax tree, returns the number of instructions generated. You should check IsReady function before using instructions. @param tree is the AST to be compiled</p>
+<h5 id="isready" class="doc-heading"><code class="inline-code">IsReady(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">If this function returns true, it is ok to use instructions from the list. A return value of false means not all instructions are fully completed. In these cases, more ASTs should be supplied to the compiler</p>
+<h5 id="finalize" class="doc-heading"><code class="inline-code">Finalize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="compilekeywordastnode-tree-byte-tempind" class="doc-heading"><code class="inline-code">compilekeyword(ASTNode *tree, Byte &tempind)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h5 id="releaseint-start-int-except-1" class="doc-heading"><code class="inline-code">release(int start, int except=-1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="releaseint-start-value-except" class="doc-heading"><code class="inline-code">release(int start, Value except)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="scope" class="doc-heading"><code class="inline-code">scope</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<hr class="doc-divider">
+<h2 id="enums" class="doc-heading">Enums</h2>
+<h3 id="nodetype" class="doc-heading"><code class="inline-code">NodeType</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">Node type</p>
+<h3 id="scopetype" class="doc-heading"><code class="inline-code">scopetype</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<hr class="doc-divider">
+<h2 id="functions" class="doc-heading">Functions</h2>
+<h3 id="instructionlisttypeinstructionlist-" class="doc-heading"><code class="inline-code">instructionlisttype("#instructionlist", "")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">MappedReferenceType<std::vector<Instruction>, &ToEmptyString></code></p>
+<h3 id="dottreeastnode-tree-int-ind" class="doc-heading"><code class="inline-code">dottree(ASTNode &tree, int &ind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<h3 id="switchtreetype" class="doc-heading"><code class="inline-code">switch(tree.Type)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-chld--treeleaves" class="doc-heading"><code class="inline-code">for(auto &chld : tree.Leaves)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="asttosvgconst-stdstring-line-astnode-tree-const-stdvectorstdstring-last-bool-show" class="doc-heading"><code class="inline-code">ASTToSVG(const std::string &line, ASTNode &tree, const std::vector<std::string> &last, bool show)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="forauto-str--last" class="doc-heading"><code class="inline-code">for(auto &str : last)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifi" class="doc-heading"><code class="inline-code">if(i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="temptempdot" class="doc-heading"><code class="inline-code">temp("temp.dot")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::ofstream</code></p>
+<h3 id="printastastnode-tree" class="doc-heading"><code class="inline-code">PrintAST(ASTNode &tree)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="iftreetypeastnodefunctioncall" class="doc-heading"><code class="inline-code">if(tree.Type==ASTNode::FunctionCall)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftreetypeastnodeconstruct" class="doc-heading"><code class="inline-code">if(tree.Type==ASTNode::Construct)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftreetypeastnodeindex" class="doc-heading"><code class="inline-code">if(tree.Type==ASTNode::Index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-n--treeleaves" class="doc-heading"><code class="inline-code">for(auto &n : tree.Leaves)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="printastn" class="doc-heading"><code class="inline-code">PrintAST(n)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftreetypeastnodefunctioncall" class="doc-heading"><code class="inline-code">if(tree.Type==ASTNode::FunctionCall)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftreetypeastnodeconstruct" class="doc-heading"><code class="inline-code">if(tree.Type==ASTNode::Construct)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftreetypeastnodeindex" class="doc-heading"><code class="inline-code">if(tree.Type==ASTNode::Index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="compilevalueastnode-tree-stdvectorinstruction-list-byte-tempind-bool-generateoutputtrue" class="doc-heading"><code class="inline-code">compilevalue(ASTNode &tree, std::vector<Instruction> *list, Byte &tempind, bool generateoutput=true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Value</code></p>
+<h3 id="iftreetypeastnodeoperator" class="doc-heading"><code class="inline-code">if(tree.Type==ASTNode::Operator)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftreetypeastnodeliteral" class="doc-heading"><code class="inline-code">if(tree.Type==ASTNode::Literal)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftreetypeastnodeidentifier" class="doc-heading"><code class="inline-code">if(tree.Type==ASTNode::Identifier)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftreetypeastnodevariable" class="doc-heading"><code class="inline-code">if(tree.Type==ASTNode::Variable)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftreetypeastnodefunctioncall--treetypeastnodemethodcall" class="doc-heading"><code class="inline-code">if(tree.Type==ASTNode::FunctionCall || tree.Type==ASTNode::MethodCall)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftreeleaves0typeastnodeidentifier" class="doc-heading"><code class="inline-code">if(tree.Leaves[0].Type==ASTNode::Identifier)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftreeleaves0typeastnodemember" class="doc-heading"><code class="inline-code">if(tree.Leaves[0].Type==ASTNode::Member)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="forint-i1itreeleavesgetcount" class="doc-heading"><code class="inline-code">for(int i=1;i<tree.Leaves.GetCount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftreetypeastnodeconstruct" class="doc-heading"><code class="inline-code">if(tree.Type==ASTNode::Construct)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0itreeleavesgetcount" class="doc-heading"><code class="inline-code">for(int i=0;i<tree.Leaves.GetCount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftreetypeastnodeindex" class="doc-heading"><code class="inline-code">if(tree.Type==ASTNode::Index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0itreeleavesgetcount" class="doc-heading"><code class="inline-code">for(int i=0;i<tree.Leaves.GetCount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftreetypeastnodemember" class="doc-heading"><code class="inline-code">if(tree.Type==ASTNode::Member)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-istartiindstarti--" class="doc-heading"><code class="inline-code">for(int i=start;i>=indstart;i--)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifiexcept" class="doc-heading"><code class="inline-code">if(i!=except)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifexcepttypevaluetypetemp" class="doc-heading"><code class="inline-code">if(except.Type==ValueType::Temp)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="releasestart-exceptresult" class="doc-heading"><code class="inline-code">release(start, except.Result)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="releasestart" class="doc-heading"><code class="inline-code">release(start)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftree-typeastnodeassignment" class="doc-heading"><code class="inline-code">if(tree->Type==ASTNode::Assignment)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftree-leaves0typeastnodeidentifier--tree-leaves0typeastnodevariable" class="doc-heading"><code class="inline-code">if(tree->Leaves[0].Type==ASTNode::Identifier || tree->Leaves[0].Type==ASTNode::Variable)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftree-leaves1typeastnodemember" class="doc-heading"><code class="inline-code">if(tree->Leaves[1].Type==ASTNode::Member)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftree-leaves0typeastnodemember" class="doc-heading"><code class="inline-code">if(tree->Leaves[0].Type==ASTNode::Member)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftree-leaves0typeastnodeindex" class="doc-heading"><code class="inline-code">if(tree->Leaves[0].Type==ASTNode::Index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="forint-i1-itree-leaves0leavesgetsize" class="doc-heading"><code class="inline-code">for(int i=1; i<tree->Leaves[0].Leaves.GetSize()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="assertfalse-assignment-can-only-be-performed-to-variable-membership-and-indexing-nodes" class="doc-heading"><code class="inline-code">ASSERT(false, "Assignment can only be performed to variable, membership and indexing nodes")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftree-typeastnodefunctioncall--tree-typeastnodemethodcall" class="doc-heading"><code class="inline-code">if(tree->Type==ASTNode::FunctionCall || tree->Type==ASTNode::MethodCall)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftree-typeastnodekeyword" class="doc-heading"><code class="inline-code">if(tree->Type==ASTNode::Keyword)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="forauto-p--tree-leaves" class="doc-heading"><code class="inline-code">for(auto &p : tree->Leaves)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="assertfalse-unknown-top-level-ast-node" class="doc-heading"><code class="inline-code">ASSERT(false, "Unknown top level AST Node")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="releasetempind-1" class="doc-heading"><code class="inline-code">release(tempind-1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftree-textif" class="doc-heading"><code class="inline-code">if(tree->Text=="if")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="missingparameterexceptioncondition-0-bool-condition-for-if-keyword-is-not-specified" class="doc-heading"><code class="inline-code">MissingParameterException("condition", 0, "Bool", "Condition for If keyword is not specified")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="releasetempind-1-jfrhs" class="doc-heading"><code class="inline-code">release(tempind-1, jf.RHS)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftree-textelse" class="doc-heading"><code class="inline-code">if(tree->Text=="else")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="flowexceptionelse-without-if" class="doc-heading"><code class="inline-code">FlowException("Else without If")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="flowexceptionmultiple-else-for-a-single-if" class="doc-heading"><code class="inline-code">FlowException("Multiple Else for a single If")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="iftree-textelseif" class="doc-heading"><code class="inline-code">if(tree->Text=="elseif")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="flowexceptionelseif-without-if" class="doc-heading"><code class="inline-code">FlowException("ElseIf without If")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="flowexceptionelseif-statements-must-be-before-else-statement" class="doc-heading"><code class="inline-code">FlowException("ElseIf statements must be before Else statement")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="missingparameterexceptioncondition-0-bool-condition-for-elseif-keyword-is-not-specified" class="doc-heading"><code class="inline-code">MissingParameterException("condition", 0, "Bool", "Condition for ElseIf keyword is not specified")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="releasetempind-1-jfrhs" class="doc-heading"><code class="inline-code">release(tempind-1, jf.RHS)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftree-textwhile" class="doc-heading"><code class="inline-code">if(tree->Text=="while")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="missingparameterexceptioncondition-0-bool-condition-for-while-keyword-is-not-specified" class="doc-heading"><code class="inline-code">MissingParameterException("condition", 0, "Bool", "Condition for While keyword is not specified")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="releasetempind-1-jfrhs" class="doc-heading"><code class="inline-code">release(tempind-1, jf.RHS)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifjfrhstypevaluetypetemp" class="doc-heading"><code class="inline-code">if(jf.RHS.Type==ValueType::Temp)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftree-textfor" class="doc-heading"><code class="inline-code">if(tree->Text=="for")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="asserttempindindstart-some-is-wrong-here" class="doc-heading"><code class="inline-code">ASSERT(tempind==indstart, "Some is wrong here")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifvaltypevaluetypetemp" class="doc-heading"><code class="inline-code">if(val.Type!=ValueType::Temp)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-itempind-1iindstarti--" class="doc-heading"><code class="inline-code">for(int i=tempind-1;i>=indstart;i--)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="releasetempind-2" class="doc-heading"><code class="inline-code">release(tempind-2)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftree-textbreak" class="doc-heading"><code class="inline-code">if(tree->Text=="break")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="forauto-itscopesrbegin" class="doc-heading"><code class="inline-code">for(auto it=scopes.rbegin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifit-typescopewhilekeyword" class="doc-heading"><code class="inline-code">if(it->type==scope::whilekeyword)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifit-typescopeforkeyword" class="doc-heading"><code class="inline-code">if(it->type==scope::forkeyword)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifsupportednullptr" class="doc-heading"><code class="inline-code">if(supported==nullptr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="flowexceptionbreak-without-a-breakable-keyword-scope" class="doc-heading"><code class="inline-code">FlowException("Break without a breakable keyword scope")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="iftree-textcontinue" class="doc-heading"><code class="inline-code">if(tree->Text=="continue")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="forauto-itscopesrbegin" class="doc-heading"><code class="inline-code">for(auto it=scopes.rbegin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifit-typescopewhilekeyword" class="doc-heading"><code class="inline-code">if(it->type==scope::whilekeyword)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifit-typescopeforkeyword" class="doc-heading"><code class="inline-code">if(it->type==scope::forkeyword)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifsupportednullptr" class="doc-heading"><code class="inline-code">if(supported==nullptr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="flowexceptioncontinue-without-a-supported-keyword-scope" class="doc-heading"><code class="inline-code">FlowException("Continue without a supported keyword scope")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="iftree-textconst" class="doc-heading"><code class="inline-code">if(tree->Text=="const")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="compiletree-leaves0" class="doc-heading"><code class="inline-code">Compile(&tree->Leaves[0])</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftree-textstatic" class="doc-heading"><code class="inline-code">if(tree->Text=="static")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftree-textref" class="doc-heading"><code class="inline-code">if(tree->Text=="ref")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftree-textfunction--tree-textmethod" class="doc-heading"><code class="inline-code">if(tree->Text=="function" || tree->Text=="method")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="asserttree-leaves0typeastnodeidentifier-function-names-should-be-represented-as-identfiers" class="doc-heading"><code class="inline-code">ASSERT(tree->Leaves[0].Type==ASTNode::Identifier, "Function names should be represented as identfiers")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftree-leaves1typeastnodeidentifier" class="doc-heading"><code class="inline-code">if(tree->Leaves[1].Type==ASTNode::Identifier)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i2-itree-leavesgetsize" class="doc-heading"><code class="inline-code">for(int i=2; i<tree->Leaves.GetSize()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifpdefvaldata" class="doc-heading"><code class="inline-code">if(p.defvaldata)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifpoptdata" class="doc-heading"><code class="inline-code">if(p.optdata)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-n--opts-leaves" class="doc-heading"><code class="inline-code">for(auto &n : opts->Leaves)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifscopesitypescopefunctionkeyword" class="doc-heading"><code class="inline-code">if(scopes[i].type==scope::functionkeyword)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifscopesistate0" class="doc-heading"><code class="inline-code">if(scopes[i].state>0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftree-textend" class="doc-heading"><code class="inline-code">if(tree->Text=="end")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="flowexceptionend-without-a-keyword-scope" class="doc-heading"><code class="inline-code">FlowException("</code>End<code class="inline-code"> without a keyword scope")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="forunsigned-i1-ielm-i" class="doc-heading"><code class="inline-code">for(unsigned i=1; i<elm; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forunsigned-i1-ielm-i" class="doc-heading"><code class="inline-code">for(unsigned i=1; i<elm; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="asttosvgconst-stdstring-line-astnode-tree-const-stdvectorstdstring-compiled-bool-showfalse" class="doc-heading"><code class="inline-code">ASTToSVG(const std::string &line, ASTNode &tree, const std::vector<std::string> &compiled={}, bool show=false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Converts given AST to an SVG file. This function requires GraphViz dot to be in path. The SVG will be saved as temp.dot.svg in the current directory. @param line the source code line @param tree to be converted @param compiled parameter can be used to add disassembly to the tree @param show if set, the generated SVG will be opened</p>
+<h3 id="printastastnode-tree" class="doc-heading"><code class="inline-code">PrintAST(ASTNode &tree)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Recursively prints an AST</p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

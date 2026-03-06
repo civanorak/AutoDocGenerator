@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>Listbox — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="../getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Base.html">Base</a></li>
+    <li><a href="Basic.html">Basic</a></li>
+    <li><a href="Common.html">Common</a></li>
+    <li><a href="Config.html">Config</a></li>
+    <li><a href="Definitions.html">Definitions</a></li>
+    <li><a href="Environment.html">Environment</a></li>
+    <li><a href="OS.html">OS</a></li>
+    <li><a href="Runtime.html">Runtime</a></li>
+    <li><a href="Types.html">Types</a></li>
+    <li><a href="Utils.html">Utils</a></li>
+    <li><a href="UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Bitmap.html">Bitmap</a></li>
+    <li><a href="BitmapFont.html">BitmapFont</a></li>
+    <li><a href="BlankImage.html">BlankImage</a></li>
+    <li><a href="Color.html">Color</a></li>
+    <li><a href="ColorPicker.html">ColorPicker</a></li>
+    <li><a href="ColorPlane.html">ColorPlane</a></li>
+    <li><a href="ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="Drawables.html">Drawables</a></li>
+    <li><a href="EmptyImage.html">EmptyImage</a></li>
+    <li><a href="Filters.html">Filters</a></li>
+    <li><a href="Flip.html">Flip</a></li>
+    <li><a href="Font.html">Font</a></li>
+    <li><a href="FontTheme.html">FontTheme</a></li>
+    <li><a href="FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="FreeType.html">FreeType</a></li>
+    <li><a href="GID.html">GID</a></li>
+    <li><a href="GL.html">GL</a></li>
+    <li><a href="Graphics.html">Graphics</a></li>
+    <li><a href="HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="IL.html">IL</a></li>
+    <li><a href="Image.html">Image</a></li>
+    <li><a href="JPEG.html">JPEG</a></li>
+    <li><a href="OpenGL.html">OpenGL</a></li>
+    <li><a href="PNG.html">PNG</a></li>
+    <li><a href="Renderer.html">Renderer</a></li>
+    <li><a href="ScalableObject.html">ScalableObject</a></li>
+    <li><a href="Shader.html">Shader</a></li>
+    <li><a href="Shaders.html">Shaders</a></li>
+    <li><a href="Texture.html">Texture</a></li>
+    <li><a href="TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="TextureTargets.html">TextureTargets</a></li>
+    <li><a href="TintedObject.html">TintedObject</a></li>
+    <li><a href="Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="AnimationServices.html">AnimationServices</a></li>
+    <li><a href="AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="Animations.html">Animations</a></li>
+    <li><a href="ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="DnD.html">DnD</a></li>
+    <li><a href="Input.html">Input</a></li>
+    <li><a href="KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="Keyboard.html">Keyboard</a></li>
+    <li><a href="Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Button.html">Button</a></li>
+    <li><a href="Checkbox.html">Checkbox</a></li>
+    <li><a href="CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="Combobox.html">Combobox</a></li>
+    <li><a href="ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="CountingText.html">CountingText</a></li>
+    <li><a href="Dialog.html">Dialog</a></li>
+    <li><a href="DialogWindow.html">DialogWindow</a></li>
+    <li><a href="Dropdown.html">Dropdown</a></li>
+    <li><a href="Filler.html">Filler</a></li>
+    <li><a href="IButton.html">IButton</a></li>
+    <li><a href="ICheckbox.html">ICheckbox</a></li>
+    <li><a href="ILabel.html">ILabel</a></li>
+    <li><a href="IListItem.html">IListItem</a></li>
+    <li><a href="INumberbox.html">INumberbox</a></li>
+    <li><a href="IOption.html">IOption</a></li>
+    <li><a href="IProgressor.html">IProgressor</a></li>
+    <li><a href="IScroller.html">IScroller</a></li>
+    <li><a href="ISlider.html">ISlider</a></li>
+    <li><a href="ITextbox.html">ITextbox</a></li>
+    <li><a href="Inputbox.html">Inputbox</a></li>
+    <li><a href="Label.html">Label</a></li>
+    <li><a href="Listbox.html" class="active">Listbox</a></li>
+    <li><a href="ListboxBase.html">ListboxBase</a></li>
+    <li><a href="ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="NumberInput.html">NumberInput</a></li>
+    <li><a href="Numberbox.html">Numberbox</a></li>
+    <li><a href="Panel.html">Panel</a></li>
+    <li><a href="PanelBase.html">PanelBase</a></li>
+    <li><a href="PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="Percentbar.html">Percentbar</a></li>
+    <li><a href="PetContainer.html">PetContainer</a></li>
+    <li><a href="PetTextbox.html">PetTextbox</a></li>
+    <li><a href="Placeholder.html">Placeholder</a></li>
+    <li><a href="Progressbar.html">Progressbar</a></li>
+    <li><a href="RadioButton.html">RadioButton</a></li>
+    <li><a href="RadioButtons.html">RadioButtons</a></li>
+    <li><a href="RadioControl.html">RadioControl</a></li>
+    <li><a href="Scrollbar.html">Scrollbar</a></li>
+    <li><a href="ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="Slider.html">Slider</a></li>
+    <li><a href="SliderBase.html">SliderBase</a></li>
+    <li><a href="SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="Spinner.html">Spinner</a></li>
+    <li><a href="StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="Tabpanel.html">Tabpanel</a></li>
+    <li><a href="TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="TextInput.html">TextInput</a></li>
+    <li><a href="Textarea.html">Textarea</a></li>
+    <li><a href="Textbox.html">Textbox</a></li>
+    <li><a href="TextboxBase.html">TextboxBase</a></li>
+    <li><a href="TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="TooltipManager.html">TooltipManager</a></li>
+    <li><a href="TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="UI.html">UI</a></li>
+    <li><a href="Widget.html">Widget</a></li>
+    <li><a href="WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Alignment.html">Alignment</a></li>
+    <li><a href="Bezier.html">Bezier</a></li>
+    <li><a href="Bounds.html">Bounds</a></li>
+    <li><a href="Circle.html">Circle</a></li>
+    <li><a href="Dimension.html">Dimension</a></li>
+    <li><a href="Geometry.html">Geometry</a></li>
+    <li><a href="GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="Line.html">Line</a></li>
+    <li><a href="Margin.html">Margin</a></li>
+    <li><a href="Point.html">Point</a></li>
+    <li><a href="Point3D.html">Point3D</a></li>
+    <li><a href="PointList.html">PointList</a></li>
+    <li><a href="PointProperty.html">PointProperty</a></li>
+    <li><a href="Polygon.html">Polygon</a></li>
+    <li><a href="Rectangle.html">Rectangle</a></li>
+    <li><a href="Region.html">Region</a></li>
+    <li><a href="Size.html">Size</a></li>
+    <li><a href="SizeProperty.html">SizeProperty</a></li>
+    <li><a href="Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Audio.html">Audio</a></li>
+    <li><a href="AudioStream.html">AudioStream</a></li>
+    <li><a href="FLAC.html">FLAC</a></li>
+    <li><a href="Multimedia.html">Multimedia</a></li>
+    <li><a href="PulseAudio.html">PulseAudio</a></li>
+    <li><a href="PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="Sound.html">Sound</a></li>
+    <li><a href="Source.html">Source</a></li>
+    <li><a href="Vorbis.html">Vorbis</a></li>
+    <li><a href="WASAPI.html">WASAPI</a></li>
+    <li><a href="WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Blob.html">Blob</a></li>
+    <li><a href="CGI.html">CGI</a></li>
+    <li><a href="Clipboard.html">Clipboard</a></li>
+    <li><a href="Data.html">Data</a></li>
+    <li><a href="DataExchange.html">DataExchange</a></li>
+    <li><a href="DataItems.html">DataItems</a></li>
+    <li><a href="File.html">File</a></li>
+    <li><a href="FileDialog.html">FileDialog</a></li>
+    <li><a href="Filesystem.html">Filesystem</a></li>
+    <li><a href="Folder.html">Folder</a></li>
+    <li><a href="HTTP.html">HTTP</a></li>
+    <li><a href="LZMA.html">LZMA</a></li>
+    <li><a href="Markdown.html">Markdown</a></li>
+    <li><a href="MemoryStream.html">MemoryStream</a></li>
+    <li><a href="Parse.html">Parse</a></li>
+    <li><a href="Query.html">Query</a></li>
+    <li><a href="Reader.html">Reader</a></li>
+    <li><a href="Storage.html">Storage</a></li>
+    <li><a href="Stream.html">Stream</a></li>
+    <li><a href="Tokenizer.html">Tokenizer</a></li>
+    <li><a href="URI.html">URI</a></li>
+    <li><a href="Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Array.html">Array</a></li>
+    <li><a href="Collection.html">Collection</a></li>
+    <li><a href="Container.html">Container</a></li>
+    <li><a href="Hashmap.html">Hashmap</a></li>
+    <li><a href="Iterator.html">Iterator</a></li>
+    <li><a href="LinkNode.html">LinkNode</a></li>
+    <li><a href="List.html">List</a></li>
+    <li><a href="ListItem.html">ListItem</a></li>
+    <li><a href="Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BorderData.html">BorderData</a></li>
+    <li><a href="ComponentStack.html">ComponentStack</a></li>
+    <li><a href="ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="CustomLayer.html">CustomLayer</a></li>
+    <li><a href="DWM.html">DWM</a></li>
+    <li><a href="ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="Flow.html">Flow</a></li>
+    <li><a href="FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="InlinePanel.html">InlinePanel</a></li>
+    <li><a href="Layer.html">Layer</a></li>
+    <li><a href="LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="LayerMover.html">LayerMover</a></li>
+    <li><a href="LayerResizer.html">LayerResizer</a></li>
+    <li><a href="LayerWidget.html">LayerWidget</a></li>
+    <li><a href="Layerbox.html">Layerbox</a></li>
+    <li><a href="LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="MaskedObject.html">MaskedObject</a></li>
+    <li><a href="Monitor.html">Monitor</a></li>
+    <li><a href="MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="Organizer.html">Organizer</a></li>
+    <li><a href="StackedObject.html">StackedObject</a></li>
+    <li><a href="VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="Window.html">Window</a></li>
+    <li><a href="WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Assert.html">Assert</a></li>
+    <li><a href="Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="CaptionValue.html">CaptionValue</a></li>
+    <li><a href="Console.html">Console</a></li>
+    <li><a href="Console_Nix.html">Console_Nix</a></li>
+    <li><a href="Console_Win32.html">Console_Win32</a></li>
+    <li><a href="ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="Event.html">Event</a></li>
+    <li><a href="Exception.html">Exception</a></li>
+    <li><a href="Exceptions.html">Exceptions</a></li>
+    <li><a href="GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="Logging.html">Logging</a></li>
+    <li><a href="Null.html">Null</a></li>
+    <li><a href="Nullable.html">Nullable</a></li>
+    <li><a href="Pointer.html">Pointer</a></li>
+    <li><a href="Property.html">Property</a></li>
+    <li><a href="Random.html">Random</a></li>
+    <li><a href="RefCounter.html">RefCounter</a></li>
+    <li><a href="Registry.html">Registry</a></li>
+    <li><a href="SGuid.html">SGuid</a></li>
+    <li><a href="Scope.html">Scope</a></li>
+    <li><a href="ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="Threading.html">Threading</a></li>
+    <li><a href="Time.html">Time</a></li>
+    <li><a href="Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AST.html">AST</a></li>
+    <li><a href="AStar.html">AStar</a></li>
+    <li><a href="Blueprint.html">Blueprint</a></li>
+    <li><a href="Compiler.html">Compiler</a></li>
+    <li><a href="Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="Compilers.html">Compilers</a></li>
+    <li><a href="Component.html">Component</a></li>
+    <li><a href="Composer.html">Composer</a></li>
+    <li><a href="Discrete.html">Discrete</a></li>
+    <li><a href="Embedding.html">Embedding</a></li>
+    <li><a href="Enum.html">Enum</a></li>
+    <li><a href="Generator.html">Generator</a></li>
+    <li><a href="Instruction.html">Instruction</a></li>
+    <li><a href="Language.html">Language</a></li>
+    <li><a href="Message.html">Message</a></li>
+    <li><a href="Pathfinders.html">Pathfinders</a></li>
+    <li><a href="Reflection.html">Reflection</a></li>
+    <li><a href="RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="Scene.html">Scene</a></li>
+    <li><a href="Scripting.html">Scripting</a></li>
+    <li><a href="Simple.html">Simple</a></li>
+    <li><a href="String.html">String</a></li>
+    <li><a href="Struct.html">Struct</a></li>
+    <li><a href="TMP.html">TMP</a></li>
+    <li><a href="Template.html">Template</a></li>
+    <li><a href="TiledMap.html">TiledMap</a></li>
+    <li><a href="Validators.html">Validators</a></li>
+    <li><a href="VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Linux.html">Linux</a></li>
+    <li><a href="Win32.html">Win32</a></li>
+    <li><a href="Windows.html">Windows</a></li>
+    <li><a href="X11.html">X11</a></li>
+    <li><a href="X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Any.html">Any</a></li>
+    <li><a href="Builtin.html">Builtin</a></li>
+    <li><a href="FindObject.html">FindObject</a></li>
+    <li><a href="Helpers.html">Helpers</a></li>
+    <li><a href="Instance.html">Instance</a></li>
+    <li><a href="ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="PD.html">PD</a></li>
+    <li><a href="ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BasicMath.html">BasicMath</a></li>
+    <li><a href="Kernel.html">Kernel</a></li>
+    <li><a href="main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">Listbox</span>
+    </nav>
+    
+        <h1 id="listbox" class="doc-heading">Listbox</h1>
+<p class="doc-paragraph">> Auto-generated documentation for the <strong>Listbox</strong> module of the Gorgon C++ Game Engine.</p>
+<h2 id="contents" class="doc-heading">Contents</h2>
+<ul class="md-list">
+<li><a href="#classes">Classes</a></li>
+<li><a href="#enums">Enums</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="classes" class="doc-heading">Classes</h2>
+<h3 id="listbase" class="doc-heading"><code class="inline-code">ListBase</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="virtual-getcount" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetCount(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual long</code></p>
+<p class="doc-paragraph">Returns the item at the given point. This operator will not perform bounds checking. Returns the item at the given point. This operator will not perform bounds checking. Returns the number of elements in the list.</p>
+<h5 id="virtual-getindexconst-w-widget" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">getindex(const W_ &widget)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual long</code></p>
+<p class="doc-paragraph">For internal use. Returns the first widget used to represent any item at within the listbox. This function will return nullptr if there are no items in the list.</p>
+<h5 id="virtual-refresh" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Refresh(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">This function should refresh the contents of the listbox. Normally, calling this function is not necessary as it is handled internally. This function may defer refresh to next frame.</p>
+<h3 id="lbtrfblank" class="doc-heading"><code class="inline-code">LBTRF_blank</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<p class="doc-paragraph">Contains no extra data and does not assume anything about W_</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="lbtrfblank" class="doc-heading"><code class="inline-code">LBTRF_blank(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="applylong-w--const-t--geometrypoint-p-geometrysize" class="doc-heading"><code class="inline-code">apply(long, W_ &, const T_ &, Geometry::Point p, Geometry::Size)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="taglong-const-t--geometrypoint-geometrysize" class="doc-heading"><code class="inline-code">tag(long, const T_ &, Geometry::Point, Geometry::Size)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">UI::ComponentTemplate::Tag</code></p>
+<h5 id="preparew-" class="doc-heading"><code class="inline-code">prepare(W_ &)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="insertlong-long" class="doc-heading"><code class="inline-code">insert(long, long)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="movelong-long" class="doc-heading"><code class="inline-code">move(long, long)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="removelong-long" class="doc-heading"><code class="inline-code">remove(long, long)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="lbtrflistitem" class="doc-heading"><code class="inline-code">LBTRF_ListItem</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<p class="doc-paragraph">Contains no extra data, W_ must be compatible with ListItem</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="setoddevenbool-value" class="doc-heading"><code class="inline-code">SetOddEven(bool value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets if Odd/even styling should be used. Default is on.</p>
+<h5 id="getoddeven" class="doc-heading"><code class="inline-code">GetOddEven(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns wether Odd/even styling is in effect</p>
+<h5 id="lbtrflistitem" class="doc-heading"><code class="inline-code">LBTRF_ListItem(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="applylong-w-w-const-t--geometrypoint-p-geometrysize" class="doc-heading"><code class="inline-code">apply(long, W_ &w, const T_ &, Geometry::Point p, Geometry::Size)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="ifoddeven" class="doc-heading"><code class="inline-code">if(oddeven)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="taglong-const-t--geometrypoint-geometrysize" class="doc-heading"><code class="inline-code">tag(long, const T_ &, Geometry::Point, Geometry::Size)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">UI::ComponentTemplate::Tag</code></p>
+<h5 id="preparew-" class="doc-heading"><code class="inline-code">prepare(W_ &)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="insertlong-long" class="doc-heading"><code class="inline-code">insert(long, long)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="movelong-long" class="doc-heading"><code class="inline-code">move(long, long)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="removelong-long" class="doc-heading"><code class="inline-code">remove(long, long)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="lbseltrsingle" class="doc-heading"><code class="inline-code">LBSELTR_Single</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="hasselecteditem" class="doc-heading"><code class="inline-code">HasSelectedItem(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns true if this listbox has a selected item.</p>
+<h5 id="getselectedindex" class="doc-heading"><code class="inline-code">GetSelectedIndex(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">long</code></p>
+<p class="doc-paragraph">Returns the selected item. If nothing is selected this function will throw. You may check if there is a selection using HasSelectedItem function. Returns the selected item. If nothing is selected this function will throw. You may check if there is a selection using HasSelectedItem function. Changing the returned value will not automatically refresh the contents. Returns the index of the selected item. -1 will be returned if nothing is selected.</p>
+<h5 id="setselectedindexlong-index" class="doc-heading"><code class="inline-code">SetSelectedIndex(long index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the selection to the given index. If index in not within the bounds this function will throw std::out_of_range exception. -1 can be used to remove selected item.</p>
+<h5 id="iffocusonly" class="doc-heading"><code class="inline-code">if(focusonly)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifindex---1" class="doc-heading"><code class="inline-code">if(index == -1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifelm--nullptr" class="doc-heading"><code class="inline-code">if(elm != nullptr)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifindex---1" class="doc-heading"><code class="inline-code">if(index != -1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="changedeventselectedindex" class="doc-heading"><code class="inline-code">ChangedEvent(selectedindex)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setfocusindexlong-value" class="doc-heading"><code class="inline-code">SetFocusIndex(long value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the index of the focused element. If set to -1, nothing is focused</p>
+<h5 id="iffocusonly" class="doc-heading"><code class="inline-code">if(focusonly)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setselectedindexvalue" class="doc-heading"><code class="inline-code">SetSelectedIndex(value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifvalue---1" class="doc-heading"><code class="inline-code">if(value != -1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="getfocusindex" class="doc-heading"><code class="inline-code">GetFocusIndex(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">long</code></p>
+<p class="doc-paragraph">Returns the index of the focused element. If nothing is focused, returns -1.</p>
+<h5 id="removeselection" class="doc-heading"><code class="inline-code">RemoveSelection(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="setselectedindex-1" class="doc-heading"><code class="inline-code">SetSelectedIndex(-1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setselectionconst-t-item" class="doc-heading"><code class="inline-code">SetSelection(const T_ &item)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Selects the first item that has the given value. If item does not exists, this function will remove the selection</p>
+<h5 id="isselectionfollowingfocus" class="doc-heading"><code class="inline-code">IsSelectionFollowingFocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns true if the selected item is the focused item. Default is true. When set to false, an item can be focused without being selected. A listbox with radio buttons should have this value set to false.</p>
+<h5 id="setselectionfollowsfocusbool-value" class="doc-heading"><code class="inline-code">SetSelectionFollowsFocus(bool value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets whether the selected item is the focused item. Default is true. When set to false, an item can be focused without being selected. A listbox with radio buttons should have this value set to false.</p>
+<h5 id="iffocusonly--value" class="doc-heading"><code class="inline-code">if(!focusonly && value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="iffocusindex---1" class="doc-heading"><code class="inline-code">if(focusindex != -1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifselectedindex--focusindex" class="doc-heading"><code class="inline-code">if(selectedindex != focusindex)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="changedeventselectedindex" class="doc-heading"><code class="inline-code">ChangedEvent(selectedindex)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="getselecteditem" class="doc-heading"><code class="inline-code">GetSelectedItem(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="getselecteditem" class="doc-heading"><code class="inline-code">GetSelectedItem(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="lbseltrsingle" class="doc-heading"><code class="inline-code">LBSELTR_Single(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="selclickedlong-index-w-w" class="doc-heading"><code class="inline-code">sel_clicked(long index, W_ &w)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="iffocusonly" class="doc-heading"><code class="inline-code">if(focusonly)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="changedeventindex" class="doc-heading"><code class="inline-code">ChangedEvent(index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="seltoggledlong-index-w-w" class="doc-heading"><code class="inline-code">sel_toggled(long index, W_ &w)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="iffocusonly" class="doc-heading"><code class="inline-code">if(focusonly)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="changedeventindex" class="doc-heading"><code class="inline-code">ChangedEvent(index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="selapplylong-index-w-w-const-t-" class="doc-heading"><code class="inline-code">sel_apply(long index, W_ &w, const T_ &)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="ifindex--focusindex" class="doc-heading"><code class="inline-code">if(index == focusindex)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifindex--selectedindex" class="doc-heading"><code class="inline-code">if(index == selectedindex)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="selpreparew-w" class="doc-heading"><code class="inline-code">sel_prepare(W_ &w)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="selinsertlong-index-long-count" class="doc-heading"><code class="inline-code">sel_insert(long index, long count)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="selmovelong-index-long-target" class="doc-heading"><code class="inline-code">sel_move(long index, long target)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="ifindex--focusindex" class="doc-heading"><code class="inline-code">if(index == focusindex)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifindex--focusindex--target--focusindex" class="doc-heading"><code class="inline-code">if(index > focusindex && target <= focusindex)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="ifindex--focusindex--target--focusindex" class="doc-heading"><code class="inline-code">if(index < focusindex && target > focusindex)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="ifindex--selectedindex" class="doc-heading"><code class="inline-code">if(index == selectedindex)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifindex--selectedindex--target--selectedindex" class="doc-heading"><code class="inline-code">if(index > selectedindex && target <= selectedindex)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="ifindex--selectedindex--target--selectedindex" class="doc-heading"><code class="inline-code">if(index < selectedindex && target > selectedindex)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="selremovelong-index-long-count" class="doc-heading"><code class="inline-code">sel_remove(long index, long count)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="ifindex--focusindex" class="doc-heading"><code class="inline-code">if(index <= focusindex)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifindexcount--focusindex" class="doc-heading"><code class="inline-code">if(index+count > focusindex)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifindex--selectedindex" class="doc-heading"><code class="inline-code">if(index <= selectedindex)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifindexcount--selectedindex" class="doc-heading"><code class="inline-code">if(index+count > selectedindex)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="changedevent-1" class="doc-heading"><code class="inline-code">ChangedEvent(-1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="seldestroyw-w" class="doc-heading"><code class="inline-code">sel_destroy(W_ &w)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="ifw--selected" class="doc-heading"><code class="inline-code">if(&w == selected)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="reapplyfocus" class="doc-heading"><code class="inline-code">reapplyfocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="iffocusindex---1" class="doc-heading"><code class="inline-code">if(focusindex != -1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="lbseltrmulti" class="doc-heading"><code class="inline-code">LBSELTR_Multi</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<h3 id="selectionindexhelper" class="doc-heading"><code class="inline-code">SelectionIndexHelper</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="begin" class="doc-heading"><code class="inline-code">begin(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<h5 id="end" class="doc-heading"><code class="inline-code">end(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<h3 id="selectionhelper" class="doc-heading"><code class="inline-code">SelectionHelper</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="begin" class="doc-heading"><code class="inline-code">begin(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<h5 id="itemiteratorme-lselected-0" class="doc-heading"><code class="inline-code">ItemIterator(me, l.selected, 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="end" class="doc-heading"><code class="inline-code">end(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<h5 id="begin" class="doc-heading"><code class="inline-code">begin(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<h5 id="constitemiteratorme-lselected-0" class="doc-heading"><code class="inline-code">ConstItemIterator(me, l.selected, 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="end" class="doc-heading"><code class="inline-code">end(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<h3 id="itemiterator" class="doc-heading"><code class="inline-code">ItemIterator_</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="isvalid" class="doc-heading"><code class="inline-code">isvalid(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Default constructor, creates an iterator pointing to invalid location Copies another iterator Satisfies the needs of Iterator</p>
+<h5 id="movebylong-amount" class="doc-heading"><code class="inline-code">moveby(long amount)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h5 id="isvalid" class="doc-heading"><code class="inline-code">isvalid(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="compareconst-itemiterator-it" class="doc-heading"><code class="inline-code">compare(const ItemIterator_ &it)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h5 id="setconst-itemiterator-it" class="doc-heading"><code class="inline-code">set(const ItemIterator_ &it)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="distanceconst-itemiterator-it" class="doc-heading"><code class="inline-code">distance(const ItemIterator_ &it)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">long</code></p>
+<h5 id="isbeforeconst-itemiterator-it" class="doc-heading"><code class="inline-code">isbefore(const ItemIterator_ &it)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="constitemiterator" class="doc-heading"><code class="inline-code">ConstItemIterator</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<p class="doc-paragraph">Regular iterator. @see Container::Iterator Const iterator allows iteration of const collections</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="constitemiteratorconst-itemiterator-it" class="doc-heading"><code class="inline-code">ConstItemIterator(const ItemIterator &it)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Regular iterators can be converted to const iterators</p>
+<h3 id="lbstrstlvector" class="doc-heading"><code class="inline-code">LBSTR_STLVector</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="addt-val" class="doc-heading"><code class="inline-code">Add(T_ val)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds the given item to the listbox</p>
+<h5 id="addt-val-a-rest" class="doc-heading"><code class="inline-code">Add(T_ val, A_&& ...rest)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds the given items to the listbox</p>
+<h5 id="insertlong-before-t-val" class="doc-heading"><code class="inline-code">Insert(long before, T_ val)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Inserts the given item before the given location. You may use Find to find the location of a specific item. If location is -1, then item is added at the end.</p>
+<h5 id="ifbefore---1" class="doc-heading"><code class="inline-code">if(before == -1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="addval" class="doc-heading"><code class="inline-code">Add(val)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="insertlong-before-t-val-a-rest" class="doc-heading"><code class="inline-code">Insert(long before, T_ val, A_&& ...rest)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Inserts the given items before the given location. You may use Find to find the location of a specific item. If location is -1, then items are added at the end.</p>
+<h5 id="ifbefore---1" class="doc-heading"><code class="inline-code">if(before == -1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="addval-rest" class="doc-heading"><code class="inline-code">Add(val, rest...)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="removelong-index" class="doc-heading"><code class="inline-code">Remove(long index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes the item at the given index.</p>
+<h5 id="movebeforelong-index-long-before" class="doc-heading"><code class="inline-code">MoveBefore(long index, long before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Moves the item at the given index before the given location. If before is -1 or equal or larger than the number of items, then the item is moved to the end.</p>
+<h5 id="ifindexbefore" class="doc-heading"><code class="inline-code">if(index>before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="findconst-t-item-long-start--0" class="doc-heading"><code class="inline-code">Find(const T_ &item, long start = 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">long</code></p>
+<p class="doc-paragraph">Return the index of the first item that has the given value. Returns -1 if item not found.</p>
+<h5 id="reservelong-amount" class="doc-heading"><code class="inline-code">Reserve(long amount)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Allocates memory for the given amount of items</p>
+<h5 id="clear" class="doc-heading"><code class="inline-code">Clear(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Clears all items from the listbox</p>
+<h5 id="begin" class="doc-heading"><code class="inline-code">begin(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<h5 id="begin" class="doc-heading"><code class="inline-code">begin(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<h5 id="end" class="doc-heading"><code class="inline-code">end(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<h5 id="end" class="doc-heading"><code class="inline-code">end(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<h5 id="lbstrstlvector" class="doc-heading"><code class="inline-code">LBSTR_STLVector(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">@}</p>
+<h5 id="getsize" class="doc-heading"><code class="inline-code">getsize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">long</code></p>
+<h3 id="lbstrcollection" class="doc-heading"><code class="inline-code">LBSTR_Collection</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="addt-val" class="doc-heading"><code class="inline-code">Add(T_ &val)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds the given item to the list</p>
+<h5 id="addt-val-a-rest" class="doc-heading"><code class="inline-code">Add(T_ &val, A_& ...rest)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="insertlong-before-t-val" class="doc-heading"><code class="inline-code">Insert(long before, T_ &val)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="insertconst-t-before-t-val" class="doc-heading"><code class="inline-code">Insert(const T_ &before, T_ &val)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="removelong-index" class="doc-heading"><code class="inline-code">Remove(long index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="removeconst-t-item" class="doc-heading"><code class="inline-code">Remove(const T_ &item)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="deleteconst-t-item" class="doc-heading"><code class="inline-code">Delete(const T_ &item)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Deletes an item from the listbox. Deleting both removes the item from the list and free the item itself. If given item does not exists, this function deletes the item and does nothing else</p>
+<h5 id="ifindex---1" class="doc-heading"><code class="inline-code">if(index == -1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="deletelong-index" class="doc-heading"><code class="inline-code">Delete(long index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Deletes the item with the given index</p>
+<h5 id="movebeforelong-index-long-before" class="doc-heading"><code class="inline-code">MoveBefore(long index, long before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="findconst-t-item" class="doc-heading"><code class="inline-code">Find(const T_ &item)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">long</code></p>
+<p class="doc-paragraph">Return the location of the given item. Returns -1 if item not found.</p>
+<h5 id="clear" class="doc-heading"><code class="inline-code">Clear(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes all elements without destroying them</p>
+<h5 id="deleteall" class="doc-heading"><code class="inline-code">DeleteAll(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Deletes and removes all elements in the listbox</p>
+<h5 id="destroy" class="doc-heading"><code class="inline-code">Destroy(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Deletes and removes all elements in the listbox. This function also clears the memory associated with the storage.</p>
+<h5 id="reservelong-amount" class="doc-heading"><code class="inline-code">Reserve(long amount)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Allocates memory for the given amount of items</p>
+<h5 id="begin" class="doc-heading"><code class="inline-code">begin(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<h5 id="begin" class="doc-heading"><code class="inline-code">begin(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<h5 id="end" class="doc-heading"><code class="inline-code">end(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<h5 id="end" class="doc-heading"><code class="inline-code">end(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<h5 id="lbstrcollection" class="doc-heading"><code class="inline-code">LBSTR_Collection(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">@}</p>
+<h5 id="getsize" class="doc-heading"><code class="inline-code">getsize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">long</code></p>
+<h3 id="two" class="doc-heading"><code class="inline-code">two</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">listbox</code></p>
+<h3 id="two" class="doc-heading"><code class="inline-code">two</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">listbox</code></p>
+<h3 id="itemdata" class="doc-heading"><code class="inline-code">ItemData</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">listbox</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="get" class="doc-heading"><code class="inline-code">Get(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">T_</code></p>
+<h3 id="collectionboxelementcompare" class="doc-heading"><code class="inline-code">collectionboxelementcompare</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">listbox</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="predicatelitem-ritem" class="doc-heading"><code class="inline-code">predicate(<em>l.item, </em>r.item)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="listboxelementcompare" class="doc-heading"><code class="inline-code">listboxelementcompare</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">listbox</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="predicatelitem-ritem" class="doc-heading"><code class="inline-code">predicate(l.item, r.item)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="valueaccessor" class="doc-heading"><code class="inline-code">valueaccessor</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">listbox</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="static-getconst-itemdatat-data" class="doc-heading"><code class="inline-code">static</code> <code class="inline-code">Get(const ItemData<T_> data)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static T_</code></p>
+<h5 id="static-storagetoreturntypet-storage" class="doc-heading"><code class="inline-code">static</code> <code class="inline-code">StorageToReturnType(T_ storage)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static T_</code></p>
+<h5 id="static-paramtostoragetypet-storage" class="doc-heading"><code class="inline-code">static</code> <code class="inline-code">ParamToStorageType(T_ storage)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static T_</code></p>
+<h5 id="static-setitemdatat-data-const-t-v" class="doc-heading"><code class="inline-code">static</code> <code class="inline-code">Set(ItemData<T_> &data, const T_ &v)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static void</code></p>
+<h5 id="static-newconst-t-v" class="doc-heading"><code class="inline-code">static</code> <code class="inline-code">New(const T_ &v)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static ItemData<T_></code></p>
+<h3 id="ptraccessor" class="doc-heading"><code class="inline-code">ptraccessor</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">listbox</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="static-setitemdatat-data-t-v" class="doc-heading"><code class="inline-code">static</code> <code class="inline-code">Set(ItemData<T_*> &data, T_ &v)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static void</code></p>
+<h5 id="static-newt-v" class="doc-heading"><code class="inline-code">static</code> <code class="inline-code">New(T_ &v)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static ItemData<T_*></code></p>
+<h3 id="basic" class="doc-heading"><code class="inline-code">Basic</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">listbox</code></p>
+<h3 id="iterator" class="doc-heading"><code class="inline-code">Iterator</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">listbox</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="int" class="doc-heading"><code class="inline-code">int(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">operator unsigned</code></p>
+<h5 id="current" class="doc-heading"><code class="inline-code">current(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">typename Ac_::returntype&</code></p>
+<h5 id="movebyint-amount" class="doc-heading"><code class="inline-code">moveby(int amount)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h5 id="ifindex0" class="doc-heading"><code class="inline-code">if(index<0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="isvalid" class="doc-heading"><code class="inline-code">isvalid(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h5 id="compareconst-iterator-it" class="doc-heading"><code class="inline-code">compare(const Iterator &it)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h5 id="setconst-iterator-it" class="doc-heading"><code class="inline-code">set(const Iterator &it)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="distanceconst-iterator-it" class="doc-heading"><code class="inline-code">distance(const Iterator &it)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<h5 id="isbeforeconst-iterator-it" class="doc-heading"><code class="inline-code">isbefore(const Iterator &it)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="selectioniterator" class="doc-heading"><code class="inline-code">SelectionIterator</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">listbox</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="int" class="doc-heading"><code class="inline-code">int(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">operator unsigned</code></p>
+<h5 id="moveby1" class="doc-heading"><code class="inline-code">moveby(1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="current" class="doc-heading"><code class="inline-code">current(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">typename Ac_::returntype&</code></p>
+<h5 id="movebyint-amount" class="doc-heading"><code class="inline-code">moveby(int amount)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h5 id="ifamount0" class="doc-heading"><code class="inline-code">if(amount>0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifamount0" class="doc-heading"><code class="inline-code">if(amount<0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="whileindex0--amount" class="doc-heading"><code class="inline-code">while(index>0 && amount)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifindex0" class="doc-heading"><code class="inline-code">if(index<0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="isvalid" class="doc-heading"><code class="inline-code">isvalid(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h5 id="compareconst-selectioniterator-it" class="doc-heading"><code class="inline-code">compare(const SelectionIterator &it)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h5 id="setconst-selectioniterator-it" class="doc-heading"><code class="inline-code">set(const SelectionIterator &it)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="distanceconst-selectioniterator-it" class="doc-heading"><code class="inline-code">distance(const SelectionIterator &it)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<h5 id="ifinditindex" class="doc-heading"><code class="inline-code">if(ind>it.index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="whileinditindex" class="doc-heading"><code class="inline-code">while(ind>it.index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifinditindex" class="doc-heading"><code class="inline-code">if(ind<it.index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="whileinditindex" class="doc-heading"><code class="inline-code">while(ind<it.index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="isbeforeconst-selectioniterator-it" class="doc-heading"><code class="inline-code">isbefore(const SelectionIterator &it)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="collectionbox" class="doc-heading"><code class="inline-code">Collectionbox</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">listbox</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="addt-value" class="doc-heading"><code class="inline-code">Add(T_ &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="addt-value" class="doc-heading"><code class="inline-code">Add(T_ *value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="addvalue" class="doc-heading"><code class="inline-code">Add(*value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="insertt-value-const--t-before" class="doc-heading"><code class="inline-code">Insert(T_ &value, const  T_ *before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="insertt-value-const--t-before" class="doc-heading"><code class="inline-code">Insert(T_ &value, const  T_ &before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="insertt-value-unsigned-before" class="doc-heading"><code class="inline-code">Insert(T_ &value, unsigned before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="insertvalue-before" class="doc-heading"><code class="inline-code">insert(value, before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="insertt-value-const--t-before" class="doc-heading"><code class="inline-code">Insert(T_ <em>value, const  T_ </em>before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="insertvalue-before" class="doc-heading"><code class="inline-code">Insert(*value, before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="insertt-value-const--t-before" class="doc-heading"><code class="inline-code">Insert(T_ *value, const  T_ &before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="insertvalue-before" class="doc-heading"><code class="inline-code">Insert(*value, &before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="insertt-value-unsigned-before" class="doc-heading"><code class="inline-code">Insert(T_ *value, unsigned before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="insertvalue-before" class="doc-heading"><code class="inline-code">Insert(*value, before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="movebeforet-value-const-t-before" class="doc-heading"><code class="inline-code">MoveBefore(T_ &value, const T_ &before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="movebeforet-value-unsigned-before" class="doc-heading"><code class="inline-code">MoveBefore(T_ &value, unsigned before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="movebeforeunsigned-index-const-t-before" class="doc-heading"><code class="inline-code">MoveBefore(unsigned index, const T_ &before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="movebeforeunsigned-index-unsigned-before" class="doc-heading"><code class="inline-code">MoveBefore(unsigned index, unsigned before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="removet-item" class="doc-heading"><code class="inline-code">Remove(T_ &item)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="removet-item" class="doc-heading"><code class="inline-code">Remove(T_ *item)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="removeunsigned-index" class="doc-heading"><code class="inline-code">Remove(unsigned index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="deletet-item" class="doc-heading"><code class="inline-code">Delete(T_ &item)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="deletet-item" class="doc-heading"><code class="inline-code">Delete(T_ *item)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="deleteunsigned-index" class="doc-heading"><code class="inline-code">Delete(unsigned index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="deleteall" class="doc-heading"><code class="inline-code">DeleteAll(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="destroy" class="doc-heading"><code class="inline-code">Destroy(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="destroy" class="doc-heading"><code class="inline-code">Destroy(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="forauto-itthis-itemsbegin" class="doc-heading"><code class="inline-code">for(auto it=this->items.begin()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setselectedt-item" class="doc-heading"><code class="inline-code">SetSelected(T_ &item)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="findconst-t-item" class="doc-heading"><code class="inline-code">Find(const T_& item)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">unsigned</code></p>
+<h5 id="forauto-itthis-itemsbegin" class="doc-heading"><code class="inline-code">for(auto it=this->items.begin()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="findconst-t-item" class="doc-heading"><code class="inline-code">Find(const T_ *item)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">unsigned</code></p>
+<h5 id="sort" class="doc-heading"><code class="inline-code">Sort(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="setvaluet-value" class="doc-heading"><code class="inline-code">setValue(T_ *value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="setselectedvalue" class="doc-heading"><code class="inline-code">SetSelected(*value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-selectionchanged" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">selectionchanged(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="changeevent" class="doc-heading"><code class="inline-code">ChangeEvent(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-reordered" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">reordered(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="reorderevent" class="doc-heading"><code class="inline-code">ReorderEvent(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-clicked" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">clicked(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="itemclickevent" class="doc-heading"><code class="inline-code">ItemClickEvent(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="listbox" class="doc-heading"><code class="inline-code">Listbox</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">listbox</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="addconst-t-value" class="doc-heading"><code class="inline-code">Add(const T_ &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="add" class="doc-heading"><code class="inline-code">Add(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="insertconst-t-value-unsigned-before" class="doc-heading"><code class="inline-code">Insert(const T_ &value, unsigned before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="movebeforeunsigned-index-unsigned-before" class="doc-heading"><code class="inline-code">MoveBefore(unsigned index, unsigned before)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="removeallconst-t-item" class="doc-heading"><code class="inline-code">RemoveAll(const T_ &item)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="forint-i0ithis-itemssize" class="doc-heading"><code class="inline-code">for(int i=0;i<this->items.size()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="removeunsigned-index" class="doc-heading"><code class="inline-code">Remove(unsigned index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="sort" class="doc-heading"><code class="inline-code">Sort(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="setvalueconst-t-value" class="doc-heading"><code class="inline-code">setValue(const T_ &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="ifthis-selectiontypelistboxbasict-listboxvalueaccessort-cf-geticonsingleselect" class="doc-heading"><code class="inline-code">if(this->selectiontype==listbox::Basic<T_, listbox::valueaccessor<T_>, CF_, GetIcon>::SingleSelect)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-i0ithis-itemssize" class="doc-heading"><code class="inline-code">for(unsigned i=0;i<this->items.size()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifthis-itemsiitemvalue" class="doc-heading"><code class="inline-code">if(this->items[i].item==value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-i0ithis-itemssize" class="doc-heading"><code class="inline-code">for(unsigned i=0;i<this->items.size()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifthis-itemsiitemvalue" class="doc-heading"><code class="inline-code">if(this->items[i].item==value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="getvalue" class="doc-heading"><code class="inline-code">getValue(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">T_</code></p>
+<h5 id="t" class="doc-heading"><code class="inline-code">T_(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="virtual-selectionchanged" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">selectionchanged(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="changeevent" class="doc-heading"><code class="inline-code">ChangeEvent(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-reordered" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">reordered(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="reorderevent" class="doc-heading"><code class="inline-code">ReorderEvent(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-clicked" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">clicked(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="itemclickevent" class="doc-heading"><code class="inline-code">ItemClickEvent(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<hr class="doc-divider">
+<h2 id="enums" class="doc-heading">Enums</h2>
+<h3 id="selectionmethod" class="doc-heading"><code class="inline-code">SelectionMethod</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<h3 id="eventmethod" class="doc-heading"><code class="inline-code">EventMethod</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<p class="doc-paragraph">Clicking on the item will toggle its selected state Clicking on the item will set the selection to be that item only. Ctrl clicking toggles</p>
+<h3 id="selectiontypes" class="doc-heading"><code class="inline-code">SelectionTypes</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">listbox</code></p>
+<hr class="doc-divider">
+<h2 id="functions" class="doc-heading">Functions</h2>
+<h3 id="settextusingfromconst-t-val-w-w" class="doc-heading"><code class="inline-code">SetTextUsingFrom(const T_ &val, W_ &w)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="settextusingfnconst-t-val-w-w" class="doc-heading"><code class="inline-code">SetTextUsingFn(const T_ &val, W_ &w)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="gettextusingtow-w-t-val" class="doc-heading"><code class="inline-code">GetTextUsingTo(W_ &w, T_ &val)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="setselectionmethodselectionmethod-value" class="doc-heading"><code class="inline-code">SetSelectionMethod(SelectionMethod value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Event will be fired only once per action Even will be fired per changed item Changes selection method. Default method is toggle. In toggle method, clicking on an item will toggle its state without effecting other items. In UseCtrl method, if an item is clicked with Ctrl key pressed, it will be toggled. If Ctrl is not pressed, it will become the only selected item.</p>
+<h3 id="getselectionmethod" class="doc-heading"><code class="inline-code">GetSelectionMethod()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">SelectionMethod</code></p>
+<p class="doc-paragraph">Returns the selection method.</p>
+<h3 id="seteventmethodeventmethod-value" class="doc-heading"><code class="inline-code">SetEventMethod(EventMethod value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes event method. Default method is ForEachItem. In ForEachItem method, ChangedEvent will be fired for each item that is affected. index and status parameters will be set. If event method is set to Once, ChangedEvent will be fired once per action. index and status parameter will be set only if one item is affected. Otherwise, index will be set to -1 and status is set to false.</p>
+<h3 id="geteventmethod" class="doc-heading"><code class="inline-code">GetEventMethod()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">EventMethod</code></p>
+<p class="doc-paragraph">Returns the event method.</p>
+<h3 id="getfocusindex" class="doc-heading"><code class="inline-code">GetFocusIndex()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">long</code></p>
+<p class="doc-paragraph">Returns the index of the focused element. If nothing is focused, returns -1.</p>
+<h3 id="setfocusindexlong-value" class="doc-heading"><code class="inline-code">SetFocusIndex(long value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the index of the focused element. If set to -1, nothing is focused</p>
+<h3 id="ifvalue---1" class="doc-heading"><code class="inline-code">if(value != -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="clearselection" class="doc-heading"><code class="inline-code">ClearSelection()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes all items from the selection</p>
+<h3 id="ifevent--once" class="doc-heading"><code class="inline-code">if(event == Once)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="changedevent-1-false" class="doc-heading"><code class="inline-code">ChangedEvent(-1, false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-ind--old" class="doc-heading"><code class="inline-code">for(auto ind : old)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="changedeventind-false" class="doc-heading"><code class="inline-code">ChangedEvent(ind, false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setselectionlong-ind" class="doc-heading"><code class="inline-code">SetSelection(long ind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Replaces the selection by the given index</p>
+<h3 id="setselectionstdvectorlongind" class="doc-heading"><code class="inline-code">SetSelection(std::vector<long>{ind})</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setselectionstdvectorlong-indices" class="doc-heading"><code class="inline-code">SetSelection(std::vector<long> indices)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Replaces the selection by the given indices</p>
+<h3 id="clearselection" class="doc-heading"><code class="inline-code">ClearSelection()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifevent--foreachitem" class="doc-heading"><code class="inline-code">if(event == ForEachItem)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-ind--selected" class="doc-heading"><code class="inline-code">for(auto ind : selected)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="changedeventind-true" class="doc-heading"><code class="inline-code">ChangedEvent(ind, true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="changedevent-1-false" class="doc-heading"><code class="inline-code">ChangedEvent(-1, false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setselectionp-elms" class="doc-heading"><code class="inline-code">SetSelection(P_&&... elms)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Replaces the selection by the given indices</p>
+<h3 id="setselectionelms" class="doc-heading"><code class="inline-code">SetSelection({elms...})</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addtoselectionlong-ind" class="doc-heading"><code class="inline-code">AddToSelection(long ind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds the given index to the selection</p>
+<h3 id="addtoselectionstdvectorlongind" class="doc-heading"><code class="inline-code">AddToSelection(std::vector<long>{ind})</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addtoselectionstdvectorlong-indices" class="doc-heading"><code class="inline-code">AddToSelection(std::vector<long> indices)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds the given indices to the selection</p>
+<h3 id="changedeventind-true" class="doc-heading"><code class="inline-code">ChangedEvent(*ind, true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifevent--once" class="doc-heading"><code class="inline-code">if(event == Once)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="changedevent-1-false" class="doc-heading"><code class="inline-code">ChangedEvent(-1, false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addtoselectionp-elms" class="doc-heading"><code class="inline-code">AddToSelection(P_&&... elms)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds the given indices to the selection</p>
+<h3 id="addtoselectionelms" class="doc-heading"><code class="inline-code">AddToSelection({elms...})</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="isselectedlong-index" class="doc-heading"><code class="inline-code">IsSelected(long index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if the item in the given index is selected.</p>
+<h3 id="getselectioncount" class="doc-heading"><code class="inline-code">GetSelectionCount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">long</code></p>
+<p class="doc-paragraph">Returns how many items are selected</p>
+<h3 id="removefromselectionlong-index" class="doc-heading"><code class="inline-code">RemoveFromSelection(long index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes the given index from the selection</p>
+<h3 id="changedeventindex-false" class="doc-heading"><code class="inline-code">ChangedEvent(index, false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="selectall" class="doc-heading"><code class="inline-code">SelectAll()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Selects all items</p>
+<h3 id="forint-i0-ielms-i" class="doc-heading"><code class="inline-code">for(int i=0; i<elms; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="changedeventi-true" class="doc-heading"><code class="inline-code">ChangedEvent(i, true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="changedevent-1-false" class="doc-heading"><code class="inline-code">ChangedEvent(-1, false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="invertselection" class="doc-heading"><code class="inline-code">InvertSelection()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Inverts the selection.</p>
+<h3 id="forint-i0-ielms-i" class="doc-heading"><code class="inline-code">for(int i=0; i<elms; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="changedeventi-false" class="doc-heading"><code class="inline-code">ChangedEvent(i, false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="changedeventi-true" class="doc-heading"><code class="inline-code">ChangedEvent(i, true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="changedevent-1-false" class="doc-heading"><code class="inline-code">ChangedEvent(-1, false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="selclickedlong-index-w-w" class="doc-heading"><code class="inline-code">sel_clicked(long index, W_ &w)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Allows iteration of selected indices Allows iteration of selected items. If the iterated items is changed, list will not be automatically updated.</p>
+<h3 id="seltoggledlong-index-w-w-bool-forcetoggle--true" class="doc-heading"><code class="inline-code">sel_toggled(long index, W_ &w, bool forcetoggle = true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="ifmethod--toggle--forcetoggle" class="doc-heading"><code class="inline-code">if(method == Toggle || forcetoggle)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="changedeventindex-false" class="doc-heading"><code class="inline-code">ChangedEvent(index, false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="changedeventindex-true" class="doc-heading"><code class="inline-code">ChangedEvent(index, true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifinputkeyboardcurrentmodifier--inputkeyboardmodifierctrl" class="doc-heading"><code class="inline-code">if(Input::Keyboard::CurrentModifier == Input::Keyboard::Modifier::Ctrl)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="changedeventindex-false" class="doc-heading"><code class="inline-code">ChangedEvent(index, false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="changedeventindex-true" class="doc-heading"><code class="inline-code">ChangedEvent(index, true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setselectionindex" class="doc-heading"><code class="inline-code">SetSelection(index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="selapplylong-index-w-w-const-t-" class="doc-heading"><code class="inline-code">sel_apply(long index, W_ &w, const T_ &)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="ifindex--focusindex" class="doc-heading"><code class="inline-code">if(index == focusindex)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="selpreparew-w" class="doc-heading"><code class="inline-code">sel_prepare(W_ &w)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="selinsertlong-index-long-count" class="doc-heading"><code class="inline-code">sel_insert(long index, long count)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="for-item--selectedend" class="doc-heading"><code class="inline-code">for(; item != selected.end()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="selmovelong-index-long-target" class="doc-heading"><code class="inline-code">sel_move(long index, long target)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="ifindex--focusindex" class="doc-heading"><code class="inline-code">if(index == focusindex)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifindex--focusindex--target--focusindex" class="doc-heading"><code class="inline-code">if(index > focusindex && target <= focusindex)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifindex--focusindex--target--focusindex" class="doc-heading"><code class="inline-code">if(index < focusindex && target > focusindex)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifindex--target" class="doc-heading"><code class="inline-code">if(index < target)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="whilefrom--to" class="doc-heading"><code class="inline-code">while(from < to)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifshifted--from" class="doc-heading"><code class="inline-code">if(shifted != from)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="whilefrom--to" class="doc-heading"><code class="inline-code">while(from > to)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifshifted--from" class="doc-heading"><code class="inline-code">if(shifted != from)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="selremovelong-index-long-count" class="doc-heading"><code class="inline-code">sel_remove(long index, long count)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="ifindex--focusindex" class="doc-heading"><code class="inline-code">if(index <= focusindex)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifindexcount--focusindex" class="doc-heading"><code class="inline-code">if(index+count > focusindex)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifitem--indexcount" class="doc-heading"><code class="inline-code">if(*item < index+count)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="seldestroyw-w" class="doc-heading"><code class="inline-code">sel_destroy(W_ &w)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="reapplyfocus" class="doc-heading"><code class="inline-code">reapplyfocus()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="iffocusindex---1" class="doc-heading"><code class="inline-code">if(focusindex != -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-p--widgetlist" class="doc-heading"><code class="inline-code">for(auto &p : widgetlist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">@endcond Returns the item at the given point. This operator will not perform bounds checking. Changing the returned value will not automatically refresh the contents. Returns the item at the given point. This operator will not perform bounds checking. Returns the number of elements in the list.</p>
+<h3 id="twv-w" class="doc-heading"><code class="inline-code">TW_(v, *w)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ify--0" class="doc-heading"><code class="inline-code">if(y == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifscroller" class="doc-heading"><code class="inline-code">if(scroller)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifscroller-range--scroller-maximum" class="doc-heading"><code class="inline-code">if(scroller->Range >= scroller->Maximum)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="scrolltofloat-y" class="doc-heading"><code class="inline-code">ScrollTo(float y)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Scrolls the contents of the listbox so that the it will start displaying items from the given location in list items. This function takes columns into account.</p>
+<h3 id="ifscrollspeed--0" class="doc-heading"><code class="inline-code">if(scrollspeed == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="refresh" class="doc-heading"><code class="inline-code">Refresh()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifisscrolling" class="doc-heading"><code class="inline-code">if(!isscrolling)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="refresh" class="doc-heading"><code class="inline-code">Refresh()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="scrollbyfloat-y" class="doc-heading"><code class="inline-code">ScrollBy(float y)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Scrolls the contents an additional amount of items.</p>
+<h3 id="scrolloffset" class="doc-heading"><code class="inline-code">ScrollOffset()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">float</code></p>
+<p class="doc-paragraph">Returns the current scroll offset.</p>
+<h3 id="setoverscrollfloat-value" class="doc-heading"><code class="inline-code">SetOverscroll(float value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the amount of extra scrolling distance after the bottom-most widget is completely visible in pixels. Default is 0. Does not apply if everything is visible.</p>
+<h3 id="ifscroller" class="doc-heading"><code class="inline-code">if(scroller)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="getoverscroll" class="doc-heading"><code class="inline-code">GetOverscroll()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">float</code></p>
+<p class="doc-paragraph">Returns the amount of extra scrolling distance after the bottom-most widget is completely visible in pixels.</p>
+<h3 id="setscrolldistanceint-value" class="doc-heading"><code class="inline-code">SetScrollDistance(int value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the scroll distance per click in pixels. Default depends on the default size of the listbox.</p>
+<h3 id="getscrolldistance" class="doc-heading"><code class="inline-code">GetScrollDistance()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns the scroll distance per click</p>
+<h3 id="disablesmoothscroll" class="doc-heading"><code class="inline-code">DisableSmoothScroll()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Disables smooth scrolling of the panel</p>
+<h3 id="setsmoothscrollspeed0" class="doc-heading"><code class="inline-code">SetSmoothScrollSpeed(0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setsmoothscrollspeedint-value" class="doc-heading"><code class="inline-code">SetSmoothScrollSpeed(int value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adjusts the smooth scrolling speed of the listbox. Given value is in items per second, default value is 20.</p>
+<h3 id="getsmoothscrollspeed" class="doc-heading"><code class="inline-code">GetSmoothScrollSpeed()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns the smooth scrolling speed of the listbox. If smooth scroll is disabled, this value will be 0.</p>
+<h3 id="issmoothscrollenabled" class="doc-heading"><code class="inline-code">IsSmoothScrollEnabled()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if the smooth scroll is enabled.</p>
+<h3 id="setmaximumscrolldurationint-value" class="doc-heading"><code class="inline-code">SetMaximumScrollDuration(int value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the the duration that scrolling can take. This speeds up scrolling if the distance is too much. This value is not exact and scrolling will slow down as it gets close to the target. However, total scroll duration cannot exceed twice this value. The time is in milliseconds and default value is 500.</p>
+<h3 id="getmaximumscrollduration" class="doc-heading"><code class="inline-code">GetMaximumScrollDuration()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns how long a scrolling operation can take.</p>
+<h3 id="getmaximumdisplayedelements" class="doc-heading"><code class="inline-code">GetMaximumDisplayedElements()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">float</code></p>
+<p class="doc-paragraph">This may not be a perfect number</p>
+<h3 id="getinteriorsize" class="doc-heading"><code class="inline-code">GetInteriorSize()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Geometry::Size</code></p>
+<h3 id="ensurevisiblelong-index" class="doc-heading"><code class="inline-code">EnsureVisible(long index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Ensures the given index is completely visible on the screen.</p>
+<h3 id="scrolltotargetind" class="doc-heading"><code class="inline-code">ScrollTo(targetind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ensurevisibleindex" class="doc-heading"><code class="inline-code">EnsureVisible(index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifkey--keycodesspace" class="doc-heading"><code class="inline-code">if(key == Keycodes::Space)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifw" class="doc-heading"><code class="inline-code">if(w)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="fitheightconst-uiunitdimension-maxsize" class="doc-heading"><code class="inline-code">FitHeight(const UI::UnitDimension &maxsize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">This function will try to set the height of the listbox to contain all its elements. If the size necessary to do so is larger than maxsize, then maxsize will be used and this function will return false. This function may give up before fully exceeding maxsize if elements have different heights. But it will never surpass maxsize.</p>
+<h3 id="fitheightfloat-elms" class="doc-heading"><code class="inline-code">FitHeight(float elms)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">This function will try to set the height of the listbox to contain all its elements. If the size necessary to do so is larger than maxsize, then maxsize will be used and this function will return false. This function may give up before fully exceeding maxsize if elements have different heights. But it will never surpass maxsize.</p>
+<h3 id="focus" class="doc-heading"><code class="inline-code">Focus()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="scrollby-amountscrolldist" class="doc-heading"><code class="inline-code">ScrollBy(-amount*scrolldist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchkey" class="doc-heading"><code class="inline-code">switch(key)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifind--org" class="doc-heading"><code class="inline-code">if(ind != org)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ensurevisibleind" class="doc-heading"><code class="inline-code">EnsureVisible(ind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="fitheightint-maxpixels" class="doc-heading"><code class="inline-code">fitheight(int maxpixels)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="ifexpected--maxpixels" class="doc-heading"><code class="inline-code">if(expected < maxpixels)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="refresh" class="doc-heading"><code class="inline-code">Refresh()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-p--widgets" class="doc-heading"><code class="inline-code">for(auto &p : widgets)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="updatescroll" class="doc-heading"><code class="inline-code">updatescroll()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="iftarget--cur" class="doc-heading"><code class="inline-code">if(target < cur)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcur---dist--target" class="doc-heading"><code class="inline-code">if(cur - dist <= target)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftarget--cur" class="doc-heading"><code class="inline-code">if(target > cur)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifcur--dist--target" class="doc-heading"><code class="inline-code">if(cur + dist >= target)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="refresh" class="doc-heading"><code class="inline-code">Refresh()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdone" class="doc-heading"><code class="inline-code">if(done)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="refresh" class="doc-heading"><code class="inline-code">Refresh()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">For internal use. Returns the widget used to represent the item at the given index. This function will return nullptr if the index does not currently have a visual representation. This is not an edge case, any item that is not in view will most likely not have a representation. For internal use. Returns the first widget used to represent any item at within the listbox. This function will return nullptr if there are no items in the list.</p>
+<h3 id="activate" class="doc-heading"><code class="inline-code">Activate()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h3 id="activate" class="doc-heading"><code class="inline-code">Activate()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h3 id="activate" class="doc-heading"><code class="inline-code">Activate()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h3 id="activate" class="doc-heading"><code class="inline-code">Activate()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h3 id="test" class="doc-heading"><code class="inline-code">test(...)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">template <typename C> static two</code></p>
+<h3 id="test" class="doc-heading"><code class="inline-code">test(...)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">template <typename C> static two</code></p>
+<h3 id="geticonconst-t-item" class="doc-heading"><code class="inline-code">GetIcon(const T_ &item)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">typename std::enable_if<has_GetIcon<T_>::value && has_HasIcon<T_>::value, graphics::RectangularGraphic2D *>::type</code></p>
+<h3 id="clear" class="doc-heading"><code class="inline-code">Clear()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="getcount" class="doc-heading"><code class="inline-code">GetCount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<h3 id="addrangeconst-i-begin-const-i-end" class="doc-heading"><code class="inline-code">AddRange(const I_ &begin, const I_ &end)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="addit" class="doc-heading"><code class="inline-code">add(*it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addallconst-c-container" class="doc-heading"><code class="inline-code">AddAll(const C_ &container)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="forauto-itcontainerbegin" class="doc-heading"><code class="inline-code">for(auto it=container.begin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addit" class="doc-heading"><code class="inline-code">add(*it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="refresh" class="doc-heading"><code class="inline-code">Refresh()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="adjustitems" class="doc-heading"><code class="inline-code">adjustitems()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="hasselection" class="doc-heading"><code class="inline-code">HasSelection()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="ifselectiontypesingleselect" class="doc-heading"><code class="inline-code">if(selectiontype==SingleSelect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="activeindex" class="doc-heading"><code class="inline-code">ActiveIndex()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<h3 id="setindexunsigned-index" class="doc-heading"><code class="inline-code">SetIndex(unsigned index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="ifselectiontypesingleselect" class="doc-heading"><code class="inline-code">if(selectiontype==SingleSelect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifindexactiveindex" class="doc-heading"><code class="inline-code">if(index!=activeindex)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="adjustitems" class="doc-heading"><code class="inline-code">adjustitems()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="clearselection" class="doc-heading"><code class="inline-code">ClearSelection()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="adjustitems" class="doc-heading"><code class="inline-code">adjustitems()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="selectunsigned-index" class="doc-heading"><code class="inline-code">Select(unsigned index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="ifselectiontypesingleselect" class="doc-heading"><code class="inline-code">if(selectiontype==SingleSelect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifactiveindexindex" class="doc-heading"><code class="inline-code">if(activeindex!=index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifactiveindex-1" class="doc-heading"><code class="inline-code">if(activeindex!=-1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="adjustitems" class="doc-heading"><code class="inline-code">adjustitems()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifitemsindexselected" class="doc-heading"><code class="inline-code">if(!items[index].selected)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="adjustitems" class="doc-heading"><code class="inline-code">adjustitems()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="selectall" class="doc-heading"><code class="inline-code">SelectAll()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="forauto-ititemsbegin" class="doc-heading"><code class="inline-code">for(auto it=items.begin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="deselect" class="doc-heading"><code class="inline-code">Deselect()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="clearselection" class="doc-heading"><code class="inline-code">ClearSelection()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="deselectunsigned-index" class="doc-heading"><code class="inline-code">Deselect(unsigned index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="ifselectiontypesingleselect" class="doc-heading"><code class="inline-code">if(selectiontype==SingleSelect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifitemsindexselected" class="doc-heading"><code class="inline-code">if(items[index].selected)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="adjustitems" class="doc-heading"><code class="inline-code">adjustitems()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifitemsindexselected" class="doc-heading"><code class="inline-code">if(items[index].selected)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="adjustitems" class="doc-heading"><code class="inline-code">adjustitems()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="clearselection" class="doc-heading"><code class="inline-code">ClearSelection()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="forauto-ititemsbegin" class="doc-heading"><code class="inline-code">for(auto it=items.begin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="isselectedunsigned-index" class="doc-heading"><code class="inline-code">IsSelected(unsigned index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="begin" class="doc-heading"><code class="inline-code">begin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Iterator<T_, A_></code></p>
+<h3 id="end" class="doc-heading"><code class="inline-code">end()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Iterator<T_, A_></code></p>
+<h3 id="first" class="doc-heading"><code class="inline-code">First()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Iterator<T_, A_></code></p>
+<h3 id="begin" class="doc-heading"><code class="inline-code">begin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="last" class="doc-heading"><code class="inline-code">Last()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Iterator<T_, A_></code></p>
+<h3 id="selbegin" class="doc-heading"><code class="inline-code">selbegin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">SelectionIterator<T_, A_></code></p>
+<h3 id="selend" class="doc-heading"><code class="inline-code">selend()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">SelectionIterator<T_, A_></code></p>
+<h3 id="firstselected" class="doc-heading"><code class="inline-code">FirstSelected()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">SelectionIterator<T_, A_></code></p>
+<h3 id="selbegin" class="doc-heading"><code class="inline-code">selbegin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="lastselected" class="doc-heading"><code class="inline-code">LastSelected()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">SelectionIterator<T_, A_></code></p>
+<h3 id="setblueprintconst-widgetsblueprint-bp" class="doc-heading"><code class="inline-code">SetBlueprint(const widgets::Blueprint &bp)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h3 id="keyboardhandlerinputkeyboardeventtype-event-inputkeyboardkey-key" class="doc-heading"><code class="inline-code">KeyboardHandler(input::keyboard::Event::Type event, input::keyboard::Key key)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h3 id="ifselectiontypesingleselect" class="doc-heading"><code class="inline-code">if(selectiontype==SingleSelect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="selectactiveindex1" class="doc-heading"><code class="inline-code">Select(activeindex+1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ensurevisible" class="doc-heading"><code class="inline-code">EnsureVisible()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="adjustitems" class="doc-heading"><code class="inline-code">adjustitems()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifkeykeycodesup--activeindex0" class="doc-heading"><code class="inline-code">if(key==KeyCodes::Up && activeindex>0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifselectiontypesingleselect" class="doc-heading"><code class="inline-code">if(selectiontype==SingleSelect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="selectactiveindex-1" class="doc-heading"><code class="inline-code">Select(activeindex-1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ensurevisible" class="doc-heading"><code class="inline-code">EnsureVisible()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="adjustitems" class="doc-heading"><code class="inline-code">adjustitems()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifkeykeycodespagedown" class="doc-heading"><code class="inline-code">if(key==KeyCodes::PageDown)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifselectiontypesingleselect" class="doc-heading"><code class="inline-code">if(selectiontype==SingleSelect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="selecttarget" class="doc-heading"><code class="inline-code">Select(target)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ensurevisible" class="doc-heading"><code class="inline-code">EnsureVisible()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="adjustitems" class="doc-heading"><code class="inline-code">adjustitems()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifkeykeycodespageup" class="doc-heading"><code class="inline-code">if(key==KeyCodes::PageUp)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftarget0" class="doc-heading"><code class="inline-code">if(target<0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifselectiontypesingleselect" class="doc-heading"><code class="inline-code">if(selectiontype==SingleSelect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="selecttarget" class="doc-heading"><code class="inline-code">Select(target)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ensurevisibletarget" class="doc-heading"><code class="inline-code">EnsureVisible(target)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="adjustitems" class="doc-heading"><code class="inline-code">adjustitems()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifselectiontypesingleselect" class="doc-heading"><code class="inline-code">if(selectiontype==SingleSelect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="select0" class="doc-heading"><code class="inline-code">Select(0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ensurevisible" class="doc-heading"><code class="inline-code">EnsureVisible()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="adjustitems" class="doc-heading"><code class="inline-code">adjustitems()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifkeykeycodesend" class="doc-heading"><code class="inline-code">if(key==KeyCodes::End)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifselectiontypesingleselect" class="doc-heading"><code class="inline-code">if(selectiontype==SingleSelect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ensurevisible" class="doc-heading"><code class="inline-code">EnsureVisible()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="adjustitems" class="doc-heading"><code class="inline-code">adjustitems()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ensurevisible" class="doc-heading"><code class="inline-code">EnsureVisible()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="ensurevisibleactiveindex" class="doc-heading"><code class="inline-code">EnsureVisible(activeindex)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ensurevisibleint-index" class="doc-heading"><code class="inline-code">EnsureVisible(int index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="flushitemcount" class="doc-heading"><code class="inline-code">flushitemcount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="centeritem" class="doc-heading"><code class="inline-code">CenterItem()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="centeritemactiveindex" class="doc-heading"><code class="inline-code">CenterItem(activeindex)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="centeritemint-index" class="doc-heading"><code class="inline-code">CenterItem(int index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="flushitemcount" class="doc-heading"><code class="inline-code">flushitemcount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setselectiontypeconst-selectiontypes-value" class="doc-heading"><code class="inline-code">setSelectionType(const SelectionTypes &value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="ifselectiontypemultiselect--valuemultiselect" class="doc-heading"><code class="inline-code">if(selectiontype==MultiSelect && value!=MultiSelect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="getselectiontype" class="doc-heading"><code class="inline-code">getSelectionType()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">SelectionTypes</code></p>
+<h3 id="setitemheightconst-int-value" class="doc-heading"><code class="inline-code">setItemHeight(const int &value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="ifitemheightvalue" class="doc-heading"><code class="inline-code">if(itemheight!=value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-widgetthis-representationsbegin" class="doc-heading"><code class="inline-code">for(auto widget=this->representations.begin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="itemheightchanged" class="doc-heading"><code class="inline-code">itemheightchanged()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="getitemheight" class="doc-heading"><code class="inline-code">getItemHeight()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<h3 id="setautoupdateconst-bool-value" class="doc-heading"><code class="inline-code">setAutoUpdate(const bool &value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="getautoupdate" class="doc-heading"><code class="inline-code">getAutoUpdate()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="checkdelete" class="doc-heading"><code class="inline-code">checkdelete()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h3 id="elementheight" class="doc-heading"><code class="inline-code">elementheight()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<h3 id="adjustitems" class="doc-heading"><code class="inline-code">adjustitems()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h3 id="flushitemcount" class="doc-heading"><code class="inline-code">flushitemcount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="ifinitemcountqueue" class="doc-heading"><code class="inline-code">if(initemcountqueue)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setitemcountdelayedcount" class="doc-heading"><code class="inline-code">setitemcount(delayedcount)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="doadjust" class="doc-heading"><code class="inline-code">doadjust()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="ifinitemcountqueue" class="doc-heading"><code class="inline-code">if(initemcountqueue)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forunsigned-iorganizergettop" class="doc-heading"><code class="inline-code">for(unsigned i=organizer.GetTop()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="triggerlistitem-element-int-index" class="doc-heading"><code class="inline-code">trigger(ListItem &element, int index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h3 id="ifselectiontypesingleselect" class="doc-heading"><code class="inline-code">if(selectiontype==SingleSelect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifactiveindex-1" class="doc-heading"><code class="inline-code">if(activeindex!=-1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifindexactiveindex" class="doc-heading"><code class="inline-code">if(index!=activeindex)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifselectiontypetoggleselect" class="doc-heading"><code class="inline-code">if(selectiontype==ToggleSelect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifselectiontypemultiselect" class="doc-heading"><code class="inline-code">if(selectiontype==MultiSelect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifmodifiercurrentmodifierctrl" class="doc-heading"><code class="inline-code">if(Modifier::Current==Modifier::Ctrl)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifmodifiercurrentmodifiershift" class="doc-heading"><code class="inline-code">if(Modifier::Current==Modifier::Shift)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="forint-ifromitoi" class="doc-heading"><code class="inline-code">for(int i=from;i<=to;i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifitemsiselected" class="doc-heading"><code class="inline-code">if(!items[i].selected)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifselectedcount1--itemsindexselected" class="doc-heading"><code class="inline-code">if(selectedcount!=1 || !items[index].selected)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="clearselection" class="doc-heading"><code class="inline-code">ClearSelection()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifnotifyselection" class="doc-heading"><code class="inline-code">if(notifyselection)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="selectionchanged" class="doc-heading"><code class="inline-code">selectionchanged()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="clicked" class="doc-heading"><code class="inline-code">clicked()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="adjustitems" class="doc-heading"><code class="inline-code">adjustitems()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setautoheightconst-bool-value" class="doc-heading"><code class="inline-code">setAutoHeight(const bool &value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="getautoheight" class="doc-heading"><code class="inline-code">getAutoHeight()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="setcolumnsconst-int-value" class="doc-heading"><code class="inline-code">setColumns(const int &value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="getcolumns" class="doc-heading"><code class="inline-code">getColumns()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<h3 id="setallowreorderconst-bool-value" class="doc-heading"><code class="inline-code">setAllowReorder(const bool &value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="getallowreorder" class="doc-heading"><code class="inline-code">getAllowReorder()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="wrloaded" class="doc-heading"><code class="inline-code">wr_loaded()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h3 id="itemaddedtypename-aparamtype--int-index" class="doc-heading"><code class="inline-code">itemadded(typename A_::paramtype &, int index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h3 id="itemremovingint-index" class="doc-heading"><code class="inline-code">itemremoving(int index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h3 id="delaysetitemcountint-count" class="doc-heading"><code class="inline-code">delaysetitemcount(int count)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="addtypename-aparamtype-v" class="doc-heading"><code class="inline-code">add(typename A_::paramtype &v)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h3 id="inserttypename-aparamtype-v-unsigned-before" class="doc-heading"><code class="inline-code">insert(typename A_::paramtype &v, unsigned before)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h3 id="movebeforeunsigned-index-unsigned-before" class="doc-heading"><code class="inline-code">movebefore(unsigned index, unsigned before)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h3 id="ifactiveindex-1" class="doc-heading"><code class="inline-code">if(activeindex!=-1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifactiveindexindex" class="doc-heading"><code class="inline-code">if(activeindex==index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbeforeindex--beforeindex1" class="doc-heading"><code class="inline-code">if(before==index || before==index+1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifbeforeindex" class="doc-heading"><code class="inline-code">if(before<index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="forunsigned-iindexibeforei--" class="doc-heading"><code class="inline-code">for(unsigned i=index;i>before;i--)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifactiveindex-1" class="doc-heading"><code class="inline-code">if(activeindex!=-1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifactiveindexindex" class="doc-heading"><code class="inline-code">if(activeindex==index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forunsigned-iindexibefore-1i" class="doc-heading"><code class="inline-code">for(unsigned i=index;i<before-1;i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifactiveindex-1" class="doc-heading"><code class="inline-code">if(activeindex!=-1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifactiveindexindex" class="doc-heading"><code class="inline-code">if(activeindex==index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="reordered" class="doc-heading"><code class="inline-code">reordered()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="removeunsigned-index" class="doc-heading"><code class="inline-code">remove(unsigned index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h3 id="itemremovingindex" class="doc-heading"><code class="inline-code">itemremoving(index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifactiveindexindex" class="doc-heading"><code class="inline-code">if(activeindex==index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifitemsindexselected" class="doc-heading"><code class="inline-code">if(items[index].selected)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="selectionchanged" class="doc-heading"><code class="inline-code">selectionchanged()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h3 id="reordered" class="doc-heading"><code class="inline-code">reordered()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h3 id="clicked" class="doc-heading"><code class="inline-code">clicked()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

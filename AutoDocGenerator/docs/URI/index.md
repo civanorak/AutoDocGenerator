@@ -1,6 +1,6 @@
 # URI
 
-> Auto-generated documentation for the **URI** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **URI** module of the Gorgon C++ Game Engine.
 
 
 ## Contents
@@ -23,7 +23,7 @@ This error is thrown while URI decoding and building.
 
 **Namespace:** `Gorgon`
 
-Represents an unfolded URI. Can be used to parse a URI string or build one according to RFC 3986. @code #include <Gorgon/Network/HTTP.h> ... std::cout<<Gorgon::Network::HTTP::BlockingGetText(URI("http", "darkgaze.org", "path/to/data.php"))<<std::endl; @endcode
+Represents an unfolded URI. Can be used to parse a URI string or build one according to RFC 3986. @code #include &lt;Gorgon/Network/HTTP.h&gt; ... std::cout&lt;&lt;Gorgon::Network::HTTP::BlockingGetText(URI("http", "darkgaze.org", "path/to/data.php"))&lt;&lt;std::endl; @endcode
 
 #### Methods
 

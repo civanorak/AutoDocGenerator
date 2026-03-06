@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>Image — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="../getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Base.html">Base</a></li>
+    <li><a href="Basic.html">Basic</a></li>
+    <li><a href="Common.html">Common</a></li>
+    <li><a href="Config.html">Config</a></li>
+    <li><a href="Definitions.html">Definitions</a></li>
+    <li><a href="Environment.html">Environment</a></li>
+    <li><a href="OS.html">OS</a></li>
+    <li><a href="Runtime.html">Runtime</a></li>
+    <li><a href="Types.html">Types</a></li>
+    <li><a href="Utils.html">Utils</a></li>
+    <li><a href="UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Bitmap.html">Bitmap</a></li>
+    <li><a href="BitmapFont.html">BitmapFont</a></li>
+    <li><a href="BlankImage.html">BlankImage</a></li>
+    <li><a href="Color.html">Color</a></li>
+    <li><a href="ColorPicker.html">ColorPicker</a></li>
+    <li><a href="ColorPlane.html">ColorPlane</a></li>
+    <li><a href="ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="Drawables.html">Drawables</a></li>
+    <li><a href="EmptyImage.html">EmptyImage</a></li>
+    <li><a href="Filters.html">Filters</a></li>
+    <li><a href="Flip.html">Flip</a></li>
+    <li><a href="Font.html">Font</a></li>
+    <li><a href="FontTheme.html">FontTheme</a></li>
+    <li><a href="FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="FreeType.html">FreeType</a></li>
+    <li><a href="GID.html">GID</a></li>
+    <li><a href="GL.html">GL</a></li>
+    <li><a href="Graphics.html">Graphics</a></li>
+    <li><a href="HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="IL.html">IL</a></li>
+    <li><a href="Image.html" class="active">Image</a></li>
+    <li><a href="JPEG.html">JPEG</a></li>
+    <li><a href="OpenGL.html">OpenGL</a></li>
+    <li><a href="PNG.html">PNG</a></li>
+    <li><a href="Renderer.html">Renderer</a></li>
+    <li><a href="ScalableObject.html">ScalableObject</a></li>
+    <li><a href="Shader.html">Shader</a></li>
+    <li><a href="Shaders.html">Shaders</a></li>
+    <li><a href="Texture.html">Texture</a></li>
+    <li><a href="TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="TextureTargets.html">TextureTargets</a></li>
+    <li><a href="TintedObject.html">TintedObject</a></li>
+    <li><a href="Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="AnimationServices.html">AnimationServices</a></li>
+    <li><a href="AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="Animations.html">Animations</a></li>
+    <li><a href="ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="DnD.html">DnD</a></li>
+    <li><a href="Input.html">Input</a></li>
+    <li><a href="KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="Keyboard.html">Keyboard</a></li>
+    <li><a href="Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Button.html">Button</a></li>
+    <li><a href="Checkbox.html">Checkbox</a></li>
+    <li><a href="CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="Combobox.html">Combobox</a></li>
+    <li><a href="ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="CountingText.html">CountingText</a></li>
+    <li><a href="Dialog.html">Dialog</a></li>
+    <li><a href="DialogWindow.html">DialogWindow</a></li>
+    <li><a href="Dropdown.html">Dropdown</a></li>
+    <li><a href="Filler.html">Filler</a></li>
+    <li><a href="IButton.html">IButton</a></li>
+    <li><a href="ICheckbox.html">ICheckbox</a></li>
+    <li><a href="ILabel.html">ILabel</a></li>
+    <li><a href="IListItem.html">IListItem</a></li>
+    <li><a href="INumberbox.html">INumberbox</a></li>
+    <li><a href="IOption.html">IOption</a></li>
+    <li><a href="IProgressor.html">IProgressor</a></li>
+    <li><a href="IScroller.html">IScroller</a></li>
+    <li><a href="ISlider.html">ISlider</a></li>
+    <li><a href="ITextbox.html">ITextbox</a></li>
+    <li><a href="Inputbox.html">Inputbox</a></li>
+    <li><a href="Label.html">Label</a></li>
+    <li><a href="Listbox.html">Listbox</a></li>
+    <li><a href="ListboxBase.html">ListboxBase</a></li>
+    <li><a href="ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="NumberInput.html">NumberInput</a></li>
+    <li><a href="Numberbox.html">Numberbox</a></li>
+    <li><a href="Panel.html">Panel</a></li>
+    <li><a href="PanelBase.html">PanelBase</a></li>
+    <li><a href="PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="Percentbar.html">Percentbar</a></li>
+    <li><a href="PetContainer.html">PetContainer</a></li>
+    <li><a href="PetTextbox.html">PetTextbox</a></li>
+    <li><a href="Placeholder.html">Placeholder</a></li>
+    <li><a href="Progressbar.html">Progressbar</a></li>
+    <li><a href="RadioButton.html">RadioButton</a></li>
+    <li><a href="RadioButtons.html">RadioButtons</a></li>
+    <li><a href="RadioControl.html">RadioControl</a></li>
+    <li><a href="Scrollbar.html">Scrollbar</a></li>
+    <li><a href="ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="Slider.html">Slider</a></li>
+    <li><a href="SliderBase.html">SliderBase</a></li>
+    <li><a href="SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="Spinner.html">Spinner</a></li>
+    <li><a href="StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="Tabpanel.html">Tabpanel</a></li>
+    <li><a href="TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="TextInput.html">TextInput</a></li>
+    <li><a href="Textarea.html">Textarea</a></li>
+    <li><a href="Textbox.html">Textbox</a></li>
+    <li><a href="TextboxBase.html">TextboxBase</a></li>
+    <li><a href="TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="TooltipManager.html">TooltipManager</a></li>
+    <li><a href="TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="UI.html">UI</a></li>
+    <li><a href="Widget.html">Widget</a></li>
+    <li><a href="WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Alignment.html">Alignment</a></li>
+    <li><a href="Bezier.html">Bezier</a></li>
+    <li><a href="Bounds.html">Bounds</a></li>
+    <li><a href="Circle.html">Circle</a></li>
+    <li><a href="Dimension.html">Dimension</a></li>
+    <li><a href="Geometry.html">Geometry</a></li>
+    <li><a href="GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="Line.html">Line</a></li>
+    <li><a href="Margin.html">Margin</a></li>
+    <li><a href="Point.html">Point</a></li>
+    <li><a href="Point3D.html">Point3D</a></li>
+    <li><a href="PointList.html">PointList</a></li>
+    <li><a href="PointProperty.html">PointProperty</a></li>
+    <li><a href="Polygon.html">Polygon</a></li>
+    <li><a href="Rectangle.html">Rectangle</a></li>
+    <li><a href="Region.html">Region</a></li>
+    <li><a href="Size.html">Size</a></li>
+    <li><a href="SizeProperty.html">SizeProperty</a></li>
+    <li><a href="Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Audio.html">Audio</a></li>
+    <li><a href="AudioStream.html">AudioStream</a></li>
+    <li><a href="FLAC.html">FLAC</a></li>
+    <li><a href="Multimedia.html">Multimedia</a></li>
+    <li><a href="PulseAudio.html">PulseAudio</a></li>
+    <li><a href="PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="Sound.html">Sound</a></li>
+    <li><a href="Source.html">Source</a></li>
+    <li><a href="Vorbis.html">Vorbis</a></li>
+    <li><a href="WASAPI.html">WASAPI</a></li>
+    <li><a href="WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Blob.html">Blob</a></li>
+    <li><a href="CGI.html">CGI</a></li>
+    <li><a href="Clipboard.html">Clipboard</a></li>
+    <li><a href="Data.html">Data</a></li>
+    <li><a href="DataExchange.html">DataExchange</a></li>
+    <li><a href="DataItems.html">DataItems</a></li>
+    <li><a href="File.html">File</a></li>
+    <li><a href="FileDialog.html">FileDialog</a></li>
+    <li><a href="Filesystem.html">Filesystem</a></li>
+    <li><a href="Folder.html">Folder</a></li>
+    <li><a href="HTTP.html">HTTP</a></li>
+    <li><a href="LZMA.html">LZMA</a></li>
+    <li><a href="Markdown.html">Markdown</a></li>
+    <li><a href="MemoryStream.html">MemoryStream</a></li>
+    <li><a href="Parse.html">Parse</a></li>
+    <li><a href="Query.html">Query</a></li>
+    <li><a href="Reader.html">Reader</a></li>
+    <li><a href="Storage.html">Storage</a></li>
+    <li><a href="Stream.html">Stream</a></li>
+    <li><a href="Tokenizer.html">Tokenizer</a></li>
+    <li><a href="URI.html">URI</a></li>
+    <li><a href="Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Array.html">Array</a></li>
+    <li><a href="Collection.html">Collection</a></li>
+    <li><a href="Container.html">Container</a></li>
+    <li><a href="Hashmap.html">Hashmap</a></li>
+    <li><a href="Iterator.html">Iterator</a></li>
+    <li><a href="LinkNode.html">LinkNode</a></li>
+    <li><a href="List.html">List</a></li>
+    <li><a href="ListItem.html">ListItem</a></li>
+    <li><a href="Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BorderData.html">BorderData</a></li>
+    <li><a href="ComponentStack.html">ComponentStack</a></li>
+    <li><a href="ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="CustomLayer.html">CustomLayer</a></li>
+    <li><a href="DWM.html">DWM</a></li>
+    <li><a href="ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="Flow.html">Flow</a></li>
+    <li><a href="FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="InlinePanel.html">InlinePanel</a></li>
+    <li><a href="Layer.html">Layer</a></li>
+    <li><a href="LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="LayerMover.html">LayerMover</a></li>
+    <li><a href="LayerResizer.html">LayerResizer</a></li>
+    <li><a href="LayerWidget.html">LayerWidget</a></li>
+    <li><a href="Layerbox.html">Layerbox</a></li>
+    <li><a href="LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="MaskedObject.html">MaskedObject</a></li>
+    <li><a href="Monitor.html">Monitor</a></li>
+    <li><a href="MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="Organizer.html">Organizer</a></li>
+    <li><a href="StackedObject.html">StackedObject</a></li>
+    <li><a href="VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="Window.html">Window</a></li>
+    <li><a href="WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Assert.html">Assert</a></li>
+    <li><a href="Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="CaptionValue.html">CaptionValue</a></li>
+    <li><a href="Console.html">Console</a></li>
+    <li><a href="Console_Nix.html">Console_Nix</a></li>
+    <li><a href="Console_Win32.html">Console_Win32</a></li>
+    <li><a href="ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="Event.html">Event</a></li>
+    <li><a href="Exception.html">Exception</a></li>
+    <li><a href="Exceptions.html">Exceptions</a></li>
+    <li><a href="GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="Logging.html">Logging</a></li>
+    <li><a href="Null.html">Null</a></li>
+    <li><a href="Nullable.html">Nullable</a></li>
+    <li><a href="Pointer.html">Pointer</a></li>
+    <li><a href="Property.html">Property</a></li>
+    <li><a href="Random.html">Random</a></li>
+    <li><a href="RefCounter.html">RefCounter</a></li>
+    <li><a href="Registry.html">Registry</a></li>
+    <li><a href="SGuid.html">SGuid</a></li>
+    <li><a href="Scope.html">Scope</a></li>
+    <li><a href="ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="Threading.html">Threading</a></li>
+    <li><a href="Time.html">Time</a></li>
+    <li><a href="Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AST.html">AST</a></li>
+    <li><a href="AStar.html">AStar</a></li>
+    <li><a href="Blueprint.html">Blueprint</a></li>
+    <li><a href="Compiler.html">Compiler</a></li>
+    <li><a href="Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="Compilers.html">Compilers</a></li>
+    <li><a href="Component.html">Component</a></li>
+    <li><a href="Composer.html">Composer</a></li>
+    <li><a href="Discrete.html">Discrete</a></li>
+    <li><a href="Embedding.html">Embedding</a></li>
+    <li><a href="Enum.html">Enum</a></li>
+    <li><a href="Generator.html">Generator</a></li>
+    <li><a href="Instruction.html">Instruction</a></li>
+    <li><a href="Language.html">Language</a></li>
+    <li><a href="Message.html">Message</a></li>
+    <li><a href="Pathfinders.html">Pathfinders</a></li>
+    <li><a href="Reflection.html">Reflection</a></li>
+    <li><a href="RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="Scene.html">Scene</a></li>
+    <li><a href="Scripting.html">Scripting</a></li>
+    <li><a href="Simple.html">Simple</a></li>
+    <li><a href="String.html">String</a></li>
+    <li><a href="Struct.html">Struct</a></li>
+    <li><a href="TMP.html">TMP</a></li>
+    <li><a href="Template.html">Template</a></li>
+    <li><a href="TiledMap.html">TiledMap</a></li>
+    <li><a href="Validators.html">Validators</a></li>
+    <li><a href="VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Linux.html">Linux</a></li>
+    <li><a href="Win32.html">Win32</a></li>
+    <li><a href="Windows.html">Windows</a></li>
+    <li><a href="X11.html">X11</a></li>
+    <li><a href="X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Any.html">Any</a></li>
+    <li><a href="Builtin.html">Builtin</a></li>
+    <li><a href="FindObject.html">FindObject</a></li>
+    <li><a href="Helpers.html">Helpers</a></li>
+    <li><a href="Instance.html">Instance</a></li>
+    <li><a href="ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="PD.html">PD</a></li>
+    <li><a href="ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BasicMath.html">BasicMath</a></li>
+    <li><a href="Kernel.html">Kernel</a></li>
+    <li><a href="main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">Image</span>
+    </nav>
+    
+        <h1 id="image" class="doc-heading">Image</h1>
+<p class="doc-paragraph">> Auto-generated documentation for the <strong>Image</strong> module of the Gorgon C++ Game Engine.</p>
+<h2 id="contents" class="doc-heading">Contents</h2>
+<ul class="md-list">
+<li><a href="#classes">Classes</a></li>
+<li><a href="#enums">Enums</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="classes" class="doc-heading">Classes</h2>
+<h3 id="basicimage" class="doc-heading"><code class="inline-code">basic_Image</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Containers</code></p>
+<p class="doc-paragraph">This class is a container for image data. It supports different color modes and access to the underlying data through () operator. This object implements move semantics. Since copy constructor is expensive, it is deleted against accidental use. If a copy of the object is required, use Duplicate function. TODO Separate non-rgba related images, export/import with rgbaf</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="basicimage" class="doc-heading"><code class="inline-code">basic_Image(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Constructs an empty image data</p>
+<h5 id="swapdata" class="doc-heading"><code class="inline-code">Swap(data)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Constructs a new image data with the given width, height and color mode. This constructor does not initialize data inside the image Copy constructor is disabled Move constructor</p>
+<h5 id="destroy" class="doc-heading"><code class="inline-code">Destroy(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Copy assignment is disabled Move assignment</p>
+<h5 id="swapother" class="doc-heading"><code class="inline-code">Swap(other)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="destroy" class="doc-heading"><code class="inline-code">Destroy(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Destructor</p>
+<h5 id="duplicate" class="doc-heading"><code class="inline-code">Duplicate(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Image</code></p>
+<p class="doc-paragraph">Duplicates this image, essentially performing the work of copy constructor</p>
+<h5 id="resizeconst-geometrysize-size-graphicscolormode-mode" class="doc-heading"><code class="inline-code">Resize(const Geometry::Size &size, Graphics::ColorMode mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Resizes the image to the given size and color mode. This function discards the contents of the image and does not perform any initialization.</p>
+<h5 id="ifdata" class="doc-heading"><code class="inline-code">if(data)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="freedata" class="doc-heading"><code class="inline-code">free(data)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="assignbyte-newdata-const-geometrysize-size-graphicscolormode-mode" class="doc-heading"><code class="inline-code">Assign(Byte *newdata, const Geometry::Size &size, Graphics::ColorMode mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Assigns the image to the copy of the given data. Ownership of the given data is not transferred. If the given data is not required elsewhere, consider using Assume function. This variant performs resize and copy at the same time. The given data should have the size of width<em>height</em>Graphics::GetBytesPerPixel(mode)*sizeof(T_). This function does not perform any checks for the data size while copying it. If width or height is 0, the newdata is not accessed and this method effectively Destroys the current image. In this case, both width and height should be specified as 0.</p>
+<h5 id="ifdata--datanewdata" class="doc-heading"><code class="inline-code">if(data && data!=newdata)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="freedata" class="doc-heading"><code class="inline-code">free(data)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="assignbyte-newdata" class="doc-heading"><code class="inline-code">Assign(Byte *newdata)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Assigns the image to the copy of the given data. Ownership of the given data is not transferred. If the given data is not required elsewhere, consider using Assume function. The size and color mode of the image stays the same. The given data should have the size of width<em>height</em>Graphics::GetBytesPerPixel(mode)*sizeof(T_). This function does not perform any checks for the data size while copying it.t</p>
+<h5 id="assumebyte-newdata-const-geometrysize-size-graphicscolormode-mode" class="doc-heading"><code class="inline-code">Assume(Byte *newdata, const Geometry::Size &size, Graphics::ColorMode mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Assumes the ownership of the given data. This variant changes the size and color mode of the image. The given data should have the size of width<em>height</em>Graphics::GetBytesPerPixel(mode)*sizeof(T_). This function does not perform any checks for the data size while assuming it. newdata could be nullptr however, in this case width, height should be 0. mode is not assumed to be ColorMode::Invalid while the image is empty, therefore it could be specified as any value.</p>
+<h5 id="ifdata--datanewdata" class="doc-heading"><code class="inline-code">if(data && data!=newdata)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="freedata" class="doc-heading"><code class="inline-code">free(data)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="assumebyte-newdata" class="doc-heading"><code class="inline-code">Assume(Byte *newdata)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Assumes the ownership of the given data. The size and color mode of the image stays the same. The given data should have the size of width<em>height</em>Graphics::GetBytesPerPixel(mode)*sizeof(T_). This function does not perform any checks for the data size while assuming it.</p>
+<h5 id="ifdata--datanewdata" class="doc-heading"><code class="inline-code">if(data && data!=newdata)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="freedata" class="doc-heading"><code class="inline-code">free(data)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="destroy" class="doc-heading"><code class="inline-code">Destroy(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Returns and disowns the current data buffer. If image is empty, this method will return a nullptr.</p>
+<h5 id="clear" class="doc-heading"><code class="inline-code">Clear(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Cleans the contents of the buffer by setting every byte it contains to 0.</p>
+<h5 id="ifdata" class="doc-heading"><code class="inline-code">if(!data)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="destroy" class="doc-heading"><code class="inline-code">Destroy(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Destroys this image by setting width and height to 0 and freeing the memory used by its data. Also color mode is set to ColorMode::Invalid</p>
+<h5 id="ifdata" class="doc-heading"><code class="inline-code">if(data)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="freedata" class="doc-heading"><code class="inline-code">free(data)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="swapbasicimage-other" class="doc-heading"><code class="inline-code">Swap(basic_Image &other)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Swaps this image with another. This function is used to implement move semantics.</p>
+<h5 id="swapdata-otherdata" class="doc-heading"><code class="inline-code">swap(data, other.data)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="swapsize-othersize" class="doc-heading"><code class="inline-code">swap(size, other.size)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="swapmode-othermode" class="doc-heading"><code class="inline-code">swap(mode, other.mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="swapcpp-othercpp" class="doc-heading"><code class="inline-code">swap(cpp, other.cpp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="swapalphaloc-otheralphaloc" class="doc-heading"><code class="inline-code">swap(alphaloc, other.alphaloc)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="converttorgba" class="doc-heading"><code class="inline-code">ConvertToRGBA(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Returns the raw data pointer Returns the raw data pointer Converts this image data to RGBA buffer</p>
+<h5 id="switchmode" class="doc-heading"><code class="inline-code">switch(mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-isizearea" class="doc-heading"><code class="inline-code">for(int i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-isizearea" class="doc-heading"><code class="inline-code">for(int i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-isizearea" class="doc-heading"><code class="inline-code">for(int i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-isizearea" class="doc-heading"><code class="inline-code">for(int i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-isizearea" class="doc-heading"><code class="inline-code">for(int i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-isizearea" class="doc-heading"><code class="inline-code">for(int i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="copytobasicimage-dest-geometrypoint-target--0-0" class="doc-heading"><code class="inline-code">CopyTo(basic_Image &dest, Geometry::Point target = {0, 0})</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Copies data from one image to another. This operation does not perform blending. Additionally, color modes should be the same. However, this function will do clipping for overflows. Do not use negative values for target. Will return false if nothing is copied.</p>
+<h5 id="forint-y0-ygetheight" class="doc-heading"><code class="inline-code">for(int y=0; y<GetHeight()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="memcpydd--di-sd--si-cs" class="doc-heading"><code class="inline-code">memcpy(dd + di, sd + si, cs)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="copytobasicimage-dest-geometrybounds-source-geometrypoint-target--0-0" class="doc-heading"><code class="inline-code">CopyTo(basic_Image &dest, Geometry::Bounds source, Geometry::Point target = {0, 0})</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Copies data from one image to another. This operation does not perform blending. Additionally, color modes should be the same. However, this function will do clipping. Source bounds should be within the image. Will return false if nothing is copied.</p>
+<h5 id="iftargetx--0" class="doc-heading"><code class="inline-code">if(target.X < 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="iftargety--0" class="doc-heading"><code class="inline-code">if(target.Y < 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-ysourcetop-ysourcebottom-y" class="doc-heading"><code class="inline-code">for(int y=source.Top; y<source.Bottom; y++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="memcpydd--di-sd--si-cs" class="doc-heading"><code class="inline-code">memcpy(dd + di, sd + si, cs)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="copytorgbabufferbyte-buffer" class="doc-heading"><code class="inline-code">CopyToRGBABuffer(Byte *buffer)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Copies this image to a RGBA buffer, buffer should be resize before calling this function</p>
+<h5 id="switchmode" class="doc-heading"><code class="inline-code">switch(mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="copytobgrabufferbyte-buffer" class="doc-heading"><code class="inline-code">CopyToBGRABuffer(Byte *buffer)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Copies this image to a RGBA buffer, buffer should be resize before calling this function. This function is here mostly to create icon for Win32</p>
+<h5 id="switchmode" class="doc-heading"><code class="inline-code">switch(mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="copytobgrabufferlongunsigned-long-buffer" class="doc-heading"><code class="inline-code">CopyToBGRABufferLong(unsigned long *buffer)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Copies this image to a RGBA buffer, buffer should be resize before calling this function. This function is here mostly to create icon for X11</p>
+<h5 id="switchmode" class="doc-heading"><code class="inline-code">switch(mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fori0-isizearea" class="doc-heading"><code class="inline-code">for(i=0; i<size.Area()</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="shrinkmultipleconst-geometrysize-factor" class="doc-heading"><code class="inline-code">ShrinkMultiple(const Geometry::Size& factor)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Image</code></p>
+<p class="doc-paragraph">Shrinks the size of the image using integer area interpolation.</p>
+<h5 id="forint-y0-ynewsizeheight-y" class="doc-heading"><code class="inline-code">for(int y=0; y<newsize.Height; y++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-x0-xnewsizewidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<newsize.Width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-yyys-yyth-yy" class="doc-heading"><code class="inline-code">for(int yy=ys; yy<th; yy++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-xxxs-xxtw-xx" class="doc-heading"><code class="inline-code">for(int xx=xs; xx<tw; xx++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-c0-ccpp-c" class="doc-heading"><code class="inline-code">for(unsigned c=0; c<cpp; c++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-c0-ccpp-c" class="doc-heading"><code class="inline-code">for(unsigned c=0; c<cpp; c++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="scaleconst-geometrysize-newsize-interpolationmethod-method--interpolationmethodcubic" class="doc-heading"><code class="inline-code">Scale(const Geometry::Size &newsize, InterpolationMethod method = InterpolationMethod::Cubic)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Image</code></p>
+<p class="doc-paragraph">Scales this image to the given size. In the image is shrunk more than 2x its original size Area interpolation is used along with the specified interpolation method.</p>
+<h5 id="iffx--2--fy--2" class="doc-heading"><code class="inline-code">if(fx > 2 || fy > 2)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifmethod--interpolationmethodnearestneighbor" class="doc-heading"><code class="inline-code">if(method == InterpolationMethod::NearestNeighbor)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-y0-ynewsizeheight-y" class="doc-heading"><code class="inline-code">for(int y=0; y<newsize.Height; y++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-x0-xnewsizewidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<newsize.Width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-c0-ccpp-c" class="doc-heading"><code class="inline-code">for(unsigned c=0; c<cpp; c++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifmethod--interpolationmethodlinear" class="doc-heading"><code class="inline-code">if(method == InterpolationMethod::Linear)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="forint-y0-ynewsizeheight-y" class="doc-heading"><code class="inline-code">for(int y=0; y<newsize.Height; y++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-x0-xnewsizewidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<newsize.Width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-c0-ccpp-c" class="doc-heading"><code class="inline-code">for(unsigned c=0; c<cpp; c++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifmethod--interpolationmethodcubic" class="doc-heading"><code class="inline-code">if(method == InterpolationMethod::Cubic)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="forint-y0-ynewsizeheight-y" class="doc-heading"><code class="inline-code">for(int y=0; y<newsize.Height; y++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-i4-i" class="doc-heading"><code class="inline-code">for(int i=0; i<4; i++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifi--1--i--2" class="doc-heading"><code class="inline-code">if(i == 1 || i == 2)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-x0-xnewsizewidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<newsize.Width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-i4-i" class="doc-heading"><code class="inline-code">for(int i=0; i<4; i++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifi--1--i--2" class="doc-heading"><code class="inline-code">if(i == 1 || i == 2)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-c0-ccpp-c" class="doc-heading"><code class="inline-code">for(unsigned c=0; c<cpp; c++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-j0-j4-j" class="doc-heading"><code class="inline-code">for(int j=0; j<4; j++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-i4-i" class="doc-heading"><code class="inline-code">for(int i=0; i<4; i++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="rotatefloat-angle-interpolationmethod-method--interpolationmethodcubic" class="doc-heading"><code class="inline-code">Rotate(Float angle, InterpolationMethod method = InterpolationMethod::Cubic)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Image</code></p>
+<p class="doc-paragraph">Rotates this image with the given angle.</p>
+<h5 id="rotateangle-sizewidth2f-sizeheight2f-method" class="doc-heading"><code class="inline-code">Rotate(angle, {size.Width/2.f, size.Height/2.f}, method)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="rotatefloat-angle-const-geometrypointf-origin-interpolationmethod-method--interpolationmethodcubic" class="doc-heading"><code class="inline-code">Rotate(Float angle, const Geometry::Pointf origin, InterpolationMethod method = InterpolationMethod::Cubic)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Image</code></p>
+<p class="doc-paragraph">Rotates this image with the given angle.</p>
+<h5 id="ifmethod--interpolationmethodnearestneighbor" class="doc-heading"><code class="inline-code">if(method == InterpolationMethod::NearestNeighbor)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-y0-ynewsizeheight-y" class="doc-heading"><code class="inline-code">for(int y=0; y<newsize.Height; y++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-x0-xnewsizewidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<newsize.Width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-c0-ccpp-c" class="doc-heading"><code class="inline-code">for(unsigned c=0; c<cpp; c++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifmethod--interpolationmethodlinear" class="doc-heading"><code class="inline-code">if(method == InterpolationMethod::Linear)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="forint-y0-ynewsizeheight-y" class="doc-heading"><code class="inline-code">for(int y=0; y<newsize.Height; y++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-x0-xnewsizewidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<newsize.Width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-c0-ccpp-c" class="doc-heading"><code class="inline-code">for(unsigned c=0; c<cpp; c++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifmethod--interpolationmethodcubic" class="doc-heading"><code class="inline-code">if(method == InterpolationMethod::Cubic)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="forint-y0-ynewsizeheight-y" class="doc-heading"><code class="inline-code">for(int y=0; y<newsize.Height; y++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-x0-xnewsizewidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<newsize.Width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-i4-i" class="doc-heading"><code class="inline-code">for(int i=0; i<4; i++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifi--1--i--2" class="doc-heading"><code class="inline-code">if(i == 1 || i == 2)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-i4-i" class="doc-heading"><code class="inline-code">for(int i=0; i<4; i++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifi--1--i--2" class="doc-heading"><code class="inline-code">if(i == 1 || i == 2)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-c0-ccpp-c" class="doc-heading"><code class="inline-code">for(unsigned c=0; c<cpp; c++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-j0-j4-j" class="doc-heading"><code class="inline-code">for(int j=0; j<4; j++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-i4-i" class="doc-heading"><code class="inline-code">for(int i=0; i<4; i++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="skewxfloat-perpixel-interpolationmethod-method--interpolationmethodcubic" class="doc-heading"><code class="inline-code">SkewX(Float perpixel, InterpolationMethod method = InterpolationMethod::Cubic)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Image</code></p>
+<p class="doc-paragraph">Rotates this image with the given angle.</p>
+<h5 id="skewxperpixel-0f-0f-method" class="doc-heading"><code class="inline-code">SkewX(perpixel, {0.f, 0.f}, method)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="skewxfloat-perpixel-const-geometrypointf-origin-interpolationmethod-method--interpolationmethodcubic" class="doc-heading"><code class="inline-code">SkewX(Float perpixel, const Geometry::Pointf origin, InterpolationMethod method = InterpolationMethod::Cubic)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Image</code></p>
+<p class="doc-paragraph">Rotates this image with the given angle.</p>
+<h5 id="ifmethod--interpolationmethodnearestneighbor" class="doc-heading"><code class="inline-code">if(method == InterpolationMethod::NearestNeighbor)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-y0-ynewsizeheight-y" class="doc-heading"><code class="inline-code">for(int y=0; y<newsize.Height; y++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-x0-xnewsizewidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<newsize.Width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-c0-ccpp-c" class="doc-heading"><code class="inline-code">for(unsigned c=0; c<cpp; c++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifmethod--interpolationmethodlinear" class="doc-heading"><code class="inline-code">if(method == InterpolationMethod::Linear)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="forint-y0-ynewsizeheight-y" class="doc-heading"><code class="inline-code">for(int y=0; y<newsize.Height; y++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-x0-xnewsizewidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<newsize.Width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-c0-ccpp-c" class="doc-heading"><code class="inline-code">for(unsigned c=0; c<cpp; c++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifmethod--interpolationmethodcubic" class="doc-heading"><code class="inline-code">if(method == InterpolationMethod::Cubic)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="forint-y0-ynewsizeheight-y" class="doc-heading"><code class="inline-code">for(int y=0; y<newsize.Height; y++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-x0-xnewsizewidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<newsize.Width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-i4-i" class="doc-heading"><code class="inline-code">for(int i=0; i<4; i++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifi--1--i--2" class="doc-heading"><code class="inline-code">if(i == 1 || i == 2)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-c0-ccpp-c" class="doc-heading"><code class="inline-code">for(unsigned c=0; c<cpp; c++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-i4-i" class="doc-heading"><code class="inline-code">for(int i=0; i<4; i++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="skewyfloat-perpixel-interpolationmethod-method--interpolationmethodcubic" class="doc-heading"><code class="inline-code">SkewY(Float perpixel, InterpolationMethod method = InterpolationMethod::Cubic)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Image</code></p>
+<p class="doc-paragraph">Rotates this image with the given angle.</p>
+<h5 id="skewyperpixel-0f-0f-method" class="doc-heading"><code class="inline-code">SkewY(perpixel, {0.f, 0.f}, method)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="skewyfloat-perpixel-const-geometrypointf-origin-interpolationmethod-method--interpolationmethodcubic" class="doc-heading"><code class="inline-code">SkewY(Float perpixel, const Geometry::Pointf origin, InterpolationMethod method = InterpolationMethod::Cubic)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Image</code></p>
+<p class="doc-paragraph">Rotates this image with the given angle.</p>
+<h5 id="ifmethod--interpolationmethodnearestneighbor" class="doc-heading"><code class="inline-code">if(method == InterpolationMethod::NearestNeighbor)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-x0-xnewsizewidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<newsize.Width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-y0-ynewsizeheight-y" class="doc-heading"><code class="inline-code">for(int y=0; y<newsize.Height; y++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-c0-ccpp-c" class="doc-heading"><code class="inline-code">for(unsigned c=0; c<cpp; c++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifmethod--interpolationmethodlinear" class="doc-heading"><code class="inline-code">if(method == InterpolationMethod::Linear)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="forint-x0-xnewsizewidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<newsize.Width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-y0-ynewsizeheight-y" class="doc-heading"><code class="inline-code">for(int y=0; y<newsize.Height; y++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-c0-ccpp-c" class="doc-heading"><code class="inline-code">for(unsigned c=0; c<cpp; c++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifmethod--interpolationmethodcubic" class="doc-heading"><code class="inline-code">if(method == InterpolationMethod::Cubic)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="forint-x0-xnewsizewidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<newsize.Width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-y0-ynewsizeheight-y" class="doc-heading"><code class="inline-code">for(int y=0; y<newsize.Height; y++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-i4-i" class="doc-heading"><code class="inline-code">for(int i=0; i<4; i++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifi--1--i--2" class="doc-heading"><code class="inline-code">if(i == 1 || i == 2)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-c0-ccpp-c" class="doc-heading"><code class="inline-code">for(unsigned c=0; c<cpp; c++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-i4-i" class="doc-heading"><code class="inline-code">for(int i=0; i<4; i++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="mirrorx" class="doc-heading"><code class="inline-code">MirrorX(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Image</code></p>
+<p class="doc-paragraph">Mirrors this bitmap along X axis as a new one.</p>
+<h5 id="forint-y0-ysizeheight-y" class="doc-heading"><code class="inline-code">for(int y=0; y<size.Height; y++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-x0-xsizewidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<size.Width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-c0-ccpp-c" class="doc-heading"><code class="inline-code">for(unsigned c=0; c<cpp; c++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="mirrory" class="doc-heading"><code class="inline-code">MirrorY(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Image</code></p>
+<p class="doc-paragraph">Mirrors this bitmap along Y axis as a new one.</p>
+<h5 id="forint-x0-xsizewidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<size.Width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-y0-ysizeheight-y" class="doc-heading"><code class="inline-code">for(int y=0; y<size.Height; y++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forunsigned-c0-ccpp-c" class="doc-heading"><code class="inline-code">for(unsigned c=0; c<cpp; c++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="flipx" class="doc-heading"><code class="inline-code">FlipX(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Image</code></p>
+<p class="doc-paragraph">Flips this bitmap along X axis as a new one.</p>
+<h5 id="mirrory" class="doc-heading"><code class="inline-code">MirrorY(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="flipy" class="doc-heading"><code class="inline-code">FlipY(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Image</code></p>
+<p class="doc-paragraph">Flips this bitmap along Y axis as a new one.</p>
+<h5 id="mirrorx" class="doc-heading"><code class="inline-code">MirrorX(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="importbmpconst-stdstring-filename-bool-dib--false" class="doc-heading"><code class="inline-code">ImportBMP(const std::string &filename, bool dib = false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Imports a given bitmap file. BMP RLE compression and colorspaces are not supported.</p>
+<h5 id="filefilename-stdiosbinary" class="doc-heading"><code class="inline-code">file(filename, std::ios::binary)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::ifstream</code></p>
+<h5 id="importbmpfile-dib" class="doc-heading"><code class="inline-code">ImportBMP(file, dib)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="importbmpstdistream-file-bool-dib--false" class="doc-heading"><code class="inline-code">ImportBMP(std::istream &file, bool dib = false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Imports a given bitmap file. BMP RLE compression and colorspaces are not supported.</p>
+<h5 id="ifdib" class="doc-heading"><code class="inline-code">if(!dib)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="readuint16file" class="doc-heading"><code class="inline-code">ReadUInt16(file)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="readuint16file" class="doc-heading"><code class="inline-code">ReadUInt16(file)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="whilev" class="doc-heading"><code class="inline-code">while(v)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifheadersize--12" class="doc-heading"><code class="inline-code">if(headersize == 12)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="readuint16file" class="doc-heading"><code class="inline-code">ReadUInt16(file)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifheadersize--40" class="doc-heading"><code class="inline-code">if(headersize >= 40)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="readuint16file" class="doc-heading"><code class="inline-code">ReadUInt16(file)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="readuint32file" class="doc-heading"><code class="inline-code">ReadUInt32(file)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="readint32file" class="doc-heading"><code class="inline-code">ReadInt32(file)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="readint32file" class="doc-heading"><code class="inline-code">ReadInt32(file)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="readuint32file" class="doc-heading"><code class="inline-code">ReadUInt32(file)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifbitcompress--headersize--40" class="doc-heading"><code class="inline-code">if(bitcompress && headersize == 40)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifbpp--16" class="doc-heading"><code class="inline-code">if(bpp == 16)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="ifbpp--32" class="doc-heading"><code class="inline-code">if(bpp == 32)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="ifheadersize--108" class="doc-heading"><code class="inline-code">if(headersize >= 108)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifredmask" class="doc-heading"><code class="inline-code">if(redmask)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifgreenmask" class="doc-heading"><code class="inline-code">if(greenmask)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifbluemask" class="doc-heading"><code class="inline-code">if(bluemask)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifalphamask" class="doc-heading"><code class="inline-code">if(alphamask)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifheadersize--108" class="doc-heading"><code class="inline-code">if(headersize > 108)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifbpp--8" class="doc-heading"><code class="inline-code">if(bpp <= 8)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-icolorsused-i" class="doc-heading"><code class="inline-code">for(int i=0; i<colorsused; i++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifheadersize--12" class="doc-heading"><code class="inline-code">if(headersize > 12)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-icolorsused-i" class="doc-heading"><code class="inline-code">for(int i=0; i<colorsused; i++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifpaletteia" class="doc-heading"><code class="inline-code">if(palette[i].A)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="resizewidth-height-graphicscolormodergba" class="doc-heading"><code class="inline-code">Resize({width, height}, Graphics::ColorMode::RGBA)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifbpp--8--grayscalepalette" class="doc-heading"><code class="inline-code">if(bpp <= 8 && grayscalepalette)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="resizewidth-height-graphicscolormodegrayscalealpha" class="doc-heading"><code class="inline-code">Resize({width, height}, Graphics::ColorMode::Grayscale_Alpha)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="resizewidth-height-graphicscolormodegrayscale" class="doc-heading"><code class="inline-code">Resize({width, height}, Graphics::ColorMode::Grayscale)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifalpha" class="doc-heading"><code class="inline-code">if(alpha)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="ifredmask--0--greenmask--0--bluemask--0" class="doc-heading"><code class="inline-code">if(redmask == 0 && greenmask == 0 && bluemask == 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="resizewidth-height-graphicscolormodealpha" class="doc-heading"><code class="inline-code">Resize({width, height}, Graphics::ColorMode::Alpha)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="resizewidth-height-graphicscolormodergba" class="doc-heading"><code class="inline-code">Resize({width, height}, Graphics::ColorMode::RGBA)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="resizewidth-height-graphicscolormodergb" class="doc-heading"><code class="inline-code">Resize({width, height}, Graphics::ColorMode::RGB)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifupsidedown" class="doc-heading"><code class="inline-code">if(upsidedown)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifbpp--24" class="doc-heading"><code class="inline-code">if(bpp == 24)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-y--ys-yye-y--yc" class="doc-heading"><code class="inline-code">for(int y = ys; y!=ye; y += yc)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-x0-xwidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifbytes4" class="doc-heading"><code class="inline-code">if(bytes%4)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifbpp--16--bpp--32" class="doc-heading"><code class="inline-code">if(bpp == 16 || bpp == 32)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="forint-y--ys-yye-y--yc" class="doc-heading"><code class="inline-code">for(int y = ys; y!=ye; y += yc)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-x0-xwidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifredmask--0--greenmask--0--bluemask--0" class="doc-heading"><code class="inline-code">if(redmask != 0 || greenmask != 0 || bluemask != 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifalpha" class="doc-heading"><code class="inline-code">if(alpha)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifredmask--0--greenmask--0--bluemask--0" class="doc-heading"><code class="inline-code">if(redmask != 0 || greenmask != 0 || bluemask != 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifbytes4" class="doc-heading"><code class="inline-code">if(bytes%4)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifbpp--8" class="doc-heading"><code class="inline-code">if(bpp < 8)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="forint-y--ys-yye-y--yc" class="doc-heading"><code class="inline-code">for(int y = ys; y!=ye; y += yc)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-x0-xwidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifbits--0" class="doc-heading"><code class="inline-code">if(bits == 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifgrayscalepalette" class="doc-heading"><code class="inline-code">if(grayscalepalette)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifalpha" class="doc-heading"><code class="inline-code">if(alpha)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifbytes4" class="doc-heading"><code class="inline-code">if(bytes%4)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="exportbmpconst-stdstring-filename-bool-usev4--false-bool-dib--false" class="doc-heading"><code class="inline-code">ExportBMP(const std::string &filename, bool usev4 = false, bool dib = false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Exports the image as a bitmap. RGB is exported as 24-bit, RGBA, BGR, BGRA is exported as 32-bit, Grayscale exported as 8-bit, Grayscale alpha, alpha only is exported as 16-bit</p>
+<h5 id="filefilename-stdiosbinary" class="doc-heading"><code class="inline-code">file(filename, std::ios::binary)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::ofstream</code></p>
+<h5 id="exportbmpfile-usev4-dib" class="doc-heading"><code class="inline-code">ExportBMP(file, usev4, dib)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="exportbmpstdostream-file-bool-usev4--false-bool-dib--false" class="doc-heading"><code class="inline-code">ExportBMP(std::ostream &file, bool usev4 = false, bool dib = false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Exports the image as a bitmap. RGB is exported as 24-bit, RGBA, BGR, BGRA is exported as 32-bit, Grayscale exported as 8-bit, Grayscale alpha, alpha only is exported as 16-bit</p>
+<h5 id="switchmode" class="doc-heading"><code class="inline-code">switch(mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifdib" class="doc-heading"><code class="inline-code">if(!dib)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writestringfile-bm" class="doc-heading"><code class="inline-code">WriteString(file, "BM")</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-14--headersize--extraspace--datasize" class="doc-heading"><code class="inline-code">WriteUInt32(file, 14 + headersize + extraspace + datasize)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint16file-0" class="doc-heading"><code class="inline-code">WriteUInt16(file, 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint16file-0" class="doc-heading"><code class="inline-code">WriteUInt16(file, 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-14--headersize--extraspace" class="doc-heading"><code class="inline-code">WriteUInt32(file, 14 + headersize + extraspace)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-headersize" class="doc-heading"><code class="inline-code">WriteUInt32(file, headersize)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeint32file-sizewidth" class="doc-heading"><code class="inline-code">WriteInt32(file, size.Width)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeint32file-sizeheight" class="doc-heading"><code class="inline-code">WriteInt32(file, size.Height)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint16file-1" class="doc-heading"><code class="inline-code">WriteUInt16(file, 1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint16file-bpp" class="doc-heading"><code class="inline-code">WriteUInt16(file, bpp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-compression" class="doc-heading"><code class="inline-code">WriteUInt32(file, compression)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-datasize" class="doc-heading"><code class="inline-code">WriteUInt32(file, datasize)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeint32file-2834" class="doc-heading"><code class="inline-code">WriteInt32(file, 2834)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeint32file-2834" class="doc-heading"><code class="inline-code">WriteInt32(file, 2834)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeint32file-0" class="doc-heading"><code class="inline-code">WriteInt32(file, 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeint32file-0" class="doc-heading"><code class="inline-code">WriteInt32(file, 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifcompression--3" class="doc-heading"><code class="inline-code">if(compression == 3)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifmode--colormodealpha" class="doc-heading"><code class="inline-code">if(mode == ColorMode::Alpha)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-0x00000001" class="doc-heading"><code class="inline-code">WriteUInt32(file, 0x00000001)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-0x00000002" class="doc-heading"><code class="inline-code">WriteUInt32(file, 0x00000002)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-0x00000004" class="doc-heading"><code class="inline-code">WriteUInt32(file, 0x00000004)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifmode--colormodebgra" class="doc-heading"><code class="inline-code">if(mode == ColorMode::BGRA)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="writeuint32file-0x00ff0000" class="doc-heading"><code class="inline-code">WriteUInt32(file, 0x00ff0000)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-0x0000ff00" class="doc-heading"><code class="inline-code">WriteUInt32(file, 0x0000ff00)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-0x000000ff" class="doc-heading"><code class="inline-code">WriteUInt32(file, 0x000000ff)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-0x000000ff" class="doc-heading"><code class="inline-code">WriteUInt32(file, 0x000000ff)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-0x0000ff00" class="doc-heading"><code class="inline-code">WriteUInt32(file, 0x0000ff00)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-0x00ff0000" class="doc-heading"><code class="inline-code">WriteUInt32(file, 0x00ff0000)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifheadersize--108--usev4" class="doc-heading"><code class="inline-code">if(headersize == 108 || usev4)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifcompression--3" class="doc-heading"><code class="inline-code">if(compression != 3)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-0x00000001" class="doc-heading"><code class="inline-code">WriteUInt32(file, 0x00000001)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-0x00000002" class="doc-heading"><code class="inline-code">WriteUInt32(file, 0x00000002)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-0x00000004" class="doc-heading"><code class="inline-code">WriteUInt32(file, 0x00000004)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifmode--colormodealpha" class="doc-heading"><code class="inline-code">if(mode == ColorMode::Alpha)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-0x0000ff00" class="doc-heading"><code class="inline-code">WriteUInt32(file, 0x0000ff00)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-0xff000000" class="doc-heading"><code class="inline-code">WriteUInt32(file, 0xff000000)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-1" class="doc-heading"><code class="inline-code">WriteUInt32(file, 1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint32file-0" class="doc-heading"><code class="inline-code">WriteUInt32(file, 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="switchmode" class="doc-heading"><code class="inline-code">switch(mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-ysizeheight-1-y0-y--" class="doc-heading"><code class="inline-code">for(int y=size.Height-1; y>=0; y--)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writearrayfile-datayostride-ostride" class="doc-heading"><code class="inline-code">WriteArray(file, data+y*ostride, ostride)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint8file-0" class="doc-heading"><code class="inline-code">WriteUInt8(file, 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-ysizeheight-1-y0-y--" class="doc-heading"><code class="inline-code">for(int y=size.Height-1; y>=0; y--)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writearrayfile-datayostride-ostride" class="doc-heading"><code class="inline-code">WriteArray(file, data+y*ostride, ostride)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint8file-0" class="doc-heading"><code class="inline-code">WriteUInt8(file, 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-ysizeheight-1-y0-y--" class="doc-heading"><code class="inline-code">for(int y=size.Height-1; y>=0; y--)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writearrayfile-datayostride-ostride" class="doc-heading"><code class="inline-code">WriteArray(file, data+y*ostride, ostride)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-i0-i256-i" class="doc-heading"><code class="inline-code">for(int i=0; i<256; i++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint8file-0" class="doc-heading"><code class="inline-code">WriteUInt8(file, 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-ysizeheight-1-y0-y--" class="doc-heading"><code class="inline-code">for(int y=size.Height-1; y>=0; y--)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writearrayfile-datayostride-ostride" class="doc-heading"><code class="inline-code">WriteArray(file, data+y*ostride, ostride)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint8file-0" class="doc-heading"><code class="inline-code">WriteUInt8(file, 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-ysizeheight-1-y0-y--" class="doc-heading"><code class="inline-code">for(int y=size.Height-1; y>=0; y--)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-x0-xsizewidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<size.Width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint8file-datayostridex2" class="doc-heading"><code class="inline-code">WriteUInt8(file, data[y<em>ostride+x</em>2])</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint8file-datayostridex2" class="doc-heading"><code class="inline-code">WriteUInt8(file, data[y<em>ostride+x</em>2])</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint8file-datayostridex2" class="doc-heading"><code class="inline-code">WriteUInt8(file, data[y<em>ostride+x</em>2])</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint8file-datayostridex21" class="doc-heading"><code class="inline-code">WriteUInt8(file, data[y<em>ostride+x</em>2+1])</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-ysizeheight-1-y0-y--" class="doc-heading"><code class="inline-code">for(int y=size.Height-1; y>=0; y--)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forint-x0-xsizewidth-x" class="doc-heading"><code class="inline-code">for(int x=0; x<size.Width; x++)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint8file-0xff" class="doc-heading"><code class="inline-code">WriteUInt8(file, 0xff)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint8file-datayostridex" class="doc-heading"><code class="inline-code">WriteUInt8(file, data[y*ostride+x])</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="writeuint8file-0" class="doc-heading"><code class="inline-code">WriteUInt8(file, 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifpx0--py0--pxsizewidth--pysizeheight--componentcpp" class="doc-heading"><code class="inline-code">if(p.X<0 || p.Y<0 || p.X>=size.Width || p.Y>=size.Height || component>=cpp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Provides access to the given component in x and y coordinates. This function performs bounds checking only on debug mode.</p>
+<h5 id="ifpx0--py0--pxsizewidth--pysizeheight--componentcpp" class="doc-heading"><code class="inline-code">if(p.X<0 || p.Y<0 || p.X>=size.Width || p.Y>=size.Height || component>=cpp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Provides access to the given component in x and y coordinates. This function performs bounds checking only on debug mode.</p>
+<h5 id="getconst-geometrypoint-p-unsigned-component--0" class="doc-heading"><code class="inline-code">Get(const Geometry::Point &p, unsigned component = 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Byte</code></p>
+<p class="doc-paragraph">Provides access to the given component in x and y coordinates. This function returns 0 if the given coordinates are out of bounds. This function works slower than the () operator.</p>
+<h5 id="ifpx--0--py--0--px--sizewidth--py--sizeheight--component--cpp" class="doc-heading"><code class="inline-code">if(p.X < 0 || p.Y < 0 || p.X >= size.Width || p.Y >= size.Height || component >= cpp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="getconst-geometrypoint-p-byte-def-unsigned-component--0" class="doc-heading"><code class="inline-code">Get(const Geometry::Point &p, Byte def, unsigned component = 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Byte</code></p>
+<p class="doc-paragraph">Provides access to the given component in x and y coordinates. This function returns 0 if the given coordinates are out of bounds. This function works slower than the () operator.</p>
+<h5 id="ifpx--0--py--0--px--sizewidth--py--sizeheight--component--cpp" class="doc-heading"><code class="inline-code">if(p.X < 0 || p.Y < 0 || p.X >= size.Width || p.Y >= size.Height || component >= cpp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifx0--y0--xsizewidth--ysizeheight--componentcpp" class="doc-heading"><code class="inline-code">if(x<0 || y<0 || x>=size.Width || y>=size.Height || component>=cpp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Provides access to the given component in x and y coordinates. This function performs bounds checking only on debug mode.</p>
+<h5 id="ifx0--y0--xsizewidth--ysizeheight--componentcpp" class="doc-heading"><code class="inline-code">if(x<0 || y<0 || x>=size.Width || y>=size.Height || component>=cpp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Provides access to the given component in x and y coordinates. This function performs bounds checking only on debug mode.</p>
+<h5 id="getint-x-int-y-unsigned-component0" class="doc-heading"><code class="inline-code">Get(int x, int y, unsigned component=0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Byte</code></p>
+<p class="doc-paragraph">Provides access to the given component in x and y coordinates. This function returns 0 if the given coordinates are out of bounds. This function works slower than the () operator.</p>
+<h5 id="ifx0--y0--xsizewidth--ysizeheight--componentcpp" class="doc-heading"><code class="inline-code">if(x<0 || y<0 || x>=size.Width || y>=size.Height || component>=cpp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="getalphaatint-x-int-y" class="doc-heading"><code class="inline-code">GetAlphaAt(int x, int y)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Byte</code></p>
+<p class="doc-paragraph">Returns the alpha at the given location. If the given location does not exits this function will return 0. If there is no alpha channel, image is assumed to be opaque.</p>
+<h5 id="ifx0--y0--xsizewidth--ysizeheight" class="doc-heading"><code class="inline-code">if(x<0 || y<0 || x>=size.Width || y>=size.Height)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="getrgbaatint-x-int-y" class="doc-heading"><code class="inline-code">GetRGBAAt(int x, int y)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Graphics::RGBA</code></p>
+<p class="doc-paragraph">Returns the alpha at the given location. If the given location does not exits this function will return 0. If there is no alpha channel, image is assumed to be opaque.</p>
+<h5 id="ifx0--y0--xsizewidth--ysizeheight" class="doc-heading"><code class="inline-code">if(x<0 || y<0 || x>=size.Width || y>=size.Height)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="switchmode" class="doc-heading"><code class="inline-code">switch(mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="getrgbaatgeometrypoint-p" class="doc-heading"><code class="inline-code">GetRGBAAt(Geometry::Point p)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Graphics::RGBA</code></p>
+<p class="doc-paragraph">Returns the alpha at the given location. If the given location does not exits this function will return 0. If there is no alpha channel, image is assumed to be opaque.</p>
+<h5 id="getrgbaatpx-py" class="doc-heading"><code class="inline-code">GetRGBAAt(p.X, p.Y)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="setrgbaatint-x-int-y-graphicsrgba-color" class="doc-heading"><code class="inline-code">SetRGBAAt(int x, int y, Graphics::RGBA color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the color at the given location to the specified RGBA value. If pixel does not exists, the call will be ignored.</p>
+<h5 id="ifx0--y0--xsizewidth--ysizeheight" class="doc-heading"><code class="inline-code">if(x<0 || y<0 || x>=size.Width || y>=size.Height)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="switchmode" class="doc-heading"><code class="inline-code">switch(mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setrgbaatgeometrypoint-p-graphicsrgba-color" class="doc-heading"><code class="inline-code">SetRGBAAt(Geometry::Point p, Graphics::RGBA color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the color at the given location to the specified RGBA value. If pixel does not exists, the call will be ignored.</p>
+<h5 id="setrgbaatpx-py-color" class="doc-heading"><code class="inline-code">SetRGBAAt(p.X, p.Y, color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="getsize" class="doc-heading"><code class="inline-code">GetSize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Geometry::Size</code></p>
+<p class="doc-paragraph">Returns the size of the image</p>
+<h5 id="getwidth" class="doc-heading"><code class="inline-code">GetWidth(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns the width of the image</p>
+<h5 id="getheight" class="doc-heading"><code class="inline-code">GetHeight(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns the height of the image</p>
+<h5 id="gettotalsize" class="doc-heading"><code class="inline-code">GetTotalSize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">unsigned long</code></p>
+<p class="doc-paragraph">Total size of this image in number units</p>
+<h5 id="getmode" class="doc-heading"><code class="inline-code">GetMode(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Graphics::ColorMode</code></p>
+<p class="doc-paragraph">Returns the color mode of the image</p>
+<h5 id="changemodegraphicscolormode-value" class="doc-heading"><code class="inline-code">ChangeMode(Graphics::ColorMode value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the color mode of the image. Only works if the bits/pixel of the target mode is the same as the original</p>
+<h5 id="getchannelsperpixel" class="doc-heading"><code class="inline-code">GetChannelsPerPixel(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">unsigned</code></p>
+<p class="doc-paragraph">Returns the number units occupied by a single pixel of this image</p>
+<h5 id="hasalpha" class="doc-heading"><code class="inline-code">HasAlpha(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if this image has alpha channel</p>
+<h5 id="getalphaindex" class="doc-heading"><code class="inline-code">GetAlphaIndex(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns the index of alpha channel. Value of -1 denotes no alpha channel</p>
+<hr class="doc-divider">
+<h2 id="enums" class="doc-heading">Enums</h2>
+<h3 id="interpolationmethod" class="doc-heading"><code class="inline-code">InterpolationMethod</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Containers</code></p>
+<hr class="doc-divider">
+<h2 id="functions" class="doc-heading">Functions</h2>
+<h3 id="fixfloat-val" class="doc-heading"><code class="inline-code">Fix(float val)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static T_</code></p>
+<h3 id="fixfloat-val" class="doc-heading"><code class="inline-code">Fix(float val)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static float</code></p>
+<h3 id="swapbasicimaget-l-basicimaget-r" class="doc-heading"><code class="inline-code">swap(basic_Image<T_> &l, basic_Image<T_> &r)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline void</code></p>
+<p class="doc-paragraph">Data that stores pixels of the image Width of the image Color mode of the image Channels per pixel information Location of the alpha channel, -1 means it does not exits Compares two images. Images are equal if their size, mode and contents are the same Compares two images. Images are equal if their size, mode and contents are not the same Swaps two images. Should be used unqualified for ADL.</p>
+<h3 id="ifreader" class="doc-heading"><code class="inline-code">if(reader)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifret--isloaded" class="doc-heading"><code class="inline-code">if(ret && isloaded)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="loaded" class="doc-heading"><code class="inline-code">loaded()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="whiletarget" class="doc-heading"><code class="inline-code">while(!target)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifgidgidimageprops" class="doc-heading"><code class="inline-code">if(gid==GID::Image_Props)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifload" class="doc-heading"><code class="inline-code">if(!load)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifgidgidimagedata" class="doc-heading"><code class="inline-code">if(gid==GID::Image_Data)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifload" class="doc-heading"><code class="inline-code">if(load)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="destroy" class="doc-heading"><code class="inline-code">Destroy()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifgidgidimagecmpdata" class="doc-heading"><code class="inline-code">if(gid==GID::Image_Cmp_Data)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifload" class="doc-heading"><code class="inline-code">if(load)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="destroy" class="doc-heading"><code class="inline-code">Destroy()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcompressiongidpng" class="doc-heading"><code class="inline-code">if(compression==GID::PNG)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="loaderrorloaderrorunknown-unknown-compression-type" class="doc-heading"><code class="inline-code">LoadError(LoadError::Unknown, "Unknown compression type.")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="ifgidgidimagecmpprops" class="doc-heading"><code class="inline-code">if(gid==GID::Image_Cmp_Props)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifsize4" class="doc-heading"><code class="inline-code">if(size>4)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="loaderrorloaderrorversionmismatch-old-version-image-compression" class="doc-heading"><code class="inline-code">LoadError(LoadError::VersionMismatch, "Old version image compression")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="assertdata-image-data-does-not-exists" class="doc-heading"><code class="inline-code">ASSERT(data, "Image data does not exists")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcompressiongidnone" class="doc-heading"><code class="inline-code">if(compression==GID::None)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcompressiongidpng" class="doc-heading"><code class="inline-code">if(compression==GID::PNG)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifimg" class="doc-heading"><code class="inline-code">if(img)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcompress" class="doc-heading"><code class="inline-code">if(compress)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="imagegraphicsbitmap-source" class="doc-heading"><code class="inline-code">Image(Graphics::Bitmap &&source)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">This resource contains images. It allows draw, load, import, export functionality. An image resource may work without its data buffer. In order to be drawn, an image object should be prepared. Both data and texture might be released from the image resource. This allows safe destruction of the file tree without destroying the necessary information. Assumes the given bitmap and converts it to a resource.</p>
+<h3 id="swapsource" class="doc-heading"><code class="inline-code">Swap(source)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setcompressiongidtype-compression" class="doc-heading"><code class="inline-code">SetCompression(GID::Type compression)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the compression mode. It only works if this image is saved along with a file. Currently only GID::None and GID::PNG works.</p>
+<h3 id="getcompression" class="doc-heading"><code class="inline-code">GetCompression()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">GID::Type</code></p>
+<p class="doc-paragraph">Returns the compression mode of this image resource</p>
+<h3 id="moveoutasbitmap" class="doc-heading"><code class="inline-code">MoveOutAsBitmap()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Graphics::Bitmap</code></p>
+<p class="doc-paragraph">Moves the data out of resource system. Use Prepare and Discard before moving to avoid data duplication</p>
+<h3 id="load" class="doc-heading"><code class="inline-code">Load()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Loads the image from the disk. This function requires image to be tied to a resource file.</p>
+<h3 id="isloaded" class="doc-heading"><code class="inline-code">IsLoaded()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns whether the image data is loaded. Data loading is a valid information in only resource context. If this image is created manually, it is always considered loaded even if no data is set for it.</p>
+<h3 id="savethiswriter-writer-const-graphicsbitmap-bmp-gidtype-type--gidimage" class="doc-heading"><code class="inline-code">SaveThis(Writer &writer, const Graphics::Bitmap &bmp, GID::Type type = GID::Image)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static void</code></p>
+<p class="doc-paragraph">This function loads a image resource from the given file This function can be used to save a bitmap as image resource without modifying it. If given bitmap is a resource save function of that resource is used instead. If the area of the bitmap is greater than 400 pixel it will be saved as PNG.</p>
+<h3 id="loadstdsharedptrreader-reader-unsigned-long-size-bool-forceload" class="doc-heading"><code class="inline-code">load(std::shared_ptr<Reader> reader, unsigned long size, bool forceload)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Loads the image from the data stream</p>
+<h3 id="loaded" class="doc-heading"><code class="inline-code">loaded()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

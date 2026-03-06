@@ -1,6 +1,6 @@
 # Main
 
-> Auto-generated documentation for the **Main** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Main** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

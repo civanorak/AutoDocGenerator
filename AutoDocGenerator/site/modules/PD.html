@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>PD — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="../getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Base.html">Base</a></li>
+    <li><a href="Basic.html">Basic</a></li>
+    <li><a href="Common.html">Common</a></li>
+    <li><a href="Config.html">Config</a></li>
+    <li><a href="Definitions.html">Definitions</a></li>
+    <li><a href="Environment.html">Environment</a></li>
+    <li><a href="OS.html">OS</a></li>
+    <li><a href="Runtime.html">Runtime</a></li>
+    <li><a href="Types.html">Types</a></li>
+    <li><a href="Utils.html">Utils</a></li>
+    <li><a href="UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Bitmap.html">Bitmap</a></li>
+    <li><a href="BitmapFont.html">BitmapFont</a></li>
+    <li><a href="BlankImage.html">BlankImage</a></li>
+    <li><a href="Color.html">Color</a></li>
+    <li><a href="ColorPicker.html">ColorPicker</a></li>
+    <li><a href="ColorPlane.html">ColorPlane</a></li>
+    <li><a href="ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="Drawables.html">Drawables</a></li>
+    <li><a href="EmptyImage.html">EmptyImage</a></li>
+    <li><a href="Filters.html">Filters</a></li>
+    <li><a href="Flip.html">Flip</a></li>
+    <li><a href="Font.html">Font</a></li>
+    <li><a href="FontTheme.html">FontTheme</a></li>
+    <li><a href="FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="FreeType.html">FreeType</a></li>
+    <li><a href="GID.html">GID</a></li>
+    <li><a href="GL.html">GL</a></li>
+    <li><a href="Graphics.html">Graphics</a></li>
+    <li><a href="HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="IL.html">IL</a></li>
+    <li><a href="Image.html">Image</a></li>
+    <li><a href="JPEG.html">JPEG</a></li>
+    <li><a href="OpenGL.html">OpenGL</a></li>
+    <li><a href="PNG.html">PNG</a></li>
+    <li><a href="Renderer.html">Renderer</a></li>
+    <li><a href="ScalableObject.html">ScalableObject</a></li>
+    <li><a href="Shader.html">Shader</a></li>
+    <li><a href="Shaders.html">Shaders</a></li>
+    <li><a href="Texture.html">Texture</a></li>
+    <li><a href="TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="TextureTargets.html">TextureTargets</a></li>
+    <li><a href="TintedObject.html">TintedObject</a></li>
+    <li><a href="Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="AnimationServices.html">AnimationServices</a></li>
+    <li><a href="AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="Animations.html">Animations</a></li>
+    <li><a href="ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="DnD.html">DnD</a></li>
+    <li><a href="Input.html">Input</a></li>
+    <li><a href="KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="Keyboard.html">Keyboard</a></li>
+    <li><a href="Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Button.html">Button</a></li>
+    <li><a href="Checkbox.html">Checkbox</a></li>
+    <li><a href="CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="Combobox.html">Combobox</a></li>
+    <li><a href="ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="CountingText.html">CountingText</a></li>
+    <li><a href="Dialog.html">Dialog</a></li>
+    <li><a href="DialogWindow.html">DialogWindow</a></li>
+    <li><a href="Dropdown.html">Dropdown</a></li>
+    <li><a href="Filler.html">Filler</a></li>
+    <li><a href="IButton.html">IButton</a></li>
+    <li><a href="ICheckbox.html">ICheckbox</a></li>
+    <li><a href="ILabel.html">ILabel</a></li>
+    <li><a href="IListItem.html">IListItem</a></li>
+    <li><a href="INumberbox.html">INumberbox</a></li>
+    <li><a href="IOption.html">IOption</a></li>
+    <li><a href="IProgressor.html">IProgressor</a></li>
+    <li><a href="IScroller.html">IScroller</a></li>
+    <li><a href="ISlider.html">ISlider</a></li>
+    <li><a href="ITextbox.html">ITextbox</a></li>
+    <li><a href="Inputbox.html">Inputbox</a></li>
+    <li><a href="Label.html">Label</a></li>
+    <li><a href="Listbox.html">Listbox</a></li>
+    <li><a href="ListboxBase.html">ListboxBase</a></li>
+    <li><a href="ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="NumberInput.html">NumberInput</a></li>
+    <li><a href="Numberbox.html">Numberbox</a></li>
+    <li><a href="Panel.html">Panel</a></li>
+    <li><a href="PanelBase.html">PanelBase</a></li>
+    <li><a href="PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="Percentbar.html">Percentbar</a></li>
+    <li><a href="PetContainer.html">PetContainer</a></li>
+    <li><a href="PetTextbox.html">PetTextbox</a></li>
+    <li><a href="Placeholder.html">Placeholder</a></li>
+    <li><a href="Progressbar.html">Progressbar</a></li>
+    <li><a href="RadioButton.html">RadioButton</a></li>
+    <li><a href="RadioButtons.html">RadioButtons</a></li>
+    <li><a href="RadioControl.html">RadioControl</a></li>
+    <li><a href="Scrollbar.html">Scrollbar</a></li>
+    <li><a href="ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="Slider.html">Slider</a></li>
+    <li><a href="SliderBase.html">SliderBase</a></li>
+    <li><a href="SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="Spinner.html">Spinner</a></li>
+    <li><a href="StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="Tabpanel.html">Tabpanel</a></li>
+    <li><a href="TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="TextInput.html">TextInput</a></li>
+    <li><a href="Textarea.html">Textarea</a></li>
+    <li><a href="Textbox.html">Textbox</a></li>
+    <li><a href="TextboxBase.html">TextboxBase</a></li>
+    <li><a href="TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="TooltipManager.html">TooltipManager</a></li>
+    <li><a href="TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="UI.html">UI</a></li>
+    <li><a href="Widget.html">Widget</a></li>
+    <li><a href="WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Alignment.html">Alignment</a></li>
+    <li><a href="Bezier.html">Bezier</a></li>
+    <li><a href="Bounds.html">Bounds</a></li>
+    <li><a href="Circle.html">Circle</a></li>
+    <li><a href="Dimension.html">Dimension</a></li>
+    <li><a href="Geometry.html">Geometry</a></li>
+    <li><a href="GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="Line.html">Line</a></li>
+    <li><a href="Margin.html">Margin</a></li>
+    <li><a href="Point.html">Point</a></li>
+    <li><a href="Point3D.html">Point3D</a></li>
+    <li><a href="PointList.html">PointList</a></li>
+    <li><a href="PointProperty.html">PointProperty</a></li>
+    <li><a href="Polygon.html">Polygon</a></li>
+    <li><a href="Rectangle.html">Rectangle</a></li>
+    <li><a href="Region.html">Region</a></li>
+    <li><a href="Size.html">Size</a></li>
+    <li><a href="SizeProperty.html">SizeProperty</a></li>
+    <li><a href="Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Audio.html">Audio</a></li>
+    <li><a href="AudioStream.html">AudioStream</a></li>
+    <li><a href="FLAC.html">FLAC</a></li>
+    <li><a href="Multimedia.html">Multimedia</a></li>
+    <li><a href="PulseAudio.html">PulseAudio</a></li>
+    <li><a href="PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="Sound.html">Sound</a></li>
+    <li><a href="Source.html">Source</a></li>
+    <li><a href="Vorbis.html">Vorbis</a></li>
+    <li><a href="WASAPI.html">WASAPI</a></li>
+    <li><a href="WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Blob.html">Blob</a></li>
+    <li><a href="CGI.html">CGI</a></li>
+    <li><a href="Clipboard.html">Clipboard</a></li>
+    <li><a href="Data.html">Data</a></li>
+    <li><a href="DataExchange.html">DataExchange</a></li>
+    <li><a href="DataItems.html">DataItems</a></li>
+    <li><a href="File.html">File</a></li>
+    <li><a href="FileDialog.html">FileDialog</a></li>
+    <li><a href="Filesystem.html">Filesystem</a></li>
+    <li><a href="Folder.html">Folder</a></li>
+    <li><a href="HTTP.html">HTTP</a></li>
+    <li><a href="LZMA.html">LZMA</a></li>
+    <li><a href="Markdown.html">Markdown</a></li>
+    <li><a href="MemoryStream.html">MemoryStream</a></li>
+    <li><a href="Parse.html">Parse</a></li>
+    <li><a href="Query.html">Query</a></li>
+    <li><a href="Reader.html">Reader</a></li>
+    <li><a href="Storage.html">Storage</a></li>
+    <li><a href="Stream.html">Stream</a></li>
+    <li><a href="Tokenizer.html">Tokenizer</a></li>
+    <li><a href="URI.html">URI</a></li>
+    <li><a href="Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Array.html">Array</a></li>
+    <li><a href="Collection.html">Collection</a></li>
+    <li><a href="Container.html">Container</a></li>
+    <li><a href="Hashmap.html">Hashmap</a></li>
+    <li><a href="Iterator.html">Iterator</a></li>
+    <li><a href="LinkNode.html">LinkNode</a></li>
+    <li><a href="List.html">List</a></li>
+    <li><a href="ListItem.html">ListItem</a></li>
+    <li><a href="Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BorderData.html">BorderData</a></li>
+    <li><a href="ComponentStack.html">ComponentStack</a></li>
+    <li><a href="ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="CustomLayer.html">CustomLayer</a></li>
+    <li><a href="DWM.html">DWM</a></li>
+    <li><a href="ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="Flow.html">Flow</a></li>
+    <li><a href="FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="InlinePanel.html">InlinePanel</a></li>
+    <li><a href="Layer.html">Layer</a></li>
+    <li><a href="LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="LayerMover.html">LayerMover</a></li>
+    <li><a href="LayerResizer.html">LayerResizer</a></li>
+    <li><a href="LayerWidget.html">LayerWidget</a></li>
+    <li><a href="Layerbox.html">Layerbox</a></li>
+    <li><a href="LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="MaskedObject.html">MaskedObject</a></li>
+    <li><a href="Monitor.html">Monitor</a></li>
+    <li><a href="MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="Organizer.html">Organizer</a></li>
+    <li><a href="StackedObject.html">StackedObject</a></li>
+    <li><a href="VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="Window.html">Window</a></li>
+    <li><a href="WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Assert.html">Assert</a></li>
+    <li><a href="Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="CaptionValue.html">CaptionValue</a></li>
+    <li><a href="Console.html">Console</a></li>
+    <li><a href="Console_Nix.html">Console_Nix</a></li>
+    <li><a href="Console_Win32.html">Console_Win32</a></li>
+    <li><a href="ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="Event.html">Event</a></li>
+    <li><a href="Exception.html">Exception</a></li>
+    <li><a href="Exceptions.html">Exceptions</a></li>
+    <li><a href="GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="Logging.html">Logging</a></li>
+    <li><a href="Null.html">Null</a></li>
+    <li><a href="Nullable.html">Nullable</a></li>
+    <li><a href="Pointer.html">Pointer</a></li>
+    <li><a href="Property.html">Property</a></li>
+    <li><a href="Random.html">Random</a></li>
+    <li><a href="RefCounter.html">RefCounter</a></li>
+    <li><a href="Registry.html">Registry</a></li>
+    <li><a href="SGuid.html">SGuid</a></li>
+    <li><a href="Scope.html">Scope</a></li>
+    <li><a href="ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="Threading.html">Threading</a></li>
+    <li><a href="Time.html">Time</a></li>
+    <li><a href="Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AST.html">AST</a></li>
+    <li><a href="AStar.html">AStar</a></li>
+    <li><a href="Blueprint.html">Blueprint</a></li>
+    <li><a href="Compiler.html">Compiler</a></li>
+    <li><a href="Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="Compilers.html">Compilers</a></li>
+    <li><a href="Component.html">Component</a></li>
+    <li><a href="Composer.html">Composer</a></li>
+    <li><a href="Discrete.html">Discrete</a></li>
+    <li><a href="Embedding.html">Embedding</a></li>
+    <li><a href="Enum.html">Enum</a></li>
+    <li><a href="Generator.html">Generator</a></li>
+    <li><a href="Instruction.html">Instruction</a></li>
+    <li><a href="Language.html">Language</a></li>
+    <li><a href="Message.html">Message</a></li>
+    <li><a href="Pathfinders.html">Pathfinders</a></li>
+    <li><a href="Reflection.html">Reflection</a></li>
+    <li><a href="RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="Scene.html">Scene</a></li>
+    <li><a href="Scripting.html">Scripting</a></li>
+    <li><a href="Simple.html">Simple</a></li>
+    <li><a href="String.html">String</a></li>
+    <li><a href="Struct.html">Struct</a></li>
+    <li><a href="TMP.html">TMP</a></li>
+    <li><a href="Template.html">Template</a></li>
+    <li><a href="TiledMap.html">TiledMap</a></li>
+    <li><a href="Validators.html">Validators</a></li>
+    <li><a href="VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Linux.html">Linux</a></li>
+    <li><a href="Win32.html">Win32</a></li>
+    <li><a href="Windows.html">Windows</a></li>
+    <li><a href="X11.html">X11</a></li>
+    <li><a href="X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Any.html">Any</a></li>
+    <li><a href="Builtin.html">Builtin</a></li>
+    <li><a href="FindObject.html">FindObject</a></li>
+    <li><a href="Helpers.html">Helpers</a></li>
+    <li><a href="Instance.html">Instance</a></li>
+    <li><a href="ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="PD.html" class="active">PD</a></li>
+    <li><a href="ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BasicMath.html">BasicMath</a></li>
+    <li><a href="Kernel.html">Kernel</a></li>
+    <li><a href="main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">PD</span>
+    </nav>
+    
+        <h1 id="pd" class="doc-heading">PD</h1>
+<p class="doc-paragraph">> Auto-generated documentation for the <strong>PD</strong> module of the Gorgon C++ Game Engine.</p>
+<h2 id="contents" class="doc-heading">Contents</h2>
+<ul class="md-list">
+<li><a href="#classes">Classes</a></li>
+<li><a href="#enums">Enums</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="classes" class="doc-heading">Classes</h2>
+<h3 id="token" class="doc-heading"><code class="inline-code">Token</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Compilers</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="getliteralvalue" class="doc-heading"><code class="inline-code">GetLiteralValue(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">const Data</code></p>
+<h5 id="switchtype" class="doc-heading"><code class="inline-code">switch(type)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="isliteral" class="doc-heading"><code class="inline-code">isliteral(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h5 id="switchtype" class="doc-heading"><code class="inline-code">switch(type)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="opnode" class="doc-heading"><code class="inline-code">opnode</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Compilers</code></p>
+<h3 id="parenthesis" class="doc-heading"><code class="inline-code">parenthesis</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Compilers</code></p>
+<hr class="doc-divider">
+<h2 id="enums" class="doc-heading">Enums</h2>
+<h3 id="type" class="doc-heading"><code class="inline-code">Type</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Compilers</code></p>
+<hr class="doc-divider">
+<h2 id="functions" class="doc-heading">Functions</h2>
+<h3 id="isbreakerchar-c" class="doc-heading"><code class="inline-code">isbreaker(char c)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="switchc" class="doc-heading"><code class="inline-code">switch(c)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="isoperatorchar-c" class="doc-heading"><code class="inline-code">isoperator(char c)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="switchc" class="doc-heading"><code class="inline-code">switch(c)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="consumenexttokenconst-stdstring-input-int-index-bool-expectopfalse" class="doc-heading"><code class="inline-code">consumenexttoken(const std::string &input, int &index, bool expectop=false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Token</code></p>
+<h3 id="switchc" class="doc-heading"><code class="inline-code">switch(c)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifliteralmarker--literalmarkers" class="doc-heading"><code class="inline-code">if(literalmarker=="" || literalmarker=="s")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifliteralmarkerc" class="doc-heading"><code class="inline-code">if(literalmarker=="c")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="parseerrorexceptiontypeinvalidliteral-literal-c-is-only-valid-for-single-character-index" class="doc-heading"><code class="inline-code">ParseError(ExceptionType::InvalidLiteral, "Literal 'c' is only valid for single character", index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="parseerrorexceptiontypeinvalidliteral-unknown-string-literal-literalmarker-index" class="doc-heading"><code class="inline-code">ParseError(ExceptionType::InvalidLiteral, "Unknown string literal: "+literalmarker, index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="ifspecialident" class="doc-heading"><code class="inline-code">if(specialident)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifc-----expectop" class="doc-heading"><code class="inline-code">if(c == '-' && !expectop)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifc-" class="doc-heading"><code class="inline-code">if(c== '=')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifspecialident" class="doc-heading"><code class="inline-code">if(specialident)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifnumeric" class="doc-heading"><code class="inline-code">if(numeric)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifliterali" class="doc-heading"><code class="inline-code">if(literal=="i")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifliteralu" class="doc-heading"><code class="inline-code">if(literal=="u")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifliteralf" class="doc-heading"><code class="inline-code">if(literal=="f")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifliterald" class="doc-heading"><code class="inline-code">if(literal=="d")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifliteralc" class="doc-heading"><code class="inline-code">if(literal=="c")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifliteraln" class="doc-heading"><code class="inline-code">if(literal=="n")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifliteralb" class="doc-heading"><code class="inline-code">if(literal=="b")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifliterals" class="doc-heading"><code class="inline-code">if(literal=="s")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="parseerrorexceptiontypeinvalidliteral-unknown-numeric-literal-literal-index" class="doc-heading"><code class="inline-code">ParseError(ExceptionType::InvalidLiteral, "Unknown numeric literal: "+literal, index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="ifc--" class="doc-heading"><code class="inline-code">if(c == '.')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifflt" class="doc-heading"><code class="inline-code">if(flt)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifopornumber" class="doc-heading"><code class="inline-code">if(opornumber)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifoporequals" class="doc-heading"><code class="inline-code">if(oporequals)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifop--opornumber--oporequals" class="doc-heading"><code class="inline-code">if(op || opornumber || oporequals)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifoporequals" class="doc-heading"><code class="inline-code">if(oporequals)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifacc--true--acc--false" class="doc-heading"><code class="inline-code">if(acc == "true" || acc == "false")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifttokenoperator" class="doc-heading"><code class="inline-code">if(t!=Token::Operator)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifacc--operator" class="doc-heading"><code class="inline-code">if(acc != "operator")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="peeknexttokenconst-stdstring-input-int-index" class="doc-heading"><code class="inline-code">peeknexttoken(const std::string &input, int index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Token</code></p>
+<h3 id="consumenexttokeninput-index" class="doc-heading"><code class="inline-code">consumenexttoken(input, index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="testlexerconst-stdstring-input-stdostream-cases" class="doc-heading"><code class="inline-code">testlexer(const std::string &input, std::ostream *cases)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="ifcases" class="doc-heading"><code class="inline-code">if(cases)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcases" class="doc-heading"><code class="inline-code">if(cases)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-j--0-j--index-j" class="doc-heading"><code class="inline-code">for(int j = 0; j < index; j++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcases" class="doc-heading"><code class="inline-code">if(cases)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="parseexpressionsconst-stdstring-input-int-index" class="doc-heading"><code class="inline-code">parseexpressions(const std::string &input, int &index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Containers::Collection<ASTNode></code></p>
+<h3 id="iftokentokenrightp--tokentokenrightcrlyp--tokentokenrightsqrp" class="doc-heading"><code class="inline-code">if(token==Token::RightP || token==Token::RightCrlyP || token==Token::RightSqrP)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="whiletrue" class="doc-heading"><code class="inline-code">while(true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenseperator" class="doc-heading"><code class="inline-code">if(token!=Token::Seperator)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentype--tokenidentifier" class="doc-heading"><code class="inline-code">if(token.type == Token::Identifier)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenleftcrlyp" class="doc-heading"><code class="inline-code">if(token==Token::LeftCrlyP)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftokentokenrightcrlyp" class="doc-heading"><code class="inline-code">if(token!=Token::RightCrlyP)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="while1" class="doc-heading"><code class="inline-code">while(1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenmembership" class="doc-heading"><code class="inline-code">if(token==Token::Membership)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenidentifier" class="doc-heading"><code class="inline-code">if(token!=Token::Identifier)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenleftcrlyp" class="doc-heading"><code class="inline-code">if(token==Token::LeftCrlyP)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftokentokenrightcrlyp" class="doc-heading"><code class="inline-code">if(token!=Token::RightCrlyP)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenleftsqrp" class="doc-heading"><code class="inline-code">if(token==Token::LeftSqrP)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftokentokenrightsqrp" class="doc-heading"><code class="inline-code">if(token!=Token::RightSqrP)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenleftp" class="doc-heading"><code class="inline-code">if(token==Token::LeftP)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftokentokenrightp" class="doc-heading"><code class="inline-code">if(token!=Token::RightP)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-t--outputstack" class="doc-heading"><code class="inline-code">for(auto &t : outputstack)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="printastt" class="doc-heading"><code class="inline-code">PrintAST(t)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-op--opstack" class="doc-heading"><code class="inline-code">for(auto &op : opstack)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="whiletrue" class="doc-heading"><code class="inline-code">while(true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifnextisop" class="doc-heading"><code class="inline-code">if(nextisop)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenoperator--tokentokenidentifier" class="doc-heading"><code class="inline-code">if(token==Token::Operator || token==Token::Identifier)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenidentifier" class="doc-heading"><code class="inline-code">if(token==Token::Identifier)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="catch" class="doc-heading"><code class="inline-code">catch(...)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="popoff" class="doc-heading"><code class="inline-code">popoff()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenrightp--parcount" class="doc-heading"><code class="inline-code">if(token==Token::RightP && parcount)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="popoff" class="doc-heading"><code class="inline-code">popoff()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenidentifier--tokentokenleftcrlyp" class="doc-heading"><code class="inline-code">if(token==Token::Identifier || token==Token::LeftCrlyP)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftokentokenleftp" class="doc-heading"><code class="inline-code">if(token==Token::LeftP)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftokentokenrightp" class="doc-heading"><code class="inline-code">if(token==Token::RightP)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="popoff" class="doc-heading"><code class="inline-code">popoff()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="fixconstructorsastnode-tree-astnode-parentnullptr" class="doc-heading"><code class="inline-code">fixconstructors(ASTNode <em>tree, ASTNode </em>parent=nullptr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="iftree-typeastnodeconstruct" class="doc-heading"><code class="inline-code">if(tree->Type==ASTNode::Construct)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftree-leaves0typeastnodeempty" class="doc-heading"><code class="inline-code">if(tree->Leaves[0].Type==ASTNode::Empty)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifparent--parent-typeastnodeindex" class="doc-heading"><code class="inline-code">if(!parent || parent->Type!=ASTNode::Index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-astnode--tree-leaves" class="doc-heading"><code class="inline-code">for(auto &ASTNode : tree->Leaves)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="fixconstructorsastnode-tree" class="doc-heading"><code class="inline-code">fixconstructors(&ASTNode, tree)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="checkvarconst-stdstring-text" class="doc-heading"><code class="inline-code">checkvar(const std::string &text)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="forauto-c--text" class="doc-heading"><code class="inline-code">for(auto c : text)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="checknewidentconst-stdstring-text" class="doc-heading"><code class="inline-code">checknewident(const std::string &text)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="forauto-c--text" class="doc-heading"><code class="inline-code">for(auto c : text)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifterm" class="doc-heading"><code class="inline-code">if(!term)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="parseerrorexceptiontypeunexpectedtoken-term-text-is-not-a-valid-identifier-for-keyword" class="doc-heading"><code class="inline-code">ParseError(ExceptionType::UnexpectedToken, term->Text+" is not a valid identifier for "+keyword)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="iftokentokenequalsign" class="doc-heading"><code class="inline-code">if(token!=Token::EqualSign)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="parseerrorexceptiontypeunexpectedtoken-term-text-is-not-a-valid-variable-name" class="doc-heading"><code class="inline-code">ParseError(ExceptionType::UnexpectedToken, term->Text+" is not a valid variable name")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="iftokentokenidentifier" class="doc-heading"><code class="inline-code">if(token!=Token::Identifier)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokenreprfor" class="doc-heading"><code class="inline-code">if(token.repr=="for")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokenvartokenidentifier" class="doc-heading"><code class="inline-code">if(tokenvar!=Token::Identifier)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokenreprcall" class="doc-heading"><code class="inline-code">if(token.repr=="call")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifroot-typeastnodefunctioncall" class="doc-heading"><code class="inline-code">if(root->Type!=ASTNode::FunctionCall)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokenreprfunction--tokenreprmethod" class="doc-heading"><code class="inline-code">if(token.repr=="function" || token.repr=="method")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftokentokenleftp" class="doc-heading"><code class="inline-code">if(token==Token::LeftP)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="consumenexttokeninput-index" class="doc-heading"><code class="inline-code">consumenexttoken(input, index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenidentifier" class="doc-heading"><code class="inline-code">if(token!=Token::Identifier)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenidentifier" class="doc-heading"><code class="inline-code">if(token!=Token::Identifier)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenidentifier" class="doc-heading"><code class="inline-code">if(token!=Token::Identifier)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifpreference" class="doc-heading"><code class="inline-code">if(p.reference)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="parseerrorexceptiontypeunexpectedtoken-oneof-statement-cannot-be-used-for-references" class="doc-heading"><code class="inline-code">ParseError(ExceptionType::UnexpectedToken, "oneof statement cannot be used for references")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="consumenexttokeninput-index" class="doc-heading"><code class="inline-code">consumenexttoken(input, index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenleftp" class="doc-heading"><code class="inline-code">if(token!=Token::LeftP)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenrightp" class="doc-heading"><code class="inline-code">if(token!=Token::RightP)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenequalsign" class="doc-heading"><code class="inline-code">if(token==Token::EqualSign)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="consumenexttokeninput-index" class="doc-heading"><code class="inline-code">consumenexttoken(input, index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenrightp--tokentokenseperator" class="doc-heading"><code class="inline-code">if(token!=Token::RightP && token!=Token::Seperator)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenseperator" class="doc-heading"><code class="inline-code">if(token==Token::Seperator)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="consumenexttokeninput-index" class="doc-heading"><code class="inline-code">consumenexttoken(input, index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokeneos" class="doc-heading"><code class="inline-code">if(token==Token::EoS)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifismethod" class="doc-heading"><code class="inline-code">if(ismethod)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifismethod" class="doc-heading"><code class="inline-code">if(ismethod)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftokentokenidentifier" class="doc-heading"><code class="inline-code">if(token!=Token::Identifier)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenidentifier" class="doc-heading"><code class="inline-code">if(token!=Token::Identifier)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenidentifier" class="doc-heading"><code class="inline-code">if(token!=Token::Identifier)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokenreprconst--tokenreprstatic--tokenreprref" class="doc-heading"><code class="inline-code">if(token.repr=="const" || token.repr=="static" || token.repr=="ref")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="assignmentnullptr-name" class="doc-heading"><code class="inline-code">assignment(nullptr, name)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokenreprusing" class="doc-heading"><code class="inline-code">if(token.repr=="using")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifastktokeneos" class="doc-heading"><code class="inline-code">if(astk==Token::EoS)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="parseerrorexceptiontypeunexpectedtoken-expecting-identifier-for-new-name-found-astkrepr" class="doc-heading"><code class="inline-code">ParseError(ExceptionType::UnexpectedToken, "Expecting identifier for new name, found: "+astk.repr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="parseerrorexceptiontypeunexpectedtoken-expecting-as-or-end-of-line-found-astkrepr" class="doc-heading"><code class="inline-code">ParseError(ExceptionType::UnexpectedToken, "Expecting </code>as<code class="inline-code"> or end of line, found: "+astk.repr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="iftokenreprsource" class="doc-heading"><code class="inline-code">if(token.repr=="source")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftokentokenstring" class="doc-heading"><code class="inline-code">if(token!=Token::String)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="filetokenrepr" class="doc-heading"><code class="inline-code">file(token.repr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::ifstream</code></p>
+<h3 id="filenotfoundexceptiontokenrepr" class="doc-heading"><code class="inline-code">FileNotFoundException(token.repr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">throw</code></p>
+<h3 id="compileline-linenr" class="doc-heading"><code class="inline-code">Compile(line, linenr++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="catchexception-err" class="doc-heading"><code class="inline-code">catch(Exception &err)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="whiletokentokeneos" class="doc-heading"><code class="inline-code">while(token!=Token::EoS)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenseperator" class="doc-heading"><code class="inline-code">if(token==Token::Seperator)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="consumenexttokeninput-index" class="doc-heading"><code class="inline-code">consumenexttoken(input, index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftokentokenequalsign" class="doc-heading"><code class="inline-code">if(token==Token::EqualSign)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="assignmentterm-" class="doc-heading"><code class="inline-code">assignment(term, "")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifterm-typeastnodefunctioncall" class="doc-heading"><code class="inline-code">if(term->Type==ASTNode::FunctionCall)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="fixconstructorsroot" class="doc-heading"><code class="inline-code">fixconstructors(root)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="catch" class="doc-heading"><code class="inline-code">catch(...)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifit-posch" class="doc-heading"><code class="inline-code">if(it->pos<ch)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forunsigned-i0ileni" class="doc-heading"><code class="inline-code">for(unsigned i=0;i<len;i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifinquotes" class="doc-heading"><code class="inline-code">if(inquotes)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifescape1" class="doc-heading"><code class="inline-code">if(escape==1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifescape2" class="doc-heading"><code class="inline-code">if(escape==2)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifc" class="doc-heading"><code class="inline-code">if(c=='\\')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifinquotes1--c" class="doc-heading"><code class="inline-code">if(inquotes==1 && c=='\'')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifinquotes2--c" class="doc-heading"><code class="inline-code">if(inquotes==2 && c=='"')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifc" class="doc-heading"><code class="inline-code">if(c=='\'')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifc" class="doc-heading"><code class="inline-code">if(c=='"')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifc" class="doc-heading"><code class="inline-code">if(c=='#')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifc" class="doc-heading"><code class="inline-code">if(c==';')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="transformposi-cline-cchar" class="doc-heading"><code class="inline-code">transformpos(i, cline, cchar)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifclinepline" class="doc-heading"><code class="inline-code">if(cline!=pline)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifc--c--c" class="doc-heading"><code class="inline-code">if(c=='(' || c=='[' || c=='{')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iferror" class="doc-heading"><code class="inline-code">if(error)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="transformposi-cline-cchar" class="doc-heading"><code class="inline-code">transformpos(i, cline, cchar)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcutfrom-1" class="doc-heading"><code class="inline-code">if(cutfrom==-1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifclearafter-1" class="doc-heading"><code class="inline-code">if(clearafter!=-1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swapprepared-input" class="doc-heading"><code class="inline-code">swap(prepared, input)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="extractlineleft-process" class="doc-heading"><code class="inline-code">extractline(left, process)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="catchparseerror-ex" class="doc-heading"><code class="inline-code">catch(ParseError &ex)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="transformposexchar-cline-cchar" class="doc-heading"><code class="inline-code">transformpos(ex.Char, cline, cchar)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifret" class="doc-heading"><code class="inline-code">if(ret)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="catch" class="doc-heading"><code class="inline-code">catch(...)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifshowsvg" class="doc-heading"><code class="inline-code">if(showsvg__)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="asttosvginput-ret--true" class="doc-heading"><code class="inline-code">ASTToSVG(input, *ret, {}, true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="whiletrue" class="doc-heading"><code class="inline-code">while(true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifit-posp" class="doc-heading"><code class="inline-code">if(it->pos==p)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-m--linemarkers" class="doc-heading"><code class="inline-code">for(auto &m : linemarkers)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifshowsvg" class="doc-heading"><code class="inline-code">if(showsvg__)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="asttosvginput-ret-strlines-true" class="doc-heading"><code class="inline-code">ASTToSVG(input, *ret, strlines, true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="compile--1" class="doc-heading"><code class="inline-code">Compile("", -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

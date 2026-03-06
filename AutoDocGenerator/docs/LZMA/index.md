@@ -1,6 +1,6 @@
 # LZMA
 
-> Auto-generated documentation for the **LZMA** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **LZMA** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

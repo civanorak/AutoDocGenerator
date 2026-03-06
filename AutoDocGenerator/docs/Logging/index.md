@@ -1,6 +1,6 @@
 # Logging
 
-> Auto-generated documentation for the **Logging** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Logging** module of the Gorgon C++ Game Engine.
 
 
 ## Contents
@@ -125,7 +125,7 @@ Streams out the given value to the underlying stream. This function will automat
 **Returns:** `helper`
 
 
-Streams out the given value to the underlying stream. This function will automatically add requested information in front. Always cascade entries. Every time a new `logger << ...` is called, header information will be printed out. You may use std::endl in your logs, but a new line will be added for all entries. An extra empty line will be inserted for multiline entries. Do not use "\n" as it will not be detected. , @code logger.Log("Unexpected error: ", Utils::Logger::Error)<<ex.what(); @endcode
+Streams out the given value to the underlying stream. This function will automatically add requested information in front. Always cascade entries. Every time a new `logger << ...` is called, header information will be printed out. You may use std::endl in your logs, but a new line will be added for all entries. An extra empty line will be inserted for multiline entries. Do not use "\n" as it will not be detected. , @code logger.Log("Unexpected error: ", Utils::Logger::Error)&lt;&lt;ex.what(); @endcode
 
 
 ### `if(width && headw*1.25 >= width)`

@@ -1,6 +1,6 @@
 # EmptyImage
 
-> Auto-generated documentation for the **EmptyImage** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **EmptyImage** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

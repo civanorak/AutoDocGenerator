@@ -1,6 +1,6 @@
 # Assert_Win32
 
-> Auto-generated documentation for the **Assert_Win32** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Assert_Win32** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

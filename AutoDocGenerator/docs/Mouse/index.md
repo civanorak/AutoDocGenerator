@@ -1,4 +1,4 @@
 # Mouse
 
-> Auto-generated documentation for the **Mouse** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Mouse** module of the Gorgon C++ Game Engine.
 

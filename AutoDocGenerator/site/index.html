@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>Home — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Base.html">Base</a></li>
+    <li><a href="modules/Basic.html">Basic</a></li>
+    <li><a href="modules/Common.html">Common</a></li>
+    <li><a href="modules/Config.html">Config</a></li>
+    <li><a href="modules/Definitions.html">Definitions</a></li>
+    <li><a href="modules/Environment.html">Environment</a></li>
+    <li><a href="modules/OS.html">OS</a></li>
+    <li><a href="modules/Runtime.html">Runtime</a></li>
+    <li><a href="modules/Types.html">Types</a></li>
+    <li><a href="modules/Utils.html">Utils</a></li>
+    <li><a href="modules/UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Bitmap.html">Bitmap</a></li>
+    <li><a href="modules/BitmapFont.html">BitmapFont</a></li>
+    <li><a href="modules/BlankImage.html">BlankImage</a></li>
+    <li><a href="modules/Color.html">Color</a></li>
+    <li><a href="modules/ColorPicker.html">ColorPicker</a></li>
+    <li><a href="modules/ColorPlane.html">ColorPlane</a></li>
+    <li><a href="modules/ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="modules/Drawables.html">Drawables</a></li>
+    <li><a href="modules/EmptyImage.html">EmptyImage</a></li>
+    <li><a href="modules/Filters.html">Filters</a></li>
+    <li><a href="modules/Flip.html">Flip</a></li>
+    <li><a href="modules/Font.html">Font</a></li>
+    <li><a href="modules/FontTheme.html">FontTheme</a></li>
+    <li><a href="modules/FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="modules/FreeType.html">FreeType</a></li>
+    <li><a href="modules/GID.html">GID</a></li>
+    <li><a href="modules/GL.html">GL</a></li>
+    <li><a href="modules/Graphics.html">Graphics</a></li>
+    <li><a href="modules/HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="modules/IL.html">IL</a></li>
+    <li><a href="modules/Image.html">Image</a></li>
+    <li><a href="modules/JPEG.html">JPEG</a></li>
+    <li><a href="modules/OpenGL.html">OpenGL</a></li>
+    <li><a href="modules/PNG.html">PNG</a></li>
+    <li><a href="modules/Renderer.html">Renderer</a></li>
+    <li><a href="modules/ScalableObject.html">ScalableObject</a></li>
+    <li><a href="modules/Shader.html">Shader</a></li>
+    <li><a href="modules/Shaders.html">Shaders</a></li>
+    <li><a href="modules/Texture.html">Texture</a></li>
+    <li><a href="modules/TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="modules/TextureTargets.html">TextureTargets</a></li>
+    <li><a href="modules/TintedObject.html">TintedObject</a></li>
+    <li><a href="modules/Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Animation.html">Animation</a></li>
+    <li><a href="modules/AnimationServices.html">AnimationServices</a></li>
+    <li><a href="modules/AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="modules/Animations.html">Animations</a></li>
+    <li><a href="modules/ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="modules/Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/DnD.html">DnD</a></li>
+    <li><a href="modules/Input.html">Input</a></li>
+    <li><a href="modules/KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="modules/Keyboard.html">Keyboard</a></li>
+    <li><a href="modules/Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Button.html">Button</a></li>
+    <li><a href="modules/Checkbox.html">Checkbox</a></li>
+    <li><a href="modules/CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="modules/CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="modules/Combobox.html">Combobox</a></li>
+    <li><a href="modules/ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="modules/ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="modules/CountingText.html">CountingText</a></li>
+    <li><a href="modules/Dialog.html">Dialog</a></li>
+    <li><a href="modules/DialogWindow.html">DialogWindow</a></li>
+    <li><a href="modules/Dropdown.html">Dropdown</a></li>
+    <li><a href="modules/Filler.html">Filler</a></li>
+    <li><a href="modules/IButton.html">IButton</a></li>
+    <li><a href="modules/ICheckbox.html">ICheckbox</a></li>
+    <li><a href="modules/ILabel.html">ILabel</a></li>
+    <li><a href="modules/IListItem.html">IListItem</a></li>
+    <li><a href="modules/INumberbox.html">INumberbox</a></li>
+    <li><a href="modules/IOption.html">IOption</a></li>
+    <li><a href="modules/IProgressor.html">IProgressor</a></li>
+    <li><a href="modules/IScroller.html">IScroller</a></li>
+    <li><a href="modules/ISlider.html">ISlider</a></li>
+    <li><a href="modules/ITextbox.html">ITextbox</a></li>
+    <li><a href="modules/Inputbox.html">Inputbox</a></li>
+    <li><a href="modules/Label.html">Label</a></li>
+    <li><a href="modules/Listbox.html">Listbox</a></li>
+    <li><a href="modules/ListboxBase.html">ListboxBase</a></li>
+    <li><a href="modules/ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="modules/NumberInput.html">NumberInput</a></li>
+    <li><a href="modules/Numberbox.html">Numberbox</a></li>
+    <li><a href="modules/Panel.html">Panel</a></li>
+    <li><a href="modules/PanelBase.html">PanelBase</a></li>
+    <li><a href="modules/PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="modules/Percentbar.html">Percentbar</a></li>
+    <li><a href="modules/PetContainer.html">PetContainer</a></li>
+    <li><a href="modules/PetTextbox.html">PetTextbox</a></li>
+    <li><a href="modules/Placeholder.html">Placeholder</a></li>
+    <li><a href="modules/Progressbar.html">Progressbar</a></li>
+    <li><a href="modules/RadioButton.html">RadioButton</a></li>
+    <li><a href="modules/RadioButtons.html">RadioButtons</a></li>
+    <li><a href="modules/RadioControl.html">RadioControl</a></li>
+    <li><a href="modules/Scrollbar.html">Scrollbar</a></li>
+    <li><a href="modules/ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="modules/Slider.html">Slider</a></li>
+    <li><a href="modules/SliderBase.html">SliderBase</a></li>
+    <li><a href="modules/SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="modules/Spinner.html">Spinner</a></li>
+    <li><a href="modules/StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="modules/TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="modules/Tabpanel.html">Tabpanel</a></li>
+    <li><a href="modules/TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="modules/TextInput.html">TextInput</a></li>
+    <li><a href="modules/Textarea.html">Textarea</a></li>
+    <li><a href="modules/Textbox.html">Textbox</a></li>
+    <li><a href="modules/TextboxBase.html">TextboxBase</a></li>
+    <li><a href="modules/TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="modules/TooltipManager.html">TooltipManager</a></li>
+    <li><a href="modules/TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="modules/UI.html">UI</a></li>
+    <li><a href="modules/Widget.html">Widget</a></li>
+    <li><a href="modules/WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="modules/WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="modules/WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Alignment.html">Alignment</a></li>
+    <li><a href="modules/Bezier.html">Bezier</a></li>
+    <li><a href="modules/Bounds.html">Bounds</a></li>
+    <li><a href="modules/Circle.html">Circle</a></li>
+    <li><a href="modules/Dimension.html">Dimension</a></li>
+    <li><a href="modules/Geometry.html">Geometry</a></li>
+    <li><a href="modules/GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="modules/Line.html">Line</a></li>
+    <li><a href="modules/Margin.html">Margin</a></li>
+    <li><a href="modules/Point.html">Point</a></li>
+    <li><a href="modules/Point3D.html">Point3D</a></li>
+    <li><a href="modules/PointList.html">PointList</a></li>
+    <li><a href="modules/PointProperty.html">PointProperty</a></li>
+    <li><a href="modules/Polygon.html">Polygon</a></li>
+    <li><a href="modules/Rectangle.html">Rectangle</a></li>
+    <li><a href="modules/Region.html">Region</a></li>
+    <li><a href="modules/Size.html">Size</a></li>
+    <li><a href="modules/SizeProperty.html">SizeProperty</a></li>
+    <li><a href="modules/Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Audio.html">Audio</a></li>
+    <li><a href="modules/AudioStream.html">AudioStream</a></li>
+    <li><a href="modules/FLAC.html">FLAC</a></li>
+    <li><a href="modules/Multimedia.html">Multimedia</a></li>
+    <li><a href="modules/PulseAudio.html">PulseAudio</a></li>
+    <li><a href="modules/PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="modules/Sound.html">Sound</a></li>
+    <li><a href="modules/Source.html">Source</a></li>
+    <li><a href="modules/Vorbis.html">Vorbis</a></li>
+    <li><a href="modules/WASAPI.html">WASAPI</a></li>
+    <li><a href="modules/WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="modules/Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Blob.html">Blob</a></li>
+    <li><a href="modules/CGI.html">CGI</a></li>
+    <li><a href="modules/Clipboard.html">Clipboard</a></li>
+    <li><a href="modules/Data.html">Data</a></li>
+    <li><a href="modules/DataExchange.html">DataExchange</a></li>
+    <li><a href="modules/DataItems.html">DataItems</a></li>
+    <li><a href="modules/File.html">File</a></li>
+    <li><a href="modules/FileDialog.html">FileDialog</a></li>
+    <li><a href="modules/Filesystem.html">Filesystem</a></li>
+    <li><a href="modules/Folder.html">Folder</a></li>
+    <li><a href="modules/HTTP.html">HTTP</a></li>
+    <li><a href="modules/LZMA.html">LZMA</a></li>
+    <li><a href="modules/Markdown.html">Markdown</a></li>
+    <li><a href="modules/MemoryStream.html">MemoryStream</a></li>
+    <li><a href="modules/Parse.html">Parse</a></li>
+    <li><a href="modules/Query.html">Query</a></li>
+    <li><a href="modules/Reader.html">Reader</a></li>
+    <li><a href="modules/Storage.html">Storage</a></li>
+    <li><a href="modules/Stream.html">Stream</a></li>
+    <li><a href="modules/Tokenizer.html">Tokenizer</a></li>
+    <li><a href="modules/URI.html">URI</a></li>
+    <li><a href="modules/Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Array.html">Array</a></li>
+    <li><a href="modules/Collection.html">Collection</a></li>
+    <li><a href="modules/Container.html">Container</a></li>
+    <li><a href="modules/Hashmap.html">Hashmap</a></li>
+    <li><a href="modules/Iterator.html">Iterator</a></li>
+    <li><a href="modules/LinkNode.html">LinkNode</a></li>
+    <li><a href="modules/List.html">List</a></li>
+    <li><a href="modules/ListItem.html">ListItem</a></li>
+    <li><a href="modules/Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/BorderData.html">BorderData</a></li>
+    <li><a href="modules/ComponentStack.html">ComponentStack</a></li>
+    <li><a href="modules/ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="modules/ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="modules/CustomLayer.html">CustomLayer</a></li>
+    <li><a href="modules/DWM.html">DWM</a></li>
+    <li><a href="modules/ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="modules/Flow.html">Flow</a></li>
+    <li><a href="modules/FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="modules/InlinePanel.html">InlinePanel</a></li>
+    <li><a href="modules/Layer.html">Layer</a></li>
+    <li><a href="modules/LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="modules/LayerMover.html">LayerMover</a></li>
+    <li><a href="modules/LayerResizer.html">LayerResizer</a></li>
+    <li><a href="modules/LayerWidget.html">LayerWidget</a></li>
+    <li><a href="modules/Layerbox.html">Layerbox</a></li>
+    <li><a href="modules/LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="modules/ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="modules/MaskedObject.html">MaskedObject</a></li>
+    <li><a href="modules/Monitor.html">Monitor</a></li>
+    <li><a href="modules/MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="modules/Organizer.html">Organizer</a></li>
+    <li><a href="modules/StackedObject.html">StackedObject</a></li>
+    <li><a href="modules/VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="modules/Window.html">Window</a></li>
+    <li><a href="modules/WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Assert.html">Assert</a></li>
+    <li><a href="modules/Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="modules/Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="modules/CaptionValue.html">CaptionValue</a></li>
+    <li><a href="modules/Console.html">Console</a></li>
+    <li><a href="modules/Console_Nix.html">Console_Nix</a></li>
+    <li><a href="modules/Console_Win32.html">Console_Win32</a></li>
+    <li><a href="modules/ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="modules/Event.html">Event</a></li>
+    <li><a href="modules/Exception.html">Exception</a></li>
+    <li><a href="modules/Exceptions.html">Exceptions</a></li>
+    <li><a href="modules/GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="modules/Logging.html">Logging</a></li>
+    <li><a href="modules/Null.html">Null</a></li>
+    <li><a href="modules/Nullable.html">Nullable</a></li>
+    <li><a href="modules/Pointer.html">Pointer</a></li>
+    <li><a href="modules/Property.html">Property</a></li>
+    <li><a href="modules/Random.html">Random</a></li>
+    <li><a href="modules/RefCounter.html">RefCounter</a></li>
+    <li><a href="modules/Registry.html">Registry</a></li>
+    <li><a href="modules/SGuid.html">SGuid</a></li>
+    <li><a href="modules/Scope.html">Scope</a></li>
+    <li><a href="modules/ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="modules/Threading.html">Threading</a></li>
+    <li><a href="modules/Time.html">Time</a></li>
+    <li><a href="modules/Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/AST.html">AST</a></li>
+    <li><a href="modules/AStar.html">AStar</a></li>
+    <li><a href="modules/Blueprint.html">Blueprint</a></li>
+    <li><a href="modules/Compiler.html">Compiler</a></li>
+    <li><a href="modules/Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="modules/Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="modules/Compilers.html">Compilers</a></li>
+    <li><a href="modules/Component.html">Component</a></li>
+    <li><a href="modules/Composer.html">Composer</a></li>
+    <li><a href="modules/Discrete.html">Discrete</a></li>
+    <li><a href="modules/Embedding.html">Embedding</a></li>
+    <li><a href="modules/Enum.html">Enum</a></li>
+    <li><a href="modules/Generator.html">Generator</a></li>
+    <li><a href="modules/Instruction.html">Instruction</a></li>
+    <li><a href="modules/Language.html">Language</a></li>
+    <li><a href="modules/Message.html">Message</a></li>
+    <li><a href="modules/Pathfinders.html">Pathfinders</a></li>
+    <li><a href="modules/Reflection.html">Reflection</a></li>
+    <li><a href="modules/RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="modules/Scene.html">Scene</a></li>
+    <li><a href="modules/Scripting.html">Scripting</a></li>
+    <li><a href="modules/Simple.html">Simple</a></li>
+    <li><a href="modules/String.html">String</a></li>
+    <li><a href="modules/Struct.html">Struct</a></li>
+    <li><a href="modules/TMP.html">TMP</a></li>
+    <li><a href="modules/Template.html">Template</a></li>
+    <li><a href="modules/TiledMap.html">TiledMap</a></li>
+    <li><a href="modules/Validators.html">Validators</a></li>
+    <li><a href="modules/VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="modules/World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Linux.html">Linux</a></li>
+    <li><a href="modules/Win32.html">Win32</a></li>
+    <li><a href="modules/Windows.html">Windows</a></li>
+    <li><a href="modules/X11.html">X11</a></li>
+    <li><a href="modules/X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="modules/AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="modules/AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="modules/AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="modules/CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="modules/Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/Any.html">Any</a></li>
+    <li><a href="modules/Builtin.html">Builtin</a></li>
+    <li><a href="modules/FindObject.html">FindObject</a></li>
+    <li><a href="modules/Helpers.html">Helpers</a></li>
+    <li><a href="modules/Instance.html">Instance</a></li>
+    <li><a href="modules/ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="modules/PD.html">PD</a></li>
+    <li><a href="modules/ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="modules/Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="modules/BasicMath.html">BasicMath</a></li>
+    <li><a href="modules/Kernel.html">Kernel</a></li>
+    <li><a href="modules/main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content  full-width">
+        
+        
+    <div class="hero">
+        <h1>Gorgon Game Engine</h1>
+        <p>Modern C++ Game Library — Complete API Documentation</p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="number">284</div>
+                <div class="label">Modules</div>
+            </div>
+            <div class="hero-stat">
+                <div class="number">15</div>
+                <div class="label">Categories</div>
+            </div>
+            <div class="hero-stat">
+                <div class="number">C++</div>
+                <div class="label">Language</div>
+            </div>
+        </div>
+        <div class="hero-actions">
+            <a href="getting-started.html" class="btn btn-primary">🚀 Getting Started</a>
+            <a href="https://github.com/civanorak/AutoDocGenerator" class="btn btn-outline">GitHub</a>
+        </div>
+    </div>
+    <div class="category-section">
+  <h2 class="category-title">🎮 Core</h2>
+  <div class="module-grid">
+    <a href="modules/Base.html" class="module-card">
+      <div class="icon">⚡</div>
+      <div class="name">Base</div>
+    </a>
+    <a href="modules/Basic.html" class="module-card">
+      <div class="icon">⚡</div>
+      <div class="name">Basic</div>
+    </a>
+    <a href="modules/Common.html" class="module-card">
+      <div class="icon">⚡</div>
+      <div class="name">Common</div>
+    </a>
+    <a href="modules/Config.html" class="module-card">
+      <div class="icon">⚡</div>
+      <div class="name">Config</div>
+    </a>
+    <a href="modules/Definitions.html" class="module-card">
+      <div class="icon">⚡</div>
+      <div class="name">Definitions</div>
+    </a>
+    <a href="modules/Environment.html" class="module-card">
+      <div class="icon">⚡</div>
+      <div class="name">Environment</div>
+    </a>
+    <a href="modules/OS.html" class="module-card">
+      <div class="icon">⚡</div>
+      <div class="name">OS</div>
+    </a>
+    <a href="modules/Runtime.html" class="module-card">
+      <div class="icon">⚡</div>
+      <div class="name">Runtime</div>
+    </a>
+    <a href="modules/Types.html" class="module-card">
+      <div class="icon">⚡</div>
+      <div class="name">Types</div>
+    </a>
+    <a href="modules/Utils.html" class="module-card">
+      <div class="icon">⚡</div>
+      <div class="name">Utils</div>
+    </a>
+    <a href="modules/UtilsBase.html" class="module-card">
+      <div class="icon">⚡</div>
+      <div class="name">UtilsBase</div>
+    </a>
+  </div>
+</div>
+<div class="category-section">
+  <h2 class="category-title">🖼️ Graphics</h2>
+  <div class="module-grid">
+    <a href="modules/Bitmap.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">Bitmap</div>
+    </a>
+    <a href="modules/BitmapFont.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">BitmapFont</div>
+    </a>
+    <a href="modules/BlankImage.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">BlankImage</div>
+    </a>
+    <a href="modules/Color.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">Color</div>
+    </a>
+    <a href="modules/ColorPicker.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">ColorPicker</div>
+    </a>
+    <a href="modules/ColorPlane.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">ColorPlane</div>
+    </a>
+    <a href="modules/ColorSpaces.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">ColorSpaces</div>
+    </a>
+    <a href="modules/Drawables.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">Drawables</div>
+    </a>
+    <a href="modules/EmptyImage.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">EmptyImage</div>
+    </a>
+    <a href="modules/Filters.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">Filters</div>
+    </a>
+    <a href="modules/Flip.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">Flip</div>
+    </a>
+    <a href="modules/Font.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">Font</div>
+    </a>
+    <a href="modules/FontTheme.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">FontTheme</div>
+    </a>
+    <a href="modules/FrameBuffer.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">FrameBuffer</div>
+    </a>
+    <a href="modules/FreeType.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">FreeType</div>
+    </a>
+    <a href="modules/GID.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">GID</div>
+    </a>
+    <a href="modules/GL.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">GL</div>
+    </a>
+    <a href="modules/Graphics.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">Graphics</div>
+    </a>
+    <a href="modules/HTMLRenderer.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">HTMLRenderer</div>
+    </a>
+    <a href="modules/IL.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">IL</div>
+    </a>
+    <a href="modules/Image.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">Image</div>
+    </a>
+    <a href="modules/JPEG.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">JPEG</div>
+    </a>
+    <a href="modules/OpenGL.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">OpenGL</div>
+    </a>
+    <a href="modules/PNG.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">PNG</div>
+    </a>
+    <a href="modules/Renderer.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">Renderer</div>
+    </a>
+    <a href="modules/ScalableObject.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">ScalableObject</div>
+    </a>
+    <a href="modules/Shader.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">Shader</div>
+    </a>
+    <a href="modules/Shaders.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">Shaders</div>
+    </a>
+    <a href="modules/Texture.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">Texture</div>
+    </a>
+    <a href="modules/TextureAnimation.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">TextureAnimation</div>
+    </a>
+    <a href="modules/TextureTargets.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">TextureTargets</div>
+    </a>
+    <a href="modules/TintedObject.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">TintedObject</div>
+    </a>
+    <a href="modules/Tinting.html" class="module-card">
+      <div class="icon">🎨</div>
+      <div class="name">Tinting</div>
+    </a>
+  </div>
+</div>
+<div class="category-section">
+  <h2 class="category-title">🎬 Animation</h2>
+  <div class="module-grid">
+    <a href="modules/Animation.html" class="module-card">
+      <div class="icon">🎬</div>
+      <div class="name">Animation</div>
+    </a>
+    <a href="modules/AnimationServices.html" class="module-card">
+      <div class="icon">🎬</div>
+      <div class="name">AnimationServices</div>
+    </a>
+    <a href="modules/AnimationStorage.html" class="module-card">
+      <div class="icon">🎬</div>
+      <div class="name">AnimationStorage</div>
+    </a>
+    <a href="modules/Animations.html" class="module-card">
+      <div class="icon">🎬</div>
+      <div class="name">Animations</div>
+    </a>
+    <a href="modules/ControlledTimer.html" class="module-card">
+      <div class="icon">🎬</div>
+      <div class="name">ControlledTimer</div>
+    </a>
+    <a href="modules/Controllers.html" class="module-card">
+      <div class="icon">🎬</div>
+      <div class="name">Controllers</div>
+    </a>
+  </div>
+</div>
+<div class="category-section">
+  <h2 class="category-title">🖱️ Input</h2>
+  <div class="module-grid">
+    <a href="modules/DnD.html" class="module-card">
+      <div class="icon">🖱️</div>
+      <div class="name">DnD</div>
+    </a>
+    <a href="modules/Input.html" class="module-card">
+      <div class="icon">🖱️</div>
+      <div class="name">Input</div>
+    </a>
+    <a href="modules/KeyRepeater.html" class="module-card">
+      <div class="icon">🖱️</div>
+      <div class="name">KeyRepeater</div>
+    </a>
+    <a href="modules/Keyboard.html" class="module-card">
+      <div class="icon">🖱️</div>
+      <div class="name">Keyboard</div>
+    </a>
+    <a href="modules/Mouse.html" class="module-card">
+      <div class="icon">🖱️</div>
+      <div class="name">Mouse</div>
+    </a>
+  </div>
+</div>
+<div class="category-section">
+  <h2 class="category-title">🪟 UI & Widgets</h2>
+  <div class="module-grid">
+    <a href="modules/Button.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Button</div>
+    </a>
+    <a href="modules/Checkbox.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Checkbox</div>
+    </a>
+    <a href="modules/CheckboxBase.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">CheckboxBase</div>
+    </a>
+    <a href="modules/CheckboxBlueprint.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">CheckboxBlueprint</div>
+    </a>
+    <a href="modules/Combobox.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Combobox</div>
+    </a>
+    <a href="modules/ComboboxBase.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">ComboboxBase</div>
+    </a>
+    <a href="modules/ComboboxBlueprint.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">ComboboxBlueprint</div>
+    </a>
+    <a href="modules/CountingText.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">CountingText</div>
+    </a>
+    <a href="modules/Dialog.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Dialog</div>
+    </a>
+    <a href="modules/DialogWindow.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">DialogWindow</div>
+    </a>
+    <a href="modules/Dropdown.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Dropdown</div>
+    </a>
+    <a href="modules/Filler.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Filler</div>
+    </a>
+    <a href="modules/IButton.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">IButton</div>
+    </a>
+    <a href="modules/ICheckbox.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">ICheckbox</div>
+    </a>
+    <a href="modules/ILabel.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">ILabel</div>
+    </a>
+    <a href="modules/IListItem.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">IListItem</div>
+    </a>
+    <a href="modules/INumberbox.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">INumberbox</div>
+    </a>
+    <a href="modules/IOption.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">IOption</div>
+    </a>
+    <a href="modules/IProgressor.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">IProgressor</div>
+    </a>
+    <a href="modules/IScroller.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">IScroller</div>
+    </a>
+    <a href="modules/ISlider.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">ISlider</div>
+    </a>
+    <a href="modules/ITextbox.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">ITextbox</div>
+    </a>
+    <a href="modules/Inputbox.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Inputbox</div>
+    </a>
+    <a href="modules/Label.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Label</div>
+    </a>
+    <a href="modules/Listbox.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Listbox</div>
+    </a>
+    <a href="modules/ListboxBase.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">ListboxBase</div>
+    </a>
+    <a href="modules/ListboxBlueprint.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">ListboxBlueprint</div>
+    </a>
+    <a href="modules/NumberInput.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">NumberInput</div>
+    </a>
+    <a href="modules/Numberbox.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Numberbox</div>
+    </a>
+    <a href="modules/Panel.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Panel</div>
+    </a>
+    <a href="modules/PanelBase.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">PanelBase</div>
+    </a>
+    <a href="modules/PanelBlueprint.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">PanelBlueprint</div>
+    </a>
+    <a href="modules/Percentbar.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Percentbar</div>
+    </a>
+    <a href="modules/PetContainer.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">PetContainer</div>
+    </a>
+    <a href="modules/PetTextbox.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">PetTextbox</div>
+    </a>
+    <a href="modules/Placeholder.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Placeholder</div>
+    </a>
+    <a href="modules/Progressbar.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Progressbar</div>
+    </a>
+    <a href="modules/RadioButton.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">RadioButton</div>
+    </a>
+    <a href="modules/RadioButtons.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">RadioButtons</div>
+    </a>
+    <a href="modules/RadioControl.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">RadioControl</div>
+    </a>
+    <a href="modules/Scrollbar.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Scrollbar</div>
+    </a>
+    <a href="modules/ScrollingWidget.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">ScrollingWidget</div>
+    </a>
+    <a href="modules/Slider.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Slider</div>
+    </a>
+    <a href="modules/SliderBase.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">SliderBase</div>
+    </a>
+    <a href="modules/SliderBlueprint.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">SliderBlueprint</div>
+    </a>
+    <a href="modules/Spinner.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Spinner</div>
+    </a>
+    <a href="modules/StatefulLabel.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">StatefulLabel</div>
+    </a>
+    <a href="modules/TabPanelPanel.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">TabPanelPanel</div>
+    </a>
+    <a href="modules/Tabpanel.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Tabpanel</div>
+    </a>
+    <a href="modules/TabpanelBlueprint.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">TabpanelBlueprint</div>
+    </a>
+    <a href="modules/TextInput.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">TextInput</div>
+    </a>
+    <a href="modules/Textarea.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Textarea</div>
+    </a>
+    <a href="modules/Textbox.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Textbox</div>
+    </a>
+    <a href="modules/TextboxBase.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">TextboxBase</div>
+    </a>
+    <a href="modules/TextboxBlueprint.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">TextboxBlueprint</div>
+    </a>
+    <a href="modules/TooltipManager.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">TooltipManager</div>
+    </a>
+    <a href="modules/TwoStateControl.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">TwoStateControl</div>
+    </a>
+    <a href="modules/UI.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">UI</div>
+    </a>
+    <a href="modules/Widget.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">Widget</div>
+    </a>
+    <a href="modules/WidgetContainer.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">WidgetContainer</div>
+    </a>
+    <a href="modules/WidgetLayer.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">WidgetLayer</div>
+    </a>
+    <a href="modules/WidgetRegistry.html" class="module-card">
+      <div class="icon">🧩</div>
+      <div class="name">WidgetRegistry</div>
+    </a>
+  </div>
+</div>
+<div class="category-section">
+  <h2 class="category-title">📐 Geometry</h2>
+  <div class="module-grid">
+    <a href="modules/Alignment.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">Alignment</div>
+    </a>
+    <a href="modules/Bezier.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">Bezier</div>
+    </a>
+    <a href="modules/Bounds.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">Bounds</div>
+    </a>
+    <a href="modules/Circle.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">Circle</div>
+    </a>
+    <a href="modules/Dimension.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">Dimension</div>
+    </a>
+    <a href="modules/Geometry.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">Geometry</div>
+    </a>
+    <a href="modules/GeometryBoxes.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">GeometryBoxes</div>
+    </a>
+    <a href="modules/Line.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">Line</div>
+    </a>
+    <a href="modules/Margin.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">Margin</div>
+    </a>
+    <a href="modules/Point.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">Point</div>
+    </a>
+    <a href="modules/Point3D.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">Point3D</div>
+    </a>
+    <a href="modules/PointList.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">PointList</div>
+    </a>
+    <a href="modules/PointProperty.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">PointProperty</div>
+    </a>
+    <a href="modules/Polygon.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">Polygon</div>
+    </a>
+    <a href="modules/Rectangle.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">Rectangle</div>
+    </a>
+    <a href="modules/Region.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">Region</div>
+    </a>
+    <a href="modules/Size.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">Size</div>
+    </a>
+    <a href="modules/SizeProperty.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">SizeProperty</div>
+    </a>
+    <a href="modules/Transform3D.html" class="module-card">
+      <div class="icon">📐</div>
+      <div class="name">Transform3D</div>
+    </a>
+  </div>
+</div>
+<div class="category-section">
+  <h2 class="category-title">🔊 Audio</h2>
+  <div class="module-grid">
+    <a href="modules/Audio.html" class="module-card">
+      <div class="icon">🔊</div>
+      <div class="name">Audio</div>
+    </a>
+    <a href="modules/AudioStream.html" class="module-card">
+      <div class="icon">🔊</div>
+      <div class="name">AudioStream</div>
+    </a>
+    <a href="modules/FLAC.html" class="module-card">
+      <div class="icon">🔊</div>
+      <div class="name">FLAC</div>
+    </a>
+    <a href="modules/Multimedia.html" class="module-card">
+      <div class="icon">🔊</div>
+      <div class="name">Multimedia</div>
+    </a>
+    <a href="modules/PulseAudio.html" class="module-card">
+      <div class="icon">🔊</div>
+      <div class="name">PulseAudio</div>
+    </a>
+    <a href="modules/PulseAudio.inc.html" class="module-card">
+      <div class="icon">🔊</div>
+      <div class="name">PulseAudio.inc</div>
+    </a>
+    <a href="modules/Sound.html" class="module-card">
+      <div class="icon">🔊</div>
+      <div class="name">Sound</div>
+    </a>
+    <a href="modules/Source.html" class="module-card">
+      <div class="icon">🔊</div>
+      <div class="name">Source</div>
+    </a>
+    <a href="modules/Vorbis.html" class="module-card">
+      <div class="icon">🔊</div>
+      <div class="name">Vorbis</div>
+    </a>
+    <a href="modules/WASAPI.html" class="module-card">
+      <div class="icon">🔊</div>
+      <div class="name">WASAPI</div>
+    </a>
+    <a href="modules/WASAPI.inc.html" class="module-card">
+      <div class="icon">🔊</div>
+      <div class="name">WASAPI.inc</div>
+    </a>
+    <a href="modules/Wave.html" class="module-card">
+      <div class="icon">🔊</div>
+      <div class="name">Wave</div>
+    </a>
+  </div>
+</div>
+<div class="category-section">
+  <h2 class="category-title">📁 IO & Data</h2>
+  <div class="module-grid">
+    <a href="modules/Blob.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">Blob</div>
+    </a>
+    <a href="modules/CGI.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">CGI</div>
+    </a>
+    <a href="modules/Clipboard.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">Clipboard</div>
+    </a>
+    <a href="modules/Data.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">Data</div>
+    </a>
+    <a href="modules/DataExchange.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">DataExchange</div>
+    </a>
+    <a href="modules/DataItems.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">DataItems</div>
+    </a>
+    <a href="modules/File.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">File</div>
+    </a>
+    <a href="modules/FileDialog.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">FileDialog</div>
+    </a>
+    <a href="modules/Filesystem.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">Filesystem</div>
+    </a>
+    <a href="modules/Folder.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">Folder</div>
+    </a>
+    <a href="modules/HTTP.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">HTTP</div>
+    </a>
+    <a href="modules/LZMA.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">LZMA</div>
+    </a>
+    <a href="modules/Markdown.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">Markdown</div>
+    </a>
+    <a href="modules/MemoryStream.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">MemoryStream</div>
+    </a>
+    <a href="modules/Parse.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">Parse</div>
+    </a>
+    <a href="modules/Query.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">Query</div>
+    </a>
+    <a href="modules/Reader.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">Reader</div>
+    </a>
+    <a href="modules/Storage.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">Storage</div>
+    </a>
+    <a href="modules/Stream.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">Stream</div>
+    </a>
+    <a href="modules/Tokenizer.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">Tokenizer</div>
+    </a>
+    <a href="modules/URI.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">URI</div>
+    </a>
+    <a href="modules/Writer.html" class="module-card">
+      <div class="icon">📁</div>
+      <div class="name">Writer</div>
+    </a>
+  </div>
+</div>
+<div class="category-section">
+  <h2 class="category-title">🧩 Containers</h2>
+  <div class="module-grid">
+    <a href="modules/Array.html" class="module-card">
+      <div class="icon">📦</div>
+      <div class="name">Array</div>
+    </a>
+    <a href="modules/Collection.html" class="module-card">
+      <div class="icon">📦</div>
+      <div class="name">Collection</div>
+    </a>
+    <a href="modules/Container.html" class="module-card">
+      <div class="icon">📦</div>
+      <div class="name">Container</div>
+    </a>
+    <a href="modules/Hashmap.html" class="module-card">
+      <div class="icon">📦</div>
+      <div class="name">Hashmap</div>
+    </a>
+    <a href="modules/Iterator.html" class="module-card">
+      <div class="icon">📦</div>
+      <div class="name">Iterator</div>
+    </a>
+    <a href="modules/LinkNode.html" class="module-card">
+      <div class="icon">📦</div>
+      <div class="name">LinkNode</div>
+    </a>
+    <a href="modules/List.html" class="module-card">
+      <div class="icon">📦</div>
+      <div class="name">List</div>
+    </a>
+    <a href="modules/ListItem.html" class="module-card">
+      <div class="icon">📦</div>
+      <div class="name">ListItem</div>
+    </a>
+    <a href="modules/Vector.html" class="module-card">
+      <div class="icon">📦</div>
+      <div class="name">Vector</div>
+    </a>
+  </div>
+</div>
+<div class="category-section">
+  <h2 class="category-title">🪟 Window & Layout</h2>
+  <div class="module-grid">
+    <a href="modules/BorderData.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">BorderData</div>
+    </a>
+    <a href="modules/ComponentStack.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">ComponentStack</div>
+    </a>
+    <a href="modules/ComponentStackWidget.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">ComponentStackWidget</div>
+    </a>
+    <a href="modules/ControlledPanel.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">ControlledPanel</div>
+    </a>
+    <a href="modules/CustomLayer.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">CustomLayer</div>
+    </a>
+    <a href="modules/DWM.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">DWM</div>
+    </a>
+    <a href="modules/ExtenderLayer.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">ExtenderLayer</div>
+    </a>
+    <a href="modules/Flow.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">Flow</div>
+    </a>
+    <a href="modules/FullscreenPanel.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">FullscreenPanel</div>
+    </a>
+    <a href="modules/InlinePanel.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">InlinePanel</div>
+    </a>
+    <a href="modules/Layer.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">Layer</div>
+    </a>
+    <a href="modules/LayerAdapter.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">LayerAdapter</div>
+    </a>
+    <a href="modules/LayerMover.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">LayerMover</div>
+    </a>
+    <a href="modules/LayerResizer.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">LayerResizer</div>
+    </a>
+    <a href="modules/LayerWidget.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">LayerWidget</div>
+    </a>
+    <a href="modules/Layerbox.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">Layerbox</div>
+    </a>
+    <a href="modules/LinearOrganizer.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">LinearOrganizer</div>
+    </a>
+    <a href="modules/ListOrganizer.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">ListOrganizer</div>
+    </a>
+    <a href="modules/MaskedObject.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">MaskedObject</div>
+    </a>
+    <a href="modules/Monitor.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">Monitor</div>
+    </a>
+    <a href="modules/MovingListOrganizer.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">MovingListOrganizer</div>
+    </a>
+    <a href="modules/Organizer.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">Organizer</div>
+    </a>
+    <a href="modules/StackedObject.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">StackedObject</div>
+    </a>
+    <a href="modules/VirtualPanel.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">VirtualPanel</div>
+    </a>
+    <a href="modules/Window.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">Window</div>
+    </a>
+    <a href="modules/WindowManager.html" class="module-card">
+      <div class="icon">🪟</div>
+      <div class="name">WindowManager</div>
+    </a>
+  </div>
+</div>
+<div class="category-section">
+  <h2 class="category-title">⚙️ System</h2>
+  <div class="module-grid">
+    <a href="modules/Assert.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Assert</div>
+    </a>
+    <a href="modules/Assert_Linux.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Assert_Linux</div>
+    </a>
+    <a href="modules/Assert_Win32.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Assert_Win32</div>
+    </a>
+    <a href="modules/CaptionValue.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">CaptionValue</div>
+    </a>
+    <a href="modules/Console.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Console</div>
+    </a>
+    <a href="modules/Console_Nix.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Console_Nix</div>
+    </a>
+    <a href="modules/Console_Win32.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Console_Win32</div>
+    </a>
+    <a href="modules/ConsumableEvent.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">ConsumableEvent</div>
+    </a>
+    <a href="modules/Event.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Event</div>
+    </a>
+    <a href="modules/Exception.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Exception</div>
+    </a>
+    <a href="modules/Exceptions.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Exceptions</div>
+    </a>
+    <a href="modules/GarbageCollection.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">GarbageCollection</div>
+    </a>
+    <a href="modules/Logging.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Logging</div>
+    </a>
+    <a href="modules/Null.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Null</div>
+    </a>
+    <a href="modules/Nullable.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Nullable</div>
+    </a>
+    <a href="modules/Pointer.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Pointer</div>
+    </a>
+    <a href="modules/Property.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Property</div>
+    </a>
+    <a href="modules/Random.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Random</div>
+    </a>
+    <a href="modules/RefCounter.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">RefCounter</div>
+    </a>
+    <a href="modules/Registry.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Registry</div>
+    </a>
+    <a href="modules/SGuid.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">SGuid</div>
+    </a>
+    <a href="modules/Scope.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Scope</div>
+    </a>
+    <a href="modules/ScopeGuard.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">ScopeGuard</div>
+    </a>
+    <a href="modules/Threading.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Threading</div>
+    </a>
+    <a href="modules/Time.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Time</div>
+    </a>
+    <a href="modules/Timer.html" class="module-card">
+      <div class="icon">⚙️</div>
+      <div class="name">Timer</div>
+    </a>
+  </div>
+</div>
+<div class="category-section">
+  <h2 class="category-title">🔧 Advanced</h2>
+  <div class="module-grid">
+    <a href="modules/AST.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">AST</div>
+    </a>
+    <a href="modules/AStar.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">AStar</div>
+    </a>
+    <a href="modules/Blueprint.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Blueprint</div>
+    </a>
+    <a href="modules/Compiler.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Compiler</div>
+    </a>
+    <a href="modules/Compiler_GCC.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Compiler_GCC</div>
+    </a>
+    <a href="modules/Compiler_MSVC.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Compiler_MSVC</div>
+    </a>
+    <a href="modules/Compilers.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Compilers</div>
+    </a>
+    <a href="modules/Component.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Component</div>
+    </a>
+    <a href="modules/Composer.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Composer</div>
+    </a>
+    <a href="modules/Discrete.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Discrete</div>
+    </a>
+    <a href="modules/Embedding.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Embedding</div>
+    </a>
+    <a href="modules/Enum.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Enum</div>
+    </a>
+    <a href="modules/Generator.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Generator</div>
+    </a>
+    <a href="modules/Instruction.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Instruction</div>
+    </a>
+    <a href="modules/Language.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Language</div>
+    </a>
+    <a href="modules/Message.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Message</div>
+    </a>
+    <a href="modules/Pathfinders.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Pathfinders</div>
+    </a>
+    <a href="modules/Reflection.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Reflection</div>
+    </a>
+    <a href="modules/RuntimeFunction.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">RuntimeFunction</div>
+    </a>
+    <a href="modules/Scene.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Scene</div>
+    </a>
+    <a href="modules/Scripting.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Scripting</div>
+    </a>
+    <a href="modules/Simple.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Simple</div>
+    </a>
+    <a href="modules/String.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">String</div>
+    </a>
+    <a href="modules/Struct.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Struct</div>
+    </a>
+    <a href="modules/TMP.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">TMP</div>
+    </a>
+    <a href="modules/Template.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Template</div>
+    </a>
+    <a href="modules/TiledMap.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">TiledMap</div>
+    </a>
+    <a href="modules/Validators.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">Validators</div>
+    </a>
+    <a href="modules/VirtualMachine.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">VirtualMachine</div>
+    </a>
+    <a href="modules/World.html" class="module-card">
+      <div class="icon">🔧</div>
+      <div class="name">World</div>
+    </a>
+  </div>
+</div>
+<div class="category-section">
+  <h2 class="category-title">🗔 Platform</h2>
+  <div class="module-grid">
+    <a href="modules/Linux.html" class="module-card">
+      <div class="icon">💻</div>
+      <div class="name">Linux</div>
+    </a>
+    <a href="modules/Win32.html" class="module-card">
+      <div class="icon">💻</div>
+      <div class="name">Win32</div>
+    </a>
+    <a href="modules/Windows.html" class="module-card">
+      <div class="icon">💻</div>
+      <div class="name">Windows</div>
+    </a>
+    <a href="modules/X11.html" class="module-card">
+      <div class="icon">💻</div>
+      <div class="name">X11</div>
+    </a>
+    <a href="modules/X11Keysym.html" class="module-card">
+      <div class="icon">💻</div>
+      <div class="name">X11Keysym</div>
+    </a>
+  </div>
+</div>
+<div class="category-section">
+  <h2 class="category-title">📝 Text</h2>
+  <div class="module-grid">
+    <a href="modules/AdvancedPrinter.html" class="module-card">
+      <div class="icon">📝</div>
+      <div class="name">AdvancedPrinter</div>
+    </a>
+    <a href="modules/AdvancedPrinterConstants.html" class="module-card">
+      <div class="icon">📝</div>
+      <div class="name">AdvancedPrinterConstants</div>
+    </a>
+    <a href="modules/AdvancedPrinterImpl.html" class="module-card">
+      <div class="icon">📝</div>
+      <div class="name">AdvancedPrinterImpl</div>
+    </a>
+    <a href="modules/AdvancedTextBuilder.html" class="module-card">
+      <div class="icon">📝</div>
+      <div class="name">AdvancedTextBuilder</div>
+    </a>
+    <a href="modules/CastableManagedBuffer.html" class="module-card">
+      <div class="icon">📝</div>
+      <div class="name">CastableManagedBuffer</div>
+    </a>
+    <a href="modules/Marking.html" class="module-card">
+      <div class="icon">📝</div>
+      <div class="name">Marking</div>
+    </a>
+  </div>
+</div>
+<div class="category-section">
+  <h2 class="category-title">🧱 Resources</h2>
+  <div class="module-grid">
+    <a href="modules/Any.html" class="module-card">
+      <div class="icon">🧱</div>
+      <div class="name">Any</div>
+    </a>
+    <a href="modules/Builtin.html" class="module-card">
+      <div class="icon">🧱</div>
+      <div class="name">Builtin</div>
+    </a>
+    <a href="modules/FindObject.html" class="module-card">
+      <div class="icon">🧱</div>
+      <div class="name">FindObject</div>
+    </a>
+    <a href="modules/Helpers.html" class="module-card">
+      <div class="icon">🧱</div>
+      <div class="name">Helpers</div>
+    </a>
+    <a href="modules/Instance.html" class="module-card">
+      <div class="icon">🧱</div>
+      <div class="name">Instance</div>
+    </a>
+    <a href="modules/ObjectFinding.html" class="module-card">
+      <div class="icon">🧱</div>
+      <div class="name">ObjectFinding</div>
+    </a>
+    <a href="modules/PD.html" class="module-card">
+      <div class="icon">🧱</div>
+      <div class="name">PD</div>
+    </a>
+    <a href="modules/ResizableObjectResource.html" class="module-card">
+      <div class="icon">🧱</div>
+      <div class="name">ResizableObjectResource</div>
+    </a>
+    <a href="modules/Resource.html" class="module-card">
+      <div class="icon">🧱</div>
+      <div class="name">Resource</div>
+    </a>
+  </div>
+</div>
+<div class="category-section">
+  <h2 class="category-title">📦 Other</h2>
+  <div class="module-grid">
+    <a href="modules/BasicMath.html" class="module-card">
+      <div class="icon">📄</div>
+      <div class="name">BasicMath</div>
+    </a>
+    <a href="modules/Kernel.html" class="module-card">
+      <div class="icon">📄</div>
+      <div class="name">Kernel</div>
+    </a>
+    <a href="modules/main.html" class="module-card">
+      <div class="icon">📄</div>
+      <div class="name">main</div>
+    </a>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # RadioControl
 
-> Auto-generated documentation for the **RadioControl** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **RadioControl** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

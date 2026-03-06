@@ -1,6 +1,6 @@
 # Size
 
-> Auto-generated documentation for the **Size** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Size** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

@@ -1,6 +1,6 @@
 # FullscreenPanel
 
-> Auto-generated documentation for the **FullscreenPanel** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **FullscreenPanel** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

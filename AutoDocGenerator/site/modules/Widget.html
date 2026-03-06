@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>Widget — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="../getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Base.html">Base</a></li>
+    <li><a href="Basic.html">Basic</a></li>
+    <li><a href="Common.html">Common</a></li>
+    <li><a href="Config.html">Config</a></li>
+    <li><a href="Definitions.html">Definitions</a></li>
+    <li><a href="Environment.html">Environment</a></li>
+    <li><a href="OS.html">OS</a></li>
+    <li><a href="Runtime.html">Runtime</a></li>
+    <li><a href="Types.html">Types</a></li>
+    <li><a href="Utils.html">Utils</a></li>
+    <li><a href="UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Bitmap.html">Bitmap</a></li>
+    <li><a href="BitmapFont.html">BitmapFont</a></li>
+    <li><a href="BlankImage.html">BlankImage</a></li>
+    <li><a href="Color.html">Color</a></li>
+    <li><a href="ColorPicker.html">ColorPicker</a></li>
+    <li><a href="ColorPlane.html">ColorPlane</a></li>
+    <li><a href="ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="Drawables.html">Drawables</a></li>
+    <li><a href="EmptyImage.html">EmptyImage</a></li>
+    <li><a href="Filters.html">Filters</a></li>
+    <li><a href="Flip.html">Flip</a></li>
+    <li><a href="Font.html">Font</a></li>
+    <li><a href="FontTheme.html">FontTheme</a></li>
+    <li><a href="FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="FreeType.html">FreeType</a></li>
+    <li><a href="GID.html">GID</a></li>
+    <li><a href="GL.html">GL</a></li>
+    <li><a href="Graphics.html">Graphics</a></li>
+    <li><a href="HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="IL.html">IL</a></li>
+    <li><a href="Image.html">Image</a></li>
+    <li><a href="JPEG.html">JPEG</a></li>
+    <li><a href="OpenGL.html">OpenGL</a></li>
+    <li><a href="PNG.html">PNG</a></li>
+    <li><a href="Renderer.html">Renderer</a></li>
+    <li><a href="ScalableObject.html">ScalableObject</a></li>
+    <li><a href="Shader.html">Shader</a></li>
+    <li><a href="Shaders.html">Shaders</a></li>
+    <li><a href="Texture.html">Texture</a></li>
+    <li><a href="TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="TextureTargets.html">TextureTargets</a></li>
+    <li><a href="TintedObject.html">TintedObject</a></li>
+    <li><a href="Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="AnimationServices.html">AnimationServices</a></li>
+    <li><a href="AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="Animations.html">Animations</a></li>
+    <li><a href="ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="DnD.html">DnD</a></li>
+    <li><a href="Input.html">Input</a></li>
+    <li><a href="KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="Keyboard.html">Keyboard</a></li>
+    <li><a href="Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Button.html">Button</a></li>
+    <li><a href="Checkbox.html">Checkbox</a></li>
+    <li><a href="CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="Combobox.html">Combobox</a></li>
+    <li><a href="ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="CountingText.html">CountingText</a></li>
+    <li><a href="Dialog.html">Dialog</a></li>
+    <li><a href="DialogWindow.html">DialogWindow</a></li>
+    <li><a href="Dropdown.html">Dropdown</a></li>
+    <li><a href="Filler.html">Filler</a></li>
+    <li><a href="IButton.html">IButton</a></li>
+    <li><a href="ICheckbox.html">ICheckbox</a></li>
+    <li><a href="ILabel.html">ILabel</a></li>
+    <li><a href="IListItem.html">IListItem</a></li>
+    <li><a href="INumberbox.html">INumberbox</a></li>
+    <li><a href="IOption.html">IOption</a></li>
+    <li><a href="IProgressor.html">IProgressor</a></li>
+    <li><a href="IScroller.html">IScroller</a></li>
+    <li><a href="ISlider.html">ISlider</a></li>
+    <li><a href="ITextbox.html">ITextbox</a></li>
+    <li><a href="Inputbox.html">Inputbox</a></li>
+    <li><a href="Label.html">Label</a></li>
+    <li><a href="Listbox.html">Listbox</a></li>
+    <li><a href="ListboxBase.html">ListboxBase</a></li>
+    <li><a href="ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="NumberInput.html">NumberInput</a></li>
+    <li><a href="Numberbox.html">Numberbox</a></li>
+    <li><a href="Panel.html">Panel</a></li>
+    <li><a href="PanelBase.html">PanelBase</a></li>
+    <li><a href="PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="Percentbar.html">Percentbar</a></li>
+    <li><a href="PetContainer.html">PetContainer</a></li>
+    <li><a href="PetTextbox.html">PetTextbox</a></li>
+    <li><a href="Placeholder.html">Placeholder</a></li>
+    <li><a href="Progressbar.html">Progressbar</a></li>
+    <li><a href="RadioButton.html">RadioButton</a></li>
+    <li><a href="RadioButtons.html">RadioButtons</a></li>
+    <li><a href="RadioControl.html">RadioControl</a></li>
+    <li><a href="Scrollbar.html">Scrollbar</a></li>
+    <li><a href="ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="Slider.html">Slider</a></li>
+    <li><a href="SliderBase.html">SliderBase</a></li>
+    <li><a href="SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="Spinner.html">Spinner</a></li>
+    <li><a href="StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="Tabpanel.html">Tabpanel</a></li>
+    <li><a href="TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="TextInput.html">TextInput</a></li>
+    <li><a href="Textarea.html">Textarea</a></li>
+    <li><a href="Textbox.html">Textbox</a></li>
+    <li><a href="TextboxBase.html">TextboxBase</a></li>
+    <li><a href="TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="TooltipManager.html">TooltipManager</a></li>
+    <li><a href="TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="UI.html">UI</a></li>
+    <li><a href="Widget.html" class="active">Widget</a></li>
+    <li><a href="WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Alignment.html">Alignment</a></li>
+    <li><a href="Bezier.html">Bezier</a></li>
+    <li><a href="Bounds.html">Bounds</a></li>
+    <li><a href="Circle.html">Circle</a></li>
+    <li><a href="Dimension.html">Dimension</a></li>
+    <li><a href="Geometry.html">Geometry</a></li>
+    <li><a href="GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="Line.html">Line</a></li>
+    <li><a href="Margin.html">Margin</a></li>
+    <li><a href="Point.html">Point</a></li>
+    <li><a href="Point3D.html">Point3D</a></li>
+    <li><a href="PointList.html">PointList</a></li>
+    <li><a href="PointProperty.html">PointProperty</a></li>
+    <li><a href="Polygon.html">Polygon</a></li>
+    <li><a href="Rectangle.html">Rectangle</a></li>
+    <li><a href="Region.html">Region</a></li>
+    <li><a href="Size.html">Size</a></li>
+    <li><a href="SizeProperty.html">SizeProperty</a></li>
+    <li><a href="Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Audio.html">Audio</a></li>
+    <li><a href="AudioStream.html">AudioStream</a></li>
+    <li><a href="FLAC.html">FLAC</a></li>
+    <li><a href="Multimedia.html">Multimedia</a></li>
+    <li><a href="PulseAudio.html">PulseAudio</a></li>
+    <li><a href="PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="Sound.html">Sound</a></li>
+    <li><a href="Source.html">Source</a></li>
+    <li><a href="Vorbis.html">Vorbis</a></li>
+    <li><a href="WASAPI.html">WASAPI</a></li>
+    <li><a href="WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Blob.html">Blob</a></li>
+    <li><a href="CGI.html">CGI</a></li>
+    <li><a href="Clipboard.html">Clipboard</a></li>
+    <li><a href="Data.html">Data</a></li>
+    <li><a href="DataExchange.html">DataExchange</a></li>
+    <li><a href="DataItems.html">DataItems</a></li>
+    <li><a href="File.html">File</a></li>
+    <li><a href="FileDialog.html">FileDialog</a></li>
+    <li><a href="Filesystem.html">Filesystem</a></li>
+    <li><a href="Folder.html">Folder</a></li>
+    <li><a href="HTTP.html">HTTP</a></li>
+    <li><a href="LZMA.html">LZMA</a></li>
+    <li><a href="Markdown.html">Markdown</a></li>
+    <li><a href="MemoryStream.html">MemoryStream</a></li>
+    <li><a href="Parse.html">Parse</a></li>
+    <li><a href="Query.html">Query</a></li>
+    <li><a href="Reader.html">Reader</a></li>
+    <li><a href="Storage.html">Storage</a></li>
+    <li><a href="Stream.html">Stream</a></li>
+    <li><a href="Tokenizer.html">Tokenizer</a></li>
+    <li><a href="URI.html">URI</a></li>
+    <li><a href="Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Array.html">Array</a></li>
+    <li><a href="Collection.html">Collection</a></li>
+    <li><a href="Container.html">Container</a></li>
+    <li><a href="Hashmap.html">Hashmap</a></li>
+    <li><a href="Iterator.html">Iterator</a></li>
+    <li><a href="LinkNode.html">LinkNode</a></li>
+    <li><a href="List.html">List</a></li>
+    <li><a href="ListItem.html">ListItem</a></li>
+    <li><a href="Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BorderData.html">BorderData</a></li>
+    <li><a href="ComponentStack.html">ComponentStack</a></li>
+    <li><a href="ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="CustomLayer.html">CustomLayer</a></li>
+    <li><a href="DWM.html">DWM</a></li>
+    <li><a href="ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="Flow.html">Flow</a></li>
+    <li><a href="FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="InlinePanel.html">InlinePanel</a></li>
+    <li><a href="Layer.html">Layer</a></li>
+    <li><a href="LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="LayerMover.html">LayerMover</a></li>
+    <li><a href="LayerResizer.html">LayerResizer</a></li>
+    <li><a href="LayerWidget.html">LayerWidget</a></li>
+    <li><a href="Layerbox.html">Layerbox</a></li>
+    <li><a href="LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="MaskedObject.html">MaskedObject</a></li>
+    <li><a href="Monitor.html">Monitor</a></li>
+    <li><a href="MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="Organizer.html">Organizer</a></li>
+    <li><a href="StackedObject.html">StackedObject</a></li>
+    <li><a href="VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="Window.html">Window</a></li>
+    <li><a href="WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Assert.html">Assert</a></li>
+    <li><a href="Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="CaptionValue.html">CaptionValue</a></li>
+    <li><a href="Console.html">Console</a></li>
+    <li><a href="Console_Nix.html">Console_Nix</a></li>
+    <li><a href="Console_Win32.html">Console_Win32</a></li>
+    <li><a href="ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="Event.html">Event</a></li>
+    <li><a href="Exception.html">Exception</a></li>
+    <li><a href="Exceptions.html">Exceptions</a></li>
+    <li><a href="GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="Logging.html">Logging</a></li>
+    <li><a href="Null.html">Null</a></li>
+    <li><a href="Nullable.html">Nullable</a></li>
+    <li><a href="Pointer.html">Pointer</a></li>
+    <li><a href="Property.html">Property</a></li>
+    <li><a href="Random.html">Random</a></li>
+    <li><a href="RefCounter.html">RefCounter</a></li>
+    <li><a href="Registry.html">Registry</a></li>
+    <li><a href="SGuid.html">SGuid</a></li>
+    <li><a href="Scope.html">Scope</a></li>
+    <li><a href="ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="Threading.html">Threading</a></li>
+    <li><a href="Time.html">Time</a></li>
+    <li><a href="Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AST.html">AST</a></li>
+    <li><a href="AStar.html">AStar</a></li>
+    <li><a href="Blueprint.html">Blueprint</a></li>
+    <li><a href="Compiler.html">Compiler</a></li>
+    <li><a href="Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="Compilers.html">Compilers</a></li>
+    <li><a href="Component.html">Component</a></li>
+    <li><a href="Composer.html">Composer</a></li>
+    <li><a href="Discrete.html">Discrete</a></li>
+    <li><a href="Embedding.html">Embedding</a></li>
+    <li><a href="Enum.html">Enum</a></li>
+    <li><a href="Generator.html">Generator</a></li>
+    <li><a href="Instruction.html">Instruction</a></li>
+    <li><a href="Language.html">Language</a></li>
+    <li><a href="Message.html">Message</a></li>
+    <li><a href="Pathfinders.html">Pathfinders</a></li>
+    <li><a href="Reflection.html">Reflection</a></li>
+    <li><a href="RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="Scene.html">Scene</a></li>
+    <li><a href="Scripting.html">Scripting</a></li>
+    <li><a href="Simple.html">Simple</a></li>
+    <li><a href="String.html">String</a></li>
+    <li><a href="Struct.html">Struct</a></li>
+    <li><a href="TMP.html">TMP</a></li>
+    <li><a href="Template.html">Template</a></li>
+    <li><a href="TiledMap.html">TiledMap</a></li>
+    <li><a href="Validators.html">Validators</a></li>
+    <li><a href="VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Linux.html">Linux</a></li>
+    <li><a href="Win32.html">Win32</a></li>
+    <li><a href="Windows.html">Windows</a></li>
+    <li><a href="X11.html">X11</a></li>
+    <li><a href="X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Any.html">Any</a></li>
+    <li><a href="Builtin.html">Builtin</a></li>
+    <li><a href="FindObject.html">FindObject</a></li>
+    <li><a href="Helpers.html">Helpers</a></li>
+    <li><a href="Instance.html">Instance</a></li>
+    <li><a href="ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="PD.html">PD</a></li>
+    <li><a href="ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BasicMath.html">BasicMath</a></li>
+    <li><a href="Kernel.html">Kernel</a></li>
+    <li><a href="main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">Widget</span>
+    </nav>
+    
+        <h1 id="widget" class="doc-heading">Widget</h1>
+<p class="doc-paragraph">> Auto-generated documentation for the <strong>Widget</strong> module of the Gorgon C++ Game Engine.</p>
+<h2 id="contents" class="doc-heading">Contents</h2>
+<ul class="md-list">
+<li><a href="#classes">Classes</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="classes" class="doc-heading">Classes</h2>
+<h3 id="widget" class="doc-heading"><code class="inline-code">Widget</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="resizeconst-unitsize-size" class="doc-heading"><code class="inline-code">resize_(const UnitSize &size)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="resizesize" class="doc-heading"><code class="inline-code">Resize(size)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="moveunitdimension-x-unitdimension-y" class="doc-heading"><code class="inline-code">Move(UnitDimension x, UnitDimension y)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Moves this widget to the given position. Widget might be moved by organizers.</p>
+<h5 id="moveconst-unitpoint-value" class="doc-heading"><code class="inline-code">Move(const UnitPoint &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Moves this widget to the given position.</p>
+<h5 id="getlocation" class="doc-heading"><code class="inline-code">GetLocation(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">UnitPoint</code></p>
+<p class="doc-paragraph">Returns the location of the widget. This is the assigned location and may not reflect actual position. Widget might be moved by organizers.</p>
+<h5 id="virtual-getcurrentlocation" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetCurrentLocation(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual Geometry::Point</code></p>
+<p class="doc-paragraph">Returns the current location of the widget in pixels. This might be different than location that is set.</p>
+<h5 id="getcalculatedlocationdimensionunit-units--dimensionmilliunitsize" class="doc-heading"><code class="inline-code">GetCalculatedLocation(Dimension::Unit units = Dimension::MilliUnitSize)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">UnitPoint</code></p>
+<p class="doc-paragraph">Returns the current location converted to requested units</p>
+<h5 id="resizeunitdimension-w-unitdimension-h" class="doc-heading"><code class="inline-code">Resize(UnitDimension w, UnitDimension h)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the size of the widget.</p>
+<h5 id="virtual-resizeconst-unitsize-size" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Resize(const UnitSize &size)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Changes the size of the widget.</p>
+<h5 id="getsize" class="doc-heading"><code class="inline-code">GetSize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">UnitSize</code></p>
+<p class="doc-paragraph">Returns the size of the widget</p>
+<h5 id="virtual-getcurrentsize" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetCurrentSize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual Geometry::Size</code></p>
+<p class="doc-paragraph">Returns the current size of the widget in pixels. This might be different than the size that is set.</p>
+<h5 id="getcalculatedsizedimensionunit-units--dimensionmilliunitsize" class="doc-heading"><code class="inline-code">GetCalculatedSize(Dimension::Unit units = Dimension::MilliUnitSize)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">UnitSize</code></p>
+<p class="doc-paragraph">Returns the current size converted to requested units</p>
+<h5 id="getbounds" class="doc-heading"><code class="inline-code">GetBounds(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Geometry::Bounds</code></p>
+<p class="doc-paragraph">Returns the bounds of the widget in pixels.</p>
+<h5 id="getwidth" class="doc-heading"><code class="inline-code">GetWidth(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">UnitDimension</code></p>
+<p class="doc-paragraph">Returns the width of the widget</p>
+<h5 id="getheight" class="doc-heading"><code class="inline-code">GetHeight(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">UnitDimension</code></p>
+<p class="doc-paragraph">Returns the height of the widget</p>
+<h5 id="getcurrentwidth" class="doc-heading"><code class="inline-code">GetCurrentWidth(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns the width of the widget in pixels.</p>
+<h5 id="getcurrentheight" class="doc-heading"><code class="inline-code">GetCurrentHeight(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns the height of the widget in pixels.</p>
+<h5 id="virtual-setwidthunitdimension-width" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SetWidth(UnitDimension width)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Sets the width of the widget</p>
+<h5 id="virtual-setheightunitdimension-height" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SetHeight(UnitDimension height)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Sets the height of the widget</p>
+<h5 id="virtual-activate" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Activate(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">Activates the widget. This might perform the action if the widget is a button, forward the focus if it is a label or focus if it is an input field.</p>
+<h5 id="remove" class="doc-heading"><code class="inline-code">Remove(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Removes the widget from its parent. Returns true if the widget has no parent after the operation.</p>
+<h5 id="allowfocus" class="doc-heading"><code class="inline-code">AllowFocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">If this widget can be focused currently</p>
+<h5 id="focus" class="doc-heading"><code class="inline-code">Focus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Transfers the focus to this widget. Returns true if the focus is actually transferred to this widget</p>
+<h5 id="defocus" class="doc-heading"><code class="inline-code">Defocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Removes the focus from this widget if this widget is focused. This function will not transfer the focus to another widget.</p>
+<h5 id="isfocused" class="doc-heading"><code class="inline-code">IsFocused(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if this widget is focused.</p>
+<h5 id="virtual-show" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Show(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Shows this widget, widgets are visible by default.</p>
+<h5 id="virtual-hide" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Hide(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Hides this widget, when hidden, widgets cannot gain focus</p>
+<h5 id="togglevisible" class="doc-heading"><code class="inline-code">ToggleVisible(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Toggles the visibility state of the widget.</p>
+<h5 id="virtual-setvisiblebool-value" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SetVisible(bool value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Changes the visibility of the widget</p>
+<h5 id="virtual-isvisible" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">IsVisible(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">Returns if the widget is visible</p>
+<h5 id="ensurevisible" class="doc-heading"><code class="inline-code">EnsureVisible(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Ensures this widget is visible in its container by scrolling it into view. This function will not change visibility of the widget and will return false if the widget is not visible. This function cannot be expected to take outside factors into account, such as occlusion.</p>
+<h5 id="enable" class="doc-heading"><code class="inline-code">Enable(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Enables the widget so that the user can interact with it</p>
+<h5 id="disable" class="doc-heading"><code class="inline-code">Disable(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Disables the widget so that the user cannot interact with it</p>
+<h5 id="toggleenabled" class="doc-heading"><code class="inline-code">ToggleEnabled(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Toggles enabled state of the widget</p>
+<h5 id="virtual-setenabledbool-value" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SetEnabled(bool value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Sets the enabled state of the widget</p>
+<h5 id="virtual-isenabled" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">IsEnabled(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">Returns whether the widget is enabled.</p>
+<h5 id="hasparent" class="doc-heading"><code class="inline-code">HasParent(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if this widget has a parent</p>
+<h5 id="virtual-setfloatingbool-value" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SetFloating(bool value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Returns the parent of this widget, throws if it does not have a parent. Sets floating status of this widget. Floating widgets will not be moved or resized by organizers.</p>
+<h5 id="boundschanged" class="doc-heading"><code class="inline-code">boundschanged(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="isfloating" class="doc-heading"><code class="inline-code">IsFloating(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns floating status of this widget. Floating widgets will not be moved or resized by organizers.</p>
+<h5 id="virtual-keypressedinputkey-float" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">KeyPressed(Input::Key, float)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">This function should be called whenever a key is pressed or released.</p>
+<h5 id="virtual-characterpressedchar" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">CharacterPressed(Char)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">This function should be called whenever a character is received from operating system.</p>
+<h5 id="virtual-done" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Done(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">For widgets that supports it, this will trigger finalization the user interaction. This may cause widget fire change event or reorganize itself.</p>
+<h5 id="settooltipconst-stdstring-value" class="doc-heading"><code class="inline-code">SetTooltip(const std::string &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the tooltip to the given value. This will immediately update the display if it is currently displayed.</p>
+<h5 id="iftooltip--value" class="doc-heading"><code class="inline-code">if(tooltip != value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="tooltipchangedevent" class="doc-heading"><code class="inline-code">TooltipChangedEvent(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="removetooltip" class="doc-heading"><code class="inline-code">RemoveTooltip(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes the tooltip from this widget</p>
+<h5 id="settooltip" class="doc-heading"><code class="inline-code">SetTooltip("")</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="gettooltip" class="doc-heading"><code class="inline-code">GetTooltip(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<p class="doc-paragraph">Returns the tooltip of this widget.</p>
+<h5 id="convertconst-unitdimension-val-bool-isvertical-bool-issize--false" class="doc-heading"><code class="inline-code">Convert(const UnitDimension &val, bool isvertical, bool issize = false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Converts the given size in units to pixels</p>
+<h5 id="convertconst-unitsize-size" class="doc-heading"><code class="inline-code">Convert(const UnitSize &size)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Geometry::Size</code></p>
+<p class="doc-paragraph">Converts the given size in units to pixels</p>
+<h5 id="convertconst-unitpoint-location" class="doc-heading"><code class="inline-code">Convert(const UnitPoint &location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Geometry::Point</code></p>
+<p class="doc-paragraph">Converts the given location in units to pixels</p>
+<h5 id="convertdimensionunit-target-const-unitdimension-val-bool-isvertical-bool-issize--false" class="doc-heading"><code class="inline-code">Convert(Dimension::Unit target, const UnitDimension &val, bool isvertical, bool issize = false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">UnitDimension</code></p>
+<p class="doc-paragraph">Converts the given size in units to requested units.</p>
+<h5 id="convertdimensionunit-target-const-unitsize-size" class="doc-heading"><code class="inline-code">Convert(Dimension::Unit target, const UnitSize &size)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">UnitSize</code></p>
+<p class="doc-paragraph">Converts the given size in units to requested units.</p>
+<h5 id="convertdimensionunit-target-const-unitpoint-location" class="doc-heading"><code class="inline-code">Convert(Dimension::Unit target, const UnitPoint &location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">UnitPoint</code></p>
+<p class="doc-paragraph">Converts the given location in units to requested units.</p>
+<h5 id="setnamestdstring-value" class="doc-heading"><code class="inline-code">setname(std::string value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">This event will be fired when the widget receives or looses focus. This event will be fired when the area that the widget occupies on its container is changed. It will be fired when the widget is hidden or shown or its parent is changed. Movement, resize and parent change will not trigger this event if the widget is not visible. Similarly, if the object does not have a parent movement and resize will not trigger this event. Organizers use this event to rearrange widgets, thus it is not advisable to remove all handlers from this event. This event will be fired when the mouse enters the widget area. This event will be fired when the mouse exits the widget area. This event will be fired when the tooltip of the widget is changed This event will be fired before the widget is destroyed. This event is fired in the middle of the destruction. It is not safe to access the widget at this point. Only the aliases to this widget should be invalidated in the event handlers registered to this function. This is a debug feature</p>
+<h5 id="setwidthperfractionfloat-value" class="doc-heading"><code class="inline-code">setwidthperfraction(float value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Is designed to be used by organizers</p>
+<h5 id="calculatebounds" class="doc-heading"><code class="inline-code">calculatebounds(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-resizeconst-geometrysize-size" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">resize(const Geometry::Size &size)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Should resize the widget in pixels</p>
+<h5 id="virtual-moveconst-geometrypoint-value" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">move(const Geometry::Point &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Should move the widget in pixels</p>
+<h5 id="virtual-addingtowidgetcontainer-" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">addingto(WidgetContainer &)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">Called when it is about to be added to the given container</p>
+<h5 id="virtual-addtolayer-layer" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">addto(Layer &layer)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">When called, widget should locate itself on to this layer.</p>
+<h5 id="virtual-addedtowidgetcontainer-container" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">addedto(WidgetContainer &container)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Called when this widget added to the given container</p>
+<h5 id="virtual-removefromlayer-layer" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">removefrom(Layer &layer)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">When called, widget should remove itself from the given layer</p>
+<h5 id="virtual-removingfrom" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">removingfrom(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">Called before this widget is removed from its parent.</p>
+<h5 id="virtual-removed" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">removed(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Called after this widget is removed from its parent.</p>
+<h5 id="virtual-setlayerorderlayer-layer-int-order" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">setlayerorder(Layer &layer, int order)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">When called, widget should reorder itself in layer hierarchy</p>
+<h5 id="virtual-allowfocus" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">allowfocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">Should return true if the widget can be focused</p>
+<h5 id="virtual-focused" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">focused(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">This is called after the focus is transferred to this widget.</p>
+<h5 id="virtual-canloosefocus" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">canloosefocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">Should return true if the widget can loose the focus right now. Even if you return false, you still might be forced to loose focus, even without this function getting called.</p>
+<h5 id="virtual-focuslost" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">focuslost(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">This is called after the focus is lost. This is called even if focus removal is forced.</p>
+<h5 id="virtual-boundschanged" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">boundschanged(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Call this function when the widget bounds is changed</p>
+<h5 id="virtual-parentboundschanged" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">parentboundschanged(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Call this function when the bounds of the parent is changed</p>
+<h5 id="virtual-parentenabledchangedbool-state" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">parentenabledchanged(bool /<em>state</em>/)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">This function is called when the parent's enabled state changes.</p>
+<h5 id="virtual-setdefaultstatebool-default" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">setdefaultstate(bool /<em>default</em>/)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">This function is called when this widget is made or unmade default.</p>
+<h5 id="virtual-setcancelstatebool-cancel" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">setcancelstate(bool /<em>cancel</em>/)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">This function is called when this widget is made or unmade cancel.</p>
+<h5 id="virtual-mouseenter" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">mouseenter(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-mouseleave" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">mouseleave(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="calculatebounds" class="doc-heading"><code class="inline-code">calculatebounds(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">This function will recalculate location and the size of the widget and if there is a change it will call necessary functions.</p>
+<h5 id="virtual-hide" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">hide(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">last set location in pixels, used to determine if move is necessary last set size in pixels, used to determine if resize is necessary currently set location, used to determine if move is necessary currently set size, used to determine if resize is necessary Never call this function</p>
+<h5 id="virtual-show" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">show(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Never call this function</p>
+<h3 id="widgetbase" class="doc-heading"><code class="inline-code">WidgetBase</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">gge</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="drawsignalintervalobject-interval" class="doc-heading"><code class="inline-code">Draw_Signal(IntervalObject &interval)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">friend void</code></p>
+<h5 id="virtual-setblueprintconst-blueprint-bp" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SetBlueprint(const Blueprint &bp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-setblueprintconst-blueprint-bp" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SetBlueprint(const Blueprint *bp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="setblueprintbp" class="doc-heading"><code class="inline-code">SetBlueprint(*bp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-isvisible" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">IsVisible(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h5 id="ishidden" class="doc-heading"><code class="inline-code">IsHidden(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline bool</code></p>
+<h5 id="virtual-showbool-setfocusfalse" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Show(bool setfocus=false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="ifisvisible" class="doc-heading"><code class="inline-code">if(!isvisible)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="callcontainerwidgetvisibilitychangetrue" class="doc-heading"><code class="inline-code">call_container_widget_visibility_change(true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="focus" class="doc-heading"><code class="inline-code">Focus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-hide" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Hide(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="ifisvisible" class="doc-heading"><code class="inline-code">if(isvisible)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="callcontainerwidgetvisibilitychangefalse" class="doc-heading"><code class="inline-code">call_container_widget_visibility_change(false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="togglevisibility" class="doc-heading"><code class="inline-code">ToggleVisibility(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="hide" class="doc-heading"><code class="inline-code">Hide(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="setvisibilitybool-visible" class="doc-heading"><code class="inline-code">SetVisibility(bool visible)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="virtual-isenabled" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">IsEnabled(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h5 id="isdisabled" class="doc-heading"><code class="inline-code">IsDisabled(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline bool</code></p>
+<h5 id="virtual-enable" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Enable(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-disable" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Disable(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="toggleenabled" class="doc-heading"><code class="inline-code">ToggleEnabled(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="disable" class="doc-heading"><code class="inline-code">Disable(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="setenabledbool-enabled" class="doc-heading"><code class="inline-code">SetEnabled(bool enabled)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="virtual-getsize" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetSize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual utils::Size</code></p>
+<h5 id="getwidth" class="doc-heading"><code class="inline-code">GetWidth(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<h5 id="getheight" class="doc-heading"><code class="inline-code">GetHeight(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<h5 id="virtual-resizeutilssize-size" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Resize(utils::Size Size)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="resizeint-w-int-h" class="doc-heading"><code class="inline-code">Resize(int W, int H)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="setwidthint-w" class="doc-heading"><code class="inline-code">SetWidth(int W)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="setheightint-h" class="doc-heading"><code class="inline-code">SetHeight(int H)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="virtual-getlocation" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetLocation(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual utils::Point</code></p>
+<h5 id="getx" class="doc-heading"><code class="inline-code">GetX(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<h5 id="gety" class="doc-heading"><code class="inline-code">GetY(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<h5 id="getleft" class="doc-heading"><code class="inline-code">GetLeft(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<h5 id="gettop" class="doc-heading"><code class="inline-code">GetTop(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<h5 id="virtual-moveutilspoint-location" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Move(utils::Point Location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="moveint-x-int-y" class="doc-heading"><code class="inline-code">Move(int X, int Y)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="setxint-x" class="doc-heading"><code class="inline-code">SetX(int X)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="setyint-y" class="doc-heading"><code class="inline-code">SetY(int Y)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="setleftint-x" class="doc-heading"><code class="inline-code">SetLeft(int X)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="settopint-y" class="doc-heading"><code class="inline-code">SetTop(int Y)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="virtual-getbounds" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetBounds(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual utils::Bounds</code></p>
+<h5 id="virtual-getrectangle" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetRectangle(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual utils::Rectangle</code></p>
+<h5 id="virtual-setboundsutilsbounds-b" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SetBounds(utils::Bounds b)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-setrectangleutilsrectangle-r" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SetRectangle(utils::Rectangle r)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-isfocused" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">IsFocused(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h5 id="virtual-focus" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Focus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h5 id="callcontainersetfocus" class="doc-heading"><code class="inline-code">call_container_setfocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="gotfocus" class="doc-heading"><code class="inline-code">GotFocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setfocusbool-focus" class="doc-heading"><code class="inline-code">SetFocus(bool focus)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h5 id="callcontainersetfocus" class="doc-heading"><code class="inline-code">call_container_setfocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="removefocus" class="doc-heading"><code class="inline-code">RemoveFocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="virtual-removefocus" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">RemoveFocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h5 id="callcontainerremovefocus" class="doc-heading"><code class="inline-code">call_container_removefocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-forceremovefocus" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">ForceRemoveFocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="callcontainerforceremovefocus" class="doc-heading"><code class="inline-code">call_container_forceremovefocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-getzorder" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetZOrder(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<h5 id="virtual-setzorderint-order" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SetZOrder(int Order)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-totop" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">ToTop(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-tobottom" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">ToBottom(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-getfocusorder" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetFocusOrder(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<h5 id="virtual-setfocusorderint-order" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SetFocusOrder(int Order)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="focusordertotop" class="doc-heading"><code class="inline-code">FocusOrderToTop(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="focusordertobottom" class="doc-heading"><code class="inline-code">FocusOrderToBottom(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="virtual-hascontainer" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">HasContainer(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h5 id="setcontainercontainerbase-container" class="doc-heading"><code class="inline-code">SetContainer(ContainerBase &container)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="setcontainercontainerbase-container" class="doc-heading"><code class="inline-code">SetContainer(ContainerBase *container)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="virtual-detach" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Detach(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-getpointer" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetPointer(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual Pointer::PointerType</code></p>
+<h5 id="virtual-setpointerpointerpointertype-pointer" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SetPointer(Pointer::PointerType Pointer)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-resetpointer" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">ResetPointer(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-keyboardhandlerinputkeyboardeventtype-event-inputkeyboardkey-key" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">KeyboardHandler(input::keyboard::Event::Type event, input::keyboard::Key Key)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h5 id="virtual-mousehandlerinputmouseeventtype-event-utilspoint-location-int-amount" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">MouseHandler(input::mouse::Event::Type event, utils::Point location, int amount)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h5 id="focus" class="doc-heading"><code class="inline-code">Focus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifeventinputmouseeventout" class="doc-heading"><code class="inline-code">if(event==input::mouse::Event::Out)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h5 id="virtual-draw" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Draw(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-accessed" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Accessed(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h5 id="focus" class="doc-heading"><code class="inline-code">Focus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="virtual-setisextenderbool-value" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SetIsExtender(bool value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="ifvaluetargetextender" class="doc-heading"><code class="inline-code">if(value!=targetextender)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setcontainercontainer" class="doc-heading"><code class="inline-code">SetContainer(Container)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="makeextender" class="doc-heading"><code class="inline-code">MakeExtender(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="setisextendertrue" class="doc-heading"><code class="inline-code">SetIsExtender(true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="getisextender" class="doc-heading"><code class="inline-code">GetIsExtender(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h5 id="detach" class="doc-heading"><code class="inline-code">Detach(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="playsoundresourcesound-snd" class="doc-heading"><code class="inline-code">playsound(resource::Sound *snd)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="virtual-draw" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">draw(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-loosefocusbool-force" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">loosefocus(bool force)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h5 id="virtual-locatingcontainerbase-container-int-order" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">locating(ContainerBase *container, int Order)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h5 id="virtual-locatedcontainerbase-container-utilssortedcollectionwidgetbasewrapper-w-int-order" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">located(ContainerBase<em> container, utils::SortedCollection<WidgetBase>::Wrapper </em>w, int Order)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-accesskeystatechanged" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">accesskeystatechanged(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-containerenabledchangedbool-state" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">containerenabledchanged(bool state)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="locatetocontainerbase-container-int-order-utilssortedcollectionwidgetbasewrapper--w" class="doc-heading"><code class="inline-code">locateto(ContainerBase<em> container, int Order, utils::SortedCollection<WidgetBase>::Wrapper </em> w)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="virtual-detachcontainerbase-container" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">detach(ContainerBase *container)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<h5 id="callcontainersetfocus" class="doc-heading"><code class="inline-code">call_container_setfocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h5 id="callcontainerwidgetvisibilitychangebool-state" class="doc-heading"><code class="inline-code">call_container_widget_visibility_change(bool state)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="callcontainerremovefocus" class="doc-heading"><code class="inline-code">call_container_removefocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="callcontainerforceremovefocus" class="doc-heading"><code class="inline-code">call_container_forceremovefocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="widgetbaseconst-widgetbase-wb" class="doc-heading"><code class="inline-code">WidgetBase(const WidgetBase &wb)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<hr class="doc-divider">
+<h2 id="functions" class="doc-heading">Functions</h2>
+<h3 id="ifvisible--value" class="doc-heading"><code class="inline-code">if(visible != value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="show" class="doc-heading"><code class="inline-code">show()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="defocus" class="doc-heading"><code class="inline-code">Defocus()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="hide" class="doc-heading"><code class="inline-code">hide()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="boundschangedevent" class="doc-heading"><code class="inline-code">BoundsChangedEvent()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="calculatebounds" class="doc-heading"><code class="inline-code">calculatebounds()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Called when this widget added to the given container</p>
+<h3 id="boundschanged" class="doc-heading"><code class="inline-code">boundschanged()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="boundschanged" class="doc-heading"><code class="inline-code">boundschanged()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="focusevent" class="doc-heading"><code class="inline-code">FocusEvent()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="focusevent" class="doc-heading"><code class="inline-code">FocusEvent()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="destroyedevent" class="doc-heading"><code class="inline-code">DestroyedEvent()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="mouseenterevent" class="doc-heading"><code class="inline-code">MouseEnterEvent()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="mouseleaveevent" class="doc-heading"><code class="inline-code">MouseLeaveEvent()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifllocation--l" class="doc-heading"><code class="inline-code">if(llocation != l)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="movel" class="doc-heading"><code class="inline-code">move(l)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iflsize--s" class="doc-heading"><code class="inline-code">if(lsize != s)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="resizes" class="doc-heading"><code class="inline-code">resize(s)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="boundschanged" class="doc-heading"><code class="inline-code">boundschanged()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="calculatebounds" class="doc-heading"><code class="inline-code">calculatebounds()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="calculatebounds" class="doc-heading"><code class="inline-code">calculatebounds()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchtarget" class="doc-heading"><code class="inline-code">switch(target)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="pixelspx" class="doc-heading"><code class="inline-code">Pixels(px)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="switchtarget" class="doc-heading"><code class="inline-code">switch(target)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="pixelspx" class="doc-heading"><code class="inline-code">Pixels(px)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="ifwidthperfraction---1" class="doc-heading"><code class="inline-code">if(widthperfraction != -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchtarget" class="doc-heading"><code class="inline-code">switch(target)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="pixelspx" class="doc-heading"><code class="inline-code">Pixels(px)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="calculatebounds" class="doc-heading"><code class="inline-code">calculatebounds()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="detach" class="doc-heading"><code class="inline-code">Detach()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="locatetocontainer-order-w" class="doc-heading"><code class="inline-code">locateto(container, Order, w)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="boundschanged" class="doc-heading"><code class="inline-code">BoundsChanged()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="draw" class="doc-heading"><code class="inline-code">Draw()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbaselayer" class="doc-heading"><code class="inline-code">if(BaseLayer)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifinputmousepressedobjectbaselayer-mousecallbackobject" class="doc-heading"><code class="inline-code">if(input::mouse::PressedObject==BaseLayer->MouseCallback.object)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="boundschanged" class="doc-heading"><code class="inline-code">BoundsChanged()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="draw" class="doc-heading"><code class="inline-code">Draw()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="boundschanged" class="doc-heading"><code class="inline-code">BoundsChanged()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcontainer" class="doc-heading"><code class="inline-code">if(Container)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

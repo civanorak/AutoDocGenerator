@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>Generator — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="../getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Base.html">Base</a></li>
+    <li><a href="Basic.html">Basic</a></li>
+    <li><a href="Common.html">Common</a></li>
+    <li><a href="Config.html">Config</a></li>
+    <li><a href="Definitions.html">Definitions</a></li>
+    <li><a href="Environment.html">Environment</a></li>
+    <li><a href="OS.html">OS</a></li>
+    <li><a href="Runtime.html">Runtime</a></li>
+    <li><a href="Types.html">Types</a></li>
+    <li><a href="Utils.html">Utils</a></li>
+    <li><a href="UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Bitmap.html">Bitmap</a></li>
+    <li><a href="BitmapFont.html">BitmapFont</a></li>
+    <li><a href="BlankImage.html">BlankImage</a></li>
+    <li><a href="Color.html">Color</a></li>
+    <li><a href="ColorPicker.html">ColorPicker</a></li>
+    <li><a href="ColorPlane.html">ColorPlane</a></li>
+    <li><a href="ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="Drawables.html">Drawables</a></li>
+    <li><a href="EmptyImage.html">EmptyImage</a></li>
+    <li><a href="Filters.html">Filters</a></li>
+    <li><a href="Flip.html">Flip</a></li>
+    <li><a href="Font.html">Font</a></li>
+    <li><a href="FontTheme.html">FontTheme</a></li>
+    <li><a href="FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="FreeType.html">FreeType</a></li>
+    <li><a href="GID.html">GID</a></li>
+    <li><a href="GL.html">GL</a></li>
+    <li><a href="Graphics.html">Graphics</a></li>
+    <li><a href="HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="IL.html">IL</a></li>
+    <li><a href="Image.html">Image</a></li>
+    <li><a href="JPEG.html">JPEG</a></li>
+    <li><a href="OpenGL.html">OpenGL</a></li>
+    <li><a href="PNG.html">PNG</a></li>
+    <li><a href="Renderer.html">Renderer</a></li>
+    <li><a href="ScalableObject.html">ScalableObject</a></li>
+    <li><a href="Shader.html">Shader</a></li>
+    <li><a href="Shaders.html">Shaders</a></li>
+    <li><a href="Texture.html">Texture</a></li>
+    <li><a href="TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="TextureTargets.html">TextureTargets</a></li>
+    <li><a href="TintedObject.html">TintedObject</a></li>
+    <li><a href="Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="AnimationServices.html">AnimationServices</a></li>
+    <li><a href="AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="Animations.html">Animations</a></li>
+    <li><a href="ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="DnD.html">DnD</a></li>
+    <li><a href="Input.html">Input</a></li>
+    <li><a href="KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="Keyboard.html">Keyboard</a></li>
+    <li><a href="Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Button.html">Button</a></li>
+    <li><a href="Checkbox.html">Checkbox</a></li>
+    <li><a href="CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="Combobox.html">Combobox</a></li>
+    <li><a href="ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="CountingText.html">CountingText</a></li>
+    <li><a href="Dialog.html">Dialog</a></li>
+    <li><a href="DialogWindow.html">DialogWindow</a></li>
+    <li><a href="Dropdown.html">Dropdown</a></li>
+    <li><a href="Filler.html">Filler</a></li>
+    <li><a href="IButton.html">IButton</a></li>
+    <li><a href="ICheckbox.html">ICheckbox</a></li>
+    <li><a href="ILabel.html">ILabel</a></li>
+    <li><a href="IListItem.html">IListItem</a></li>
+    <li><a href="INumberbox.html">INumberbox</a></li>
+    <li><a href="IOption.html">IOption</a></li>
+    <li><a href="IProgressor.html">IProgressor</a></li>
+    <li><a href="IScroller.html">IScroller</a></li>
+    <li><a href="ISlider.html">ISlider</a></li>
+    <li><a href="ITextbox.html">ITextbox</a></li>
+    <li><a href="Inputbox.html">Inputbox</a></li>
+    <li><a href="Label.html">Label</a></li>
+    <li><a href="Listbox.html">Listbox</a></li>
+    <li><a href="ListboxBase.html">ListboxBase</a></li>
+    <li><a href="ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="NumberInput.html">NumberInput</a></li>
+    <li><a href="Numberbox.html">Numberbox</a></li>
+    <li><a href="Panel.html">Panel</a></li>
+    <li><a href="PanelBase.html">PanelBase</a></li>
+    <li><a href="PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="Percentbar.html">Percentbar</a></li>
+    <li><a href="PetContainer.html">PetContainer</a></li>
+    <li><a href="PetTextbox.html">PetTextbox</a></li>
+    <li><a href="Placeholder.html">Placeholder</a></li>
+    <li><a href="Progressbar.html">Progressbar</a></li>
+    <li><a href="RadioButton.html">RadioButton</a></li>
+    <li><a href="RadioButtons.html">RadioButtons</a></li>
+    <li><a href="RadioControl.html">RadioControl</a></li>
+    <li><a href="Scrollbar.html">Scrollbar</a></li>
+    <li><a href="ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="Slider.html">Slider</a></li>
+    <li><a href="SliderBase.html">SliderBase</a></li>
+    <li><a href="SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="Spinner.html">Spinner</a></li>
+    <li><a href="StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="Tabpanel.html">Tabpanel</a></li>
+    <li><a href="TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="TextInput.html">TextInput</a></li>
+    <li><a href="Textarea.html">Textarea</a></li>
+    <li><a href="Textbox.html">Textbox</a></li>
+    <li><a href="TextboxBase.html">TextboxBase</a></li>
+    <li><a href="TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="TooltipManager.html">TooltipManager</a></li>
+    <li><a href="TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="UI.html">UI</a></li>
+    <li><a href="Widget.html">Widget</a></li>
+    <li><a href="WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Alignment.html">Alignment</a></li>
+    <li><a href="Bezier.html">Bezier</a></li>
+    <li><a href="Bounds.html">Bounds</a></li>
+    <li><a href="Circle.html">Circle</a></li>
+    <li><a href="Dimension.html">Dimension</a></li>
+    <li><a href="Geometry.html">Geometry</a></li>
+    <li><a href="GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="Line.html">Line</a></li>
+    <li><a href="Margin.html">Margin</a></li>
+    <li><a href="Point.html">Point</a></li>
+    <li><a href="Point3D.html">Point3D</a></li>
+    <li><a href="PointList.html">PointList</a></li>
+    <li><a href="PointProperty.html">PointProperty</a></li>
+    <li><a href="Polygon.html">Polygon</a></li>
+    <li><a href="Rectangle.html">Rectangle</a></li>
+    <li><a href="Region.html">Region</a></li>
+    <li><a href="Size.html">Size</a></li>
+    <li><a href="SizeProperty.html">SizeProperty</a></li>
+    <li><a href="Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Audio.html">Audio</a></li>
+    <li><a href="AudioStream.html">AudioStream</a></li>
+    <li><a href="FLAC.html">FLAC</a></li>
+    <li><a href="Multimedia.html">Multimedia</a></li>
+    <li><a href="PulseAudio.html">PulseAudio</a></li>
+    <li><a href="PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="Sound.html">Sound</a></li>
+    <li><a href="Source.html">Source</a></li>
+    <li><a href="Vorbis.html">Vorbis</a></li>
+    <li><a href="WASAPI.html">WASAPI</a></li>
+    <li><a href="WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Blob.html">Blob</a></li>
+    <li><a href="CGI.html">CGI</a></li>
+    <li><a href="Clipboard.html">Clipboard</a></li>
+    <li><a href="Data.html">Data</a></li>
+    <li><a href="DataExchange.html">DataExchange</a></li>
+    <li><a href="DataItems.html">DataItems</a></li>
+    <li><a href="File.html">File</a></li>
+    <li><a href="FileDialog.html">FileDialog</a></li>
+    <li><a href="Filesystem.html">Filesystem</a></li>
+    <li><a href="Folder.html">Folder</a></li>
+    <li><a href="HTTP.html">HTTP</a></li>
+    <li><a href="LZMA.html">LZMA</a></li>
+    <li><a href="Markdown.html">Markdown</a></li>
+    <li><a href="MemoryStream.html">MemoryStream</a></li>
+    <li><a href="Parse.html">Parse</a></li>
+    <li><a href="Query.html">Query</a></li>
+    <li><a href="Reader.html">Reader</a></li>
+    <li><a href="Storage.html">Storage</a></li>
+    <li><a href="Stream.html">Stream</a></li>
+    <li><a href="Tokenizer.html">Tokenizer</a></li>
+    <li><a href="URI.html">URI</a></li>
+    <li><a href="Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Array.html">Array</a></li>
+    <li><a href="Collection.html">Collection</a></li>
+    <li><a href="Container.html">Container</a></li>
+    <li><a href="Hashmap.html">Hashmap</a></li>
+    <li><a href="Iterator.html">Iterator</a></li>
+    <li><a href="LinkNode.html">LinkNode</a></li>
+    <li><a href="List.html">List</a></li>
+    <li><a href="ListItem.html">ListItem</a></li>
+    <li><a href="Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BorderData.html">BorderData</a></li>
+    <li><a href="ComponentStack.html">ComponentStack</a></li>
+    <li><a href="ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="CustomLayer.html">CustomLayer</a></li>
+    <li><a href="DWM.html">DWM</a></li>
+    <li><a href="ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="Flow.html">Flow</a></li>
+    <li><a href="FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="InlinePanel.html">InlinePanel</a></li>
+    <li><a href="Layer.html">Layer</a></li>
+    <li><a href="LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="LayerMover.html">LayerMover</a></li>
+    <li><a href="LayerResizer.html">LayerResizer</a></li>
+    <li><a href="LayerWidget.html">LayerWidget</a></li>
+    <li><a href="Layerbox.html">Layerbox</a></li>
+    <li><a href="LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="MaskedObject.html">MaskedObject</a></li>
+    <li><a href="Monitor.html">Monitor</a></li>
+    <li><a href="MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="Organizer.html">Organizer</a></li>
+    <li><a href="StackedObject.html">StackedObject</a></li>
+    <li><a href="VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="Window.html">Window</a></li>
+    <li><a href="WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Assert.html">Assert</a></li>
+    <li><a href="Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="CaptionValue.html">CaptionValue</a></li>
+    <li><a href="Console.html">Console</a></li>
+    <li><a href="Console_Nix.html">Console_Nix</a></li>
+    <li><a href="Console_Win32.html">Console_Win32</a></li>
+    <li><a href="ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="Event.html">Event</a></li>
+    <li><a href="Exception.html">Exception</a></li>
+    <li><a href="Exceptions.html">Exceptions</a></li>
+    <li><a href="GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="Logging.html">Logging</a></li>
+    <li><a href="Null.html">Null</a></li>
+    <li><a href="Nullable.html">Nullable</a></li>
+    <li><a href="Pointer.html">Pointer</a></li>
+    <li><a href="Property.html">Property</a></li>
+    <li><a href="Random.html">Random</a></li>
+    <li><a href="RefCounter.html">RefCounter</a></li>
+    <li><a href="Registry.html">Registry</a></li>
+    <li><a href="SGuid.html">SGuid</a></li>
+    <li><a href="Scope.html">Scope</a></li>
+    <li><a href="ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="Threading.html">Threading</a></li>
+    <li><a href="Time.html">Time</a></li>
+    <li><a href="Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AST.html">AST</a></li>
+    <li><a href="AStar.html">AStar</a></li>
+    <li><a href="Blueprint.html">Blueprint</a></li>
+    <li><a href="Compiler.html">Compiler</a></li>
+    <li><a href="Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="Compilers.html">Compilers</a></li>
+    <li><a href="Component.html">Component</a></li>
+    <li><a href="Composer.html">Composer</a></li>
+    <li><a href="Discrete.html">Discrete</a></li>
+    <li><a href="Embedding.html">Embedding</a></li>
+    <li><a href="Enum.html">Enum</a></li>
+    <li><a href="Generator.html" class="active">Generator</a></li>
+    <li><a href="Instruction.html">Instruction</a></li>
+    <li><a href="Language.html">Language</a></li>
+    <li><a href="Message.html">Message</a></li>
+    <li><a href="Pathfinders.html">Pathfinders</a></li>
+    <li><a href="Reflection.html">Reflection</a></li>
+    <li><a href="RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="Scene.html">Scene</a></li>
+    <li><a href="Scripting.html">Scripting</a></li>
+    <li><a href="Simple.html">Simple</a></li>
+    <li><a href="String.html">String</a></li>
+    <li><a href="Struct.html">Struct</a></li>
+    <li><a href="TMP.html">TMP</a></li>
+    <li><a href="Template.html">Template</a></li>
+    <li><a href="TiledMap.html">TiledMap</a></li>
+    <li><a href="Validators.html">Validators</a></li>
+    <li><a href="VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Linux.html">Linux</a></li>
+    <li><a href="Win32.html">Win32</a></li>
+    <li><a href="Windows.html">Windows</a></li>
+    <li><a href="X11.html">X11</a></li>
+    <li><a href="X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Any.html">Any</a></li>
+    <li><a href="Builtin.html">Builtin</a></li>
+    <li><a href="FindObject.html">FindObject</a></li>
+    <li><a href="Helpers.html">Helpers</a></li>
+    <li><a href="Instance.html">Instance</a></li>
+    <li><a href="ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="PD.html">PD</a></li>
+    <li><a href="ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BasicMath.html">BasicMath</a></li>
+    <li><a href="Kernel.html">Kernel</a></li>
+    <li><a href="main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">Generator</span>
+    </nav>
+    
+        <h1 id="generator" class="doc-heading">Generator</h1>
+<p class="doc-paragraph">> Auto-generated documentation for the <strong>Generator</strong> module of the Gorgon C++ Game Engine.</p>
+<h2 id="contents" class="doc-heading">Contents</h2>
+<ul class="md-list">
+<li><a href="#classes">Classes</a></li>
+<li><a href="#enums">Enums</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="classes" class="doc-heading">Classes</h2>
+<h3 id="generator" class="doc-heading"><code class="inline-code">Generator</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="virtual-button" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Button(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<p class="doc-paragraph">Generates a button template</p>
+<h5 id="virtual-iconbutton" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">IconButton(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<p class="doc-paragraph">Generates a button template with the given default size.</p>
+<h5 id="virtual-dialogbutton" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">DialogButton(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<p class="doc-paragraph">Generates a button template</p>
+<h5 id="virtual-checkbox" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Checkbox(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-checkboxbutton" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">CheckboxButton(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-radiobutton" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">RadioButton(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-label" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Label(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-errorlabel" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">ErrorLabel(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-boldlabel" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">BoldLabel(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-titlelabel" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">TitleLabel(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-subtitlelabel" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SubtitleLabel(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-leadinglabel" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">LeadingLabel(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-infolabel" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">InfoLabel(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-iconlabel" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">IconLabel(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-panel" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Panel(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-toppanel" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">TopPanel(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-leftpanel" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">LeftPanel(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-bottompanel" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">BottomPanel(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-rightpanel" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">RightPanel(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-blankpanel" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">BlankPanel(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-inputbox" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Inputbox(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-progressbar" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Progressbar(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-hscrollbar" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">HScrollbar(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-vscrollbar" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">VScrollbar(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-layerbox" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Layerbox(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-blanklayerbox" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">BlankLayerbox(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-listbox" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Listbox(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-dropdown" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Dropdown(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-window" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Window(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-dialogwindow" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">DialogWindow(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-colorplane" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">ColorPlane(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-colorpicker" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">ColorPicker(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-tabpanel" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">TabPanel(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="virtual-textarea" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Textarea(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual UI::Template</code></p>
+<h5 id="switchtype" class="doc-heading"><code class="inline-code">switch(type)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="simplegenerator" class="doc-heading"><code class="inline-code">SimpleGenerator</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h3 id="focusinfo" class="doc-heading"><code class="inline-code">FocusInfo</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h3 id="borderinfo" class="doc-heading"><code class="inline-code">BorderInfo</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h3 id="assetid" class="doc-heading"><code class="inline-code">AssetID</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">Identifies and helps with the creation of assets used in a generator</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="static-hbordersborderside-b" class="doc-heading"><code class="inline-code">static</code> <code class="inline-code">HBorders(BorderSide b)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static int</code></p>
+<h5 id="switchb" class="doc-heading"><code class="inline-code">switch(b)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="static-vbordersborderside-b" class="doc-heading"><code class="inline-code">static</code> <code class="inline-code">VBorders(BorderSide b)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static int</code></p>
+<h5 id="switchb" class="doc-heading"><code class="inline-code">switch(b)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="static-totalbordersborderside-b" class="doc-heading"><code class="inline-code">static</code> <code class="inline-code">TotalBorders(BorderSide b)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static int</code></p>
+<h5 id="switchb" class="doc-heading"><code class="inline-code">switch(b)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="static-hasleftborderside-b" class="doc-heading"><code class="inline-code">static</code> <code class="inline-code">HasLeft(BorderSide b)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static bool</code></p>
+<h5 id="switchb" class="doc-heading"><code class="inline-code">switch(b)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="static-hastopborderside-b" class="doc-heading"><code class="inline-code">static</code> <code class="inline-code">HasTop(BorderSide b)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static bool</code></p>
+<h5 id="switchb" class="doc-heading"><code class="inline-code">switch(b)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="static-hasrightborderside-b" class="doc-heading"><code class="inline-code">static</code> <code class="inline-code">HasRight(BorderSide b)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static bool</code></p>
+<h5 id="switchb" class="doc-heading"><code class="inline-code">switch(b)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="static-hasbottomborderside-b" class="doc-heading"><code class="inline-code">static</code> <code class="inline-code">HasBottom(BorderSide b)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static bool</code></p>
+<h5 id="switchb" class="doc-heading"><code class="inline-code">switch(b)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<hr class="doc-divider">
+<h2 id="enums" class="doc-heading">Enums</h2>
+<h3 id="cornerstyle" class="doc-heading"><code class="inline-code">CornerStyle</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">Constants to control style of corners</p>
+<h3 id="assettype" class="doc-heading"><code class="inline-code">AssetType</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h3 id="borderside" class="doc-heading"><code class="inline-code">BorderSide</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<hr class="doc-divider">
+<h2 id="functions" class="doc-heading">Functions</h2>
+<h3 id="disassemblevalueconst-value-value" class="doc-heading"><code class="inline-code">disassemblevalue(const Value &value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<h3 id="switchvaluetype" class="doc-heading"><code class="inline-code">switch(value.Type)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="disassembleconst-instruction-instruction" class="doc-heading"><code class="inline-code">Disassemble(const Instruction *instruction)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<h3 id="switchinstruction-type" class="doc-heading"><code class="inline-code">switch(instruction->Type)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="disassemblevalueinstruction-rhs" class="doc-heading"><code class="inline-code">disassemblevalue(instruction->RHS)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="disassemblevalueinstruction-rhs" class="doc-heading"><code class="inline-code">disassemblevalue(instruction->RHS)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="disassemblevalueinstruction-rhs" class="doc-heading"><code class="inline-code">disassemblevalue(instruction->RHS)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="disassemblevalueinstruction-rhs" class="doc-heading"><code class="inline-code">disassemblevalue(instruction->RHS)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifinstruction-store" class="doc-heading"><code class="inline-code">if(instruction->Store)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-param--instruction-parameters" class="doc-heading"><code class="inline-code">for(auto &param : instruction->Parameters)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="disassemblescope-scope-stdostream-out" class="doc-heading"><code class="inline-code">Disassemble(Scope &scope, std::ostream &out)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="finddefaultfontfamilybool-mono-const-stdvectorgorgonosfontfamily-list" class="doc-heading"><code class="inline-code">FindDefaultFontFamily(bool mono, const std::vector<Gorgon::OS::FontFamily> &list)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<h3 id="ifos" class="doc-heading"><code class="inline-code">if(!os)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="fcpatterndestroypat" class="doc-heading"><code class="inline-code">FcPatternDestroy(pat)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iffs--fs-nfont--0" class="doc-heading"><code class="inline-code">if(fs && fs->nfont > 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="fcpatterngetstringfont-fcfamily-0-family" class="doc-heading"><code class="inline-code">FcPatternGetString(font, FC_FAMILY, 0, &family)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="fcpatterndestroypat" class="doc-heading"><code class="inline-code">FcPatternDestroy(pat)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="fcobjectsetdestroyos" class="doc-heading"><code class="inline-code">FcObjectSetDestroy(os)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="fcpatterndestroypat" class="doc-heading"><code class="inline-code">FcPatternDestroy(pat)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="fcobjectsetdestroyos" class="doc-heading"><code class="inline-code">FcObjectSetDestroy(os)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-r--l" class="doc-heading"><code class="inline-code">for(auto r : l)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-f--list" class="doc-heading"><code class="inline-code">for(auto &f : list)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifmono" class="doc-heading"><code class="inline-code">if(mono)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-f--list" class="doc-heading"><code class="inline-code">for(auto &f : list)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-face--ffaces" class="doc-heading"><code class="inline-code">for(auto &face : f.Faces)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="findfontfilestdstring-family-bool-bold-bool-italic-const-stdvectorgorgonosfontfamily-list-bool-mono" class="doc-heading"><code class="inline-code">FindFontFile(std::string family, bool bold, bool italic, const std::vector<Gorgon::OS::FontFamily> &list, bool mono)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<h3 id="forauto-f--list" class="doc-heading"><code class="inline-code">for(auto &f : list)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-face--ffaces" class="doc-heading"><code class="inline-code">for(auto &face : f.Faces)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-f--list" class="doc-heading"><code class="inline-code">for(auto &f : list)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-face--ffaces" class="doc-heading"><code class="inline-code">for(auto &face : f.Faces)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iffam--family" class="doc-heading"><code class="inline-code">if(fam != family)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifitalic" class="doc-heading"><code class="inline-code">if(italic)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbold" class="doc-heading"><code class="inline-code">if(bold)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-t--colors" class="doc-heading"><code class="inline-code">for(auto &t : colors)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="initfontrelated" class="doc-heading"><code class="inline-code">initfontrelated()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Loads the specified fonts, while using supplied or default family for monospaced fonts.</p>
+<h3 id="italicfntitalicrenderer-regcol" class="doc-heading"><code class="inline-code">italicfnt(*italicrenderer, regcol)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Graphics::StyledPrinter</code></p>
+<h3 id="bolditalicfntbolditalicrenderer-regcol" class="doc-heading"><code class="inline-code">bolditalicfnt(*bolditalicrenderer, regcol)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Graphics::StyledPrinter</code></p>
+<h3 id="smallfntsmallrenderer-regcol" class="doc-heading"><code class="inline-code">smallfnt(*smallrenderer, regcol)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Graphics::StyledPrinter</code></p>
+<h3 id="largerfntlargerrenderer-regcol" class="doc-heading"><code class="inline-code">largerfnt(*largerrenderer, regcol)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Graphics::StyledPrinter</code></p>
+<h3 id="scriptfntscriptrenderer-regcol" class="doc-heading"><code class="inline-code">scriptfnt(*scriptrenderer, regcol)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Graphics::StyledPrinter</code></p>
+<h3 id="boldscriptfntboldscriptrenderer-regcol" class="doc-heading"><code class="inline-code">boldscriptfnt(*boldscriptrenderer, regcol)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Graphics::StyledPrinter</code></p>
+<h3 id="smallscriptfntsmallscriptrenderer-regcol" class="doc-heading"><code class="inline-code">smallscriptfnt(*smallscriptrenderer, regcol)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Graphics::StyledPrinter</code></p>
+<h3 id="fixedwidthfntfixedwidthrenderer-regcol" class="doc-heading"><code class="inline-code">fixedwidthfnt(*fixedwidthrenderer, regcol)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Graphics::StyledPrinter</code></p>
+<h3 id="fixedwidthboldfntfixedwidthboldrenderer-regcol" class="doc-heading"><code class="inline-code">fixedwidthboldfnt(*fixedwidthboldrenderer, regcol)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Graphics::StyledPrinter</code></p>
+<h3 id="fixedwidthitalicfntfixedwidthitalicrenderer-regcol" class="doc-heading"><code class="inline-code">fixedwidthitalicfnt(*fixedwidthitalicrenderer, regcol)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Graphics::StyledPrinter</code></p>
+<h3 id="fixedwidthbolditalicfntfixedwidthbolditalicrenderer-regcol" class="doc-heading"><code class="inline-code">fixedwidthbolditalicfnt(*fixedwidthbolditalicrenderer, regcol)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Graphics::StyledPrinter</code></p>
+<h3 id="ifbordersize---1" class="doc-heading"><code class="inline-code">if(bordersize == -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifborderwidth--2" class="doc-heading"><code class="inline-code">if(border.Width > 2)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbordershape--2f" class="doc-heading"><code class="inline-code">if(border.Shape > 2.f)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchcorners" class="doc-heading"><code class="inline-code">switch(corners)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchcorners" class="doc-heading"><code class="inline-code">switch(corners)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchidtype" class="doc-heading"><code class="inline-code">switch(id.Type)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="assertprov-unknown-asset" class="doc-heading"><code class="inline-code">ASSERT(prov, "Unknown asset")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifborders--assetidnone" class="doc-heading"><code class="inline-code">if(borders == AssetID::None)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbordera--0" class="doc-heading"><code class="inline-code">if(border.A != 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchborders" class="doc-heading"><code class="inline-code">switch(borders)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifmissingedge---1" class="doc-heading"><code class="inline-code">if(missingedge != -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-idiv-i" class="doc-heading"><code class="inline-code">for(int i=0; i<=div; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-idiv-i" class="doc-heading"><code class="inline-code">for(int i=0; i<=div; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-idiv-i" class="doc-heading"><code class="inline-code">for(int i=0; i<=div; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifmissingedge---1" class="doc-heading"><code class="inline-code">if(missingedge != -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-idiv-i" class="doc-heading"><code class="inline-code">for(int i=0; i<=div; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifmissingedge---1" class="doc-heading"><code class="inline-code">if(missingedge == -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifmissingedge--0" class="doc-heading"><code class="inline-code">if(missingedge == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifmissingedge--1" class="doc-heading"><code class="inline-code">if(missingedge == 1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifmissingedge--2" class="doc-heading"><code class="inline-code">if(missingedge == 2)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifcoff--0" class="doc-heading"><code class="inline-code">if(coff > 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifr--0" class="doc-heading"><code class="inline-code">if(r == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-idiv-i" class="doc-heading"><code class="inline-code">for(int i=0; i<=div; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-idiv-i" class="doc-heading"><code class="inline-code">for(int i=0; i<=div; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-idiv-i" class="doc-heading"><code class="inline-code">for(int i=0; i<=div; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-idiv-i" class="doc-heading"><code class="inline-code">for(int i=0; i<=div; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="rotateborder-rotation-w2f-h2f" class="doc-heading"><code class="inline-code">Rotate(border, rotation, {w/2.f, h/2.f})</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifsizewidth---bordershape46f--3" class="doc-heading"><code class="inline-code">if(size.Width - Border.Shape*4.6f < 3)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifborder" class="doc-heading"><code class="inline-code">if(border)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="makestategraphicscolorregular-uicomponentconditionalways" class="doc-heading"><code class="inline-code">makestate(Graphics::Color::Regular, UI::ComponentCondition::Always)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="makestategraphicscolorhover-uicomponentconditionhover" class="doc-heading"><code class="inline-code">makestate(Graphics::Color::Hover, UI::ComponentCondition::Hover)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="makestategraphicscolordown-uicomponentconditiondown" class="doc-heading"><code class="inline-code">makestate(Graphics::Color::Down, UI::ComponentCondition::Down)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="makestategraphicscolordisabled-uicomponentconditiondisabled" class="doc-heading"><code class="inline-code">makestate(Graphics::Color::Disabled, UI::ComponentCondition::Disabled)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftabbutton--assetidnone" class="doc-heading"><code class="inline-code">if(tabbutton == AssetID::None)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftabbutton--assetidnone" class="doc-heading"><code class="inline-code">if(tabbutton == AssetID::None)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="checkboxbuttonassetidnone" class="doc-heading"><code class="inline-code">checkboxbutton(AssetID::None)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="makestategraphicscolorregular-uicomponentconditionalways" class="doc-heading"><code class="inline-code">makestate(Graphics::Color::Regular, UI::ComponentCondition::Always)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="makestategraphicscolorhover-uicomponentconditionhover" class="doc-heading"><code class="inline-code">makestate(Graphics::Color::Hover, UI::ComponentCondition::Hover)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="makestategraphicscolordown-uicomponentconditiondown" class="doc-heading"><code class="inline-code">makestate(Graphics::Color::Down, UI::ComponentCondition::Down)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="makestategraphicscolordisabled-uicomponentconditiondisabled" class="doc-heading"><code class="inline-code">makestate(Graphics::Color::Disabled, UI::ComponentCondition::Disabled)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="paddingspacing" class="doc-heading"><code class="inline-code">padding(spacing)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Geometry::Margin</code></p>
+<h3 id="ifscrollers" class="doc-heading"><code class="inline-code">if(scrollers)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="makepanelassetidallexcepttop-false" class="doc-heading"><code class="inline-code">makepanel(AssetID::AllExceptTop, false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="makepanelassetidallexceptleft-true" class="doc-heading"><code class="inline-code">makepanel(AssetID::AllExceptLeft, true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="makepanelassetidallexceptright-true" class="doc-heading"><code class="inline-code">makepanel(AssetID::AllExceptRight, true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="makepanelassetidallexceptbottom-false" class="doc-heading"><code class="inline-code">makepanel(AssetID::AllExceptBottom, false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="switchicon" class="doc-heading"><code class="inline-code">switch(icon)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="makebuttongraphicscolorregular-0-uicomponentconditionalways" class="doc-heading"><code class="inline-code">makebutton(Graphics::Color::Regular, 0, UI::ComponentCondition::Always)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="makebuttongraphicscolorregular-1-uicomponentconditionreversed" class="doc-heading"><code class="inline-code">makebutton(Graphics::Color::Regular, 1, UI::ComponentCondition::Reversed)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="makebuttongraphicscolorregular-2-uicomponentconditionopened" class="doc-heading"><code class="inline-code">makebutton(Graphics::Color::Regular, 2, UI::ComponentCondition::Opened)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-c--temp" class="doc-heading"><code class="inline-code">for(auto &c : temp)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-c--temp" class="doc-heading"><code class="inline-code">for(auto &c : temp)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifrootp" class="doc-heading"><code class="inline-code">if(rootp)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setcolorgraphicscolordesignation-designation-graphicscolortriplet-color" class="doc-heading"><code class="inline-code">SetColor(Graphics::Color::Designation designation, Graphics::Color::Triplet<> color)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Creates a non-working simple generator. Calls to any function other than Init is undefined behaviour. Updates a single color. All setup should be performed before any templates are generated</p>
+<h3 id="setcolorsgraphicscolortripletpack-pack" class="doc-heading"><code class="inline-code">SetColors(Graphics::Color::TripletPack pack)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Replaces the list of colors with the given list. All setup should be performed before any templates are generated</p>
+<h3 id="initfontsint-size-stdstring-family---stdstring-mono--" class="doc-heading"><code class="inline-code">InitFonts(int size, std::string family = "", std::string mono = "")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Finds the requested typeface from the installed fonts. You may query installed fonts using OS::GetFontFamilies. Leaving family empty will trigger internal mechanism to find an ideal font for the task. On Linux, the font is requested from FontConfig, on Windows, we have a list of fonts that will be tried in order.</p>
+<h3 id="initfontsfamily-mono-density" class="doc-heading"><code class="inline-code">InitFonts(family, mono, density)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Loads the specified fonts, while using supplied or default family for monospaced fonts. Loads the specified fonts. Finds the requested typeface from the installed fonts. You may query installed fonts using OS::GetFontFamilies. Leaving family empty will trigger internal mechanism to find an ideal font for UI. On Linux, the font is requested from FontConfig, on Windows, we have a list of fonts that will be tried in order. Font size will be calculated from the monitor size and density Loads the specified fonts, while using supplied or default family for monospaced fonts. Loads the specified fonts. Initializes the dimensions that will be used by the generator. Call after font setup is completed. Density controls how dense the widgets will be packed together, effecting their spacing. bordersize controls the border of individual widgets. If -1 is supplied for border, line thickness from the regular font will be used. Fully initializes the generator with default colors</p>
+<h3 id="initdimensionsdensity-bordersize-corners" class="doc-heading"><code class="inline-code">InitDimensions(density, bordersize, corners)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="initfontssize-family-mono" class="doc-heading"><code class="inline-code">InitFonts(size, family, mono)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Fully initializes the generator with default colors</p>
+<h3 id="initdimensionsdensity-bordersize-corners" class="doc-heading"><code class="inline-code">InitDimensions(density, bordersize, corners)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="initfontsfamily-mono-density" class="doc-heading"><code class="inline-code">InitFonts(family, mono, density)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Fully initializes the generator</p>
+<h3 id="initdimensionsdensity-bordersize-corners" class="doc-heading"><code class="inline-code">InitDimensions(density, bordersize, corners)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="initfontssize-family-mono" class="doc-heading"><code class="inline-code">InitFonts(size, family, mono)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Fully initializes the generator</p>
+<h3 id="initdimensionsdensity-bordersize-corners" class="doc-heading"><code class="inline-code">InitDimensions(density, bordersize, corners)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="initfontsregular-bold-italic-bolditalic-mono-density" class="doc-heading"><code class="inline-code">InitFonts(regular, bold, italic, bolditalic, mono, density)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Fully initializes the generator</p>
+<h3 id="initdimensionsdensity-bordersize-corners" class="doc-heading"><code class="inline-code">InitDimensions(density, bordersize, corners)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="initfontssize-regular-bold-italic-bolditalic-mono" class="doc-heading"><code class="inline-code">InitFonts(size, regular, bold, italic, bolditalic, mono)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Fully initializes the generator</p>
+<h3 id="initdimensionsdensity-bordersize-corners" class="doc-heading"><code class="inline-code">InitDimensions(density, bordersize, corners)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="initfontsregular-bold-italic-bolditalic-mono-monobold-monoitalic-monobolditalic-density" class="doc-heading"><code class="inline-code">InitFonts(regular, bold, italic, bolditalic, mono, monobold, monoitalic, monobolditalic, density)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Fully initializes the generator</p>
+<h3 id="initdimensionsdensity-bordersize-corners" class="doc-heading"><code class="inline-code">InitDimensions(density, bordersize, corners)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="initfontssize-regular-bold-italic-bolditalic-mono-monobold-monoitalic-monobolditalic" class="doc-heading"><code class="inline-code">InitFonts(size, regular, bold, italic, bolditalic, mono, monobold, monoitalic, monobolditalic)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Fully initializes the generator</p>
+<h3 id="initdimensionsdensity-bordersize-corners" class="doc-heading"><code class="inline-code">InitDimensions(density, bordersize, corners)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="buttonbool-border" class="doc-heading"><code class="inline-code">Button(bool border)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">UI::Template</code></p>
+<h3 id="makebordergraphicsrgba-border-graphicsrgba-bg-simplegeneratorassetidborderside-borders-int-w---1-int-r---1" class="doc-heading"><code class="inline-code">makeborder(Graphics::RGBA border, Graphics::RGBA bg, SimpleGenerator::AssetID::BorderSide borders, int w = -1, int r = -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Graphics::RectangularAnimationProvider*</code></p>
+<p class="doc-paragraph">Returns the foreground color for the requested designation. Returns the background for the requested designation. Returns an printer instance that will render the requested text style Returns an advanced printer instance that will be able to render any text style</p>
+<h3 id="makepanelsimplegeneratorassetidborderside-edge-bool-scrollers-bool-spacing--true-bool-nobg--false" class="doc-heading"><code class="inline-code">makepanel(SimpleGenerator::AssetID::BorderSide edge, bool scrollers, bool spacing = true, bool nobg = false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">UI::Template</code></p>
+<h3 id="checkboxbuttonassetidborderside-tabbutton" class="doc-heading"><code class="inline-code">checkboxbutton(AssetID::BorderSide tabbutton)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">UI::Template</code></p>
+<h3 id="initfontrelated" class="doc-heading"><code class="inline-code">initfontrelated()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">This is the height of a bordered widget This is the height of a non-bordered widget</p>
+<h3 id="expandedradiusfloat-pixels" class="doc-heading"><code class="inline-code">expandedradius(float pixels)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">float</code></p>
+<h3 id="maketemplate" class="doc-heading"><code class="inline-code">maketemplate()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">UI::Template</code></p>
+<h3 id="setupfocusuigraphicstemplate-focus" class="doc-heading"><code class="inline-code">setupfocus(UI::GraphicsTemplate &focus)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

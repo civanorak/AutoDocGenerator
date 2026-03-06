@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>Window — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="../getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Base.html">Base</a></li>
+    <li><a href="Basic.html">Basic</a></li>
+    <li><a href="Common.html">Common</a></li>
+    <li><a href="Config.html">Config</a></li>
+    <li><a href="Definitions.html">Definitions</a></li>
+    <li><a href="Environment.html">Environment</a></li>
+    <li><a href="OS.html">OS</a></li>
+    <li><a href="Runtime.html">Runtime</a></li>
+    <li><a href="Types.html">Types</a></li>
+    <li><a href="Utils.html">Utils</a></li>
+    <li><a href="UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Bitmap.html">Bitmap</a></li>
+    <li><a href="BitmapFont.html">BitmapFont</a></li>
+    <li><a href="BlankImage.html">BlankImage</a></li>
+    <li><a href="Color.html">Color</a></li>
+    <li><a href="ColorPicker.html">ColorPicker</a></li>
+    <li><a href="ColorPlane.html">ColorPlane</a></li>
+    <li><a href="ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="Drawables.html">Drawables</a></li>
+    <li><a href="EmptyImage.html">EmptyImage</a></li>
+    <li><a href="Filters.html">Filters</a></li>
+    <li><a href="Flip.html">Flip</a></li>
+    <li><a href="Font.html">Font</a></li>
+    <li><a href="FontTheme.html">FontTheme</a></li>
+    <li><a href="FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="FreeType.html">FreeType</a></li>
+    <li><a href="GID.html">GID</a></li>
+    <li><a href="GL.html">GL</a></li>
+    <li><a href="Graphics.html">Graphics</a></li>
+    <li><a href="HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="IL.html">IL</a></li>
+    <li><a href="Image.html">Image</a></li>
+    <li><a href="JPEG.html">JPEG</a></li>
+    <li><a href="OpenGL.html">OpenGL</a></li>
+    <li><a href="PNG.html">PNG</a></li>
+    <li><a href="Renderer.html">Renderer</a></li>
+    <li><a href="ScalableObject.html">ScalableObject</a></li>
+    <li><a href="Shader.html">Shader</a></li>
+    <li><a href="Shaders.html">Shaders</a></li>
+    <li><a href="Texture.html">Texture</a></li>
+    <li><a href="TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="TextureTargets.html">TextureTargets</a></li>
+    <li><a href="TintedObject.html">TintedObject</a></li>
+    <li><a href="Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="AnimationServices.html">AnimationServices</a></li>
+    <li><a href="AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="Animations.html">Animations</a></li>
+    <li><a href="ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="DnD.html">DnD</a></li>
+    <li><a href="Input.html">Input</a></li>
+    <li><a href="KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="Keyboard.html">Keyboard</a></li>
+    <li><a href="Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Button.html">Button</a></li>
+    <li><a href="Checkbox.html">Checkbox</a></li>
+    <li><a href="CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="Combobox.html">Combobox</a></li>
+    <li><a href="ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="CountingText.html">CountingText</a></li>
+    <li><a href="Dialog.html">Dialog</a></li>
+    <li><a href="DialogWindow.html">DialogWindow</a></li>
+    <li><a href="Dropdown.html">Dropdown</a></li>
+    <li><a href="Filler.html">Filler</a></li>
+    <li><a href="IButton.html">IButton</a></li>
+    <li><a href="ICheckbox.html">ICheckbox</a></li>
+    <li><a href="ILabel.html">ILabel</a></li>
+    <li><a href="IListItem.html">IListItem</a></li>
+    <li><a href="INumberbox.html">INumberbox</a></li>
+    <li><a href="IOption.html">IOption</a></li>
+    <li><a href="IProgressor.html">IProgressor</a></li>
+    <li><a href="IScroller.html">IScroller</a></li>
+    <li><a href="ISlider.html">ISlider</a></li>
+    <li><a href="ITextbox.html">ITextbox</a></li>
+    <li><a href="Inputbox.html">Inputbox</a></li>
+    <li><a href="Label.html">Label</a></li>
+    <li><a href="Listbox.html">Listbox</a></li>
+    <li><a href="ListboxBase.html">ListboxBase</a></li>
+    <li><a href="ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="NumberInput.html">NumberInput</a></li>
+    <li><a href="Numberbox.html">Numberbox</a></li>
+    <li><a href="Panel.html">Panel</a></li>
+    <li><a href="PanelBase.html">PanelBase</a></li>
+    <li><a href="PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="Percentbar.html">Percentbar</a></li>
+    <li><a href="PetContainer.html">PetContainer</a></li>
+    <li><a href="PetTextbox.html">PetTextbox</a></li>
+    <li><a href="Placeholder.html">Placeholder</a></li>
+    <li><a href="Progressbar.html">Progressbar</a></li>
+    <li><a href="RadioButton.html">RadioButton</a></li>
+    <li><a href="RadioButtons.html">RadioButtons</a></li>
+    <li><a href="RadioControl.html">RadioControl</a></li>
+    <li><a href="Scrollbar.html">Scrollbar</a></li>
+    <li><a href="ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="Slider.html">Slider</a></li>
+    <li><a href="SliderBase.html">SliderBase</a></li>
+    <li><a href="SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="Spinner.html">Spinner</a></li>
+    <li><a href="StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="Tabpanel.html">Tabpanel</a></li>
+    <li><a href="TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="TextInput.html">TextInput</a></li>
+    <li><a href="Textarea.html">Textarea</a></li>
+    <li><a href="Textbox.html">Textbox</a></li>
+    <li><a href="TextboxBase.html">TextboxBase</a></li>
+    <li><a href="TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="TooltipManager.html">TooltipManager</a></li>
+    <li><a href="TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="UI.html">UI</a></li>
+    <li><a href="Widget.html">Widget</a></li>
+    <li><a href="WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Alignment.html">Alignment</a></li>
+    <li><a href="Bezier.html">Bezier</a></li>
+    <li><a href="Bounds.html">Bounds</a></li>
+    <li><a href="Circle.html">Circle</a></li>
+    <li><a href="Dimension.html">Dimension</a></li>
+    <li><a href="Geometry.html">Geometry</a></li>
+    <li><a href="GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="Line.html">Line</a></li>
+    <li><a href="Margin.html">Margin</a></li>
+    <li><a href="Point.html">Point</a></li>
+    <li><a href="Point3D.html">Point3D</a></li>
+    <li><a href="PointList.html">PointList</a></li>
+    <li><a href="PointProperty.html">PointProperty</a></li>
+    <li><a href="Polygon.html">Polygon</a></li>
+    <li><a href="Rectangle.html">Rectangle</a></li>
+    <li><a href="Region.html">Region</a></li>
+    <li><a href="Size.html">Size</a></li>
+    <li><a href="SizeProperty.html">SizeProperty</a></li>
+    <li><a href="Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Audio.html">Audio</a></li>
+    <li><a href="AudioStream.html">AudioStream</a></li>
+    <li><a href="FLAC.html">FLAC</a></li>
+    <li><a href="Multimedia.html">Multimedia</a></li>
+    <li><a href="PulseAudio.html">PulseAudio</a></li>
+    <li><a href="PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="Sound.html">Sound</a></li>
+    <li><a href="Source.html">Source</a></li>
+    <li><a href="Vorbis.html">Vorbis</a></li>
+    <li><a href="WASAPI.html">WASAPI</a></li>
+    <li><a href="WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Blob.html">Blob</a></li>
+    <li><a href="CGI.html">CGI</a></li>
+    <li><a href="Clipboard.html">Clipboard</a></li>
+    <li><a href="Data.html">Data</a></li>
+    <li><a href="DataExchange.html">DataExchange</a></li>
+    <li><a href="DataItems.html">DataItems</a></li>
+    <li><a href="File.html">File</a></li>
+    <li><a href="FileDialog.html">FileDialog</a></li>
+    <li><a href="Filesystem.html">Filesystem</a></li>
+    <li><a href="Folder.html">Folder</a></li>
+    <li><a href="HTTP.html">HTTP</a></li>
+    <li><a href="LZMA.html">LZMA</a></li>
+    <li><a href="Markdown.html">Markdown</a></li>
+    <li><a href="MemoryStream.html">MemoryStream</a></li>
+    <li><a href="Parse.html">Parse</a></li>
+    <li><a href="Query.html">Query</a></li>
+    <li><a href="Reader.html">Reader</a></li>
+    <li><a href="Storage.html">Storage</a></li>
+    <li><a href="Stream.html">Stream</a></li>
+    <li><a href="Tokenizer.html">Tokenizer</a></li>
+    <li><a href="URI.html">URI</a></li>
+    <li><a href="Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Array.html">Array</a></li>
+    <li><a href="Collection.html">Collection</a></li>
+    <li><a href="Container.html">Container</a></li>
+    <li><a href="Hashmap.html">Hashmap</a></li>
+    <li><a href="Iterator.html">Iterator</a></li>
+    <li><a href="LinkNode.html">LinkNode</a></li>
+    <li><a href="List.html">List</a></li>
+    <li><a href="ListItem.html">ListItem</a></li>
+    <li><a href="Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BorderData.html">BorderData</a></li>
+    <li><a href="ComponentStack.html">ComponentStack</a></li>
+    <li><a href="ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="CustomLayer.html">CustomLayer</a></li>
+    <li><a href="DWM.html">DWM</a></li>
+    <li><a href="ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="Flow.html">Flow</a></li>
+    <li><a href="FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="InlinePanel.html">InlinePanel</a></li>
+    <li><a href="Layer.html">Layer</a></li>
+    <li><a href="LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="LayerMover.html">LayerMover</a></li>
+    <li><a href="LayerResizer.html">LayerResizer</a></li>
+    <li><a href="LayerWidget.html">LayerWidget</a></li>
+    <li><a href="Layerbox.html">Layerbox</a></li>
+    <li><a href="LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="MaskedObject.html">MaskedObject</a></li>
+    <li><a href="Monitor.html">Monitor</a></li>
+    <li><a href="MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="Organizer.html">Organizer</a></li>
+    <li><a href="StackedObject.html">StackedObject</a></li>
+    <li><a href="VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="Window.html" class="active">Window</a></li>
+    <li><a href="WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Assert.html">Assert</a></li>
+    <li><a href="Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="CaptionValue.html">CaptionValue</a></li>
+    <li><a href="Console.html">Console</a></li>
+    <li><a href="Console_Nix.html">Console_Nix</a></li>
+    <li><a href="Console_Win32.html">Console_Win32</a></li>
+    <li><a href="ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="Event.html">Event</a></li>
+    <li><a href="Exception.html">Exception</a></li>
+    <li><a href="Exceptions.html">Exceptions</a></li>
+    <li><a href="GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="Logging.html">Logging</a></li>
+    <li><a href="Null.html">Null</a></li>
+    <li><a href="Nullable.html">Nullable</a></li>
+    <li><a href="Pointer.html">Pointer</a></li>
+    <li><a href="Property.html">Property</a></li>
+    <li><a href="Random.html">Random</a></li>
+    <li><a href="RefCounter.html">RefCounter</a></li>
+    <li><a href="Registry.html">Registry</a></li>
+    <li><a href="SGuid.html">SGuid</a></li>
+    <li><a href="Scope.html">Scope</a></li>
+    <li><a href="ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="Threading.html">Threading</a></li>
+    <li><a href="Time.html">Time</a></li>
+    <li><a href="Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AST.html">AST</a></li>
+    <li><a href="AStar.html">AStar</a></li>
+    <li><a href="Blueprint.html">Blueprint</a></li>
+    <li><a href="Compiler.html">Compiler</a></li>
+    <li><a href="Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="Compilers.html">Compilers</a></li>
+    <li><a href="Component.html">Component</a></li>
+    <li><a href="Composer.html">Composer</a></li>
+    <li><a href="Discrete.html">Discrete</a></li>
+    <li><a href="Embedding.html">Embedding</a></li>
+    <li><a href="Enum.html">Enum</a></li>
+    <li><a href="Generator.html">Generator</a></li>
+    <li><a href="Instruction.html">Instruction</a></li>
+    <li><a href="Language.html">Language</a></li>
+    <li><a href="Message.html">Message</a></li>
+    <li><a href="Pathfinders.html">Pathfinders</a></li>
+    <li><a href="Reflection.html">Reflection</a></li>
+    <li><a href="RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="Scene.html">Scene</a></li>
+    <li><a href="Scripting.html">Scripting</a></li>
+    <li><a href="Simple.html">Simple</a></li>
+    <li><a href="String.html">String</a></li>
+    <li><a href="Struct.html">Struct</a></li>
+    <li><a href="TMP.html">TMP</a></li>
+    <li><a href="Template.html">Template</a></li>
+    <li><a href="TiledMap.html">TiledMap</a></li>
+    <li><a href="Validators.html">Validators</a></li>
+    <li><a href="VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Linux.html">Linux</a></li>
+    <li><a href="Win32.html">Win32</a></li>
+    <li><a href="Windows.html">Windows</a></li>
+    <li><a href="X11.html">X11</a></li>
+    <li><a href="X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Any.html">Any</a></li>
+    <li><a href="Builtin.html">Builtin</a></li>
+    <li><a href="FindObject.html">FindObject</a></li>
+    <li><a href="Helpers.html">Helpers</a></li>
+    <li><a href="Instance.html">Instance</a></li>
+    <li><a href="ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="PD.html">PD</a></li>
+    <li><a href="ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BasicMath.html">BasicMath</a></li>
+    <li><a href="Kernel.html">Kernel</a></li>
+    <li><a href="main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">Window</span>
+    </nav>
+    
+        <h1 id="window" class="doc-heading">Window</h1>
+<p class="doc-paragraph">> Auto-generated documentation for the <strong>Window</strong> module of the Gorgon C++ Game Engine.</p>
+<h2 id="contents" class="doc-heading">Contents</h2>
+<ul class="md-list">
+<li><a href="#classes">Classes</a></li>
+<li><a href="#enums">Enums</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="classes" class="doc-heading">Classes</h2>
+<h3 id="window" class="doc-heading"><code class="inline-code">Window</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="init" class="doc-heading"><code class="inline-code">init(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Creates a new window @param  rect the position and the <strong>interior</strong> size of the window unless use outer metrics is set to true @param  name of the window @param  visible after creation, window will be visible or invisible depending on this value.</p>
+<h5 id="init" class="doc-heading"><code class="inline-code">init(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Creates a new window @param  rect the position and the <strong>interior</strong> size of the window unless use outer metrics is set to true @param  name of the window @param  visible after creation, window will be visible or invisible depending on this value.</p>
+<h5 id="init" class="doc-heading"><code class="inline-code">init(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Creates a new window at the center of the screen @param  size of the window @param  name of the window @param  title of the window @param  visible after creation, window will be visible or invisible depending on this value.</p>
+<h5 id="init" class="doc-heading"><code class="inline-code">init(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Creates a new window at the center of the screen @param  size of the window @param  name of the window @param  title of the window @param  visible after creation, window will be visible or invisible depending on this value.</p>
+<h5 id="init" class="doc-heading"><code class="inline-code">init(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Creates a new window at the center of the screen @param  size of the window @param  name of the window @param  visible after creation, window will be visible or invisible depending on this value.</p>
+<h5 id="init" class="doc-heading"><code class="inline-code">init(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Creates a new window at the center of the screen @param  size of the window @param  name of the window @param  visible after creation, window will be visible or invisible depending on this value.</p>
+<h5 id="init" class="doc-heading"><code class="inline-code">init(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Creates a new window at the center of the screen @param  monitor that the window will be centered on @param  size of the window @param  name of the window @param  visible after creation, window will be visible or invisible depending on this value.</p>
+<h5 id="init" class="doc-heading"><code class="inline-code">init(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Creates a new window at the center of the screen @param  monitor that the window will be centered on @param  size of the window @param  name of the window @param  visible after creation, window will be visible or invisible depending on this value.</p>
+<h5 id="init" class="doc-heading"><code class="inline-code">init(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Creates a fullscreen window. Fullscreen windows do not have chrome and covers entire screen, including any panels it contains.</p>
+<h5 id="init" class="doc-heading"><code class="inline-code">init(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Creates a fullscreen window. Fullscreen windows do not have chrome and covers entire screen, including any panels it contains.</p>
+<h5 id="windowwindow-other" class="doc-heading"><code class="inline-code">Window(Window &&other)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Copy constructor is not allowed</p>
+<h5 id="distributeparentboundschanged" class="doc-heading"><code class="inline-code">distributeparentboundschanged(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="resizeinteriorsize-interiorsizeheight" class="doc-heading"><code class="inline-code">ResizeInterior({size, interiorsize.Height})</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="resizeinteriorinteriorsizewidth-size" class="doc-heading"><code class="inline-code">ResizeInterior({interiorsize.Width, size})</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="whilequiting" class="doc-heading"><code class="inline-code">while(!quiting)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Closes the window, returning the execution to the point where Run function is called. It allows current frame to be completed before quiting.</p>
+<h5 id="setsizesint-spacing-int-unitwidth" class="doc-heading"><code class="inline-code">SetSizes(int spacing, int unitwidth)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Window does not do any scrolling, thus cannot ensure visibility The spacing should be left between widgets Returns the unit width for a widget. This size is enough to have a bordered icon. Widgets should be sized according to unit width and spacing. A single unit width would be too small for most widgets. Overrides default spacing and unitwidth</p>
+<h5 id="usedefaultsizes" class="doc-heading"><code class="inline-code">UseDefaultSizes(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Return to use default sizes</p>
+<h5 id="updateregistry" class="doc-heading"><code class="inline-code">updateregistry(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Returns a container that can be used to place windows Returns a container that can be used to place dialog windows. Dialog windows stays above bars (status, menu, etc...) Returns a container that can be used to place bars like statusbar, menubar, or taskbar. Bar container stays above windows Returns a container that can be used to place widgets under the graphical contents of the window.</p>
+<h5 id="init" class="doc-heading"><code class="inline-code">init(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="focuschangedinlayeradapter-cont" class="doc-heading"><code class="inline-code">focuschangedin(LayerAdapter &cont)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="window" class="doc-heading"><code class="inline-code">Window</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">gge</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="setallowmovetrue" class="doc-heading"><code class="inline-code">setallowmove(true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setallownofocustrue" class="doc-heading"><code class="inline-code">setallownofocus(true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setshowtitletrue" class="doc-heading"><code class="inline-code">setshowtitle(true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setupvscrolltrue-true-true" class="doc-heading"><code class="inline-code">setupvscroll(true, true, true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="placetitlebuttonrollbtn" class="doc-heading"><code class="inline-code">placetitlebutton(rollbtn)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="placetitlebuttonclosebtn" class="doc-heading"><code class="inline-code">placetitlebutton(closebtn)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setcontainertoplevel" class="doc-heading"><code class="inline-code">SetContainer(TopLevel)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setblueprintwrwindow" class="doc-heading"><code class="inline-code">setblueprint(*WR.Window)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="close" class="doc-heading"><code class="inline-code">Close(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="closingeventallow" class="doc-heading"><code class="inline-code">ClosingEvent(allow)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forcedclose" class="doc-heading"><code class="inline-code">ForcedClose(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-forcedclose" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">ForcedClose(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="hide" class="doc-heading"><code class="inline-code">Hide(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="rollup" class="doc-heading"><code class="inline-code">RollUp(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="rollupeventallow" class="doc-heading"><code class="inline-code">RollUpEvent(allow)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forcedrollup" class="doc-heading"><code class="inline-code">ForcedRollUp(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-forcedrollup" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">ForcedRollUp(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="setheighth" class="doc-heading"><code class="inline-code">SetHeight(h)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setupvscrollfalse-false-false" class="doc-heading"><code class="inline-code">setupvscroll(false, false, false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="rolldown" class="doc-heading"><code class="inline-code">RollDown(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="rolldowneventallow" class="doc-heading"><code class="inline-code">RollDownEvent(allow)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forcedrolldown" class="doc-heading"><code class="inline-code">ForcedRollDown(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-forcedrolldown" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">ForcedRollDown(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="setheightprevh" class="doc-heading"><code class="inline-code">SetHeight(prevh)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setupvscrolltrue-true-true" class="doc-heading"><code class="inline-code">setupvscroll(true, true, true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="toggleroll" class="doc-heading"><code class="inline-code">ToggleRoll(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="setrollbool-rolled" class="doc-heading"><code class="inline-code">SetRoll(bool rolled)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="isrolledup" class="doc-heading"><code class="inline-code">IsRolledUp(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h5 id="virtual-movetocenter" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">MoveToCenter(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="ifcontainer" class="doc-heading"><code class="inline-code">if(Container)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="moveszwidth-szheight" class="doc-heading"><code class="inline-code">Move(sz.Width, sz.Height)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-setblueprintconst-widgetsblueprint-bp" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">setblueprint(const widgets::Blueprint &bp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="gotfocus" class="doc-heading"><code class="inline-code">gotfocus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="focusordertotop" class="doc-heading"><code class="inline-code">FocusOrderToTop(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setpaddingconst-utilsmargins-value" class="doc-heading"><code class="inline-code">setPadding(const utils::Margins &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="getpadding" class="doc-heading"><code class="inline-code">getPadding(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">utils::Margins</code></p>
+<h5 id="settitleconst-stdstring-value" class="doc-heading"><code class="inline-code">setTitle(const std::string &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="gettitle" class="doc-heading"><code class="inline-code">getTitle(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<h5 id="seticongraphicsrectangulargraphic2d-icon" class="doc-heading"><code class="inline-code">setIcon(graphics::RectangularGraphic2D *icon)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="setclosebuttonconst-bool-value" class="doc-heading"><code class="inline-code">setCloseButton(const bool &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="adjustcontrols" class="doc-heading"><code class="inline-code">adjustcontrols(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="getclosebutton" class="doc-heading"><code class="inline-code">getCloseButton(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h5 id="setrollbuttonconst-bool-value" class="doc-heading"><code class="inline-code">setRollButton(const bool &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="adjustcontrols" class="doc-heading"><code class="inline-code">adjustcontrols(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="getrollbutton" class="doc-heading"><code class="inline-code">getRollButton(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h5 id="wrloaded" class="doc-heading"><code class="inline-code">wr_loaded(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="setblueprintwrwindow" class="doc-heading"><code class="inline-code">setblueprint(*WR.Window)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="window" class="doc-heading"><code class="inline-code">Window</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="windowconst-uitemplate-temp-const-stdstring-title---bool-autoplace--true" class="doc-heading"><code class="inline-code">Window(const UI::Template &temp, const std::string &title = "", bool autoplace = true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">explicit</code></p>
+<h5 id="windowconst-uitemplate-temp-const-stdstring-title-const-uiunitsize-size-bool-autoplace--true" class="doc-heading"><code class="inline-code">Window(const UI::Template &temp, const std::string &title, const UI::UnitSize size, bool autoplace = true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="settitleconst-stdstring-value" class="doc-heading"><code class="inline-code">SetTitle(const std::string &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the window title to the given string. Title placement is controlled by the template and might not be visible.</p>
+<h5 id="gettitle" class="doc-heading"><code class="inline-code">GetTitle(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<p class="doc-paragraph">Returns the window title. Title placement is controlled by the template and might not be visible.</p>
+<h5 id="seticonconst-graphicsbitmap-value" class="doc-heading"><code class="inline-code">SetIcon(const Graphics::Bitmap &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the icon on the label. The ownership of the bitmap is not transferred. If you wish the bitmap to be destroyed with the label, use OwnIcon instead.</p>
+<h5 id="seticonconst-graphicsanimation-value" class="doc-heading"><code class="inline-code">SetIcon(const Graphics::Animation &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the icon on the label. The ownership of the animation is not transferred. If you wish the animation to be destroyed with the label, use OwnIcon instead.</p>
+<h5 id="seticonproviderconst-graphicsanimationprovider-value" class="doc-heading"><code class="inline-code">SetIconProvider(const Graphics::AnimationProvider &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the icon on the label. This will create a new animation from the given provider and will own the resultant animation.</p>
+<h5 id="seticonprovidergraphicsanimationprovider-provider" class="doc-heading"><code class="inline-code">SetIconProvider(Graphics::AnimationProvider &&provider)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the icon on the label. This will move in the provider, create a new animation and own both the provider and the animation</p>
+<h5 id="removeicon" class="doc-heading"><code class="inline-code">RemoveIcon(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes the icon on the label</p>
+<h5 id="hasicon" class="doc-heading"><code class="inline-code">HasIcon(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if the label has an icon</p>
+<h5 id="ownicon" class="doc-heading"><code class="inline-code">OwnIcon(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Returns the icon on the label. If the label does not have an icon, this function will throw Transfers the ownership of the current icon.</p>
+<h5 id="owniconconst-graphicsanimation-value" class="doc-heading"><code class="inline-code">OwnIcon(const Graphics::Animation &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the icon while transferring the ownership</p>
+<h5 id="ownicongraphicsbitmap-value" class="doc-heading"><code class="inline-code">OwnIcon(Graphics::Bitmap &&value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Moves the given animation to the icon of the label</p>
+<h5 id="lockmovement" class="doc-heading"><code class="inline-code">LockMovement(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Locks the movement of the window.</p>
+<h5 id="allowmovementfalse" class="doc-heading"><code class="inline-code">AllowMovement(false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="allowmovementbool-allow--true" class="doc-heading"><code class="inline-code">AllowMovement(bool allow = true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Allows movement of the window.</p>
+<h5 id="canbemoved" class="doc-heading"><code class="inline-code">CanBeMoved(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns whether the window can be moved.</p>
+<h5 id="locksize" class="doc-heading"><code class="inline-code">LockSize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Prevents user from resizing the window. Windows are not resizable by default.</p>
+<h5 id="allowresizefalse" class="doc-heading"><code class="inline-code">AllowResize(false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="allowresizebool-allow--true" class="doc-heading"><code class="inline-code">AllowResize(bool allow = true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Allows user to resize the window. Windows are not resizable by default.</p>
+<h5 id="canberesized" class="doc-heading"><code class="inline-code">CanBeResized(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns whether the window can be resized by the user.</p>
+<h5 id="hideclosebutton" class="doc-heading"><code class="inline-code">HideCloseButton(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Hides the close button. Close button is visible by default.</p>
+<h5 id="setclosebuttonvisibilityfalse" class="doc-heading"><code class="inline-code">SetCloseButtonVisibility(false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="showclosebutton" class="doc-heading"><code class="inline-code">ShowCloseButton(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Shows the close button. Close button is visible by default.</p>
+<h5 id="setclosebuttonvisibilitytrue" class="doc-heading"><code class="inline-code">SetCloseButtonVisibility(true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setclosebuttonvisibilitybool-value" class="doc-heading"><code class="inline-code">SetCloseButtonVisibility(bool value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets close button visibility. Close button is visible by default.</p>
+<h5 id="isclosebuttonvisible" class="doc-heading"><code class="inline-code">IsCloseButtonVisible(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if the close button is visible</p>
+<h5 id="disableclosebutton" class="doc-heading"><code class="inline-code">DisableCloseButton(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Disables the close button. Close button is enabled by default.</p>
+<h5 id="setclosebuttonenabledfalse" class="doc-heading"><code class="inline-code">SetCloseButtonEnabled(false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="enableclosebutton" class="doc-heading"><code class="inline-code">EnableCloseButton(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Enables the close button. Close button is enabled by default.</p>
+<h5 id="setclosebuttonenabledtrue" class="doc-heading"><code class="inline-code">SetCloseButtonEnabled(true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setclosebuttonenabledbool-value" class="doc-heading"><code class="inline-code">SetCloseButtonEnabled(bool value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets whether close button is enabled. Close button is enabled by default.</p>
+<h5 id="isclosebuttonenabled" class="doc-heading"><code class="inline-code">IsCloseButtonEnabled(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if the close button is enabled</p>
+<h5 id="close" class="doc-heading"><code class="inline-code">Close(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Hides the window if it is not canceled. Calling hide will cause the window to become hidden without any chance of preventing it.</p>
+<h5 id="closingeventallow" class="doc-heading"><code class="inline-code">ClosingEvent(allow)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifallow" class="doc-heading"><code class="inline-code">if(allow)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="hide" class="doc-heading"><code class="inline-code">Hide(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="closedevent" class="doc-heading"><code class="inline-code">ClosedEvent(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="keyeventkey-state" class="doc-heading"><code class="inline-code">KeyEvent(key, state)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="focus" class="doc-heading"><code class="inline-code">Focus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="center" class="doc-heading"><code class="inline-code">Center(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Centers the window to its container. After resizing the window or changing its parent you need to recenter it. All windows open centered to the first UI::Window that is opened.</p>
+<h5 id="setminsizeconst-uiunitsize-value" class="doc-heading"><code class="inline-code">SetMinSize(const UI::UnitSize &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets minimum internal size of the widget, default value is 2x1 units.</p>
+<h5 id="getminsize" class="doc-heading"><code class="inline-code">GetMinSize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">UI::UnitSize</code></p>
+<p class="doc-paragraph">Returns minimum internal size of the widget</p>
+<h5 id="setmaxsizeconst-uiunitsize-value" class="doc-heading"><code class="inline-code">SetMaxSize(const UI::UnitSize &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets maximum external size of the widget, default value is 100%, 100%</p>
+<h5 id="getmaxsize" class="doc-heading"><code class="inline-code">GetMaxSize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">UI::UnitSize</code></p>
+<p class="doc-paragraph">Sets maximum external size of the widget</p>
+<h5 id="updatescrollvisibility" class="doc-heading"><code class="inline-code">updatescrollvisibility(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Window title Icon that will be displayed on the window. Availability of icon depends on the theme. This event is called after the window is closed. In Gorgon, close button only hides the window. It is the owner's task to cleanup. Set the bool parameter to false to prevent window from closing. This event is called after the window is closed. In Gorgon, close button only hides the window. It is the owner's task to cleanup. This event is called when a key is pressed in this window before any widgets receive it. This event is called when a key is pressed and focused widget is not consumed it.</p>
+<h5 id="mousedownuicomponenttemplatetag-tag-geometrypoint-location-inputmousebutton-button" class="doc-heading"><code class="inline-code">mouse_down(UI::ComponentTemplate::Tag tag, Geometry::Point location, Input::Mouse::Button button)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="mouseupuicomponenttemplatetag-tag-geometrypoint-location-inputmousebutton-button" class="doc-heading"><code class="inline-code">mouse_up(UI::ComponentTemplate::Tag tag, Geometry::Point location, Input::Mouse::Button button)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="mousemoveuicomponenttemplatetag-tag-geometrypoint-location" class="doc-heading"><code class="inline-code">mouse_move(UI::ComponentTemplate::Tag tag, Geometry::Point location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="mouseclickuicomponenttemplatetag-tag-geometrypoint-location-inputmousebutton-button" class="doc-heading"><code class="inline-code">mouse_click(UI::ComponentTemplate::Tag tag, Geometry::Point location, Input::Mouse::Button button)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="window" class="doc-heading"><code class="inline-code">Window</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Graphics</code></p>
+<p class="doc-paragraph">This class represents a window. @nosubgrouping</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="window" class="doc-heading"><code class="inline-code">Window(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Fullscreen tag Empty constructor creates a non-initialized window. This constructor is there support move semantics. Any action on non-initialized window may result in a crash.</p>
+<h5 id="windowmonitor-automaticplacement-size-name-name-allowresize-visible" class="doc-heading"><code class="inline-code">Window(monitor, {automaticplacement, size}, name, name, allowresize, visible)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Creates a new window @param  rect the position and the <strong>interior</strong> size of the window unless use outer metrics is set to true @param  name of the window @param  visible after creation, window will be visible or invisible depending on this value. Creates a new window @param  rect the position and the <strong>interior</strong> size of the window unless use outer metrics is set to true @param  name of the window @param  visible after creation, window will be visible or invisible depending on this value. Creates a new window at the center of the screen @param  size of the window @param  name of the window @param  title of the window @param  visible after creation, window will be visible or invisible depending on this value. Creates a new window at the center of the screen @param  size of the window @param  name of the window @param  title of the window @param  visible after creation, window will be visible or invisible depending on this value. Creates a new window at the center of the screen @param  size of the window @param  name of the window @param  visible after creation, window will be visible or invisible depending on this value. Creates a new window at the center of the screen @param  size of the window @param  name of the window @param  visible after creation, window will be visible or invisible depending on this value. Creates a new window at the center of the screen @param  monitor that the window will be centered on @param  size of the window @param  name of the window @param  visible after creation, window will be visible or invisible depending on this value.</p>
+<h5 id="windowmonitor-automaticplacement-size-name-name-allowresize-visible" class="doc-heading"><code class="inline-code">Window(monitor, {automaticplacement, size}, name, name, allowresize, visible)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Creates a new window at the center of the screen @param  monitor that the window will be centered on @param  size of the window @param  name of the window @param  visible after creation, window will be visible or invisible depending on this value.</p>
+<h5 id="windowconst-fullscreentag--const-windowmanagermonitor-monitor-const-stdstring-name-const-stdstring-title-bool-visible--true" class="doc-heading"><code class="inline-code">Window(const FullscreenTag &, const WindowManager::Monitor &monitor, const std::string &name, const std::string &title="", bool visible = true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Creates a fullscreen window. Fullscreen windows do not have chrome and covers entire screen, including any panels it contains.</p>
+<h5 id="windowwindow-other" class="doc-heading"><code class="inline-code">Window(Window &&other)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Creates a fullscreen window. Fullscreen windows do not have chrome and covers entire screen, including any panels it contains. Copy constructor is not allowed Move constructor</p>
+<h5 id="swapother" class="doc-heading"><code class="inline-code">Swap(other)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-destroy" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Destroy(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Destroys this window Returns the OS specific data of the window. This data is used internally and should not be used unless necessary. Destroys this window</p>
+<h5 id="swapother" class="doc-heading"><code class="inline-code">Swap(other)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Moves another window into this one</p>
+<h5 id="swapwindow-other" class="doc-heading"><code class="inline-code">Swap(Window &other)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Used for move semantics</p>
+<h5 id="processmessages" class="doc-heading"><code class="inline-code">processmessages(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">This method is automatically called by the system.Unless its necessary, do not use it.  @warning Notice that it is a window manager defined behavior to handle tasks in Window classes differently or for all of them at the same time. Therefore, OS::processmessage should be used.</p>
+<h5 id="activatecontext" class="doc-heading"><code class="inline-code">activatecontext(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Activates the GL context of the window. This function is used internally and should not be called unless necessary.</p>
+<h5 id="movex-y" class="doc-heading"><code class="inline-code">Move({x, y})</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Moves the window to the given position Moves the window to the given position</p>
+<h5 id="getexteriorbounds" class="doc-heading"><code class="inline-code">GetExteriorBounds(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Geometry::Bounds</code></p>
+<p class="doc-paragraph">Resizes the window to the given size. The given size is considered as the interior region of the window. The restrictions for the smallest sized window might change depending on the window manager or theme. Largest window size can be obtained using UsableScreenRegion however, this size does not exclude window chrome. This function resizes all window sized layers. Returns the exterior bounding box of the window. May throw or return invalid values if the window is not visible</p>
+<h5 id="getposition" class="doc-heading"><code class="inline-code">GetPosition(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Geometry::Point</code></p>
+<p class="doc-paragraph">Returns the current position of the window. This value is measured from the (0,0) of the virtual screen to the top-left of the window chrome.</p>
+<h5 id="minimize" class="doc-heading"><code class="inline-code">Minimize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Minimizes the window. Use Restore function to return it to its previous state.</p>
+<h5 id="isminimized" class="doc-heading"><code class="inline-code">IsMinimized(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if the window is minimized</p>
+<h5 id="maximize" class="doc-heading"><code class="inline-code">Maximize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Maximizes the window to cover the usable area of the screen. Use Restore function to return the window to its previous size and position. Maximize might take time.</p>
+<h5 id="ismaximized" class="doc-heading"><code class="inline-code">IsMaximized(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if the window is maximized</p>
+<h5 id="restore" class="doc-heading"><code class="inline-code">Restore(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Restores a minimized or maximized window</p>
+<h5 id="focus" class="doc-heading"><code class="inline-code">Focus(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Returns the monitor that the window is currently on. May throw if the window is not visible, will throw if the window is not on any currently known monitors. If this case occurs consider refreshing monitor list. Displays this window, may generate Activated event Hides this window, may generate Deactivated event Returns whether this layer is effectively visible Focuses this window</p>
+<h5 id="isfocused" class="doc-heading"><code class="inline-code">IsFocused(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if this window has the focus</p>
+<h5 id="close" class="doc-heading"><code class="inline-code">Close(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Closes the window. After this function, any use of this object might fail.</p>
+<h5 id="settitleconst-stdstring-title" class="doc-heading"><code class="inline-code">SetTitle(const std::string &title)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the title of the window to the specified string</p>
+<h5 id="gettitle" class="doc-heading"><code class="inline-code">GetTitle(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<p class="doc-paragraph">Returns the current title of the window.</p>
+<h5 id="getname" class="doc-heading"><code class="inline-code">GetName(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<p class="doc-paragraph">Returns the name of the window that is set at creation time</p>
+<h5 id="isclosed" class="doc-heading"><code class="inline-code">IsClosed(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Whether the window is currently closed and cannot be acted on.</p>
+<h5 id="showpointer" class="doc-heading"><code class="inline-code">ShowPointer(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Displays the pointer. If local pointers are activated, this function will show local pointer, otherwise it will show window manager pointer</p>
+<h5 id="hidepointer" class="doc-heading"><code class="inline-code">HidePointer(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Hides the pointer. If local pointers are activated, this function will hide local pointer, otherwise it will hide window manager pointer. In both cases, after calling to this function, there will be no visible pointer on the screen.</p>
+<h5 id="ispointervisible" class="doc-heading"><code class="inline-code">IsPointerVisible(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns whether the pointer is visible</p>
+<h5 id="switchtolocalpointers" class="doc-heading"><code class="inline-code">SwitchToLocalPointers(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes the operating system pointer and starts using Locally defined pointers. If there are no pointers added to the Pointers object, this function will throw. After switching, ShowPointer and HidePointer will show and hide local pointers not OS pointers. Calling this function will show the local pointer.</p>
+<h5 id="switchtowmpointers" class="doc-heading"><code class="inline-code">SwitchToWMPointers(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Stops showing local pointers and makes window manager pointer visible.</p>
+<h5 id="islocalpointer" class="doc-heading"><code class="inline-code">IsLocalPointer(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns whether the current pointer is a local pointer</p>
+<h5 id="center" class="doc-heading"><code class="inline-code">Center(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Centers the window to the default monitor</p>
+<h5 id="centerconst-windowmanagermonitor-monitor" class="doc-heading"><code class="inline-code">Center(const WindowManager::Monitor &monitor)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Centers the window to the given monitor</p>
+<h5 id="seticonconst-windowmanagericon-icon" class="doc-heading"><code class="inline-code">SetIcon(const WindowManager::Icon &icon)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the icon of the window.</p>
+<h5 id="getmouselocation" class="doc-heading"><code class="inline-code">GetMouseLocation(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Geometry::Point</code></p>
+<p class="doc-paragraph">Renders the contents of the window Returns the mouse location on the window. If the cursor is outside the window and its position cannot be determined (-1, -1) is returned. This function can return coordinates outside the bounds of the window.</p>
+<h5 id="pressedbuttons" class="doc-heading"><code class="inline-code">PressedButtons(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Input::Mouse::Button</code></p>
+<p class="doc-paragraph">Returns currently pressed buttons.</p>
+<h5 id="isleftbuttonpressed" class="doc-heading"><code class="inline-code">IsLeftButtonPressed(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Query whether the left mouse button is pressed</p>
+<h5 id="isrightbuttonpressed" class="doc-heading"><code class="inline-code">IsRightButtonPressed(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Query whether the right mouse button is pressed</p>
+<h5 id="ismiddlebuttonpressed" class="doc-heading"><code class="inline-code">IsMiddleButtonPressed(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Query whether the middle mouse button is pressed</p>
+<h5 id="isx1buttonpressed" class="doc-heading"><code class="inline-code">IsX1ButtonPressed(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Query whether the X1 mouse button is pressed</p>
+<h5 id="isx2buttonpressed" class="doc-heading"><code class="inline-code">IsX2ButtonPressed(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Query whether the X2 mouse button is pressed</p>
+<h5 id="setbackgroundconst-graphicsrgbaf-color" class="doc-heading"><code class="inline-code">SetBackground(const Graphics::RGBAf &color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the background color of the window.</p>
+<h5 id="setbackgroundconst-graphicsbitmap-bg" class="doc-heading"><code class="inline-code">SetBackground(const Graphics::Bitmap &bg)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the background of the window. This background image will be scaled with the window automatically.</p>
+<h5 id="setbackgroundconst-graphicsrectangularanimationprovider-bg" class="doc-heading"><code class="inline-code">SetBackground(const Graphics::RectangularAnimationProvider &bg)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the background of the window. This background image will be scaled with the window automatically.</p>
+<h5 id="virtual-setbackgroundconst-graphicsrectangularanimation-bg" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SetBackground(const Graphics::RectangularAnimation &bg)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Sets the background of the window. This background image will be scaled with the window automatically.</p>
+<h5 id="ownbackgroundconst-graphicsrectangularanimation-bg" class="doc-heading"><code class="inline-code">OwnBackground(const Graphics::RectangularAnimation &bg)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the background of the window. This background image will be scaled with the window automatically.</p>
+<h5 id="ownbackgroundconst-graphicsbitmap-bg" class="doc-heading"><code class="inline-code">OwnBackground(const Graphics::Bitmap &bg)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the background of the window. This background image will be scaled with the window automatically.</p>
+<h5 id="virtual-removebackground" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">RemoveBackground(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Removes the background of the window.</p>
+<h5 id="hasbackground" class="doc-heading"><code class="inline-code">HasBackground(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if the window has a background image</p>
+<h5 id="allowresize" class="doc-heading"><code class="inline-code">AllowResize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Returns the background image of the window. If window has no background image, this function throws. Allows window to be resized by the user</p>
+<h5 id="preventresize" class="doc-heading"><code class="inline-code">PreventResize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Prevents window to be resized by the user</p>
+<h5 id="updatepointer" class="doc-heading"><code class="inline-code">UpdatePointer(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Updates current mouse pointer if OS pointer is shown. This is called automatically.</p>
+<h5 id="static-getminimumrequiredsize" class="doc-heading"><code class="inline-code">static</code> <code class="inline-code">GetMinimumRequiredSize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static Geometry::Size</code></p>
+<p class="doc-paragraph">Returns the minimum size required to fit any window inside.</p>
+<h5 id="mousedowngeometrypoint-location-inputmousebutton-button" class="doc-heading"><code class="inline-code">mouse_down(Geometry::Point location, Input::Mouse::Button button)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Pointer system to be used within the window @name Events @{ Called when this window is focused Called when this window is deactivated Called when this window is destroyed. Note that at this point, any reference to this object may fail. Called when user tries to close the window. Will not be called if window is closed using Destructor or Close function ### Parameters: ### <strong>allow</strong> <code class="inline-code">(bool &)</code>: setting this value to false will stop window being closed. Called after the window is moved, either by the user or programmatically Called after the window is resized, either by the user or programmatically Called after the window is minimized, either by the user or programmatically Called after the window is restored from minimized state, either by the user or programmatically Called when a key is pressed or released. This key could be a keyboard key or any other controller key including mouse. In case of mouse, this method will be triggered if mouse call is not handled by layers.  If the input device is keyboard, key down event (amount=1) is repeated if the first event is handled. The repeats will only be sent to the handler of the event. Additionally, Key up event (amount=0) is sent only to handler, if key down is handled otherwise it will be sent to all listeners.  ### Parameters: ### <strong>Key</strong> <code class="inline-code">(Input::Key)</code>: The key that is pressed or released <strong>Amount</strong> <code class="inline-code">(float)</code>: Depending on the device this can be a boolean 0 and 1, number of successive key strokes or amount of pressure (0 to 1) in analog controllers Called when a character is received. This event is raised for regular characters that can be printed. If a key is handled in keypress event, this event will not be fired. This event will be called multiple times when the key repeats. @} List of currently created windows These functions are used internally</p>
+<h5 id="mouseupgeometrypoint-location-inputmousebutton-button" class="doc-heading"><code class="inline-code">mouse_up(Geometry::Point location, Input::Mouse::Button button)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">These functions are used internally</p>
+<h5 id="mouseeventinputmouseeventtype-event-geometrypoint-location-inputmousebutton-button-float-amount" class="doc-heading"><code class="inline-code">mouse_event(Input::Mouse::EventType event, Geometry::Point location, Input::Mouse::Button button, float amount)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">These functions are used internally</p>
+<h5 id="mouselocation" class="doc-heading"><code class="inline-code">mouse_location(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">These functions are used internally</p>
+<h5 id="windowconst-windowmanagermonitor-monitor-geometryrectangle-rect-const-stdstring-name-const-stdstring-title-bool-allowresize-bool-visible" class="doc-heading"><code class="inline-code">Window(const WindowManager::Monitor &monitor, Geometry::Rectangle rect, const std::string &name, const std::string &title, bool allowresize, bool visible)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="deletinglayer-layer" class="doc-heading"><code class="inline-code">deleting(Layer *layer)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">A window cannot be placed in another layer. This function always fails.</p>
+<h5 id="init" class="doc-heading"><code class="inline-code">init(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="virtual-osdestroy" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">osdestroy(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="redrawbg" class="doc-heading"><code class="inline-code">redrawbg(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="virtual-resized" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">resized(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="createglcontext" class="doc-heading"><code class="inline-code">createglcontext(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="updatedataowner" class="doc-heading"><code class="inline-code">updatedataowner(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<hr class="doc-divider">
+<h2 id="enums" class="doc-heading">Enums</h2>
+<h3 id="resizedir" class="doc-heading"><code class="inline-code">resizedir</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<hr class="doc-divider">
+<h2 id="functions" class="doc-heading">Functions</h2>
+<h3 id="ifissizesset" class="doc-heading"><code class="inline-code">if(issizesset)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifissizesset" class="doc-heading"><code class="inline-code">if(issizesset)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="focuschangedindialogadapter" class="doc-heading"><code class="inline-code">focuschangedin(dialogadapter)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="focuschangedinbaradapter" class="doc-heading"><code class="inline-code">focuschangedin(baradapter)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="focuschangedinwindowadapter" class="doc-heading"><code class="inline-code">focuschangedin(windowadapter)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="focuschangedinunderadapter" class="doc-heading"><code class="inline-code">focuschangedin(underadapter)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifautobg" class="doc-heading"><code class="inline-code">if(autobg)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iffocusedadapter--nullptr" class="doc-heading"><code class="inline-code">if(focusedadapter == nullptr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="removefocus" class="doc-heading"><code class="inline-code">RemoveFocus()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="focuschangedindialogadapter" class="doc-heading"><code class="inline-code">focuschangedin(dialogadapter)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="focuschangedinbaradapter" class="doc-heading"><code class="inline-code">focuschangedin(baradapter)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="focuschangedinwindowadapter" class="doc-heading"><code class="inline-code">focuschangedin(windowadapter)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="focuschangedinunderadapter" class="doc-heading"><code class="inline-code">focuschangedin(underadapter)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="focuschangedindialogadapter" class="doc-heading"><code class="inline-code">focuschangedin(dialogadapter)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="focuschangedinbaradapter" class="doc-heading"><code class="inline-code">focuschangedin(baradapter)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="focuschangedinwindowadapter" class="doc-heading"><code class="inline-code">focuschangedin(windowadapter)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="focuschangedinunderadapter" class="doc-heading"><code class="inline-code">focuschangedin(underadapter)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="distributeparentboundschanged" class="doc-heading"><code class="inline-code">distributeparentboundschanged()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="updatescrollvisibility" class="doc-heading"><code class="inline-code">updatescrollvisibility()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifautoplace" class="doc-heading"><code class="inline-code">if(autoplace)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-w--gorgonwindowwindows" class="doc-heading"><code class="inline-code">for(auto &w : Gorgon::Window::Windows)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdone" class="doc-heading"><code class="inline-code">if(!done)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-w--gorgonwindowwindows" class="doc-heading"><code class="inline-code">for(auto &w : Gorgon::Window::Windows)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="center" class="doc-heading"><code class="inline-code">Center()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="resizeinteriorsize" class="doc-heading"><code class="inline-code">ResizeInterior(size)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="updatescrollvisibility" class="doc-heading"><code class="inline-code">updatescrollvisibility()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="center" class="doc-heading"><code class="inline-code">Center()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifownicon" class="doc-heading"><code class="inline-code">if(ownicon)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="owniconanim" class="doc-heading"><code class="inline-code">OwnIcon(anim)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="owniconanim" class="doc-heading"><code class="inline-code">OwnIcon(anim)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifownicon" class="doc-heading"><code class="inline-code">if(ownicon)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="seticonvalue" class="doc-heading"><code class="inline-code">SetIcon(value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="updatescrollvisibility" class="doc-heading"><code class="inline-code">updatescrollvisibility()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="updatescrollvisibility" class="doc-heading"><code class="inline-code">updatescrollvisibility()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="updatescrollvisibility" class="doc-heading"><code class="inline-code">updatescrollvisibility()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifval2--1--val2--0--hscroll" class="doc-heading"><code class="inline-code">if(val[2] == 1 || val[2] == 0 || !hscroll)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifhscrollon" class="doc-heading"><code class="inline-code">if(hscrollon)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifhscrollon" class="doc-heading"><code class="inline-code">if(!hscrollon)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifval3--1--val3--0--vscroll" class="doc-heading"><code class="inline-code">if(val[3] == 1 || val[3] == 0 || !vscroll)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifvscrollon" class="doc-heading"><code class="inline-code">if(vscrollon)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifvscrollon" class="doc-heading"><code class="inline-code">if(!vscrollon)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifchanged" class="doc-heading"><code class="inline-code">if(changed)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftag--uicomponenttemplatenotag" class="doc-heading"><code class="inline-code">if(tag == UI::ComponentTemplate::NoTag)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbutton--inputmousebuttonleft" class="doc-heading"><code class="inline-code">if(button == Input::Mouse::Button::Left)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifallowmove--tag--uicomponenttemplatedragtag" class="doc-heading"><code class="inline-code">if(allowmove && tag == UI::ComponentTemplate::DragTag)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifallowresize--tag--uicomponenttemplateresizetag" class="doc-heading"><code class="inline-code">if(allowresize && tag == UI::ComponentTemplate::ResizeTag)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifleftdist--rightdist" class="doc-heading"><code class="inline-code">if(leftdist < rightdist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifleftdist--maxdist" class="doc-heading"><code class="inline-code">if(leftdist <= maxdist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifrightdist--maxdist" class="doc-heading"><code class="inline-code">if(rightdist <= maxdist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftopdist--bottomdist" class="doc-heading"><code class="inline-code">if(topdist < bottomdist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftopdist--maxdist" class="doc-heading"><code class="inline-code">if(topdist <= maxdist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbottomdist--maxdist" class="doc-heading"><code class="inline-code">if(bottomdist <= maxdist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="focus" class="doc-heading"><code class="inline-code">Focus()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbutton--inputmousebuttonleft" class="doc-heading"><code class="inline-code">if(button == Input::Mouse::Button::Left)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftag--uicomponenttemplatenotag" class="doc-heading"><code class="inline-code">if(tag == UI::ComponentTemplate::NoTag)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifmoving" class="doc-heading"><code class="inline-code">if(moving)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifresizing--none" class="doc-heading"><code class="inline-code">if(resizing != none)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="switchresizing" class="doc-heading"><code class="inline-code">switch(resizing)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifallowresize--tag--uicomponenttemplateresizetag" class="doc-heading"><code class="inline-code">if(allowresize && tag == UI::ComponentTemplate::ResizeTag)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifleftdist--rightdist" class="doc-heading"><code class="inline-code">if(leftdist < rightdist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifleftdist--maxdist" class="doc-heading"><code class="inline-code">if(leftdist <= maxdist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifrightdist--maxdist" class="doc-heading"><code class="inline-code">if(rightdist <= maxdist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftopdist--bottomdist" class="doc-heading"><code class="inline-code">if(topdist < bottomdist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftopdist--maxdist" class="doc-heading"><code class="inline-code">if(topdist <= maxdist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbottomdist--maxdist" class="doc-heading"><code class="inline-code">if(bottomdist <= maxdist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchr" class="doc-heading"><code class="inline-code">switch(r)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifptrtype--graphicspointertypenone" class="doc-heading"><code class="inline-code">if(ptrtype == Graphics::PointerType::None)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifmoving" class="doc-heading"><code class="inline-code">if(moving)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchresizing" class="doc-heading"><code class="inline-code">switch(resizing)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchresizing" class="doc-heading"><code class="inline-code">switch(resizing)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftag--uicomponenttemplatenotag" class="doc-heading"><code class="inline-code">if(tag == UI::ComponentTemplate::NoTag)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbutton--inputmousebuttonleft--tag--uicomponenttemplateclosetag" class="doc-heading"><code class="inline-code">if(button == Input::Mouse::Button::Left && tag == UI::ComponentTemplate::CloseTag)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="close" class="doc-heading"><code class="inline-code">Close()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="mouseupuicomponenttemplatenotag-0-0-inputmousebuttonleft" class="doc-heading"><code class="inline-code">mouse_up(UI::ComponentTemplate::NoTag, {0, 0}, Input::Mouse::Button::Left)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="mouseupuicomponenttemplatenotag-0-0-inputmousebuttonleft" class="doc-heading"><code class="inline-code">mouse_up(UI::ComponentTemplate::NoTag, {0, 0}, Input::Mouse::Button::Left)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifclosebutton" class="doc-heading"><code class="inline-code">if(closebutton)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifclosebutton" class="doc-heading"><code class="inline-code">if(closebutton)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifupdatingminmax" class="doc-heading"><code class="inline-code">if(!updatingminmax)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifszwidth--minsizepxwidth--szheight--minsizepxheight" class="doc-heading"><code class="inline-code">if(sz.Width < minsizepx.Width && sz.Height < minsizepx.Height)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="resizeinteriorminsize" class="doc-heading"><code class="inline-code">ResizeInterior(minsize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifszwidth--minsizepxwidth" class="doc-heading"><code class="inline-code">if(sz.Width < minsizepx.Width)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="setinteriorwidthminsizewidth" class="doc-heading"><code class="inline-code">SetInteriorWidth(minsize.Width)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifszheight--minsizepxheight" class="doc-heading"><code class="inline-code">if(sz.Height < minsizepx.Height)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="setinteriorheightminsizeheight" class="doc-heading"><code class="inline-code">SetInteriorHeight(minsize.Height)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifszwidth--maxsizepxwidth--szheight--maxsizepxheight" class="doc-heading"><code class="inline-code">if(sz.Width > maxsizepx.Width && sz.Height > maxsizepx.Height)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="resizemaxsize" class="doc-heading"><code class="inline-code">Resize(maxsize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifszwidth--maxsizepxwidth" class="doc-heading"><code class="inline-code">if(sz.Width > maxsizepx.Width)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="setwidthmaxsizewidth" class="doc-heading"><code class="inline-code">SetWidth(maxsize.Width)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifszheight--maxsizepxheight" class="doc-heading"><code class="inline-code">if(sz.Height > maxsizepx.Height)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="setheightmaxsizeheight" class="doc-heading"><code class="inline-code">SetHeight(maxsize.Height)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swapdata-otherdata" class="doc-heading"><code class="inline-code">swap(data, other.data)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swappressed-otherpressed" class="doc-heading"><code class="inline-code">swap(pressed, other.pressed)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swapallowresize-otherallowresize" class="doc-heading"><code class="inline-code">swap(allowresize, other.allowresize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swapcursorover-othercursorover" class="doc-heading"><code class="inline-code">swap(cursorover, other.cursorover)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swapmousedownlocation-othermousedownlocation" class="doc-heading"><code class="inline-code">swap(mousedownlocation, other.mousedownlocation)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swapmouselocation-othermouselocation" class="doc-heading"><code class="inline-code">swap(mouselocation, other.mouselocation)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swappointerlayer-otherpointerlayer" class="doc-heading"><code class="inline-code">swap(pointerlayer, other.pointerlayer)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swapcontentslayer-othercontentslayer" class="doc-heading"><code class="inline-code">swap(contentslayer, other.contentslayer)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swapbglayer-otherbglayer" class="doc-heading"><code class="inline-code">swap(bglayer, other.bglayer)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifotherpointerlayer" class="doc-heading"><code class="inline-code">if(other.pointerlayer)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swapiswmpointer-otheriswmpointer" class="doc-heading"><code class="inline-code">swap(iswmpointer, other.iswmpointer)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swapshowptr-othershowptr" class="doc-heading"><code class="inline-code">swap(showptr, other.showptr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swapswitchbacktolocalptr-otherswitchbacktolocalptr" class="doc-heading"><code class="inline-code">swap(switchbacktolocalptr, other.switchbacktolocalptr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="swapglsize-otherglsize" class="doc-heading"><code class="inline-code">swap(glsize, other.glsize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata" class="doc-heading"><code class="inline-code">if(data)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifotherdata" class="doc-heading"><code class="inline-code">if(other.data)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="updatedataowner" class="doc-heading"><code class="inline-code">updatedataowner()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="activatecontext" class="doc-heading"><code class="inline-code">activatecontext()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdown" class="doc-heading"><code class="inline-code">if(down)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdown" class="doc-heading"><code class="inline-code">if(down)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdown" class="doc-heading"><code class="inline-code">if(down)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-l--overlayers" class="doc-heading"><code class="inline-code">for(auto &l : over.layers)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-l--newoverlayers" class="doc-heading"><code class="inline-code">for(auto &l : newover.layers)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="hidepointer" class="doc-heading"><code class="inline-code">HidePointer()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="showpointer" class="doc-heading"><code class="inline-code">ShowPointer()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="hidepointer" class="doc-heading"><code class="inline-code">HidePointer()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="showpointer" class="doc-heading"><code class="inline-code">ShowPointer()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="osdestroy" class="doc-heading"><code class="inline-code">osdestroy()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="redrawbg" class="doc-heading"><code class="inline-code">redrawbg()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setbackgroundvalue" class="doc-heading"><code class="inline-code">SetBackground(value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="redrawbg" class="doc-heading"><code class="inline-code">redrawbg()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="wndprochwnd-hwnd-uint-message-wparam-wparam-lparam-lparam" class="doc-heading"><code class="inline-code">WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">LRESULT __stdcall</code></p>
+<h3 id="defwindowprochwnd-message-wparam-lparam" class="doc-heading"><code class="inline-code">DefWindowProc(hWnd, message, wParam, lParam)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="defwindowprochwnd-message-wparam-lparam" class="doc-heading"><code class="inline-code">DefWindowProc(hWnd, message, wParam, lParam)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="switchmessage" class="doc-heading"><code class="inline-code">switch(message)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="defwindowprochandle-message-wparam-lparam" class="doc-heading"><code class="inline-code">DefWindowProc(handle, message, wParam, lParam)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="ifwparam--scminimize" class="doc-heading"><code class="inline-code">if(wParam == SC_MINIMIZE)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifwparam--screstore--min" class="doc-heading"><code class="inline-code">if(wParam == SC_RESTORE && min)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="getclientrectparent-data-handle-rect" class="doc-heading"><code class="inline-code">GetClientRect(parent->data->handle, &rect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="defwindowprochandle-message-wparam-lparam" class="doc-heading"><code class="inline-code">DefWindowProc(handle, message, wParam, lParam)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="ifret--0" class="doc-heading"><code class="inline-code">if(ret == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifallowresize" class="doc-heading"><code class="inline-code">if(allowresize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifhwndinvalidhandlevalue" class="doc-heading"><code class="inline-code">if(hwnd==INVALID_HANDLE_VALUE)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="getwindowinfohwnd-wi" class="doc-heading"><code class="inline-code">GetWindowInfo(hwnd, &wi)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setwindowposhwnd-0-rectx-recty-rectwidth-rectheight-0" class="doc-heading"><code class="inline-code">SetWindowPos(hwnd, 0, rect.X, rect.Y, rect.Width, rect.Height, 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="updatewindowhwnd" class="doc-heading"><code class="inline-code">UpdateWindow(hwnd)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="postmessagehwnd-wmactivate--1--1" class="doc-heading"><code class="inline-code">PostMessage(hwnd, WM_ACTIVATE, -1, -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="createglcontext" class="doc-heading"><code class="inline-code">createglcontext()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="oleinitializenull" class="doc-heading"><code class="inline-code">OleInitialize(NULL)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="registerdragdrophwnd-data-target" class="doc-heading"><code class="inline-code">RegisterDragDrop(hwnd, &data->target)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="init" class="doc-heading"><code class="inline-code">init()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="registerclassexwindclass" class="doc-heading"><code class="inline-code">RegisterClassEx(&windclass)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifhwnd--invalidhandlevalue" class="doc-heading"><code class="inline-code">if(hwnd == INVALID_HANDLE_VALUE)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="updatewindowhwnd" class="doc-heading"><code class="inline-code">UpdateWindow(hwnd)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="postmessagehwnd-wmactivate--1--1" class="doc-heading"><code class="inline-code">PostMessage(hwnd, WM_ACTIVATE, -1, -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="createglcontext" class="doc-heading"><code class="inline-code">createglcontext()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="oleinitializenull" class="doc-heading"><code class="inline-code">OleInitialize(NULL)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="registerdragdrophwnd-data-target" class="doc-heading"><code class="inline-code">RegisterDragDrop(hwnd, &data->target)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="init" class="doc-heading"><code class="inline-code">init()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata" class="doc-heading"><code class="inline-code">if(data)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="destroywindowdata-handle" class="doc-heading"><code class="inline-code">DestroyWindow(data->handle)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="showwindowdata-handle-swshow" class="doc-heading"><code class="inline-code">ShowWindow(data->handle, SW_SHOW)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setactivewindowdata-handle" class="doc-heading"><code class="inline-code">SetActiveWindow(data->handle)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="showwindowdata-handle-swshow" class="doc-heading"><code class="inline-code">ShowWindow(data->handle, SW_SHOW)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="showwindowdata-handle-swhide" class="doc-heading"><code class="inline-code">ShowWindow(data->handle, SW_HIDE)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifiswmpointer" class="doc-heading"><code class="inline-code">if(iswmpointer)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata-pointerdisplayed" class="doc-heading"><code class="inline-code">if(data->pointerdisplayed)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setcursornull" class="doc-heading"><code class="inline-code">SetCursor(NULL)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="showcursorfalse" class="doc-heading"><code class="inline-code">ShowCursor(false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setcursornull" class="doc-heading"><code class="inline-code">SetCursor(NULL)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="showcursorfalse" class="doc-heading"><code class="inline-code">ShowCursor(false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifiswmpointer" class="doc-heading"><code class="inline-code">if(iswmpointer)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata-pointerdisplayed" class="doc-heading"><code class="inline-code">if(!data->pointerdisplayed)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="showcursortrue" class="doc-heading"><code class="inline-code">ShowCursor(true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="showcursortrue" class="doc-heading"><code class="inline-code">ShowCursor(true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="getwindowinfodata-handle-wi" class="doc-heading"><code class="inline-code">GetWindowInfo(data->handle, &wi)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="getclientrectdata-handle-rect" class="doc-heading"><code class="inline-code">GetClientRect(data->handle, &rect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="activatecontext" class="doc-heading"><code class="inline-code">activatecontext()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="redrawbg" class="doc-heading"><code class="inline-code">redrawbg()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="resized" class="doc-heading"><code class="inline-code">resized()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setwindowposdata-handle-0-locationx-locationy-0-0-swpnosize--swpnozorder" class="doc-heading"><code class="inline-code">SetWindowPos(data->handle, 0, location.X, location.Y, 0, 0, SWP_NOSIZE | SWP_NOZORDER)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="getcursorposp" class="doc-heading"><code class="inline-code">GetCursorPos(&p)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="mouselocation" class="doc-heading"><code class="inline-code">mouse_location()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setpixelformatdata-devicecontext-pixelformat-pfd" class="doc-heading"><code class="inline-code">SetPixelFormat(data->device_context, PixelFormat, &pfd)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata-contextnull" class="doc-heading"><code class="inline-code">if(data->context==NULL)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="exit0" class="doc-heading"><code class="inline-code">exit(0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="destroywindowdata-handle" class="doc-heading"><code class="inline-code">DestroyWindow(data->handle)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="unicodetombyteret" class="doc-heading"><code class="inline-code">UnicodeToMByte(ret)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="getwindowrectdata-handle-rect" class="doc-heading"><code class="inline-code">GetWindowRect(data->handle, &rect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setfocusdata-handle" class="doc-heading"><code class="inline-code">SetFocus(data->handle)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="showwindowdata-handle-swminimize" class="doc-heading"><code class="inline-code">ShowWindow(data->handle, SW_MINIMIZE)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="minimizedevent" class="doc-heading"><code class="inline-code">MinimizedEvent()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="showwindowdata-handle-swmaximize" class="doc-heading"><code class="inline-code">ShowWindow(data->handle, SW_MAXIMIZE)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="getclientrectdata-handle-rect" class="doc-heading"><code class="inline-code">GetClientRect(data->handle, &rect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="activatecontext" class="doc-heading"><code class="inline-code">activatecontext()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="redrawbg" class="doc-heading"><code class="inline-code">redrawbg()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="showwindowdata-handle-swrestore" class="doc-heading"><code class="inline-code">ShowWindow(data->handle, SW_RESTORE)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata-min" class="doc-heading"><code class="inline-code">if(data->min)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="restoredevent" class="doc-heading"><code class="inline-code">RestoredEvent()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="getclientrectdata-handle-rect" class="doc-heading"><code class="inline-code">GetClientRect(data->handle, &rect)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="activatecontext" class="doc-heading"><code class="inline-code">activatecontext()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="redrawbg" class="doc-heading"><code class="inline-code">redrawbg()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="getwindowplacementdata-handle-p" class="doc-heading"><code class="inline-code">GetWindowPlacement(data->handle, &p)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setwindowlongdata-handle-gwlstyle-s" class="doc-heading"><code class="inline-code">SetWindowLong(data->handle, GWL_STYLE, s)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setwindowlongdata-handle-gwlstyle-s" class="doc-heading"><code class="inline-code">SetWindowLong(data->handle, GWL_STYLE, s)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata" class="doc-heading"><code class="inline-code">if(data)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setpointerwindow-wind-graphicspointertype-type" class="doc-heading"><code class="inline-code">SetPointer(Window &wind, Graphics::PointerType type)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="switchtype" class="doc-heading"><code class="inline-code">switch(type)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setcursorc" class="doc-heading"><code class="inline-code">SetCursor(c)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="getanywindow" class="doc-heading"><code class="inline-code">getanywindow()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">::Window</code></p>
+<h3 id="forauto-w--windowwindows" class="doc-heading"><code class="inline-code">for(auto &w : Window::Windows)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata--data-handle" class="doc-heading"><code class="inline-code">if(data && data->handle)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifwindowhandle0" class="doc-heading"><code class="inline-code">if(windowhandle==0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="datanew-internalwindowdata" class="doc-heading"><code class="inline-code">data(new internal::windowdata)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="assertwindowmanagerdisplay-window-manager-system-is-not-initialized" class="doc-heading"><code class="inline-code">ASSERT(WindowManager::display, "Window manager system is not initialized.")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xsetclasshintwindowmanagerdisplay-data-handle-classhint" class="doc-heading"><code class="inline-code">XSetClassHint(WindowManager::display, data->handle, classhint)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xfreeclasshint" class="doc-heading"><code class="inline-code">XFree(classhint)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifallowresize" class="doc-heading"><code class="inline-code">if(!allowresize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xsetwmnormalhintswindowmanagerdisplay-data-handle-sizehints" class="doc-heading"><code class="inline-code">XSetWMNormalHints(WindowManager::display, data->handle, sizehints)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xfreesizehints" class="doc-heading"><code class="inline-code">XFree(sizehints)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xsetwmprotocolswindowmanagerdisplay-data-handle-windowmanagerwmdeletewindow-1" class="doc-heading"><code class="inline-code">XSetWMProtocols(WindowManager::display, data->handle, &WindowManager::WM_DELETE_WINDOW, 1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifvisible" class="doc-heading"><code class="inline-code">if(visible)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xmapwindowwindowmanagerdisplay-data-handle" class="doc-heading"><code class="inline-code">XMapWindow(WindowManager::display, data->handle)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xmovewindowwindowmanagerdisplay-data-handle-rectx-recty" class="doc-heading"><code class="inline-code">XMoveWindow(WindowManager::display, data->handle, rect.X, rect.Y)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifautoplaced" class="doc-heading"><code class="inline-code">if(autoplaced)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xmovewindowwindowmanagerdisplay-data-handle-rectx-recty" class="doc-heading"><code class="inline-code">XMoveWindow(WindowManager::display, data->handle, rect.X, rect.Y)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="createglcontext" class="doc-heading"><code class="inline-code">createglcontext()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="init" class="doc-heading"><code class="inline-code">init()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="assertwindowmanagerdisplay-window-manager-system-is-not-initialized" class="doc-heading"><code class="inline-code">ASSERT(WindowManager::display, "Window manager system is not initialized.")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xsetclasshintwindowmanagerdisplay-data-handle-classhint" class="doc-heading"><code class="inline-code">XSetClassHint(WindowManager::display, data->handle, classhint)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xfreeclasshint" class="doc-heading"><code class="inline-code">XFree(classhint)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xsetwmprotocolswindowmanagerdisplay-data-handle-windowmanagerwmdeletewindow-1" class="doc-heading"><code class="inline-code">XSetWMProtocols(WindowManager::display, data->handle, &WindowManager::WM_DELETE_WINDOW, 1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifisvisible" class="doc-heading"><code class="inline-code">if(isvisible)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xmapwindowwindowmanagerdisplay-data-handle" class="doc-heading"><code class="inline-code">XMapWindow(WindowManager::display, data->handle)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="createglcontext" class="doc-heading"><code class="inline-code">createglcontext()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="init" class="doc-heading"><code class="inline-code">init()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata" class="doc-heading"><code class="inline-code">if(data)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="close" class="doc-heading"><code class="inline-code">Close()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xmapwindowwindowmanagerdisplay-data-handle" class="doc-heading"><code class="inline-code">XMapWindow(WindowManager::display, data->handle)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xraisewindowwindowmanagerdisplay-data-handle" class="doc-heading"><code class="inline-code">XRaiseWindow(WindowManager::display, data->handle)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata-move" class="doc-heading"><code class="inline-code">if(data->move)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xmovewindowwindowmanagerdisplay-data-handle-data-movetox-data-movetoy" class="doc-heading"><code class="inline-code">XMoveWindow(WindowManager::display, data->handle, data->moveto.X, data->moveto.Y)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xunmapwindowwindowmanagerdisplay-data-handle" class="doc-heading"><code class="inline-code">XUnmapWindow(WindowManager::display, data->handle)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifiswmpointer" class="doc-heading"><code class="inline-code">if(iswmpointer)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata-pointerdisplayed" class="doc-heading"><code class="inline-code">if(data->pointerdisplayed)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xdefinecursorwindowmanagerdisplay-data-handle-windowmanagerblankcursor" class="doc-heading"><code class="inline-code">XDefineCursor(WindowManager::display, data->handle, WindowManager::blank_cursor)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifiswmpointer" class="doc-heading"><code class="inline-code">if(iswmpointer)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata-pointerdisplayed" class="doc-heading"><code class="inline-code">if(!data->pointerdisplayed)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xdefinecursorwindowmanagerdisplay-data-handle-0" class="doc-heading"><code class="inline-code">XDefineCursor(WindowManager::display, data->handle, 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata-ismapped" class="doc-heading"><code class="inline-code">if(data->ismapped)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xmovewindowwindowmanagerdisplay-data-handle-locationxbordersleft-locationyborderstop" class="doc-heading"><code class="inline-code">XMoveWindow(WindowManager::display, data->handle, location.X+borders.Left, location.Y+borders.Top)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifallowresize" class="doc-heading"><code class="inline-code">if(!allowresize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xsetwmnormalhintswindowmanagerdisplay-data-handle-sizehints" class="doc-heading"><code class="inline-code">XSetWMNormalHints(WindowManager::display, data->handle, sizehints)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xfreesizehints" class="doc-heading"><code class="inline-code">XFree(sizehints)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xresizewindowwindowmanagerdisplay-data-handle-sizewidth-sizeheight" class="doc-heading"><code class="inline-code">XResizeWindow(WindowManager::display, data->handle, size.Width, size.Height)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xdestroywindowwindowmanagerdisplay-data-handle" class="doc-heading"><code class="inline-code">XDestroyWindow(WindowManager::display, data->handle)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="destroyedevent" class="doc-heading"><code class="inline-code">DestroyedEvent()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-w--windows" class="doc-heading"><code class="inline-code">for(auto &w : windows)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifwdata-context0" class="doc-heading"><code class="inline-code">if(w.data->context!=0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata-context0" class="doc-heading"><code class="inline-code">if(data->context==0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="exit1" class="doc-heading"><code class="inline-code">exit(1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="glxswapbufferswindowmanagerdisplay-data-handle" class="doc-heading"><code class="inline-code">glXSwapBuffers(WindowManager::display, data->handle)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifprop" class="doc-heading"><code class="inline-code">if(!prop)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xfreeprop" class="doc-heading"><code class="inline-code">XFree(prop)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xgetgeometrywindowmanagerdisplay-data-handle-r-x-y-w-h-bw-d" class="doc-heading"><code class="inline-code">XGetGeometry(WindowManager::display, data->handle, &r, &x, &y, &w, &h, &bw, &d)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xtranslatecoordinateswindowmanagerdisplay-data-handle-r-0-0-x-y-c" class="doc-heading"><code class="inline-code">XTranslateCoordinates(WindowManager::display, data->handle, r, 0, 0, &x, &y, &c)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xgetinputfocuswindowmanagerdisplay-focused-r" class="doc-heading"><code class="inline-code">XGetInputFocus(WindowManager::display, &focused, &r)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xiconifywindowwindowmanagerdisplay-data-handle-0" class="doc-heading"><code class="inline-code">XIconifyWindow(WindowManager::display, data->handle, 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifallowresize" class="doc-heading"><code class="inline-code">if(!allowresize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xsetwmnormalhintswindowmanagerdisplay-data-handle-sizehints" class="doc-heading"><code class="inline-code">XSetWMNormalHints(WindowManager::display, data->handle, sizehints)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xfreesizehints" class="doc-heading"><code class="inline-code">XFree(sizehints)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xgetgeometrywindowmanagerdisplay-data-handle-r-x-y-w-h-bw-d" class="doc-heading"><code class="inline-code">XGetGeometry(WindowManager::display, data->handle, &r, &x, &y, &w, &h, &bw, &d)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifallowresize" class="doc-heading"><code class="inline-code">if(!allowresize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xsetwmnormalhintswindowmanagerdisplay-data-handle-sizehints" class="doc-heading"><code class="inline-code">XSetWMNormalHints(WindowManager::display, data->handle, sizehints)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xfreesizehints" class="doc-heading"><code class="inline-code">XFree(sizehints)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-icount-i" class="doc-heading"><code class="inline-code">for(int i=0; i<count; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifmin" class="doc-heading"><code class="inline-code">if(min)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="focus" class="doc-heading"><code class="inline-code">Focus()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifmax" class="doc-heading"><code class="inline-code">if(max)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifallowresize" class="doc-heading"><code class="inline-code">if(!allowresize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xsetwmnormalhintswindowmanagerdisplay-data-handle-sizehints" class="doc-heading"><code class="inline-code">XSetWMNormalHints(WindowManager::display, data->handle, sizehints)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xfreesizehints" class="doc-heading"><code class="inline-code">XFree(sizehints)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xgetgeometrywindowmanagerdisplay-data-handle-r-x-y-w-h-bw-d" class="doc-heading"><code class="inline-code">XGetGeometry(WindowManager::display, data->handle, &r, &x, &y, &w, &h, &bw, &d)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifallowresize" class="doc-heading"><code class="inline-code">if(!allowresize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xsetwmnormalhintswindowmanagerdisplay-data-handle-sizehints" class="doc-heading"><code class="inline-code">XSetWMNormalHints(WindowManager::display, data->handle, sizehints)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xfreesizehints" class="doc-heading"><code class="inline-code">XFree(sizehints)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xfreeproperties" class="doc-heading"><code class="inline-code">XFree(properties)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-icount-i" class="doc-heading"><code class="inline-code">for(int i=0; i<count; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xfreeproperties" class="doc-heading"><code class="inline-code">XFree(properties)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-icount-i" class="doc-heading"><code class="inline-code">for(int i=0; i<count; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xfreeproperties" class="doc-heading"><code class="inline-code">XFree(properties)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xsetwmnormalhintswindowmanagerdisplay-data-handle-sizehints" class="doc-heading"><code class="inline-code">XSetWMNormalHints(WindowManager::display, data->handle, sizehints)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xfreesizehints" class="doc-heading"><code class="inline-code">XFree(sizehints)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xsyncwindowmanagerdisplay-false" class="doc-heading"><code class="inline-code">XSync(WindowManager::display, False)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xsetwmnormalhintswindowmanagerdisplay-data-handle-sizehints" class="doc-heading"><code class="inline-code">XSetWMNormalHints(WindowManager::display, data->handle, sizehints)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xflushwindowmanagerdisplay" class="doc-heading"><code class="inline-code">XFlush(WindowManager::display)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xsyncwindowmanagerdisplay-false" class="doc-heading"><code class="inline-code">XSync(WindowManager::display, False)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xfreesizehints" class="doc-heading"><code class="inline-code">XFree(sizehints)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xchangepropertywindowmanagerdisplay-data-handle-windowmanagerxanetwmicon-windowmanagerxacardinal-32-propmodereplace-icondata-data-icondata-wicondata-h2" class="doc-heading"><code class="inline-code">XChangeProperty(WindowManager::display, data->handle, WindowManager::XA_NET_WM_ICON, WindowManager::XA_CARDINAL, 32, PropModeReplace, icon.data->data, icon.data->w*icon.data->h+2)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xsyncwindowmanagerdisplay-1" class="doc-heading"><code class="inline-code">XSync(WindowManager::display, 1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="mouselocation" class="doc-heading"><code class="inline-code">mouse_location()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="xnexteventwindowmanagerdisplay-event" class="doc-heading"><code class="inline-code">XNextEvent(WindowManager::display, &event)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switcheventtype" class="doc-heading"><code class="inline-code">switch(event.type)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="closingeventallow" class="doc-heading"><code class="inline-code">ClosingEvent(allow)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifallow" class="doc-heading"><code class="inline-code">if(allow)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="close" class="doc-heading"><code class="inline-code">Close()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifeventxclientmessagetypewindowmanagerxdndenter" class="doc-heading"><code class="inline-code">if(event.xclient.message_type==WindowManager::XdndEnter)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifeventxclientmessagetypewindowmanagerxdndposition" class="doc-heading"><code class="inline-code">if(event.xclient.message_type==WindowManager::XdndPosition)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifeventxclientmessagetype--windowmanagerxdndleave" class="doc-heading"><code class="inline-code">if(event.xclient.message_type == WindowManager::XdndLeave)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifeventxclientmessagetype--windowmanagerxdnddrop" class="doc-heading"><code class="inline-code">if(event.xclient.message_type == WindowManager::XdndDrop)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="activatecontext" class="doc-heading"><code class="inline-code">activatecontext()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="resizedevent" class="doc-heading"><code class="inline-code">ResizedEvent()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="redrawbg" class="doc-heading"><code class="inline-code">redrawbg()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="resized" class="doc-heading"><code class="inline-code">resized()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata-ppointx--x--data-ppointy--y" class="doc-heading"><code class="inline-code">if(data->ppoint.X != x || data->ppoint.Y != y)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="movedevent" class="doc-heading"><code class="inline-code">MovedEvent()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifeventxfocusmode--notifynormal" class="doc-heading"><code class="inline-code">if(event.xfocus.mode == NotifyNormal)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata-focused" class="doc-heading"><code class="inline-code">if(!data->focused)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="focusedevent" class="doc-heading"><code class="inline-code">FocusedEvent()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdata-focused" class="doc-heading"><code class="inline-code">if(data->focused)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="lostfocusevent" class="doc-heading"><code class="inline-code">LostFocusEvent()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifeventxpropertyatom--windowmanagerxanetwmstate" class="doc-heading"><code class="inline-code">if(event.xproperty.atom == WindowManager::XA_NET_WM_STATE)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifminstate--data-min" class="doc-heading"><code class="inline-code">if(minstate && !data->min)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="minimizedevent" class="doc-heading"><code class="inline-code">MinimizedEvent()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifminstate--data-min" class="doc-heading"><code class="inline-code">if(!minstate && data->min)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="restoredevent" class="doc-heading"><code class="inline-code">RestoredEvent()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setpointerwindow-wind-graphicspointertype-type" class="doc-heading"><code class="inline-code">SetPointer(Window &wind, Graphics::PointerType type)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="switchtype" class="doc-heading"><code class="inline-code">switch(type)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # PetContainer
 
-> Auto-generated documentation for the **PetContainer** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **PetContainer** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

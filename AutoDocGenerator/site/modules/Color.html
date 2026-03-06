@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>Color — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="../getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Base.html">Base</a></li>
+    <li><a href="Basic.html">Basic</a></li>
+    <li><a href="Common.html">Common</a></li>
+    <li><a href="Config.html">Config</a></li>
+    <li><a href="Definitions.html">Definitions</a></li>
+    <li><a href="Environment.html">Environment</a></li>
+    <li><a href="OS.html">OS</a></li>
+    <li><a href="Runtime.html">Runtime</a></li>
+    <li><a href="Types.html">Types</a></li>
+    <li><a href="Utils.html">Utils</a></li>
+    <li><a href="UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Bitmap.html">Bitmap</a></li>
+    <li><a href="BitmapFont.html">BitmapFont</a></li>
+    <li><a href="BlankImage.html">BlankImage</a></li>
+    <li><a href="Color.html" class="active">Color</a></li>
+    <li><a href="ColorPicker.html">ColorPicker</a></li>
+    <li><a href="ColorPlane.html">ColorPlane</a></li>
+    <li><a href="ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="Drawables.html">Drawables</a></li>
+    <li><a href="EmptyImage.html">EmptyImage</a></li>
+    <li><a href="Filters.html">Filters</a></li>
+    <li><a href="Flip.html">Flip</a></li>
+    <li><a href="Font.html">Font</a></li>
+    <li><a href="FontTheme.html">FontTheme</a></li>
+    <li><a href="FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="FreeType.html">FreeType</a></li>
+    <li><a href="GID.html">GID</a></li>
+    <li><a href="GL.html">GL</a></li>
+    <li><a href="Graphics.html">Graphics</a></li>
+    <li><a href="HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="IL.html">IL</a></li>
+    <li><a href="Image.html">Image</a></li>
+    <li><a href="JPEG.html">JPEG</a></li>
+    <li><a href="OpenGL.html">OpenGL</a></li>
+    <li><a href="PNG.html">PNG</a></li>
+    <li><a href="Renderer.html">Renderer</a></li>
+    <li><a href="ScalableObject.html">ScalableObject</a></li>
+    <li><a href="Shader.html">Shader</a></li>
+    <li><a href="Shaders.html">Shaders</a></li>
+    <li><a href="Texture.html">Texture</a></li>
+    <li><a href="TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="TextureTargets.html">TextureTargets</a></li>
+    <li><a href="TintedObject.html">TintedObject</a></li>
+    <li><a href="Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="AnimationServices.html">AnimationServices</a></li>
+    <li><a href="AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="Animations.html">Animations</a></li>
+    <li><a href="ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="DnD.html">DnD</a></li>
+    <li><a href="Input.html">Input</a></li>
+    <li><a href="KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="Keyboard.html">Keyboard</a></li>
+    <li><a href="Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Button.html">Button</a></li>
+    <li><a href="Checkbox.html">Checkbox</a></li>
+    <li><a href="CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="Combobox.html">Combobox</a></li>
+    <li><a href="ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="CountingText.html">CountingText</a></li>
+    <li><a href="Dialog.html">Dialog</a></li>
+    <li><a href="DialogWindow.html">DialogWindow</a></li>
+    <li><a href="Dropdown.html">Dropdown</a></li>
+    <li><a href="Filler.html">Filler</a></li>
+    <li><a href="IButton.html">IButton</a></li>
+    <li><a href="ICheckbox.html">ICheckbox</a></li>
+    <li><a href="ILabel.html">ILabel</a></li>
+    <li><a href="IListItem.html">IListItem</a></li>
+    <li><a href="INumberbox.html">INumberbox</a></li>
+    <li><a href="IOption.html">IOption</a></li>
+    <li><a href="IProgressor.html">IProgressor</a></li>
+    <li><a href="IScroller.html">IScroller</a></li>
+    <li><a href="ISlider.html">ISlider</a></li>
+    <li><a href="ITextbox.html">ITextbox</a></li>
+    <li><a href="Inputbox.html">Inputbox</a></li>
+    <li><a href="Label.html">Label</a></li>
+    <li><a href="Listbox.html">Listbox</a></li>
+    <li><a href="ListboxBase.html">ListboxBase</a></li>
+    <li><a href="ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="NumberInput.html">NumberInput</a></li>
+    <li><a href="Numberbox.html">Numberbox</a></li>
+    <li><a href="Panel.html">Panel</a></li>
+    <li><a href="PanelBase.html">PanelBase</a></li>
+    <li><a href="PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="Percentbar.html">Percentbar</a></li>
+    <li><a href="PetContainer.html">PetContainer</a></li>
+    <li><a href="PetTextbox.html">PetTextbox</a></li>
+    <li><a href="Placeholder.html">Placeholder</a></li>
+    <li><a href="Progressbar.html">Progressbar</a></li>
+    <li><a href="RadioButton.html">RadioButton</a></li>
+    <li><a href="RadioButtons.html">RadioButtons</a></li>
+    <li><a href="RadioControl.html">RadioControl</a></li>
+    <li><a href="Scrollbar.html">Scrollbar</a></li>
+    <li><a href="ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="Slider.html">Slider</a></li>
+    <li><a href="SliderBase.html">SliderBase</a></li>
+    <li><a href="SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="Spinner.html">Spinner</a></li>
+    <li><a href="StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="Tabpanel.html">Tabpanel</a></li>
+    <li><a href="TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="TextInput.html">TextInput</a></li>
+    <li><a href="Textarea.html">Textarea</a></li>
+    <li><a href="Textbox.html">Textbox</a></li>
+    <li><a href="TextboxBase.html">TextboxBase</a></li>
+    <li><a href="TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="TooltipManager.html">TooltipManager</a></li>
+    <li><a href="TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="UI.html">UI</a></li>
+    <li><a href="Widget.html">Widget</a></li>
+    <li><a href="WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Alignment.html">Alignment</a></li>
+    <li><a href="Bezier.html">Bezier</a></li>
+    <li><a href="Bounds.html">Bounds</a></li>
+    <li><a href="Circle.html">Circle</a></li>
+    <li><a href="Dimension.html">Dimension</a></li>
+    <li><a href="Geometry.html">Geometry</a></li>
+    <li><a href="GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="Line.html">Line</a></li>
+    <li><a href="Margin.html">Margin</a></li>
+    <li><a href="Point.html">Point</a></li>
+    <li><a href="Point3D.html">Point3D</a></li>
+    <li><a href="PointList.html">PointList</a></li>
+    <li><a href="PointProperty.html">PointProperty</a></li>
+    <li><a href="Polygon.html">Polygon</a></li>
+    <li><a href="Rectangle.html">Rectangle</a></li>
+    <li><a href="Region.html">Region</a></li>
+    <li><a href="Size.html">Size</a></li>
+    <li><a href="SizeProperty.html">SizeProperty</a></li>
+    <li><a href="Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Audio.html">Audio</a></li>
+    <li><a href="AudioStream.html">AudioStream</a></li>
+    <li><a href="FLAC.html">FLAC</a></li>
+    <li><a href="Multimedia.html">Multimedia</a></li>
+    <li><a href="PulseAudio.html">PulseAudio</a></li>
+    <li><a href="PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="Sound.html">Sound</a></li>
+    <li><a href="Source.html">Source</a></li>
+    <li><a href="Vorbis.html">Vorbis</a></li>
+    <li><a href="WASAPI.html">WASAPI</a></li>
+    <li><a href="WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Blob.html">Blob</a></li>
+    <li><a href="CGI.html">CGI</a></li>
+    <li><a href="Clipboard.html">Clipboard</a></li>
+    <li><a href="Data.html">Data</a></li>
+    <li><a href="DataExchange.html">DataExchange</a></li>
+    <li><a href="DataItems.html">DataItems</a></li>
+    <li><a href="File.html">File</a></li>
+    <li><a href="FileDialog.html">FileDialog</a></li>
+    <li><a href="Filesystem.html">Filesystem</a></li>
+    <li><a href="Folder.html">Folder</a></li>
+    <li><a href="HTTP.html">HTTP</a></li>
+    <li><a href="LZMA.html">LZMA</a></li>
+    <li><a href="Markdown.html">Markdown</a></li>
+    <li><a href="MemoryStream.html">MemoryStream</a></li>
+    <li><a href="Parse.html">Parse</a></li>
+    <li><a href="Query.html">Query</a></li>
+    <li><a href="Reader.html">Reader</a></li>
+    <li><a href="Storage.html">Storage</a></li>
+    <li><a href="Stream.html">Stream</a></li>
+    <li><a href="Tokenizer.html">Tokenizer</a></li>
+    <li><a href="URI.html">URI</a></li>
+    <li><a href="Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Array.html">Array</a></li>
+    <li><a href="Collection.html">Collection</a></li>
+    <li><a href="Container.html">Container</a></li>
+    <li><a href="Hashmap.html">Hashmap</a></li>
+    <li><a href="Iterator.html">Iterator</a></li>
+    <li><a href="LinkNode.html">LinkNode</a></li>
+    <li><a href="List.html">List</a></li>
+    <li><a href="ListItem.html">ListItem</a></li>
+    <li><a href="Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BorderData.html">BorderData</a></li>
+    <li><a href="ComponentStack.html">ComponentStack</a></li>
+    <li><a href="ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="CustomLayer.html">CustomLayer</a></li>
+    <li><a href="DWM.html">DWM</a></li>
+    <li><a href="ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="Flow.html">Flow</a></li>
+    <li><a href="FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="InlinePanel.html">InlinePanel</a></li>
+    <li><a href="Layer.html">Layer</a></li>
+    <li><a href="LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="LayerMover.html">LayerMover</a></li>
+    <li><a href="LayerResizer.html">LayerResizer</a></li>
+    <li><a href="LayerWidget.html">LayerWidget</a></li>
+    <li><a href="Layerbox.html">Layerbox</a></li>
+    <li><a href="LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="MaskedObject.html">MaskedObject</a></li>
+    <li><a href="Monitor.html">Monitor</a></li>
+    <li><a href="MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="Organizer.html">Organizer</a></li>
+    <li><a href="StackedObject.html">StackedObject</a></li>
+    <li><a href="VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="Window.html">Window</a></li>
+    <li><a href="WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Assert.html">Assert</a></li>
+    <li><a href="Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="CaptionValue.html">CaptionValue</a></li>
+    <li><a href="Console.html">Console</a></li>
+    <li><a href="Console_Nix.html">Console_Nix</a></li>
+    <li><a href="Console_Win32.html">Console_Win32</a></li>
+    <li><a href="ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="Event.html">Event</a></li>
+    <li><a href="Exception.html">Exception</a></li>
+    <li><a href="Exceptions.html">Exceptions</a></li>
+    <li><a href="GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="Logging.html">Logging</a></li>
+    <li><a href="Null.html">Null</a></li>
+    <li><a href="Nullable.html">Nullable</a></li>
+    <li><a href="Pointer.html">Pointer</a></li>
+    <li><a href="Property.html">Property</a></li>
+    <li><a href="Random.html">Random</a></li>
+    <li><a href="RefCounter.html">RefCounter</a></li>
+    <li><a href="Registry.html">Registry</a></li>
+    <li><a href="SGuid.html">SGuid</a></li>
+    <li><a href="Scope.html">Scope</a></li>
+    <li><a href="ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="Threading.html">Threading</a></li>
+    <li><a href="Time.html">Time</a></li>
+    <li><a href="Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AST.html">AST</a></li>
+    <li><a href="AStar.html">AStar</a></li>
+    <li><a href="Blueprint.html">Blueprint</a></li>
+    <li><a href="Compiler.html">Compiler</a></li>
+    <li><a href="Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="Compilers.html">Compilers</a></li>
+    <li><a href="Component.html">Component</a></li>
+    <li><a href="Composer.html">Composer</a></li>
+    <li><a href="Discrete.html">Discrete</a></li>
+    <li><a href="Embedding.html">Embedding</a></li>
+    <li><a href="Enum.html">Enum</a></li>
+    <li><a href="Generator.html">Generator</a></li>
+    <li><a href="Instruction.html">Instruction</a></li>
+    <li><a href="Language.html">Language</a></li>
+    <li><a href="Message.html">Message</a></li>
+    <li><a href="Pathfinders.html">Pathfinders</a></li>
+    <li><a href="Reflection.html">Reflection</a></li>
+    <li><a href="RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="Scene.html">Scene</a></li>
+    <li><a href="Scripting.html">Scripting</a></li>
+    <li><a href="Simple.html">Simple</a></li>
+    <li><a href="String.html">String</a></li>
+    <li><a href="Struct.html">Struct</a></li>
+    <li><a href="TMP.html">TMP</a></li>
+    <li><a href="Template.html">Template</a></li>
+    <li><a href="TiledMap.html">TiledMap</a></li>
+    <li><a href="Validators.html">Validators</a></li>
+    <li><a href="VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Linux.html">Linux</a></li>
+    <li><a href="Win32.html">Win32</a></li>
+    <li><a href="Windows.html">Windows</a></li>
+    <li><a href="X11.html">X11</a></li>
+    <li><a href="X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Any.html">Any</a></li>
+    <li><a href="Builtin.html">Builtin</a></li>
+    <li><a href="FindObject.html">FindObject</a></li>
+    <li><a href="Helpers.html">Helpers</a></li>
+    <li><a href="Instance.html">Instance</a></li>
+    <li><a href="ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="PD.html">PD</a></li>
+    <li><a href="ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BasicMath.html">BasicMath</a></li>
+    <li><a href="Kernel.html">Kernel</a></li>
+    <li><a href="main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">Color</span>
+    </nav>
+    
+        <h1 id="color" class="doc-heading">Color</h1>
+<p class="doc-paragraph">> Auto-generated documentation for the <strong>Color</strong> module of the Gorgon C++ Game Engine.</p>
+<h2 id="contents" class="doc-heading">Contents</h2>
+<ul class="md-list">
+<li><a href="#classes">Classes</a></li>
+<li><a href="#enums">Enums</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="classes" class="doc-heading">Classes</h2>
+<h3 id="rgba" class="doc-heading"><code class="inline-code">RGBA</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">This class represents a color information. Contains 4 channels, 8 bits each. Red is the lowest bit while alpha is the highest. Please note that conversion from/to integer will work in reverse of the HTML notation. 0xff800000 is dark blue not dark red.</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="rgba" class="doc-heading"><code class="inline-code">RGBA(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Data type for each channel Default constructor does not perform initialization</p>
+<h5 id="blendsecond-alpha" class="doc-heading"><code class="inline-code">Blend(second, alpha)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Copy constructor Copy constructor with new alpha value Copy constructor with new alpha value Copy constructor with new alpha value Copy constructor with new alpha value Blending constructor</p>
+<h5 id="rgbaconst-stdstring-color" class="doc-heading"><code class="inline-code">RGBA(const std::string &color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">explicit</code></p>
+<p class="doc-paragraph">Blending constructor Blending constructor Filling constructor Constructs a grayscale color from the given luminance Constructs a grayscale color from the given luminance Conversion from integer Conversion from uint32_t Conversion from float. Assumes the given float value is a 0 to 1 luminance. Sets alpha to 255 Conversion from float. Assumes the given float value is a 0 to 1 luminance. Sets alpha to 255 From string</p>
+<h5 id="rgbargbaf-color" class="doc-heading"><code class="inline-code">RGBA(RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">From string</p>
+<h5 id="int" class="doc-heading"><code class="inline-code">int(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">operator</code></p>
+<p class="doc-paragraph">Conversion to integer</p>
+<h5 id="memcpyret-this-4" class="doc-heading"><code class="inline-code">memcpy(&ret, this, 4)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="uint32t" class="doc-heading"><code class="inline-code">uint32_t(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">operator</code></p>
+<p class="doc-paragraph">Conversion to integer</p>
+<h5 id="memcpyret-this-4" class="doc-heading"><code class="inline-code">memcpy(&ret, this, 4)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="memcpythis-color-4" class="doc-heading"><code class="inline-code">memcpy(this, &color, 4)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Copy assignment From integer assignment</p>
+<h5 id="memcpythis-color-4" class="doc-heading"><code class="inline-code">memcpy(this, &color, 4)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">From integer assignment</p>
+<h5 id="luminance" class="doc-heading"><code class="inline-code">Luminance(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Byte</code></p>
+<p class="doc-paragraph">From float assignment. Assumes the given float value is a 0 to 1 luminance. Sets alpha to 255 Compares two colors Compares two colors Returns the luminance of this color as a single byte number. The returned number could be supplied to a new color to create grayscale representation of this color. This function performs lots of shifts to calculate a luminance close to perceived grayscale value. Probably works even slower than accurate luminance, however, the value returned is directly a byte.</p>
+<h5 id="accurateluminance" class="doc-heading"><code class="inline-code">AccurateLuminance(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">float</code></p>
+<p class="doc-paragraph">Returns the luminance of this color as a floating point value between 0 and 1. The conversion is done to preserve perceived luminance.</p>
+<h5 id="htmlcolor" class="doc-heading"><code class="inline-code">HTMLColor(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<p class="doc-paragraph">Returns a six nibble HTML color</p>
+<h5 id="blendconst-rgba-color" class="doc-heading"><code class="inline-code">Blend(const RGBA &color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Blends the given color into this one. This operation performs regular alpha blending with the current color being blended over.</p>
+<h5 id="blendcolor-10f" class="doc-heading"><code class="inline-code">Blend(color, 1.0f)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="slideconst-rgba-color-float-factor" class="doc-heading"><code class="inline-code">Slide(const RGBA &color, float factor)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Blends the given color into this one without performing alpha blending</p>
+<h5 id="iffactor--1" class="doc-heading"><code class="inline-code">if(factor == 1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="blendconst-rgba-color-float-alpha" class="doc-heading"><code class="inline-code">Blend(const RGBA &color, float alpha)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Blends the given color into this one. This operation performs regular alpha blending with the current color being blended over.</p>
+<h5 id="ifcolora--alpha--255" class="doc-heading"><code class="inline-code">if(color.A * alpha == 255)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifaa--0" class="doc-heading"><code class="inline-code">if(aa > 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="blendwithconst-rgba-color" class="doc-heading"><code class="inline-code">BlendWith(const RGBA &color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">RGBA</code></p>
+<p class="doc-paragraph">Blends the current color with the given color and returns the result</p>
+<h5 id="blendwithconst-rgba-color-float-alpha" class="doc-heading"><code class="inline-code">BlendWith(const RGBA &color, float alpha)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">RGBA</code></p>
+<p class="doc-paragraph">Blends the current color with the given color and returns the result</p>
+<h5 id="convertconst-gorgongraphicscolormode-mode" class="doc-heading"><code class="inline-code">Convert(const Gorgon::Graphics::ColorMode &mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::array<Gorgon::Byte, 4></code></p>
+<p class="doc-paragraph">Converts this color to a hex representation of this color Converts this color to the given color mode. At most GetChannelsPerPixel(mode) amount of values will be set</p>
+<h5 id="switchmode" class="doc-heading"><code class="inline-code">switch(mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="rgbaf" class="doc-heading"><code class="inline-code">RGBAf</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">Represents a four channel 32 bit float per channel color information.</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="rgbaf" class="doc-heading"><code class="inline-code">RGBAf(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Data type for each channel Default constructor does not perform initialization</p>
+<h5 id="rgbafconst-stdstring-color" class="doc-heading"><code class="inline-code">RGBAf(const std::string &color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">explicit</code></p>
+<p class="doc-paragraph">Filling constructor Constructor that sets all color channels to the given value to create a grayscale color. Alpha is set to 1.0f Constructor that sets all color channels to the given value to create a grayscale color. Alpha is set to 1.0f Converts a RGBA to RGBAf Converts a RGBA to RGBAf Converts a RGBA to RGBAf Converts from an unsigned int Converts from an unsigned int Converts from an unsigned int From string</p>
+<h5 id="int" class="doc-heading"><code class="inline-code">int(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">explicit operator</code></p>
+<p class="doc-paragraph">From string Copy assignment Assignment from RGBA Assignment from int Assignment from float Assignment from float Conversion to integer</p>
+<h5 id="convert" class="doc-heading"><code class="inline-code">Convert(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">RGBA</code></p>
+<p class="doc-paragraph">Converts this color to RGBA by clipping the values</p>
+<h5 id="luminance" class="doc-heading"><code class="inline-code">Luminance(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">float</code></p>
+<p class="doc-paragraph">Returns the luminance of this color as a floating point value between 0 and 1. The conversion is done to preserve perceived luminance.</p>
+<h5 id="blendconst-rgbaf-color" class="doc-heading"><code class="inline-code">Blend(const RGBAf &color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Compares two colors Compares two colors Blends the given color into this one. This operation performs regular alpha blending with the current color being blended over.</p>
+<h5 id="blendcolor-1f" class="doc-heading"><code class="inline-code">Blend(color, 1.f)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="blendconst-rgbaf-color-float-factor" class="doc-heading"><code class="inline-code">Blend(const RGBAf &color, float factor)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Blends the given color into this one with the given factor that is applied to all channels.</p>
+<h5 id="ifcolora1f" class="doc-heading"><code class="inline-code">if(color.A==1.f)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ifaa--0" class="doc-heading"><code class="inline-code">if(aa > 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="slideconst-rgbaf-color-float-factor" class="doc-heading"><code class="inline-code">Slide(const RGBAf &color, float factor)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Blends the given color into this one with the given factor that is applied to color and alpha channels separately. This is not regular alpha blending as source alpha is not used.</p>
+<h5 id="slideconst-rgbaf-color-float-factorcolor-float-factoralpha" class="doc-heading"><code class="inline-code">Slide(const RGBAf &color, float factor_color, float factor_alpha)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Blends the given color into this one with the given factor that is applied to color and alpha channels separately. This is not regular alpha blending as source alpha is not used.</p>
+<h5 id="slideconst-rgbaf-color-const-rgbaf-factor" class="doc-heading"><code class="inline-code">Slide(const RGBAf &color, const RGBAf &factor)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Blends the given color into this one with the given factor that is applied to color and alpha channels separately. This is not regular alpha blending as source alpha is not used.</p>
+<h3 id="pair" class="doc-heading"><code class="inline-code">Pair</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Color</code></p>
+<p class="doc-paragraph">Regular commonly used color. If the system has background image, background color should match the image Alternate colors, often used alternating lists Color for title fonts A color to emphasize a piece of text Inverted text or object A color to highlight a piece of code, often a border is drawn around code segments Keyword in a code segment Comment in a code segment Selection color, both background and foreground. Generally, selection background is drawn on top of regular background color Used to denote something is disabled Used to highlight a portion of text Used for editable text Used to separate pieces. Often forecolor is used as a border, backcolor is ignored Used for containers, often forecolor is used for border. A container that is activated. Often used for windows A container that is passive/unfocused. Often used for windows Used to denote an information section Used to denote a message section Used to denote warnings Used to denote errors Used to denote success messages Link to a page or an operation Used when the mouse hovers over an interactive object Used when the mouse is pressed on an activatable object Used to denote that a link is visited Used to mark active objects Used to mark focused objects Colors for a part which could be used a placeholder or a more pronounced separator Color pair that has a higher contrast then regular color pair A color that is used to draw non-text objects. Often regular color is used for these and in some cases, this might be ignored A color that is used for readonly edit fields A color that is used for list items A color that is used for alternate list items A color that is used for main window background User defined colors should start from this index. Some systems support user defined colors.</p>
+<h3 id="triplet" class="doc-heading"><code class="inline-code">Triplet</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Color</code></p>
+<h3 id="pack" class="doc-heading"><code class="inline-code">Pack</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Color</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="packconst-c-forecolor" class="doc-heading"><code class="inline-code">Pack(const C_ &forecolor)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">explicit</code></p>
+<p class="doc-paragraph">This constructor creates an empty pack, which may not be suitable for use This constructor initializes the pack with a regular color, which then will be used for every color combination.</p>
+<h5 id="packconst-stdinitializerliststdpairdesignation-c-colors" class="doc-heading"><code class="inline-code">Pack(const std::initializer_list<std::pair<Designation, C_>> &colors)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Initializes the pack using designation, color pairs. You may use this constructor to pass color list as an argument. Example use:  namespace Color = Gorgon::Graphics::Color; Color::Pack pack = { {Color::Regular  , Color::Black}, {Color::Inverted , Color::White} };</p>
+<h5 id="setdesignation-index-const-c-color" class="doc-heading"><code class="inline-code">Set(Designation index, const C_ &color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds or replaces the color at the supplied designation</p>
+<h5 id="unsetdesignation-index" class="doc-heading"><code class="inline-code">Unset(Designation index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes the color at the supplied designation</p>
+<h5 id="getdesignation-index" class="doc-heading"><code class="inline-code">Get(Designation index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">C_</code></p>
+<p class="doc-paragraph">Returns the color at the given designation. Returns the color at the given designation.</p>
+<h5 id="getindex" class="doc-heading"><code class="inline-code">Get(index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<p class="doc-paragraph">Returns the color at the given designation.</p>
+<h5 id="getindex" class="doc-heading"><code class="inline-code">Get(index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<p class="doc-paragraph">Returns the color at the given designation.</p>
+<h5 id="hasdesignation-index" class="doc-heading"><code class="inline-code">Has(Designation index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if the color at the given designation exists.</p>
+<h5 id="begin" class="doc-heading"><code class="inline-code">begin(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<p class="doc-paragraph">For iteration</p>
+<h5 id="begin" class="doc-heading"><code class="inline-code">begin(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<p class="doc-paragraph">For iteration</p>
+<h5 id="end" class="doc-heading"><code class="inline-code">end(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<p class="doc-paragraph">For iteration</p>
+<h5 id="end" class="doc-heading"><code class="inline-code">end(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">auto</code></p>
+<p class="doc-paragraph">For iteration</p>
+<hr class="doc-divider">
+<h2 id="enums" class="doc-heading">Enums</h2>
+<h3 id="colormode" class="doc-heading"><code class="inline-code">ColorMode</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">Color modes for images</p>
+<h3 id="designation" class="doc-heading"><code class="inline-code">Designation</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Color</code></p>
+<p class="doc-paragraph">Constants for color designations. Often named colors are used in pairs of background and foreground colors.</p>
+<hr class="doc-divider">
+<h2 id="functions" class="doc-heading">Functions</h2>
+<h3 id="hexchartointchar-c" class="doc-heading"><code class="inline-code">hexchartoint(char c)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<h3 id="ifcolor0--" class="doc-heading"><code class="inline-code">if(color[0] == '#')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcolor0--0" class="doc-heading"><code class="inline-code">if(color[0] == '0')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="catch" class="doc-heading"><code class="inline-code">catch(...)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcolor0--" class="doc-heading"><code class="inline-code">if(color[0] == '#')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcolor0--0" class="doc-heading"><code class="inline-code">if(color[0] == '0')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcolor0--" class="doc-heading"><code class="inline-code">if(color[0] == '(')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="catch" class="doc-heading"><code class="inline-code">catch(...)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="sscolor" class="doc-heading"><code class="inline-code">ss(color)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::stringstream</code></p>
+<h3 id="catch" class="doc-heading"><code class="inline-code">catch(...)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="getnamedcolorstdstring-name" class="doc-heading"><code class="inline-code">GetNamedColor(std::string name)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Gorgon::Graphics::RGBA</code></p>
+<h3 id="getchannelsperpixelcolormode-mode" class="doc-heading"><code class="inline-code">GetChannelsPerPixel(ColorMode mode)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline unsigned long</code></p>
+<p class="doc-paragraph">This is used to mark invalid color data This is used by some functions to mark color mode should be determined automatically 24bit red, green, blue color mode that has red component in the lowest byte order 24bit red, green, blue color mode that has blue component in the lowest byte order 8bit gray scale color mode 8bit alpha only color mode 32bit red, green, blue and alpha channel image. Red component is in the lowest byte order and 32bit red, green, blue and alpha channel image. Blue component is in the lowest byte order and alpha is in the highest byte order. 16bit gray scale image color mode with an alpha channel. Alpha channel is in the high byte Returns bytes per pixel for the given color mode</p>
+<h3 id="switchmode" class="doc-heading"><code class="inline-code">switch(mode)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="hasalphacolormode-mode" class="doc-heading"><code class="inline-code">HasAlpha(ColorMode mode)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline bool</code></p>
+<p class="doc-paragraph">Returns if the given color mode has alpha channel</p>
+<h3 id="getalphaindexcolormode-mode" class="doc-heading"><code class="inline-code">GetAlphaIndex(ColorMode mode)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline int</code></p>
+<p class="doc-paragraph">Returns the index of alpha channel. If alpha channel does not exists, this function returns -1.</p>
+<h3 id="switchmode" class="doc-heading"><code class="inline-code">switch(mode)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="blendrgba-first-const-rgba-second" class="doc-heading"><code class="inline-code">Blend(RGBA first, const RGBA &second)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline RGBA</code></p>
+<p class="doc-paragraph">Red channel Green channel Blue channel Alpha channel Prints the given color to the stream Reads a color from the stream. This color can either be in full HTML format with # in front or a hex representation of the color with an optional 0x in front. Blends two colors together, you do not need to use namespace if calling on an RGBA object</p>
+<h3 id="blendrgba-first-const-rgba-second-float-alpha" class="doc-heading"><code class="inline-code">Blend(RGBA first, const RGBA &second, float alpha)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline RGBA</code></p>
+<p class="doc-paragraph">Blends two colors together, you do not need to use namespace if calling on an RGBA object</p>
+<h3 id="getnamedcolorstdstring-name" class="doc-heading"><code class="inline-code">GetNamedColor(std::string name)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Gorgon::Graphics::RGBA</code></p>
+<p class="doc-paragraph">Returns the list of all named colors Returns the color of a named color. Returns transparent if the color does not exist.</p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

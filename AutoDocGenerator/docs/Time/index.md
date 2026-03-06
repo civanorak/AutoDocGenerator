@@ -1,6 +1,6 @@
 # Time
 
-> Auto-generated documentation for the **Time** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Time** module of the Gorgon C++ Game Engine.
 
 
 ## Contents
@@ -41,7 +41,7 @@ Reads a new date object from a binary stream. @see Save for details. @throw std:
 
 **Returns:** `bool`
 
-Writes date object to a binary stream. Format is given below. numbers after names are number of bytes. @verbatim <year:2><month:1><day:1><hour:1><minute:1><millis:2><timezone:2><checksum:1> @endverbatim checksum is the sum of all numbers in base 256. @return true if successful. An empty date will be saved correctly.
+Writes date object to a binary stream. Format is given below. numbers after names are number of bytes. @verbatim &lt;year:2&gt;&lt;month:1&gt;&lt;day:1&gt;&lt;hour:1&gt;&lt;minute:1&gt;&lt;millis:2&gt;&lt;timezone:2&gt;&lt;checksum:1&gt; @endverbatim checksum is the sum of all numbers in base 256. @return true if successful. An empty date will be saved correctly.
 
 ##### `Load(std::istream &source)`
 

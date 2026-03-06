@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>AdvancedTextBuilder — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="../getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Base.html">Base</a></li>
+    <li><a href="Basic.html">Basic</a></li>
+    <li><a href="Common.html">Common</a></li>
+    <li><a href="Config.html">Config</a></li>
+    <li><a href="Definitions.html">Definitions</a></li>
+    <li><a href="Environment.html">Environment</a></li>
+    <li><a href="OS.html">OS</a></li>
+    <li><a href="Runtime.html">Runtime</a></li>
+    <li><a href="Types.html">Types</a></li>
+    <li><a href="Utils.html">Utils</a></li>
+    <li><a href="UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Bitmap.html">Bitmap</a></li>
+    <li><a href="BitmapFont.html">BitmapFont</a></li>
+    <li><a href="BlankImage.html">BlankImage</a></li>
+    <li><a href="Color.html">Color</a></li>
+    <li><a href="ColorPicker.html">ColorPicker</a></li>
+    <li><a href="ColorPlane.html">ColorPlane</a></li>
+    <li><a href="ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="Drawables.html">Drawables</a></li>
+    <li><a href="EmptyImage.html">EmptyImage</a></li>
+    <li><a href="Filters.html">Filters</a></li>
+    <li><a href="Flip.html">Flip</a></li>
+    <li><a href="Font.html">Font</a></li>
+    <li><a href="FontTheme.html">FontTheme</a></li>
+    <li><a href="FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="FreeType.html">FreeType</a></li>
+    <li><a href="GID.html">GID</a></li>
+    <li><a href="GL.html">GL</a></li>
+    <li><a href="Graphics.html">Graphics</a></li>
+    <li><a href="HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="IL.html">IL</a></li>
+    <li><a href="Image.html">Image</a></li>
+    <li><a href="JPEG.html">JPEG</a></li>
+    <li><a href="OpenGL.html">OpenGL</a></li>
+    <li><a href="PNG.html">PNG</a></li>
+    <li><a href="Renderer.html">Renderer</a></li>
+    <li><a href="ScalableObject.html">ScalableObject</a></li>
+    <li><a href="Shader.html">Shader</a></li>
+    <li><a href="Shaders.html">Shaders</a></li>
+    <li><a href="Texture.html">Texture</a></li>
+    <li><a href="TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="TextureTargets.html">TextureTargets</a></li>
+    <li><a href="TintedObject.html">TintedObject</a></li>
+    <li><a href="Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="AnimationServices.html">AnimationServices</a></li>
+    <li><a href="AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="Animations.html">Animations</a></li>
+    <li><a href="ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="DnD.html">DnD</a></li>
+    <li><a href="Input.html">Input</a></li>
+    <li><a href="KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="Keyboard.html">Keyboard</a></li>
+    <li><a href="Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Button.html">Button</a></li>
+    <li><a href="Checkbox.html">Checkbox</a></li>
+    <li><a href="CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="Combobox.html">Combobox</a></li>
+    <li><a href="ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="CountingText.html">CountingText</a></li>
+    <li><a href="Dialog.html">Dialog</a></li>
+    <li><a href="DialogWindow.html">DialogWindow</a></li>
+    <li><a href="Dropdown.html">Dropdown</a></li>
+    <li><a href="Filler.html">Filler</a></li>
+    <li><a href="IButton.html">IButton</a></li>
+    <li><a href="ICheckbox.html">ICheckbox</a></li>
+    <li><a href="ILabel.html">ILabel</a></li>
+    <li><a href="IListItem.html">IListItem</a></li>
+    <li><a href="INumberbox.html">INumberbox</a></li>
+    <li><a href="IOption.html">IOption</a></li>
+    <li><a href="IProgressor.html">IProgressor</a></li>
+    <li><a href="IScroller.html">IScroller</a></li>
+    <li><a href="ISlider.html">ISlider</a></li>
+    <li><a href="ITextbox.html">ITextbox</a></li>
+    <li><a href="Inputbox.html">Inputbox</a></li>
+    <li><a href="Label.html">Label</a></li>
+    <li><a href="Listbox.html">Listbox</a></li>
+    <li><a href="ListboxBase.html">ListboxBase</a></li>
+    <li><a href="ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="NumberInput.html">NumberInput</a></li>
+    <li><a href="Numberbox.html">Numberbox</a></li>
+    <li><a href="Panel.html">Panel</a></li>
+    <li><a href="PanelBase.html">PanelBase</a></li>
+    <li><a href="PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="Percentbar.html">Percentbar</a></li>
+    <li><a href="PetContainer.html">PetContainer</a></li>
+    <li><a href="PetTextbox.html">PetTextbox</a></li>
+    <li><a href="Placeholder.html">Placeholder</a></li>
+    <li><a href="Progressbar.html">Progressbar</a></li>
+    <li><a href="RadioButton.html">RadioButton</a></li>
+    <li><a href="RadioButtons.html">RadioButtons</a></li>
+    <li><a href="RadioControl.html">RadioControl</a></li>
+    <li><a href="Scrollbar.html">Scrollbar</a></li>
+    <li><a href="ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="Slider.html">Slider</a></li>
+    <li><a href="SliderBase.html">SliderBase</a></li>
+    <li><a href="SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="Spinner.html">Spinner</a></li>
+    <li><a href="StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="Tabpanel.html">Tabpanel</a></li>
+    <li><a href="TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="TextInput.html">TextInput</a></li>
+    <li><a href="Textarea.html">Textarea</a></li>
+    <li><a href="Textbox.html">Textbox</a></li>
+    <li><a href="TextboxBase.html">TextboxBase</a></li>
+    <li><a href="TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="TooltipManager.html">TooltipManager</a></li>
+    <li><a href="TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="UI.html">UI</a></li>
+    <li><a href="Widget.html">Widget</a></li>
+    <li><a href="WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Alignment.html">Alignment</a></li>
+    <li><a href="Bezier.html">Bezier</a></li>
+    <li><a href="Bounds.html">Bounds</a></li>
+    <li><a href="Circle.html">Circle</a></li>
+    <li><a href="Dimension.html">Dimension</a></li>
+    <li><a href="Geometry.html">Geometry</a></li>
+    <li><a href="GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="Line.html">Line</a></li>
+    <li><a href="Margin.html">Margin</a></li>
+    <li><a href="Point.html">Point</a></li>
+    <li><a href="Point3D.html">Point3D</a></li>
+    <li><a href="PointList.html">PointList</a></li>
+    <li><a href="PointProperty.html">PointProperty</a></li>
+    <li><a href="Polygon.html">Polygon</a></li>
+    <li><a href="Rectangle.html">Rectangle</a></li>
+    <li><a href="Region.html">Region</a></li>
+    <li><a href="Size.html">Size</a></li>
+    <li><a href="SizeProperty.html">SizeProperty</a></li>
+    <li><a href="Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Audio.html">Audio</a></li>
+    <li><a href="AudioStream.html">AudioStream</a></li>
+    <li><a href="FLAC.html">FLAC</a></li>
+    <li><a href="Multimedia.html">Multimedia</a></li>
+    <li><a href="PulseAudio.html">PulseAudio</a></li>
+    <li><a href="PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="Sound.html">Sound</a></li>
+    <li><a href="Source.html">Source</a></li>
+    <li><a href="Vorbis.html">Vorbis</a></li>
+    <li><a href="WASAPI.html">WASAPI</a></li>
+    <li><a href="WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Blob.html">Blob</a></li>
+    <li><a href="CGI.html">CGI</a></li>
+    <li><a href="Clipboard.html">Clipboard</a></li>
+    <li><a href="Data.html">Data</a></li>
+    <li><a href="DataExchange.html">DataExchange</a></li>
+    <li><a href="DataItems.html">DataItems</a></li>
+    <li><a href="File.html">File</a></li>
+    <li><a href="FileDialog.html">FileDialog</a></li>
+    <li><a href="Filesystem.html">Filesystem</a></li>
+    <li><a href="Folder.html">Folder</a></li>
+    <li><a href="HTTP.html">HTTP</a></li>
+    <li><a href="LZMA.html">LZMA</a></li>
+    <li><a href="Markdown.html">Markdown</a></li>
+    <li><a href="MemoryStream.html">MemoryStream</a></li>
+    <li><a href="Parse.html">Parse</a></li>
+    <li><a href="Query.html">Query</a></li>
+    <li><a href="Reader.html">Reader</a></li>
+    <li><a href="Storage.html">Storage</a></li>
+    <li><a href="Stream.html">Stream</a></li>
+    <li><a href="Tokenizer.html">Tokenizer</a></li>
+    <li><a href="URI.html">URI</a></li>
+    <li><a href="Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Array.html">Array</a></li>
+    <li><a href="Collection.html">Collection</a></li>
+    <li><a href="Container.html">Container</a></li>
+    <li><a href="Hashmap.html">Hashmap</a></li>
+    <li><a href="Iterator.html">Iterator</a></li>
+    <li><a href="LinkNode.html">LinkNode</a></li>
+    <li><a href="List.html">List</a></li>
+    <li><a href="ListItem.html">ListItem</a></li>
+    <li><a href="Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BorderData.html">BorderData</a></li>
+    <li><a href="ComponentStack.html">ComponentStack</a></li>
+    <li><a href="ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="CustomLayer.html">CustomLayer</a></li>
+    <li><a href="DWM.html">DWM</a></li>
+    <li><a href="ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="Flow.html">Flow</a></li>
+    <li><a href="FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="InlinePanel.html">InlinePanel</a></li>
+    <li><a href="Layer.html">Layer</a></li>
+    <li><a href="LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="LayerMover.html">LayerMover</a></li>
+    <li><a href="LayerResizer.html">LayerResizer</a></li>
+    <li><a href="LayerWidget.html">LayerWidget</a></li>
+    <li><a href="Layerbox.html">Layerbox</a></li>
+    <li><a href="LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="MaskedObject.html">MaskedObject</a></li>
+    <li><a href="Monitor.html">Monitor</a></li>
+    <li><a href="MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="Organizer.html">Organizer</a></li>
+    <li><a href="StackedObject.html">StackedObject</a></li>
+    <li><a href="VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="Window.html">Window</a></li>
+    <li><a href="WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Assert.html">Assert</a></li>
+    <li><a href="Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="CaptionValue.html">CaptionValue</a></li>
+    <li><a href="Console.html">Console</a></li>
+    <li><a href="Console_Nix.html">Console_Nix</a></li>
+    <li><a href="Console_Win32.html">Console_Win32</a></li>
+    <li><a href="ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="Event.html">Event</a></li>
+    <li><a href="Exception.html">Exception</a></li>
+    <li><a href="Exceptions.html">Exceptions</a></li>
+    <li><a href="GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="Logging.html">Logging</a></li>
+    <li><a href="Null.html">Null</a></li>
+    <li><a href="Nullable.html">Nullable</a></li>
+    <li><a href="Pointer.html">Pointer</a></li>
+    <li><a href="Property.html">Property</a></li>
+    <li><a href="Random.html">Random</a></li>
+    <li><a href="RefCounter.html">RefCounter</a></li>
+    <li><a href="Registry.html">Registry</a></li>
+    <li><a href="SGuid.html">SGuid</a></li>
+    <li><a href="Scope.html">Scope</a></li>
+    <li><a href="ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="Threading.html">Threading</a></li>
+    <li><a href="Time.html">Time</a></li>
+    <li><a href="Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AST.html">AST</a></li>
+    <li><a href="AStar.html">AStar</a></li>
+    <li><a href="Blueprint.html">Blueprint</a></li>
+    <li><a href="Compiler.html">Compiler</a></li>
+    <li><a href="Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="Compilers.html">Compilers</a></li>
+    <li><a href="Component.html">Component</a></li>
+    <li><a href="Composer.html">Composer</a></li>
+    <li><a href="Discrete.html">Discrete</a></li>
+    <li><a href="Embedding.html">Embedding</a></li>
+    <li><a href="Enum.html">Enum</a></li>
+    <li><a href="Generator.html">Generator</a></li>
+    <li><a href="Instruction.html">Instruction</a></li>
+    <li><a href="Language.html">Language</a></li>
+    <li><a href="Message.html">Message</a></li>
+    <li><a href="Pathfinders.html">Pathfinders</a></li>
+    <li><a href="Reflection.html">Reflection</a></li>
+    <li><a href="RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="Scene.html">Scene</a></li>
+    <li><a href="Scripting.html">Scripting</a></li>
+    <li><a href="Simple.html">Simple</a></li>
+    <li><a href="String.html">String</a></li>
+    <li><a href="Struct.html">Struct</a></li>
+    <li><a href="TMP.html">TMP</a></li>
+    <li><a href="Template.html">Template</a></li>
+    <li><a href="TiledMap.html">TiledMap</a></li>
+    <li><a href="Validators.html">Validators</a></li>
+    <li><a href="VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Linux.html">Linux</a></li>
+    <li><a href="Win32.html">Win32</a></li>
+    <li><a href="Windows.html">Windows</a></li>
+    <li><a href="X11.html">X11</a></li>
+    <li><a href="X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="AdvancedTextBuilder.html" class="active">AdvancedTextBuilder</a></li>
+    <li><a href="CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Any.html">Any</a></li>
+    <li><a href="Builtin.html">Builtin</a></li>
+    <li><a href="FindObject.html">FindObject</a></li>
+    <li><a href="Helpers.html">Helpers</a></li>
+    <li><a href="Instance.html">Instance</a></li>
+    <li><a href="ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="PD.html">PD</a></li>
+    <li><a href="ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BasicMath.html">BasicMath</a></li>
+    <li><a href="Kernel.html">Kernel</a></li>
+    <li><a href="main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">AdvancedTextBuilder</span>
+    </nav>
+    
+        <h1 id="advancedtextbuilder" class="doc-heading">AdvancedTextBuilder</h1>
+<p class="doc-paragraph">> Auto-generated documentation for the <strong>AdvancedTextBuilder</strong> module of the Gorgon C++ Game Engine.</p>
+<h2 id="contents" class="doc-heading">Contents</h2>
+<ul class="md-list">
+<li><a href="#classes">Classes</a></li>
+<li><a href="#enums">Enums</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="classes" class="doc-heading">Classes</h2>
+<h3 id="advancedtextbuilder" class="doc-heading"><code class="inline-code">AdvancedTextBuilder</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h3 id="tablecolumn" class="doc-heading"><code class="inline-code">TableColumn</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">Defines a table column. If both pixel width and relative width are 0, the column is automatically sized.</p>
+<hr class="doc-divider">
+<h2 id="enums" class="doc-heading">Enums</h2>
+<h3 id="imagealign" class="doc-heading"><code class="inline-code">ImageAlign</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">Defines how an image will be aligned</p>
+<hr class="doc-divider">
+<h2 id="functions" class="doc-heading">Functions</h2>
+<h3 id="switchalign" class="doc-heading"><code class="inline-code">switch(align)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Alignment of text in the column Width in pixels Width in percentage Constructor, optionally initial string can be supplied. Appends the given data to the builder Appends the given data to the builder Returns the string built by this builder. Returns the string built by this builder. Returns the string built by this builder. You may change it. Returns the string built by this builder. Appends a line break that does not start a new paragraph. Appends a zero width breaking space. Resets all formatting instructions. @name Font style switching Use to change the current font. Bold and italic are exclusive and may not be available. Unless overridden, all styles can modify color, underline, strikethrough and paragraph and line spacing. @{ BEGIN Switch to superscript, use ScriptOff to switch off Switch to subscript, use ScriptOff to switch off Switches sub and superscript off Switches to the given font index. If it doesn't exist, default font will be used. Switches to the given font index. If it doesn't exist, default font will be used. END @} @name Color control These functions control the color of different parts of the system. Default color for text and border is set by font style. Default color for background is transparent. @{ BEGIN Sets the forecolor to the given 7-bit index. Sets the forecolor to the given index name. Sets the forecolor to the given color. Removes tint color that is used for images. Sets the tint color that is used for images to the given 7-bit index. Sets the tint color that is used for images to the given index name. Sets the tint color that is used for images to the given color. Sets the alpha that is used for images to the given color. Sets the background color to the given 7-bit index. Sets the background color to the given index name. Sets the background color to the given color. Sets the border color to the given 7-bit index. Sets the border color to the given index name. Sets the border color to the given color. Sets the underline color to the given 7-bit index. Sets the underline color to the given index name. Sets the underline color to the given color. Sets the strikethrough color to the given 7-bit index. Sets the strikethrough color to the given index name. Sets the strikethrough collor to the given color. Sets the text color of the selection. Default is NamedFontColors::Selection Sets the text color of the selection. Default is NamedFontColors::Selection Sets the text color of the selection. Default is NamedFontColors::Selection Sets the background color of the selection. Default is NamedFontColors::Selection. Disables selection image Sets the background color of the selection. Default is NamedFontColors::Selection. Disables selection image Sets the background color of the selection. Default is NamedFontColors::Selection. Disables selection image Uses default background color if no image is set. END @} @name Alignment These functions modify alignment of text and images. Default horizontal alignment is dictated by the font style. Default vertical alignment is baseline. @{ BEGIN Disables horizontal alignment and justify override. Aligns text to left. Disables justify. Aligns text to center. Disables justify. Aligns text to right. Disables justify. Aligns text to left. Enables justify. Aligns text to center. Enables justify. Aligns text to right. Enables justify. Sets the text alignment without changing justify.</p>
+<h3 id="scigraphicsinternalscialignleft" class="doc-heading"><code class="inline-code">SCI(Graphics::internal::SCI_ALIGN_LEFT)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">case Graphics::TextAlignment::Left: return</code></p>
+<h3 id="scigraphicsinternalscialignright" class="doc-heading"><code class="inline-code">SCI(Graphics::internal::SCI_ALIGN_RIGHT)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">case Graphics::TextAlignment::Right: return</code></p>
+<h3 id="scigraphicsinternalscialigncenter" class="doc-heading"><code class="inline-code">SCI(Graphics::internal::SCI_ALIGN_CENTER)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">case Graphics::TextAlignment::Center: return</code></p>
+<h3 id="csigraphicsinternalcsisetletteroffset" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_SET_LETTER_OFFSET)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Turns justify on/off Modifies vertical alignment Modifies vertical alignment Modifies vertical alignment Modifies vertical alignment. This is the default alignment. END @} @name Marking @{ BEGIN Uses the style default for underline on/off state Uses the style default for strikethrough on/off state END @} @name Positioning @{ BEGIN Sets the width that the words will wrap from. Pixel and em widths will be added together. rel is relative to em size. Changes the offset that will be added to each letter. Relative sizing is relative to character width and line height, the value is in percentage.</p>
+<h3 id="valandrelpixelsx-relx" class="doc-heading"><code class="inline-code">ValAndRel(pixels.X, rel.X)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valandrelpixelsy-rely" class="doc-heading"><code class="inline-code">ValAndRel(pixels.Y, rel.Y)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="csigraphicsinternalcsisetunderlinesettings" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_SET_UNDERLINE_SETTINGS)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Changes the offset of underline. rel is relative to line height and in percentage. Changes underline settings. Thickness will be set to default. If no parameters are given, will set all of them to defaults.</p>
+<h3 id="index1--descenders2--spaces3--tabs4--gaps5--placeholders6" class="doc-heading"><code class="inline-code">Index(1 | descenders<<2 | spaces<<3 | tabs<<4 | gaps<<5 | placeholders<<6)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="csigraphicsinternalcsisetunderlinesettings" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_SET_UNDERLINE_SETTINGS)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Changes underline thickness. rel is relative to line thickness and is in percentage</p>
+<h3 id="index0b10" class="doc-heading"><code class="inline-code">Index(0b10)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valandrelpixels-rel" class="doc-heading"><code class="inline-code">ValAndRel(pixels, rel)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="csigraphicsinternalcsisetstrikethroughsettings" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_SET_STRIKETHROUGH_SETTINGS)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Changes the offset of strike. rel is relative to line height and in percentage. Changes strike settings. If no parameters are given, will set them to defaults.</p>
+<h3 id="index1--12--spaces3--tabs4--gaps5--placeholders6" class="doc-heading"><code class="inline-code">Index(1 | 1<<2 | spaces<<3 | tabs<<4 | gaps<<5 | placeholders<<6)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="csigraphicsinternalcsisetstrikethroughsettings" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_SET_STRIKETHROUGH_SETTINGS)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Changes strike thickness. rel is relative to line thickness and is in percentage</p>
+<h3 id="index0b10" class="doc-heading"><code class="inline-code">Index(0b10)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valandrelpixels-rel" class="doc-heading"><code class="inline-code">ValAndRel(pixels, rel)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="csigraphicsinternalcsiaddbreakingletters" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_ADD_BREAKING_LETTERS)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Add letters that will be used to break text from. Useful for code views.</p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="csigraphicsinternalcsiremovebreakingletters" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_REMOVE_BREAKING_LETTERS)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Removes letters that will be used to break text from. Useful for code views.</p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="csigraphicsinternalcsisetborderpadding" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_SET_BORDER_PADDING)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">END @} @name Spacing @{ BEGIN Changes the spacing between paragraphs. rel is relative to line height and in percentage. This value is applied after line spacing. Changes the spacing between lines. rel is relative to line height and in percentage. Changes the spacing between the letters. rel is relative to em width and in percentage. Changes the indent. rel is relative to em width and in percentage. Changes the indent of the start of paragraphs. rel is relative to em width and in percentage. Place the requested amount of space horizontally. rel is relative to em width and in percentage. per is relative to wrap width and in basis points (1/10000). This space will not be breaking. If breaking is desired, you may insert zero width space. Place the requested amount of space vertically. rel is relative to line height and in percentage. Changes the spacing between the tab stops. rel is in em width and is in percentage. per is basis points of wrap width Uses default tab width Adds a tabstop. The tabstop with the given index will be located at the specified location. It replaces nearest tabstop. rel is in space widths. per is basis point of wrap width Removes the tabstop at the given index. END @} @name Box Controls box features such as background and border. Default background color is transparent, it must be changed if background is to be used. Default border thickness is set to underline thickness of the default font. Border and background are off by default. They will be turned on and used for tables. @{ BEGIN Sets the border thickness. rel is relative to underline thickness and is in percentage. Default thickness is pixels = 0, rel = 100 Sets the padding of the text from the border. rel is relative to underline thickness and is in percentage. Default padding is pixels = 0, rel = 100</p>
+<h3 id="valandrelpixelsleft-relleft" class="doc-heading"><code class="inline-code">ValAndRel(pixels.Left, rel.Left)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valandrelpixelstop-reltop" class="doc-heading"><code class="inline-code">ValAndRel(pixels.Top, rel.Top)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valandrelpixelsright-relright" class="doc-heading"><code class="inline-code">ValAndRel(pixels.Right, rel.Right)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valandrelpixelsbottom-relbottom" class="doc-heading"><code class="inline-code">ValAndRel(pixels.Bottom, rel.Bottom)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="csigraphicsinternalcsisetselectionpadding" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_SET_SELECTION_PADDING)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Sets the padding of the selected text from the selected image border. This includes the width of the border. rel is relative to line thickness and is in percentage. Default is pixels = 0, rel = 0.</p>
+<h3 id="valandrelpixelsleft-relleft" class="doc-heading"><code class="inline-code">ValAndRel(pixels.Left, rel.Left)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valandrelpixelstop-reltop" class="doc-heading"><code class="inline-code">ValAndRel(pixels.Top, rel.Top)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valandrelpixelsright-relright" class="doc-heading"><code class="inline-code">ValAndRel(pixels.Right, rel.Right)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valandrelpixelsbottom-relbottom" class="doc-heading"><code class="inline-code">ValAndRel(pixels.Bottom, rel.Bottom)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="csigraphicsinternalcsidisplayimage" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_DISPLAY_IMAGE)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">END @} @name Image @{ BEGIN Displays the image with the given ID aIf the image is larger than the wrap width</p>
+<h3 id="indexindex" class="doc-heading"><code class="inline-code">Index(index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="index0" class="doc-heading"><code class="inline-code">Index(0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="csigraphicsinternalcsidisplayimage" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_DISPLAY_IMAGE)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Displays the image with the given ID and offset. If the image is larger than the wrap width, it will be shrunk.</p>
+<h3 id="indexindex" class="doc-heading"><code class="inline-code">Index(index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="index0b100" class="doc-heading"><code class="inline-code">Index(0b100)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="csigraphicsinternalcsidisplayimage" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_DISPLAY_IMAGE)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Displays the image with the given ID and size. Image will be scale proportionally to this area. If any dimension is 0, it will be ignored. relsize is relative to wrap width and line height and is in percentage.</p>
+<h3 id="indexindex" class="doc-heading"><code class="inline-code">Index(index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="index0b1000" class="doc-heading"><code class="inline-code">Index(0b1000)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="index0b1100" class="doc-heading"><code class="inline-code">Index(0b1100)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valandrelpixelsizewidth-relsizewidth" class="doc-heading"><code class="inline-code">ValAndRel(pixelsize.Width, relsize.Width)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valandrelpixelsizeheight-relsizeheight" class="doc-heading"><code class="inline-code">ValAndRel(pixelsize.Height, relsize.Height)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="csigraphicsinternalcsidisplayimage" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_DISPLAY_IMAGE)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Displays the image with the given ID, side and margin. If the image is larger than the wrap width, it will be shrunk.</p>
+<h3 id="indexindex" class="doc-heading"><code class="inline-code">Index(index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifmargintype--1" class="doc-heading"><code class="inline-code">if(margintype == 1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifmargintype--2" class="doc-heading"><code class="inline-code">if(margintype == 2)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="alignedimageindex-side-geometrypoint0-0-margins" class="doc-heading"><code class="inline-code">AlignedImage(index, side, Geometry::Point{0, 0}, margins)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<p class="doc-paragraph">Displays the image with the given ID and offset. If the image is larger than the wrap width, it will be shrunk.</p>
+<h3 id="csigraphicsinternalcsidisplayimage" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_DISPLAY_IMAGE)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Displays the image with the given ID, side and margin. If the image is larger than the wrap width, it will be shrunk. If any dimension of the size is zero, it will be ignored.</p>
+<h3 id="indexindex" class="doc-heading"><code class="inline-code">Index(index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valandrelpixelsizewidth-relsizewidth" class="doc-heading"><code class="inline-code">ValAndRel(pixelsize.Width, relsize.Width)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valandrelpixelsizeheight-relsizeheight" class="doc-heading"><code class="inline-code">ValAndRel(pixelsize.Height, relsize.Height)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifmargintype--1" class="doc-heading"><code class="inline-code">if(margintype == 1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifmargintype--2" class="doc-heading"><code class="inline-code">if(margintype == 2)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="alignedimageindex-side-pixelsize-relsize-0-0-margins" class="doc-heading"><code class="inline-code">AlignedImage(index, side, pixelsize, relsize, {0, 0}, margins)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<p class="doc-paragraph">Displays the image with the given ID and offset. If the image is larger than the wrap width, it will be shrunk. If any dimension of the size is zero, it will be ignored.</p>
+<h3 id="csigraphicsinternalcsibegintable" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_BEGIN_TABLE)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">END @} @name Table These functions allow generation of tables @{ BEGIN Starts a table. Tables use background and border settings. Set border thickness to 0 to disable table border. relwidth is relative to wrap width and in percentage.</p>
+<h3 id="indexdrawouterborder" class="doc-heading"><code class="inline-code">Index(drawouterborder)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valandrelpixelwidth-relwidth" class="doc-heading"><code class="inline-code">ValAndRel(pixelwidth, relwidth)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-c--columns" class="doc-heading"><code class="inline-code">for(auto c : columns)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="rs" class="doc-heading"><code class="inline-code">RS()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valandrelcwidth-crelwidth" class="doc-heading"><code class="inline-code">ValAndRel(c.Width, c.RelWidth)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="ifcolspan--1" class="doc-heading"><code class="inline-code">if(colspan > 1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Go to next cell. If colspan is set, span align is used to align the new joined column</p>
+<h3 id="csigraphicsinternalcsicolspan" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_COL_SPAN)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="indexcolspan" class="doc-heading"><code class="inline-code">Index(colspan)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifrowspan--1" class="doc-heading"><code class="inline-code">if(rowspan > 1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="csigraphicsinternalcsirowspan" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_ROW_SPAN)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="indexrowspan" class="doc-heading"><code class="inline-code">Index(rowspan)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="us" class="doc-heading"><code class="inline-code">US()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="csigraphicsinternalcsiplaceholder" class="doc-heading"><code class="inline-code">CSI(Graphics::internal::CSI_PLACEHOLDER)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">END @} @name Selection These functions help to display selection marker @{ Sets the selection image, disables selection background color. Removes the selection image and color. Calling this function will effectively remove all background from the selected text. @} @name Regions Regions are ranges of text. AdvancedPrint function will return a list of region boundaries. Each region will have one or more boundaries. Multiple boundaries are returned if a region spans multiple lines. You may use same region id multiple times. Regions can overlap. @{ Places a placeholder space. Placeholder will be wrapped as if it is a single glyph. Relative is relative to wrap width and line height and is in percentage.</p>
+<h3 id="valandrelpixelswidth-relwidth" class="doc-heading"><code class="inline-code">ValAndRel(pixels.Width, rel.Width)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valandrelpixelsheight-relheight" class="doc-heading"><code class="inline-code">ValAndRel(pixels.Height, rel.Height)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="st" class="doc-heading"><code class="inline-code">ST()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="intint16t-val" class="doc-heading"><code class="inline-code">Int(int16_t val)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Places a placeholder space. Placeholder will be wrapped as if it is a single glyph. This overload will have the same size as the previous placeholder. @}</p>
+<h3 id="indexbyte-ind" class="doc-heading"><code class="inline-code">Index(Byte ind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="alphabyte-alpha" class="doc-heading"><code class="inline-code">Alpha(Byte alpha)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="colorgraphicsrgba-color" class="doc-heading"><code class="inline-code">Color(Graphics::RGBA color)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="valandrel" class="doc-heading"><code class="inline-code">ValAndRel()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="index127" class="doc-heading"><code class="inline-code">Index(127)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valandrelshort-value-short-rel" class="doc-heading"><code class="inline-code">ValAndRel(short value, short rel)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="intvalue" class="doc-heading"><code class="inline-code">Int(value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="intrel" class="doc-heading"><code class="inline-code">Int(rel)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valrelandper" class="doc-heading"><code class="inline-code">ValRelAndPer()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="index127" class="doc-heading"><code class="inline-code">Index(127)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valrelandpershort-value-short-rel-short-per" class="doc-heading"><code class="inline-code">ValRelAndPer(short value, short rel, short per)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="intvalue" class="doc-heading"><code class="inline-code">Int(value)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="intrel" class="doc-heading"><code class="inline-code">Int(rel)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="intper" class="doc-heading"><code class="inline-code">Int(per)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="csichar-cmd" class="doc-heading"><code class="inline-code">CSI(char cmd)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="rs" class="doc-heading"><code class="inline-code">RS()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="us" class="doc-heading"><code class="inline-code">US()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

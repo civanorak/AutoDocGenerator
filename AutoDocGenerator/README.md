@@ -1,28 +1,27 @@
 # Gorgon Auto-Doc Generator
 
-> Gorgon C++ oyun kütüphanesi için otomatik dokümantasyon üretici.
+> Gorgon C++ oyun kütüphanesi için otomatik dokümantasyon üretici (Stand-alone HTML).
 
-Üç aşamalı pipeline:
+Dört aşamalı pipeline:
 
 | Aşama | Betik | Görev |
 |---|---|---|
 | 1 | `1_extractor.py` | `.h` / `.cpp` dosyalarını tarar, JSON çıkarır |
 | 2 | `2_enhancer.py` | Ollama ile boş açıklamaları zenginleştirir |
-| 3 | `3_generator.py` | JSON → VitePress uyumlu Markdown dosyaları |
+| 3 | `3_generator.py` | JSON → Markdown dosyaları oluşturur (`docs/` klasörü) |
+| 4 | `build_site.py` | Markdown → Standalone HTML sitesine dönüştürür (`site/` klasörü) |
 
 ## Gereksinimler
 
 - Python 3.10+
-- [Ollama](https://ollama.com) (çalışıyor olmalı)
-- Node.js (VitePress için)
+- [Ollama](https://ollama.com) (Aşama 2 için çalışıyor olmalı)
 
 ```bash
-# Python bağımlılıkları
+# Python bağımlılıklarını yükle
 pip install -r requirements.txt
-
-# VitePress
-npm install -g vitepress
 ```
+
+*(Not: Bu yeni sistemde Node.js, npm, VitePress veya Electron'a ihtiyaç yoktur. Çıktı tamamen saf HTML/CSS/JS içerir.)*
 
 ## Kullanım
 
@@ -32,6 +31,8 @@ npm install -g vitepress
 cd AutoDocGenerator
 python run_all.py "C:/Users/.../Gorgon-main/Source/Gorgon" llama3
 ```
+
+Kendi başına çalıştırdığında `site/` isimli bir klasör oluşturulacak. Bu klasörün içindeki `index.html` dosyasını herhangi bir web tarayıcısıyla açarak dökümantasyona ulaşabilirsin.
 
 ### Adım adım çalıştır
 
@@ -44,43 +45,28 @@ python 2_enhancer.py
 
 # 3. Markdown üret
 python 3_generator.py
+
+# 4. HTML Sitesini Üret
+python build_site.py
 ```
 
-## Yerel Önizleme
+## Çıktı Yapısı & Yayınlama (Hosting)
 
-```bash
-cd docs
-vitepress dev
-# → http://localhost:5173 adresine git
-```
-
-## GitHub Pages ile Yayınlama
-
-```bash
-# 1. Siteyi derle
-cd docs
-vitepress build
-
-# 2. GitHub reposuna yükle
-git init
-git add .
-git commit -m "docs: initial release"
-git push origin main
-
-# 3. GitHub → Settings → Pages → Source: /docs klasörünü seç
-# → https://kullaniciadi.github.io/gorgon-docs/ adresinde yayına girer!
-```
-
-## Çıktı Yapısı
+Sistem `site/` klasörü içerisine tamamen kendi kendine yeten (stand-alone) bir yapı inşa eder:
 
 ```
-docs/
-├── index.md         ← Ana sayfa
-├── Graphics/
-│   └── index.md
-├── Audio/
-│   └── index.md
-├── ... (her modül için)
-└── .vitepress/
-    └── config.mjs   ← VitePress yapılandırması
+site/
+├── index.html              ← Ana sayfa (Tüm modüllerin grid görünümü)
+├── getting-started.html    ← Başlangıç rehberi
+├── css/
+│   └── style.css           ← Tamamen karanlık mod (dark theme) CSS tasarımı
+├── js/
+│   ├── app.js              ← Animasyonlar, sidebar etkileşimi
+│   └── search.js           ← İstemci taraflı arama filtresi motoru
+└── modules/
+    ├── Animation.html      ← Her bir C++ modülü için üretilmiş detay sayfası
+    ├── Audio.html
+    └── ...
 ```
+
+Oluşan `site/` klasörünü bir `.zip` dosyası yapıp başkalarına gönderebilir ya da içerisindeki dosyaları doğrudan **Vercel**, **Netlify** veya **GitHub Pages**'a yükleyerek hiçbir ayar yapmadan internette canlı yayına alabilirsin.

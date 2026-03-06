@@ -1,6 +1,6 @@
 # Gorgon Game Engine
 
-> C++ Oyun Kütüphanesi Dokümantasyonu
+&gt; C++ Oyun Kütüphanesi Dokümantasyonu
 
 ## Modules
 

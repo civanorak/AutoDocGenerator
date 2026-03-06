@@ -1,6 +1,6 @@
 # X11Keysym
 
-> Auto-generated documentation for the **X11Keysym** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **X11Keysym** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

@@ -1,6 +1,6 @@
 # RuntimeFunction
 
-> Auto-generated documentation for the **RuntimeFunction** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **RuntimeFunction** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

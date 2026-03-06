@@ -1,6 +1,6 @@
 # MovingListOrganizer
 
-> Auto-generated documentation for the **MovingListOrganizer** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **MovingListOrganizer** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

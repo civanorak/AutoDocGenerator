@@ -1,6 +1,6 @@
 # Button
 
-> Auto-generated documentation for the **Button** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Button** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

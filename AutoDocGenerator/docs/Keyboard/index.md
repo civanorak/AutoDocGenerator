@@ -1,6 +1,6 @@
 # Keyboard
 
-> Auto-generated documentation for the **Keyboard** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Keyboard** module of the Gorgon C++ Game Engine.
 
 
 ## Contents
@@ -17,7 +17,7 @@
 
 **Namespace:** `Keycodes`
 
-@} A Unicode character, use String::Append to append this character to an std::string. MOVETO -> Window? This class represents a modifier key. These keys can be
+@} A Unicode character, use String::Append to append this character to an std::string. MOVETO -&gt; Window? This class represents a modifier key. These keys can be
 
 #### Methods
 

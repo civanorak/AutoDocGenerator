@@ -1,6 +1,6 @@
 # Scene
 
-> Auto-generated documentation for the **Scene** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Scene** module of the Gorgon C++ Game Engine.
 
 
 ## Contents
@@ -178,7 +178,7 @@ Returns iterator to the end of scenes.
 
 **Returns:** `EventToken`
 
-Quits the scene manager, returning the execution to the point where Run function is called. It allows current frame to be completed before quiting. It also deactives the current scene. Creates a new scene using the given type and parameters. Scene class should always take parent layer first, then id and then the other parameters if they exists. When using this function, only specify the class as template parameter, the others will be resolved. If a scene with the same id exists, it will be deleted. It is advisable to add new scenes at the start without activating any scene.  @code enum SceneIDs { SCENE_MENU, SCENE_GAME };  //...  class GameScene : public Scene { public: GameScene(Gorgon::SceneManager &parent, SceneID id, int players);  //... };  //...  //Create the game scene with a single player. manager.NewScene<GameScene>(SCENE_GAME, 1);  manager.SwitchScene(SCENE_GAME);  @endcode This event will be fired whenever a scene is activated.
+Quits the scene manager, returning the execution to the point where Run function is called. It allows current frame to be completed before quiting. It also deactives the current scene. Creates a new scene using the given type and parameters. Scene class should always take parent layer first, then id and then the other parameters if they exists. When using this function, only specify the class as template parameter, the others will be resolved. If a scene with the same id exists, it will be deleted. It is advisable to add new scenes at the start without activating any scene.  @code enum SceneIDs { SCENE_MENU, SCENE_GAME };  //...  class GameScene : public Scene { public: GameScene(Gorgon::SceneManager &parent, SceneID id, int players);  //... };  //...  //Create the game scene with a single player. manager.NewScene&lt;GameScene&gt;(SCENE_GAME, 1);  manager.SwitchScene(SCENE_GAME);  @endcode This event will be fired whenever a scene is activated.
 
 
 ### `Scene`
@@ -346,7 +346,7 @@ Returns iterator to the end of scenes.
 
 **Returns:** `EventToken`
 
-Quits the scene manager, returning the execution to the point where Run function is called. It allows current frame to be completed before quiting. It also deactives the current scene. Creates a new scene using the given type and parameters. Scene class should always take parent layer first, then id and then the other parameters if they exists. When using this function, only specify the class as template parameter, the others will be resolved. If a scene with the same id exists, it will be deleted. It is advisable to add new scenes at the start without activating any scene.  @code enum SceneIDs { SCENE_MENU, SCENE_GAME };  //...  class GameScene : public Scene { public: GameScene(Gorgon::SceneManager &parent, SceneID id, int players);  //... };  //...  //Create the game scene with a single player. manager.NewScene<GameScene>(SCENE_GAME, 1);  manager.SwitchScene(SCENE_GAME);  @endcode This event will be fired whenever a scene is activated.
+Quits the scene manager, returning the execution to the point where Run function is called. It allows current frame to be completed before quiting. It also deactives the current scene. Creates a new scene using the given type and parameters. Scene class should always take parent layer first, then id and then the other parameters if they exists. When using this function, only specify the class as template parameter, the others will be resolved. If a scene with the same id exists, it will be deleted. It is advisable to add new scenes at the start without activating any scene.  @code enum SceneIDs { SCENE_MENU, SCENE_GAME };  //...  class GameScene : public Scene { public: GameScene(Gorgon::SceneManager &parent, SceneID id, int players);  //... };  //...  //Create the game scene with a single player. manager.NewScene&lt;GameScene&gt;(SCENE_GAME, 1);  manager.SwitchScene(SCENE_GAME);  @endcode This event will be fired whenever a scene is activated.
 
 
 ---

@@ -1,6 +1,6 @@
 # Collection
 
-> Auto-generated documentation for the **Collection** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Collection** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

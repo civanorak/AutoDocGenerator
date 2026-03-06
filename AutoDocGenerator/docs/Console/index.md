@@ -1,6 +1,6 @@
 # Console
 
-> Auto-generated documentation for the **Console** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Console** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

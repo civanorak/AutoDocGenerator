@@ -1,6 +1,6 @@
 # CountingText
 
-> Auto-generated documentation for the **CountingText** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **CountingText** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

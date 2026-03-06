@@ -1,6 +1,6 @@
 # LinearOrganizer
 
-> Auto-generated documentation for the **LinearOrganizer** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **LinearOrganizer** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

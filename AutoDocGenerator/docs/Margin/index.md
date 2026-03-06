@@ -1,6 +1,6 @@
 # Margin
 
-> Auto-generated documentation for the **Margin** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Margin** module of the Gorgon C++ Game Engine.
 
 
 ## Contents
@@ -107,5 +107,5 @@ Adds an object to the bottom of this Margin to create a new Margin marking the u
 
 **Returns:** `basic_Point<T_>`
 
-Top left coordinate of the object that will be placed within a <0:inf, 0:inf> bounds that has this Margin.
+Top left coordinate of the object that will be placed within a &lt;0:inf, 0:inf&gt; bounds that has this Margin.
 

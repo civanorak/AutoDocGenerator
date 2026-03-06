@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>ComponentStack — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="../getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Base.html">Base</a></li>
+    <li><a href="Basic.html">Basic</a></li>
+    <li><a href="Common.html">Common</a></li>
+    <li><a href="Config.html">Config</a></li>
+    <li><a href="Definitions.html">Definitions</a></li>
+    <li><a href="Environment.html">Environment</a></li>
+    <li><a href="OS.html">OS</a></li>
+    <li><a href="Runtime.html">Runtime</a></li>
+    <li><a href="Types.html">Types</a></li>
+    <li><a href="Utils.html">Utils</a></li>
+    <li><a href="UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Bitmap.html">Bitmap</a></li>
+    <li><a href="BitmapFont.html">BitmapFont</a></li>
+    <li><a href="BlankImage.html">BlankImage</a></li>
+    <li><a href="Color.html">Color</a></li>
+    <li><a href="ColorPicker.html">ColorPicker</a></li>
+    <li><a href="ColorPlane.html">ColorPlane</a></li>
+    <li><a href="ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="Drawables.html">Drawables</a></li>
+    <li><a href="EmptyImage.html">EmptyImage</a></li>
+    <li><a href="Filters.html">Filters</a></li>
+    <li><a href="Flip.html">Flip</a></li>
+    <li><a href="Font.html">Font</a></li>
+    <li><a href="FontTheme.html">FontTheme</a></li>
+    <li><a href="FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="FreeType.html">FreeType</a></li>
+    <li><a href="GID.html">GID</a></li>
+    <li><a href="GL.html">GL</a></li>
+    <li><a href="Graphics.html">Graphics</a></li>
+    <li><a href="HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="IL.html">IL</a></li>
+    <li><a href="Image.html">Image</a></li>
+    <li><a href="JPEG.html">JPEG</a></li>
+    <li><a href="OpenGL.html">OpenGL</a></li>
+    <li><a href="PNG.html">PNG</a></li>
+    <li><a href="Renderer.html">Renderer</a></li>
+    <li><a href="ScalableObject.html">ScalableObject</a></li>
+    <li><a href="Shader.html">Shader</a></li>
+    <li><a href="Shaders.html">Shaders</a></li>
+    <li><a href="Texture.html">Texture</a></li>
+    <li><a href="TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="TextureTargets.html">TextureTargets</a></li>
+    <li><a href="TintedObject.html">TintedObject</a></li>
+    <li><a href="Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="AnimationServices.html">AnimationServices</a></li>
+    <li><a href="AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="Animations.html">Animations</a></li>
+    <li><a href="ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="DnD.html">DnD</a></li>
+    <li><a href="Input.html">Input</a></li>
+    <li><a href="KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="Keyboard.html">Keyboard</a></li>
+    <li><a href="Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Button.html">Button</a></li>
+    <li><a href="Checkbox.html">Checkbox</a></li>
+    <li><a href="CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="Combobox.html">Combobox</a></li>
+    <li><a href="ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="CountingText.html">CountingText</a></li>
+    <li><a href="Dialog.html">Dialog</a></li>
+    <li><a href="DialogWindow.html">DialogWindow</a></li>
+    <li><a href="Dropdown.html">Dropdown</a></li>
+    <li><a href="Filler.html">Filler</a></li>
+    <li><a href="IButton.html">IButton</a></li>
+    <li><a href="ICheckbox.html">ICheckbox</a></li>
+    <li><a href="ILabel.html">ILabel</a></li>
+    <li><a href="IListItem.html">IListItem</a></li>
+    <li><a href="INumberbox.html">INumberbox</a></li>
+    <li><a href="IOption.html">IOption</a></li>
+    <li><a href="IProgressor.html">IProgressor</a></li>
+    <li><a href="IScroller.html">IScroller</a></li>
+    <li><a href="ISlider.html">ISlider</a></li>
+    <li><a href="ITextbox.html">ITextbox</a></li>
+    <li><a href="Inputbox.html">Inputbox</a></li>
+    <li><a href="Label.html">Label</a></li>
+    <li><a href="Listbox.html">Listbox</a></li>
+    <li><a href="ListboxBase.html">ListboxBase</a></li>
+    <li><a href="ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="NumberInput.html">NumberInput</a></li>
+    <li><a href="Numberbox.html">Numberbox</a></li>
+    <li><a href="Panel.html">Panel</a></li>
+    <li><a href="PanelBase.html">PanelBase</a></li>
+    <li><a href="PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="Percentbar.html">Percentbar</a></li>
+    <li><a href="PetContainer.html">PetContainer</a></li>
+    <li><a href="PetTextbox.html">PetTextbox</a></li>
+    <li><a href="Placeholder.html">Placeholder</a></li>
+    <li><a href="Progressbar.html">Progressbar</a></li>
+    <li><a href="RadioButton.html">RadioButton</a></li>
+    <li><a href="RadioButtons.html">RadioButtons</a></li>
+    <li><a href="RadioControl.html">RadioControl</a></li>
+    <li><a href="Scrollbar.html">Scrollbar</a></li>
+    <li><a href="ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="Slider.html">Slider</a></li>
+    <li><a href="SliderBase.html">SliderBase</a></li>
+    <li><a href="SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="Spinner.html">Spinner</a></li>
+    <li><a href="StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="Tabpanel.html">Tabpanel</a></li>
+    <li><a href="TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="TextInput.html">TextInput</a></li>
+    <li><a href="Textarea.html">Textarea</a></li>
+    <li><a href="Textbox.html">Textbox</a></li>
+    <li><a href="TextboxBase.html">TextboxBase</a></li>
+    <li><a href="TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="TooltipManager.html">TooltipManager</a></li>
+    <li><a href="TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="UI.html">UI</a></li>
+    <li><a href="Widget.html">Widget</a></li>
+    <li><a href="WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Alignment.html">Alignment</a></li>
+    <li><a href="Bezier.html">Bezier</a></li>
+    <li><a href="Bounds.html">Bounds</a></li>
+    <li><a href="Circle.html">Circle</a></li>
+    <li><a href="Dimension.html">Dimension</a></li>
+    <li><a href="Geometry.html">Geometry</a></li>
+    <li><a href="GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="Line.html">Line</a></li>
+    <li><a href="Margin.html">Margin</a></li>
+    <li><a href="Point.html">Point</a></li>
+    <li><a href="Point3D.html">Point3D</a></li>
+    <li><a href="PointList.html">PointList</a></li>
+    <li><a href="PointProperty.html">PointProperty</a></li>
+    <li><a href="Polygon.html">Polygon</a></li>
+    <li><a href="Rectangle.html">Rectangle</a></li>
+    <li><a href="Region.html">Region</a></li>
+    <li><a href="Size.html">Size</a></li>
+    <li><a href="SizeProperty.html">SizeProperty</a></li>
+    <li><a href="Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Audio.html">Audio</a></li>
+    <li><a href="AudioStream.html">AudioStream</a></li>
+    <li><a href="FLAC.html">FLAC</a></li>
+    <li><a href="Multimedia.html">Multimedia</a></li>
+    <li><a href="PulseAudio.html">PulseAudio</a></li>
+    <li><a href="PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="Sound.html">Sound</a></li>
+    <li><a href="Source.html">Source</a></li>
+    <li><a href="Vorbis.html">Vorbis</a></li>
+    <li><a href="WASAPI.html">WASAPI</a></li>
+    <li><a href="WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Blob.html">Blob</a></li>
+    <li><a href="CGI.html">CGI</a></li>
+    <li><a href="Clipboard.html">Clipboard</a></li>
+    <li><a href="Data.html">Data</a></li>
+    <li><a href="DataExchange.html">DataExchange</a></li>
+    <li><a href="DataItems.html">DataItems</a></li>
+    <li><a href="File.html">File</a></li>
+    <li><a href="FileDialog.html">FileDialog</a></li>
+    <li><a href="Filesystem.html">Filesystem</a></li>
+    <li><a href="Folder.html">Folder</a></li>
+    <li><a href="HTTP.html">HTTP</a></li>
+    <li><a href="LZMA.html">LZMA</a></li>
+    <li><a href="Markdown.html">Markdown</a></li>
+    <li><a href="MemoryStream.html">MemoryStream</a></li>
+    <li><a href="Parse.html">Parse</a></li>
+    <li><a href="Query.html">Query</a></li>
+    <li><a href="Reader.html">Reader</a></li>
+    <li><a href="Storage.html">Storage</a></li>
+    <li><a href="Stream.html">Stream</a></li>
+    <li><a href="Tokenizer.html">Tokenizer</a></li>
+    <li><a href="URI.html">URI</a></li>
+    <li><a href="Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Array.html">Array</a></li>
+    <li><a href="Collection.html">Collection</a></li>
+    <li><a href="Container.html">Container</a></li>
+    <li><a href="Hashmap.html">Hashmap</a></li>
+    <li><a href="Iterator.html">Iterator</a></li>
+    <li><a href="LinkNode.html">LinkNode</a></li>
+    <li><a href="List.html">List</a></li>
+    <li><a href="ListItem.html">ListItem</a></li>
+    <li><a href="Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BorderData.html">BorderData</a></li>
+    <li><a href="ComponentStack.html" class="active">ComponentStack</a></li>
+    <li><a href="ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="CustomLayer.html">CustomLayer</a></li>
+    <li><a href="DWM.html">DWM</a></li>
+    <li><a href="ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="Flow.html">Flow</a></li>
+    <li><a href="FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="InlinePanel.html">InlinePanel</a></li>
+    <li><a href="Layer.html">Layer</a></li>
+    <li><a href="LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="LayerMover.html">LayerMover</a></li>
+    <li><a href="LayerResizer.html">LayerResizer</a></li>
+    <li><a href="LayerWidget.html">LayerWidget</a></li>
+    <li><a href="Layerbox.html">Layerbox</a></li>
+    <li><a href="LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="MaskedObject.html">MaskedObject</a></li>
+    <li><a href="Monitor.html">Monitor</a></li>
+    <li><a href="MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="Organizer.html">Organizer</a></li>
+    <li><a href="StackedObject.html">StackedObject</a></li>
+    <li><a href="VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="Window.html">Window</a></li>
+    <li><a href="WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Assert.html">Assert</a></li>
+    <li><a href="Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="CaptionValue.html">CaptionValue</a></li>
+    <li><a href="Console.html">Console</a></li>
+    <li><a href="Console_Nix.html">Console_Nix</a></li>
+    <li><a href="Console_Win32.html">Console_Win32</a></li>
+    <li><a href="ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="Event.html">Event</a></li>
+    <li><a href="Exception.html">Exception</a></li>
+    <li><a href="Exceptions.html">Exceptions</a></li>
+    <li><a href="GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="Logging.html">Logging</a></li>
+    <li><a href="Null.html">Null</a></li>
+    <li><a href="Nullable.html">Nullable</a></li>
+    <li><a href="Pointer.html">Pointer</a></li>
+    <li><a href="Property.html">Property</a></li>
+    <li><a href="Random.html">Random</a></li>
+    <li><a href="RefCounter.html">RefCounter</a></li>
+    <li><a href="Registry.html">Registry</a></li>
+    <li><a href="SGuid.html">SGuid</a></li>
+    <li><a href="Scope.html">Scope</a></li>
+    <li><a href="ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="Threading.html">Threading</a></li>
+    <li><a href="Time.html">Time</a></li>
+    <li><a href="Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AST.html">AST</a></li>
+    <li><a href="AStar.html">AStar</a></li>
+    <li><a href="Blueprint.html">Blueprint</a></li>
+    <li><a href="Compiler.html">Compiler</a></li>
+    <li><a href="Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="Compilers.html">Compilers</a></li>
+    <li><a href="Component.html">Component</a></li>
+    <li><a href="Composer.html">Composer</a></li>
+    <li><a href="Discrete.html">Discrete</a></li>
+    <li><a href="Embedding.html">Embedding</a></li>
+    <li><a href="Enum.html">Enum</a></li>
+    <li><a href="Generator.html">Generator</a></li>
+    <li><a href="Instruction.html">Instruction</a></li>
+    <li><a href="Language.html">Language</a></li>
+    <li><a href="Message.html">Message</a></li>
+    <li><a href="Pathfinders.html">Pathfinders</a></li>
+    <li><a href="Reflection.html">Reflection</a></li>
+    <li><a href="RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="Scene.html">Scene</a></li>
+    <li><a href="Scripting.html">Scripting</a></li>
+    <li><a href="Simple.html">Simple</a></li>
+    <li><a href="String.html">String</a></li>
+    <li><a href="Struct.html">Struct</a></li>
+    <li><a href="TMP.html">TMP</a></li>
+    <li><a href="Template.html">Template</a></li>
+    <li><a href="TiledMap.html">TiledMap</a></li>
+    <li><a href="Validators.html">Validators</a></li>
+    <li><a href="VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Linux.html">Linux</a></li>
+    <li><a href="Win32.html">Win32</a></li>
+    <li><a href="Windows.html">Windows</a></li>
+    <li><a href="X11.html">X11</a></li>
+    <li><a href="X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Any.html">Any</a></li>
+    <li><a href="Builtin.html">Builtin</a></li>
+    <li><a href="FindObject.html">FindObject</a></li>
+    <li><a href="Helpers.html">Helpers</a></li>
+    <li><a href="Instance.html">Instance</a></li>
+    <li><a href="ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="PD.html">PD</a></li>
+    <li><a href="ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BasicMath.html">BasicMath</a></li>
+    <li><a href="Kernel.html">Kernel</a></li>
+    <li><a href="main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">ComponentStack</span>
+    </nav>
+    
+        <h1 id="componentstack" class="doc-heading">ComponentStack</h1>
+<p class="doc-paragraph">> Auto-generated documentation for the <strong>ComponentStack</strong> module of the Gorgon C++ Game Engine.</p>
+<h2 id="contents" class="doc-heading">Contents</h2>
+<ul class="md-list">
+<li><a href="#classes">Classes</a></li>
+<li><a href="#enums">Enums</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="classes" class="doc-heading">Classes</h2>
+<h3 id="componentstack" class="doc-heading"><code class="inline-code">ComponentStack</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">Automatic sizing will not be in effect Automatic sizing will be in effect Automatic sizing will be in effect and will resize to next size units. This is more effective horizontally. Autosizing will only make the widget grow Autosizing will only make the widget grow to next unit size. Autosizing will only make the widget shrink Autosizing will only make the widget shrink. It will be resized to a unit size.</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="addtostackconst-componenttemplate-temp-bool-reversed" class="doc-heading"><code class="inline-code">AddToStack(const ComponentTemplate &temp, bool reversed)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Initializes a component stack with the given size. Generators are used to create widgets for the placeholders. If a function is empty or returns nullptr, neither a substack nor a widget will be placed there. Initiates a component stack with default size Destructor Adds the given component to the top of the stack. This function will be called to add all components in the given template</p>
+<h5 id="replaceconditioncomponentcondition-from-componentcondition-to-bool-transition--true" class="doc-heading"><code class="inline-code">ReplaceCondition(ComponentCondition from, ComponentCondition to, bool transition = true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Replaces a condition with another one</p>
+<h5 id="addconditioncomponentcondition-condition-bool-transition--true" class="doc-heading"><code class="inline-code">AddCondition(ComponentCondition condition, bool transition = true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds a condition and its associated components to the stack</p>
+<h5 id="replaceconditioncomponentconditionalways-condition-transition" class="doc-heading"><code class="inline-code">ReplaceCondition(ComponentCondition::Always, condition, transition)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="removeconditioncomponentcondition-condition-bool-transition--true" class="doc-heading"><code class="inline-code">RemoveCondition(ComponentCondition condition, bool transition = true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes a condition and its associated components</p>
+<h5 id="replaceconditioncondition-componentconditionalways-transition" class="doc-heading"><code class="inline-code">ReplaceCondition(condition, ComponentCondition::Always, transition)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="hasconditioncomponentcondition-condition" class="doc-heading"><code class="inline-code">HasCondition(ComponentCondition condition)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if the given condition is in effect.</p>
+<h5 id="finalizetransitions" class="doc-heading"><code class="inline-code">FinalizeTransitions(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Finalizes on-going transitions immediately</p>
+<h5 id="setdatacomponenttemplatedataeffect-effect-const-stdstring-text" class="doc-heading"><code class="inline-code">SetData(ComponentTemplate::DataEffect effect, const std::string &text)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the data for a specific data effect. This value will be cached by the stack for condition changes. This variant supports string based data.</p>
+<h5 id="setdatacomponenttemplatedataeffect-effect-const-graphicsdrawable-image" class="doc-heading"><code class="inline-code">SetData(ComponentTemplate::DataEffect effect, const Graphics::Drawable &image)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the data for a specific data effect. This value will be cached by the stack for condition changes. This variant supports image based data. Ownership of the image stays with the caller.</p>
+<h5 id="gettextdatacomponenttemplatedataeffect-effect" class="doc-heading"><code class="inline-code">GetTextData(ComponentTemplate::DataEffect effect)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<p class="doc-paragraph">Returns the text data. If data is not set, this will return empty string.</p>
+<h5 id="removedatacomponenttemplatedataeffect-effect" class="doc-heading"><code class="inline-code">RemoveData(ComponentTemplate::DataEffect effect)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Returns the image data. If data is not set, this will return nullptr. Removes the data associated with data effect. This will remove all data variants together.</p>
+<h5 id="setvaluefloat-first" class="doc-heading"><code class="inline-code">SetValue(float first)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the value for this stack. Value of the stack can affect various properties of components. This will set the individual channels separately. Values should be between 0 and 1.</p>
+<h5 id="setvaluefloat-first-float-second" class="doc-heading"><code class="inline-code">SetValue(float first, float second)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the value for this stack. Value of the stack can affect various properties of components. This will set the individual channels separately. Values should be between 0 and 1.</p>
+<h5 id="setvaluefloat-first-float-second-float-third" class="doc-heading"><code class="inline-code">SetValue(float first, float second, float third)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the value for this stack. Value of the stack can affect various properties of components. This will set the individual channels separately. Values should be between 0 and 1.</p>
+<h5 id="setvaluefloat-first-float-second-float-third-float-fourth-bool-instant--false" class="doc-heading"><code class="inline-code">SetValue(float first, float second, float third, float fourth, bool instant = false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the value for this stack. Value of the stack can affect various properties of components. This will set the individual channels separately. Values should be between 0 and 1.</p>
+<h5 id="setvaluegeometrypointf-pos" class="doc-heading"><code class="inline-code">SetValue(Geometry::Pointf pos)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the value for the stack using a point in coordinate system</p>
+<h5 id="setvaluegeometrypoint3d-pos" class="doc-heading"><code class="inline-code">SetValue(Geometry::Point3D pos)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the value for the stack using a point in coordinate system</p>
+<h5 id="setvaluegraphicsrgbaf-color" class="doc-heading"><code class="inline-code">SetValue(Graphics::RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the value for the stack using a color</p>
+<h5 id="setvaluegraphicsrgba-color" class="doc-heading"><code class="inline-code">SetValue(Graphics::RGBA color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the value for the stack using a color</p>
+<h5 id="getvalue" class="doc-heading"><code class="inline-code">GetValue(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::array<float, 4></code></p>
+<p class="doc-paragraph">Returns the value of the stack</p>
+<h5 id="gettargetvalue" class="doc-heading"><code class="inline-code">GetTargetValue(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::array<float, 4></code></p>
+<p class="doc-paragraph">Returns the value of the stack</p>
+<h5 id="setvaluetransitionspeedstdarrayfloat-4-val" class="doc-heading"><code class="inline-code">SetValueTransitionSpeed(std::array<float, 4> val)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the value transition speed. A speed of 0 will disable smooth transition. The unit is values per second</p>
+<h5 id="returntransitionalvalue" class="doc-heading"><code class="inline-code">ReturnTransitionalValue(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Whether GetValue returns the current transitional value, this will also enable value event to be called every time transitional value is updated</p>
+<h5 id="returntargetvalue" class="doc-heading"><code class="inline-code">ReturnTargetValue(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Whether GetValue returns the target value. This is the default mode.</p>
+<h5 id="setrepeatcomponenttemplaterepeatmode-mode-stdvectorstdarrayfloat-4-data" class="doc-heading"><code class="inline-code">SetRepeat(ComponentTemplate::RepeatMode mode, std::vector<std::array<float, 4>> data)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the function that will be called whenever the value is changed Sets the function that will be used to convert a value to a string. The handler will receive the value channel, data effect that is causing the translation and the value that needs to be transformed. Sets the function that will be used perform Ceil operation in unit sizes. If not set, unit width of the template will be used. Sets the repeat with the given mode to the given vector. Use std::move(data) for efficient transfer</p>
+<h5 id="checkrepeatupdatemode" class="doc-heading"><code class="inline-code">checkrepeatupdate(mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="addrepeatcomponenttemplaterepeatmode-mode-float-first" class="doc-heading"><code class="inline-code">AddRepeat(ComponentTemplate::RepeatMode mode, float first)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds a new repeating point to the given mode. Empty values will be set as 0.</p>
+<h5 id="addrepeatmode-first-0-0-0" class="doc-heading"><code class="inline-code">AddRepeat(mode, first, 0, 0, 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="addrepeatcomponenttemplaterepeatmode-mode-float-first-float-second" class="doc-heading"><code class="inline-code">AddRepeat(ComponentTemplate::RepeatMode mode, float first, float second)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds a new repeating point to the given mode. Empty values will be set as 0.</p>
+<h5 id="addrepeatmode-first-second-0-0" class="doc-heading"><code class="inline-code">AddRepeat(mode, first, second, 0, 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="addrepeatcomponenttemplaterepeatmode-mode-float-first-float-second-float-third" class="doc-heading"><code class="inline-code">AddRepeat(ComponentTemplate::RepeatMode mode, float first, float second, float third)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds a new repeating point to the given mode. Empty values will be set as 0.</p>
+<h5 id="addrepeatmode-first-second-third-0" class="doc-heading"><code class="inline-code">AddRepeat(mode, first, second, third, 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="addrepeatcomponenttemplaterepeatmode-mode-float-first-float-second-float-third-float-fourth" class="doc-heading"><code class="inline-code">AddRepeat(ComponentTemplate::RepeatMode mode, float first, float second, float third, float fourth)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds a new repeating point to the given mode.</p>
+<h5 id="checkrepeatupdatemode" class="doc-heading"><code class="inline-code">checkrepeatupdate(mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="addrepeatcomponenttemplaterepeatmode-mode-geometrypointf-pos" class="doc-heading"><code class="inline-code">AddRepeat(ComponentTemplate::RepeatMode mode, Geometry::Pointf pos)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds a new repeating point to the given mode. Empty values will be set as 0.</p>
+<h5 id="addrepeatmode-posx-posy-0-0" class="doc-heading"><code class="inline-code">AddRepeat(mode, pos.X, pos.Y, 0, 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="addrepeatcomponenttemplaterepeatmode-mode-geometrypoint3d-pos" class="doc-heading"><code class="inline-code">AddRepeat(ComponentTemplate::RepeatMode mode, Geometry::Point3D pos)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds a new repeating point to the given mode. Empty values will be set as 0.</p>
+<h5 id="addrepeatmode-posx-posy-posz-0" class="doc-heading"><code class="inline-code">AddRepeat(mode, pos.X, pos.Y, pos.Z, 0)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="addrepeatcomponenttemplaterepeatmode-mode-graphicsrgbaf-color" class="doc-heading"><code class="inline-code">AddRepeat(ComponentTemplate::RepeatMode mode, Graphics::RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds a new repeating point to the given mode.</p>
+<h5 id="addrepeatmode-colorr-colorg-colorb-colora" class="doc-heading"><code class="inline-code">AddRepeat(mode, color.R, color.G, color.B, color.A)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="addrepeatcomponenttemplaterepeatmode-mode-graphicsrgba-color" class="doc-heading"><code class="inline-code">AddRepeat(ComponentTemplate::RepeatMode mode, Graphics::RGBA color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds a new repeating point to the given mode.</p>
+<h5 id="removerepeatscomponenttemplaterepeatmode-mode" class="doc-heading"><code class="inline-code">RemoveRepeats(ComponentTemplate::RepeatMode mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes all repeat points from the given mode. Call RemoveAllConditions along with this function if you are using conditions for repeats.</p>
+<h5 id="checkrepeatupdatemode" class="doc-heading"><code class="inline-code">checkrepeatupdate(mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setconditionofcomponenttemplaterepeatmode-mode-int-index-componentcondition-condition" class="doc-heading"><code class="inline-code">SetConditionOf(ComponentTemplate::RepeatMode mode, int index, ComponentCondition condition)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the condition of a specific repeat index. Nothing will happen if index is out of bounds or condition does not exist. Setting condition to always will effectively remove the condition.</p>
+<h5 id="ifrepeatconditionsmodeindex--condition" class="doc-heading"><code class="inline-code">if(repeatconditions[mode][index] != condition)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="checkrepeatupdatemode" class="doc-heading"><code class="inline-code">checkrepeatupdate(mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="removeallconditionsofcomponenttemplaterepeatmode-mode" class="doc-heading"><code class="inline-code">RemoveAllConditionsOf(ComponentTemplate::RepeatMode mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes all conditions for a repeat mode.</p>
+<h5 id="checkrepeatupdatemode" class="doc-heading"><code class="inline-code">checkrepeatupdate(mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="update" class="doc-heading"><code class="inline-code">Update(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">@} Notifies the stack about a size change</p>
+<h5 id="ifupdaterequired" class="doc-heading"><code class="inline-code">if(updaterequired)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="updatebool-immediate" class="doc-heading"><code class="inline-code">Update(bool immediate)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Returns the template used by this stack Returns the template used by the component with given tag Returns the widget associated with the tag. If such widget does not exists nullptr will be returned instead. Updates the layout of the component stack Updates the layout of the component stack</p>
+<h5 id="resetanimation" class="doc-heading"><code class="inline-code">ResetAnimation(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="isdisabled" class="doc-heading"><code class="inline-code">IsDisabled(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if this component stack is disabled. Both disabling and enabling animations are counted as disabled.</p>
+<h5 id="setemsizeint-value" class="doc-heading"><code class="inline-code">SetEMSize(int value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the default emsize of 10. This value can be overridden.</p>
+<h5 id="setunitsizeint-unitsize-int-spacing" class="doc-heading"><code class="inline-code">SetUnitSize(int unitsize, int spacing)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the unitsize. Default value is obtained from the template.</p>
+<h5 id="handlemouseinputmousebutton-accepted--inputmousebuttonall" class="doc-heading"><code class="inline-code">HandleMouse(Input::Mouse::Button accepted = Input::Mouse::Button::All)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">This function instructs stack to handle mouse to automatically change hover/down states, unless disabled state is active. Propagates to substacks.</p>
+<h5 id="taghassubstackcomponenttemplatetag-tag" class="doc-heading"><code class="inline-code">TagHasSubstack(ComponentTemplate::Tag tag)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns whether the component marked with the tag has a substack. If multiple components are marked to have substack, only the first one is considered. If the tag does not exist this function will return false.</p>
+<h5 id="coordinatetovaluecomponenttemplatetag-tag-geometrypoint-location-bool-relative--false" class="doc-heading"><code class="inline-code">CoordinateToValue(ComponentTemplate::Tag tag, Geometry::Point location, bool relative = false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::array<float, 4></code></p>
+<p class="doc-paragraph">Returns the substack that the component with the given tag has. If it does not exit, this function will throw. Use TagHasSubStack to ensure the tag has a substack. Translates the given coordinates back to values using value scaling and channel mapping. Only works if the value affects the component location or size. If component with the specified tag does not exist, this function will simply return {0, 0, 0, 0}. If relative is set, the calculation will not take starting location into account and will return relative change in value when relative change in location happens.</p>
+<h5 id="translatecoordinatescomponenttemplatetag-tag-geometrypoint-location" class="doc-heading"><code class="inline-code">TranslateCoordinates(ComponentTemplate::Tag tag, Geometry::Point location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Geometry::Point</code></p>
+<p class="doc-paragraph">Translates the given coordinates to component space in pixels.</p>
+<h5 id="translatecoordinatesint-ind-geometrypoint-location" class="doc-heading"><code class="inline-code">TranslateCoordinates(int ind, Geometry::Point location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Geometry::Point</code></p>
+<p class="doc-paragraph">Translates the given coordinates to component space in pixels.</p>
+<h5 id="transformcoordinatescomponenttemplatetag-tag-geometrypoint-location" class="doc-heading"><code class="inline-code">TransformCoordinates(ComponentTemplate::Tag tag, Geometry::Point location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Geometry::Pointf</code></p>
+<p class="doc-paragraph">Translates the given coordinates to component space from 0 to 1.</p>
+<h5 id="transformcoordinatesint-ind-geometrypoint-location" class="doc-heading"><code class="inline-code">TransformCoordinates(int ind, Geometry::Point location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Geometry::Pointf</code></p>
+<p class="doc-paragraph">Translates the given coordinates to component space from 0 to 1.</p>
+<h5 id="indexoftagcomponenttemplatetag-tag" class="doc-heading"><code class="inline-code">IndexOfTag(ComponentTemplate::Tag tag)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns the index of the component with the specified tag. This function may cause update thus may take time to execute. If tag not found, this will return -1.</p>
+<h5 id="tagboundscomponenttemplatetag-tag" class="doc-heading"><code class="inline-code">TagBounds(ComponentTemplate::Tag tag)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Geometry::Bounds</code></p>
+<p class="doc-paragraph">Returns the boundaries of the component marked with the given tag. This function may cause update thus may take time to execute. The bounds are within the parent. If tag does not exit, bounds of the entire stack will be returned.</p>
+<h5 id="haslayerint-ind" class="doc-heading"><code class="inline-code">HasLayer(int ind)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if the component at the given index has a layer.</p>
+<h5 id="boundsofint-ind" class="doc-heading"><code class="inline-code">BoundsOf(int ind)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Geometry::Bounds</code></p>
+<p class="doc-paragraph">Returns the layer of the given component index. If the item does not have a layer, this function will create a new one for it. In the worst case, this function will return the object itself as a layer. Layer is probably a graphics layer, you may use RTTI to query layer type. Returns the boundaries of the component with the given index. The bounds are from the top level.</p>
+<h5 id="componentatgeometrypoint-location" class="doc-heading"><code class="inline-code">ComponentAt(Geometry::Point location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns the index of the component at the given location.</p>
+<h5 id="componentatlocation-b" class="doc-heading"><code class="inline-code">ComponentAt(location, b)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h5 id="componentatgeometrypoint-location-geometrybounds-bounds" class="doc-heading"><code class="inline-code">ComponentAt(Geometry::Point location, Geometry::Bounds &bounds)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns the index of the component at the given location while returning the bounds of the component.</p>
+<h5 id="componentexistsint-ind" class="doc-heading"><code class="inline-code">ComponentExists(int ind)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if a component at ind exists. If ind is negative or out of range, this function simply returns false.</p>
+<h5 id="settaglocationcomponenttemplatetag-tag-geometrypoint-location" class="doc-heading"><code class="inline-code">SetTagLocation(ComponentTemplate::Tag tag, Geometry::Point location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Returns the template at the given index. If the index does not exists, this function may crash. Use ComponentExists function to check if it is safe to use the index. Set a fixed location for a tagged component</p>
+<h5 id="update" class="doc-heading"><code class="inline-code">Update(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="gettaglocationcomponenttemplatetag-tag" class="doc-heading"><code class="inline-code">GetTagLocation(ComponentTemplate::Tag tag)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Geometry::Point</code></p>
+<h5 id="removetaglocationcomponenttemplatetag-tag" class="doc-heading"><code class="inline-code">RemoveTagLocation(ComponentTemplate::Tag tag)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes the fixed location for a set tagged component</p>
+<h5 id="settagsizecomponenttemplatetag-tag-geometrysize-size" class="doc-heading"><code class="inline-code">SetTagSize(ComponentTemplate::Tag tag, Geometry::Size size)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Set a fixed size for a tagged component</p>
+<h5 id="update" class="doc-heading"><code class="inline-code">Update(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="gettagsizecomponenttemplatetag-tag" class="doc-heading"><code class="inline-code">GetTagSize(ComponentTemplate::Tag tag)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Geometry::Size</code></p>
+<h5 id="removetagsizecomponenttemplatetag-tag" class="doc-heading"><code class="inline-code">RemoveTagSize(ComponentTemplate::Tag tag)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes the fixed size for a set tagged component</p>
+<h5 id="update" class="doc-heading"><code class="inline-code">Update(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="enabletagwrapcomponenttemplatetag-tag" class="doc-heading"><code class="inline-code">EnableTagWrap(ComponentTemplate::Tag tag)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Enables text wrapping on a specific tag, default is enabled.</p>
+<h5 id="update" class="doc-heading"><code class="inline-code">Update(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="disabletagwrapcomponenttemplatetag-tag" class="doc-heading"><code class="inline-code">DisableTagWrap(ComponentTemplate::Tag tag)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Disables text wrapping on a specific tag, default is enabled.</p>
+<h5 id="update" class="doc-heading"><code class="inline-code">Update(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setautosizeautosize-horizontal-autosize-vertical" class="doc-heading"><code class="inline-code">SetAutosize(Autosize horizontal, Autosize vertical)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets whether the ComponentStack should be autosized. Autosize uses the set size for text width.</p>
+<h5 id="update" class="doc-heading"><code class="inline-code">Update(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="refresh" class="doc-heading"><code class="inline-code">Refresh(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="update" class="doc-heading"><code class="inline-code">update(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="getautosize" class="doc-heading"><code class="inline-code">GetAutosize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::pair<Autosize, Autosize></code></p>
+<p class="doc-paragraph">Returns the autosize mode of the stack</p>
+<h5 id="setwidgetcomponenttemplatetag-tag-widget-wgt" class="doc-heading"><code class="inline-code">SetWidget(ComponentTemplate::Tag tag, Widget *wgt)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Adds or replaces a generator for a specific tag Sets the widget for a given tag. If same tag exists multiple times, the last one will get the widget</p>
+<h5 id="removegeneratorcomponenttemplatetag-tag" class="doc-heading"><code class="inline-code">RemoveGenerator(ComponentTemplate::Tag tag)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes the generator for a specific tag</p>
+<h5 id="update" class="doc-heading"><code class="inline-code">Update(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="removeframeevent" class="doc-heading"><code class="inline-code">RemoveFrameEvent(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets a function to be called before update check Sets a function to be called before every update Sets a function to be called after every update before rendering Sets a function to be called after every render Removes the function that will be called before update check</p>
+<h5 id="removebeforeupdateevent" class="doc-heading"><code class="inline-code">RemoveBeforeUpdateEvent(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes the function that will be called before every update</p>
+<h5 id="removeupdateevent" class="doc-heading"><code class="inline-code">RemoveUpdateEvent(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes the function that will be called after every update before rendering</p>
+<h5 id="removerenderevent" class="doc-heading"><code class="inline-code">RemoveRenderEvent(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes the function that will be called after every render</p>
+<h5 id="forauto-stack--substacks" class="doc-heading"><code class="inline-code">for(auto stack : substacks)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">@} Sets the mouse down event. If HandleMouse function is called, this function will first perform mouse event transition, then it will call this handler.</p>
+<h5 id="forauto-stack--substacks" class="doc-heading"><code class="inline-code">for(auto stack : substacks)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Sets the mouse up event. If HandleMouse function is called, this function will first perform mouse event transition, then it will call this handler. This event will be called even if mouse down is not handled.</p>
+<h5 id="forauto-stack--substacks" class="doc-heading"><code class="inline-code">for(auto stack : substacks)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Sets the mouse down event. If HandleMouse function is called, this function will first perform mouse event transition, then it will call this handler.</p>
+<h5 id="movefncomponenttemplatenotag-location" class="doc-heading"><code class="inline-code">move_fn(ComponentTemplate::NoTag, location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Sets the mouse mvoe event. If HandleMouse function is called, this function will first perform mouse event transition, then it will call this handler. If this event is not handled mouse move event of the layer will not be handled too.</p>
+<h5 id="forauto-stack--substacks" class="doc-heading"><code class="inline-code">for(auto stack : substacks)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="forauto-stack--substacks" class="doc-heading"><code class="inline-code">for(auto stack : substacks)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Sets the mouse over event that is fired when the mouse moves over the component stack or a substack. it will not be fired for mouse moving over a specific component. If HandleMouse function is called, this function will first perform mouse event transition, then it will call this handler.</p>
+<h5 id="forauto-stack--substacks" class="doc-heading"><code class="inline-code">for(auto stack : substacks)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Sets the mouse out event that is fired when the mouse moves over the component stack or a substack. it will not be fired for mouse moving over a specific component. If HandleMouse function is called, this function will first perform mouse event transition, then it will call this handler. This event will be called even if mouse over is not handled.</p>
+<h5 id="forauto-stack--substacks" class="doc-heading"><code class="inline-code">for(auto stack : substacks)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Sets mouse enter and leave events to be called automatically.</p>
+<h5 id="ifstack---1" class="doc-heading"><code class="inline-code">if(stack == -1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Sets the handler for scroll (HScroll or VScroll), zoom and rotate events. All these events depend on specific hardware and may not be available. @} If any text is rendered using AdvancedPrinter, this function will return regions supplied by the renderer. Only one set of regions will be kept; therefore, there should only be one active component that has AdvancedPrinter. This event is fired when condition is changed. returns the element at the stack with the given stack offset. If stack is -1, this function will return top of the stack. 0 is at the bottom of the stack</p>
+<h5 id="update" class="doc-heading"><code class="inline-code">update(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Return the component at the given index with the requested condition. Returns top of stack if condition does not exist. Calculates the position results from the anchoring the given component to the area determined by the given size and margin. Offset is used to move away from the anchor and may result reversing of direction. Calculates the position results from the anchoring the given component to another component starts the update chain</p>
+<h5 id="updatecomponent-parent-const-stdarrayfloat-4-value-int-ind-int-textwidth---1-bool-autosize--false" class="doc-heading"><code class="inline-code">update(Component &parent, const std::array<float, 4> &value, int ind, int textwidth = -1, bool autosize = false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">updates a specific container component</p>
+<h5 id="rendercomponent-component-graphicslayer-parentlayer-geometrypoint-offset-const-stdarrayfloat-4-value-graphicsrgbaf-color--1f-int-ind---1" class="doc-heading"><code class="inline-code">render(Component &component, Graphics::Layer &parentlayer, Geometry::Point offset, const std::array<float, 4> &value, Graphics::RGBAf color = 1.f, int ind = -1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">renders the given component, rendering will use parent layer if the component does not have its own layer. Index is for repeated components, it is the index of the repeat to be rendered. Unlike Layer::Render function, this function does not run every frame.</p>
+<h5 id="grow" class="doc-heading"><code class="inline-code">grow(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">grows the size of the stack</p>
+<h5 id="getemsizeconst-component-comp" class="doc-heading"><code class="inline-code">getemsize(const Component &comp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">returns the size of the emdash</p>
+<h5 id="getbaselineconst-component-comp" class="doc-heading"><code class="inline-code">getbaseline(const Component &comp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">returns the baseline point of the component</p>
+<h5 id="gettextheightconst-component-comp" class="doc-heading"><code class="inline-code">gettextheight(const Component &comp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">returns the height of the component</p>
+<h5 id="calculatevalueint-channel-const-component-comp" class="doc-heading"><code class="inline-code">calculatevalue(int channel, const Component &comp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">float</code></p>
+<p class="doc-paragraph">Calculates the value of the given channel for the given component. Uses stored value</p>
+<h5 id="calculatevalueconst-stdarrayfloat-4-data-int-channel-const-component-comp" class="doc-heading"><code class="inline-code">calculatevalue(const std::array<float, 4> &data, int channel, const Component &comp)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">float</code></p>
+<p class="doc-paragraph">Calculates the value of the given channel for the given component. Uses the supplied value.</p>
+<h5 id="checkrepeatupdatecomponenttemplaterepeatmode-mode" class="doc-heading"><code class="inline-code">checkrepeatupdate(ComponentTemplate::RepeatMode mode)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Checks if a specific type of repeating component requires update</p>
+<h5 id="addconditioncomponentcondition-from-componentcondition-to-componentcondition-hint--componentconditionnone" class="doc-heading"><code class="inline-code">addcondition(ComponentCondition from, ComponentCondition to, ComponentCondition hint = ComponentCondition::None)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Adds the given condition. To should contain the final condition even if there is no transition. If there is no transition, from should be None and hint should contain previous state if it exists.</p>
+<h5 id="removeconditioncomponentcondition-from-componentcondition-to" class="doc-heading"><code class="inline-code">removecondition(ComponentCondition from, ComponentCondition to)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Erases the given condition. To should contain the final condition to be removed. Caller should erase transition</p>
+<hr class="doc-divider">
+<h2 id="enums" class="doc-heading">Enums</h2>
+<h3 id="stage" class="doc-heading"><code class="inline-code">Stage</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h3 id="autosize" class="doc-heading"><code class="inline-code">Autosize</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<hr class="doc-divider">
+<h2 id="functions" class="doc-heading">Functions</h2>
+<h3 id="r1000float-v" class="doc-heading"><code class="inline-code">r1000(float v)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static float</code></p>
+<h3 id="isinanchor-left-anchor-right" class="doc-heading"><code class="inline-code">IsIn(Anchor left, Anchor right)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="forint-i0-itempgetcount" class="doc-heading"><code class="inline-code">for(int i=0; i<temp.GetCount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addmouse" class="doc-heading"><code class="inline-code">Add(mouse)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addbase" class="doc-heading"><code class="inline-code">Add(base)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addconditioncomponentconditionnone-componentconditionalways" class="doc-heading"><code class="inline-code">addcondition(ComponentCondition::None, ComponentCondition::Always)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifhandlingmouse" class="doc-heading"><code class="inline-code">if(handlingmouse)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addconditioncomponentconditionhover" class="doc-heading"><code class="inline-code">AddCondition(ComponentCondition::Hover)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="mouseenter" class="doc-heading"><code class="inline-code">mouseenter()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="overfncomponenttemplatenotag" class="doc-heading"><code class="inline-code">over_fn(ComponentTemplate::NoTag)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifhandlingmouse" class="doc-heading"><code class="inline-code">if(handlingmouse)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="mouseleave" class="doc-heading"><code class="inline-code">mouseleave()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="outfncomponenttemplatenotag" class="doc-heading"><code class="inline-code">out_fn(ComponentTemplate::NoTag)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifhandlingmouse" class="doc-heading"><code class="inline-code">if(handlingmouse)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbtn--mousebuttonaccepted" class="doc-heading"><code class="inline-code">if(btn && mousebuttonaccepted)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addconditioncomponentconditiondown" class="doc-heading"><code class="inline-code">AddCondition(ComponentCondition::Down)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="downfncomponenttemplatenotag-location-btn" class="doc-heading"><code class="inline-code">down_fn(ComponentTemplate::NoTag, location, btn)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifhandlingmouse" class="doc-heading"><code class="inline-code">if(handlingmouse)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbtn--mousebuttonaccepted" class="doc-heading"><code class="inline-code">if(btn && mousebuttonaccepted)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="clickfncomponenttemplatenotag-location-btn" class="doc-heading"><code class="inline-code">click_fn(ComponentTemplate::NoTag, location, btn)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="upfncomponenttemplatenotag-location-btn" class="doc-heading"><code class="inline-code">up_fn(ComponentTemplate::NoTag, location, btn)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="resizesize" class="doc-heading"><code class="inline-code">Resize(size)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-itempgetcount" class="doc-heading"><code class="inline-code">for(int i=0; i<temp.GetCount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-itempgetcount" class="doc-heading"><code class="inline-code">for(int i=0; i<temp.GetCount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addtostacktempi-false" class="doc-heading"><code class="inline-code">AddToStack(temp[i], false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-itempgetcount" class="doc-heading"><code class="inline-code">for(int i=0; i<temp.GetCount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addtostacktempi-false" class="doc-heading"><code class="inline-code">AddToStack(temp[i], false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-p--storage" class="doc-heading"><code class="inline-code">for(auto &p : storage)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifsi--stackcapacity" class="doc-heading"><code class="inline-code">if(si == stackcapacity)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="grow" class="doc-heading"><code class="inline-code">grow()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iffn" class="doc-heading"><code class="inline-code">if(fn)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifw" class="doc-heading"><code class="inline-code">if(w)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iffrom--componentconditionnone" class="doc-heading"><code class="inline-code">if(from != ComponentCondition::None)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifto--componentconditiondisabled" class="doc-heading"><code class="inline-code">if(to == ComponentCondition::Disabled)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-iter--conditionsbegin" class="doc-heading"><code class="inline-code">for(auto iter = conditions.begin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="removeconditionc-false" class="doc-heading"><code class="inline-code">RemoveCondition(c, false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iffrom--componentconditionnone" class="doc-heading"><code class="inline-code">if(from == ComponentCondition::None)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-itempgetcount" class="doc-heading"><code class="inline-code">for(int i=0; i<temp.GetCount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addtostacktempi-false" class="doc-heading"><code class="inline-code">AddToStack(temp[i], false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-itempgetcount" class="doc-heading"><code class="inline-code">for(int i=0; i<temp.GetCount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addtostacktempi-false" class="doc-heading"><code class="inline-code">AddToStack(temp[i], false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-itempgetcount" class="doc-heading"><code class="inline-code">for(int i=0; i<temp.GetCount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addtostacktempi-true" class="doc-heading"><code class="inline-code">AddToStack(temp[i], true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-itempgetcount" class="doc-heading"><code class="inline-code">for(int i=0; i<temp.GetCount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addtostacktempi-false" class="doc-heading"><code class="inline-code">AddToStack(temp[i], false)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-itempgetcount" class="doc-heading"><code class="inline-code">for(int i=0; i<temp.GetCount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addtostacktempi-true" class="doc-heading"><code class="inline-code">AddToStack(temp[i], true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="update" class="doc-heading"><code class="inline-code">Update()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="conditionchanged" class="doc-heading"><code class="inline-code">ConditionChanged()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iferased" class="doc-heading"><code class="inline-code">if(erased)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-iindices-i" class="doc-heading"><code class="inline-code">for(int i=0; i<indices; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-jstacksizesi-1-j0-j--" class="doc-heading"><code class="inline-code">for(int j=stacksizes[i]-1; j>=0; j--)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifremove" class="doc-heading"><code class="inline-code">if(remove)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifj--stacksizesi-1" class="doc-heading"><code class="inline-code">if(j == stacksizes[i]-1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-kj-kstacksizesi-1-k" class="doc-heading"><code class="inline-code">for(int k=j; k<stacksizes[i]-1; k++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifto--componentconditiondisabled" class="doc-heading"><code class="inline-code">if(to == ComponentCondition::Disabled)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="replaceconditioncomponentconditiondisabled-d" class="doc-heading"><code class="inline-code">ReplaceCondition(ComponentCondition::Disabled, d)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iffrom--componentconditionnone" class="doc-heading"><code class="inline-code">if(from == ComponentCondition::None)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forconst-auto-t--transitions" class="doc-heading"><code class="inline-code">for(const auto &t : transitions)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftfirstsecond--to" class="doc-heading"><code class="inline-code">if(t.first.second == to)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="update" class="doc-heading"><code class="inline-code">Update()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="removeconditionto-from" class="doc-heading"><code class="inline-code">removecondition(to, from)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addconditionfrom-to" class="doc-heading"><code class="inline-code">addcondition(from, to)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="removeconditionto-from" class="doc-heading"><code class="inline-code">removecondition(to, from)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addconditioncomponentconditionnone-to" class="doc-heading"><code class="inline-code">addcondition(ComponentCondition::None, to)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forconst-auto-t--transitions" class="doc-heading"><code class="inline-code">for(const auto &t : transitions)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftfirstsecond--from" class="doc-heading"><code class="inline-code">if(t.first.second == from)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addconditiontfirstfirst-to" class="doc-heading"><code class="inline-code">addcondition(t.first.first, to)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addconditioncomponentconditionalways-to" class="doc-heading"><code class="inline-code">addcondition(ComponentCondition::Always, to)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addconditioncomponentconditionnone-to" class="doc-heading"><code class="inline-code">addcondition(ComponentCondition::None, to)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="removeconditioncomponentconditionnone-from" class="doc-heading"><code class="inline-code">removecondition(ComponentCondition::None, from)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addconditionfrom-to" class="doc-heading"><code class="inline-code">addcondition(from, to)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iffrom--componentconditionalways" class="doc-heading"><code class="inline-code">if(from != ComponentCondition::Always)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="removeconditioncomponentconditionnone-from" class="doc-heading"><code class="inline-code">removecondition(ComponentCondition::None, from)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="removeconditioncomponentconditionalways-from" class="doc-heading"><code class="inline-code">removecondition(ComponentCondition::Always, from)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifto--componentconditionalways" class="doc-heading"><code class="inline-code">if(to != ComponentCondition::Always)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addconditioncomponentconditionalways-to" class="doc-heading"><code class="inline-code">addcondition(ComponentCondition::Always, to)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-iter--transitionsbegin" class="doc-heading"><code class="inline-code">for(auto iter = transitions.begin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="removeconditioncfirstfirst-cfirstsecond" class="doc-heading"><code class="inline-code">removecondition(c.first.first, c.first.second)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addconditioncomponentconditionnone-futuretransitionscfirstsecond-cfirstfirst" class="doc-heading"><code class="inline-code">addcondition(ComponentCondition::None, future_transitions[c.first.second], c.first.first)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addconditioncomponentconditionnone-cfirstsecond-cfirstfirst" class="doc-heading"><code class="inline-code">addcondition(ComponentCondition::None, c.first.second, c.first.first)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-iindices-i" class="doc-heading"><code class="inline-code">for(int i=0; i<indices; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstacksizesi--0" class="doc-heading"><code class="inline-code">if(stacksizes[i] > 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifwasset" class="doc-heading"><code class="inline-code">if(!wasset)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifupdatereq" class="doc-heading"><code class="inline-code">if(updatereq)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="update" class="doc-heading"><code class="inline-code">Update()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-iindices-i" class="doc-heading"><code class="inline-code">for(int i=0; i<indices; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstacksizesi--0" class="doc-heading"><code class="inline-code">if(stacksizes[i] > 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifwasset" class="doc-heading"><code class="inline-code">if(!wasset)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifupdatereq" class="doc-heading"><code class="inline-code">if(updatereq)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="update" class="doc-heading"><code class="inline-code">Update()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-iindices-i" class="doc-heading"><code class="inline-code">for(int i=0; i<indices; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstacksizesi--0" class="doc-heading"><code class="inline-code">if(stacksizes[i] > 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="update" class="doc-heading"><code class="inline-code">Update()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-i4-i" class="doc-heading"><code class="inline-code">for(int i=0; i<4; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valuefn" class="doc-heading"><code class="inline-code">value_fn()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-iindices-i" class="doc-heading"><code class="inline-code">for(int i=0; i<indices; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstacksizesi--0" class="doc-heading"><code class="inline-code">if(stacksizes[i] > 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="update" class="doc-heading"><code class="inline-code">Update()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifimmediate" class="doc-heading"><code class="inline-code">if(immediate)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="update" class="doc-heading"><code class="inline-code">update()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="framefn" class="doc-heading"><code class="inline-code">frame_fn()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-iter--transitionsbegin" class="doc-heading"><code class="inline-code">for(auto iter = transitions.begin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdur--delta" class="doc-heading"><code class="inline-code">if(dur <= delta)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="removeconditioncfirstfirst-cfirstsecond" class="doc-heading"><code class="inline-code">removecondition(c.first.first, c.first.second)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="addconditioncomponentconditionnone-cfirstsecond-cfirstfirst" class="doc-heading"><code class="inline-code">addcondition(ComponentCondition::None, c.first.second, c.first.first)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-iindices-i" class="doc-heading"><code class="inline-code">for(int i=0; i<indices; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-i4-i" class="doc-heading"><code class="inline-code">for(int i=0; i<4; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="replaceconditionitfirst-itsecond" class="doc-heading"><code class="inline-code">ReplaceCondition(it.first, it.second)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifchanged" class="doc-heading"><code class="inline-code">if(changed)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="valuefn" class="doc-heading"><code class="inline-code">value_fn()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="update" class="doc-heading"><code class="inline-code">update()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-iindices-i" class="doc-heading"><code class="inline-code">for(int i=0; i<indices; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="update" class="doc-heading"><code class="inline-code">update()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="update" class="doc-heading"><code class="inline-code">update()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="update" class="doc-heading"><code class="inline-code">update()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="whilecur-parent---1" class="doc-heading"><code class="inline-code">while(cur->parent != -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="catch" class="doc-heading"><code class="inline-code">catch(...)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="refresh" class="doc-heading"><code class="inline-code">Refresh()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="translatecoordinatesind-location" class="doc-heading"><code class="inline-code">TranslateCoordinates(ind, location)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="transformcoordinatesind-location" class="doc-heading"><code class="inline-code">TransformCoordinates(ind, location)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="update" class="doc-heading"><code class="inline-code">update()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-icontgetcount" class="doc-heading"><code class="inline-code">for(int i=0; i<cont.GetCount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstacksizesconti" class="doc-heading"><code class="inline-code">if(stacksizes[cont[i]])</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="otherfncomponenttemplatenotag-inputmouseeventtypescrollvert-location-amount" class="doc-heading"><code class="inline-code">other_fn(ComponentTemplate::NoTag, Input::Mouse::EventType::Scroll_Vert, location, amount)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="otherfncomponenttemplatenotag-inputmouseeventtypescrollhor-location-amount" class="doc-heading"><code class="inline-code">other_fn(ComponentTemplate::NoTag, Input::Mouse::EventType::Scroll_Hor, location, amount)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="otherfncomponenttemplatenotag-inputmouseeventtyperotate-location-amount" class="doc-heading"><code class="inline-code">other_fn(ComponentTemplate::NoTag, Input::Mouse::EventType::Rotate, location, amount)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="otherfncomponenttemplatenotag-inputmouseeventtypezoom-location-amount" class="doc-heading"><code class="inline-code">other_fn(ComponentTemplate::NoTag, Input::Mouse::EventType::Zoom, location, amount)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="forauto-stack--substacks" class="doc-heading"><code class="inline-code">for(auto stack : substacks)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifvs--componenttemplateusetransition" class="doc-heading"><code class="inline-code">if(vs == ComponentTemplate::UseTransition)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcompreversed" class="doc-heading"><code class="inline-code">if(!comp.reversed)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifvalueorderingchannel--0" class="doc-heading"><code class="inline-code">if(valueordering[channel] == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="whilei--componenttemplatevaluesourcemaxpower" class="doc-heading"><code class="inline-code">while(i <= ComponentTemplate::ValueSourceMaxPower)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifc" class="doc-heading"><code class="inline-code">if(!c)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchsrc" class="doc-heading"><code class="inline-code">switch(src)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-iindices-i" class="doc-heading"><code class="inline-code">for(int i=0; i<indices; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="update" class="doc-heading"><code class="inline-code">Update()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-istacksizesind-1-i0-i--" class="doc-heading"><code class="inline-code">for(int i=stacksizes[ind]-1; i>=0; i--)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="freedata" class="doc-heading"><code class="inline-code">free(data)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-iindices-i" class="doc-heading"><code class="inline-code">for(int i=0; i<indices; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchpa" class="doc-heading"><code class="inline-code">switch(pa)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Determines the location of the component in relation to its parent.</p>
+<h3 id="switchca" class="doc-heading"><code class="inline-code">switch(ca)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchpa" class="doc-heading"><code class="inline-code">switch(pa)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchca" class="doc-heading"><code class="inline-code">switch(ca)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="beforeupdatefn" class="doc-heading"><code class="inline-code">beforeupdate_fn()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-s--storage" class="doc-heading"><code class="inline-code">for(auto &s : storage)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstacksizes0" class="doc-heading"><code class="inline-code">if(stacksizes[0])</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-r--repeated" class="doc-heading"><code class="inline-code">for(auto &r : repeated)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-iindices-i" class="doc-heading"><code class="inline-code">for(int i=0; i<indices; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstacksizesi--0" class="doc-heading"><code class="inline-code">if(stacksizes[i] > 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifceilfn" class="doc-heading"><code class="inline-code">if(!ceilfn)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifautosizefirst--autosizenone--autosizesecond--autosizenone" class="doc-heading"><code class="inline-code">if(autosize.first != Autosize::None || autosize.second != Autosize::None)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifrootsizewidth--0" class="doc-heading"><code class="inline-code">if(rootsize.Width > 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchautosizefirst" class="doc-heading"><code class="inline-code">switch(autosize.first)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifszwidth--rootsizewidth" class="doc-heading"><code class="inline-code">if(sz.Width > rootsize.Width)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifszwidth--rootsizewidth" class="doc-heading"><code class="inline-code">if(sz.Width < rootsize.Width)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifszwidth--rootsizewidth" class="doc-heading"><code class="inline-code">if(sz.Width > rootsize.Width)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifszwidth--rootsizewidth" class="doc-heading"><code class="inline-code">if(sz.Width < rootsize.Width)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifrootsizeheight--0" class="doc-heading"><code class="inline-code">if(rootsize.Height > 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchautosizesecond" class="doc-heading"><code class="inline-code">switch(autosize.second)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifszheight--rootsizeheight" class="doc-heading"><code class="inline-code">if(sz.Height > rootsize.Height)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifszheight--rootsizeheight" class="doc-heading"><code class="inline-code">if(sz.Height < rootsize.Height)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifszheight--rootsizeheight" class="doc-heading"><code class="inline-code">if(sz.Height > rootsize.Height)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifszheight--rootsizeheight" class="doc-heading"><code class="inline-code">if(sz.Height < rootsize.Height)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="updatefn" class="doc-heading"><code class="inline-code">update_fn()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstacksizes0" class="doc-heading"><code class="inline-code">if(stacksizes[0])</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="renderfn" class="doc-heading"><code class="inline-code">render_fn()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="calculatemarginint-l-int-r" class="doc-heading"><code class="inline-code">calculatemargin(int l, int r)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<h3 id="forauto-itsubstacksbegin" class="doc-heading"><code class="inline-code">for(auto it=substacks.begin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-t--temp" class="doc-heading"><code class="inline-code">for(auto &t : temp)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iffn" class="doc-heading"><code class="inline-code">if(fn)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifw" class="doc-heading"><code class="inline-code">if(w)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-istacksizesind-i" class="doc-heading"><code class="inline-code">for(int i=0; i<stacksizes[ind]; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="update" class="doc-heading"><code class="inline-code">Update()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-itsubstacksbegin" class="doc-heading"><code class="inline-code">for(auto it=substacks.begin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-t--temp" class="doc-heading"><code class="inline-code">for(auto &t : temp)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifw" class="doc-heading"><code class="inline-code">if(w)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-istacksizesind-i" class="doc-heading"><code class="inline-code">for(int i=0; i<stacksizes[ind]; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="update" class="doc-heading"><code class="inline-code">Update()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-icontgetcount" class="doc-heading"><code class="inline-code">for(int i=0; i<cont.GetCount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="whilej--jtarget" class="doc-heading"><code class="inline-code">while(j < jtarget)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forallcomponentscomponent-comp-const-componenttemplate-temp-const-stdarrayfloat-4-val-int-emsize-int" class="doc-heading"><code class="inline-code">forallcomponents(<a href="Component &comp, const ComponentTemplate &temp, const std::array<float, 4> &val, int emsize, int">&</a></code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forallcomponentscomponent-comp-const-componenttemplate-temp-const-stdarrayfloat-4-val-int-emsize-int-index" class="doc-heading"><code class="inline-code">forallcomponents(<a href="Component &comp, const ComponentTemplate &temp, const std::array<float, 4> &val, int emsize, int index">&</a></code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifishor" class="doc-heading"><code class="inline-code">if(!ishor)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifxfree" class="doc-heading"><code class="inline-code">if(xfree)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifyfree" class="doc-heading"><code class="inline-code">if(yfree)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifxfree" class="doc-heading"><code class="inline-code">if(!xfree)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstage--middle" class="doc-heading"><code class="inline-code">if(stage == middle)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifyfree" class="doc-heading"><code class="inline-code">if(!yfree)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstage--middle" class="doc-heading"><code class="inline-code">if(stage == middle)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifwidthch---1" class="doc-heading"><code class="inline-code">if(widthch == -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifheightch---1" class="doc-heading"><code class="inline-code">if(heightch == -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="updatecomp-val-index-tw-true" class="doc-heading"><code class="inline-code">update(comp, val, index, tw, true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifrectangular" class="doc-heading"><code class="inline-code">if(rectangular)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstprimary" class="doc-heading"><code class="inline-code">if(st.primary)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifvaluetotext--d--componenttemplateautostart--d--componenttemplateautoend" class="doc-heading"><code class="inline-code">if(valuetotext && d >= ComponentTemplate::AutoStart && d <= ComponentTemplate::AutoEnd)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftext--" class="doc-heading"><code class="inline-code">if(text != "")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifrectangular" class="doc-heading"><code class="inline-code">if(rectangular)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forallcomponentscomponent-comp-const-componenttemplate-temp-const-stdarrayfloat-4-val-int-emsize-int" class="doc-heading"><code class="inline-code">forallcomponents(<a href="Component &comp, const ComponentTemplate &temp, const std::array<float, 4> &val, int emsize, int">&</a></code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifishor" class="doc-heading"><code class="inline-code">if(ishor)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifishor" class="doc-heading"><code class="inline-code">if(!ishor)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifxfree" class="doc-heading"><code class="inline-code">if(!xfree)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstage--middle" class="doc-heading"><code class="inline-code">if(stage == middle)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifyfree" class="doc-heading"><code class="inline-code">if(!yfree)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstage--middle" class="doc-heading"><code class="inline-code">if(stage == middle)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifanch" class="doc-heading"><code class="inline-code">if(anch)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifishor" class="doc-heading"><code class="inline-code">if(ishor)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchpanch" class="doc-heading"><code class="inline-code">switch(panch)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifxch---1" class="doc-heading"><code class="inline-code">if(xch == -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifych---1" class="doc-heading"><code class="inline-code">if(ych == -1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifanch" class="doc-heading"><code class="inline-code">if(anch)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="anchortoparentparent-comp-temp-offset-margin-parentinnersize" class="doc-heading"><code class="inline-code">anchortoparent(parent, comp, temp, offset, margin, parent.innersize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forallcomponentscomponent-comp-const-componenttemplate-temp-const-stdarrayfloat-4--int-int-ind" class="doc-heading"><code class="inline-code">forallcomponents(<a href="Component &comp, const ComponentTemplate &temp, const std::array<float, 4> &, int, int ind">&</a></code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifishor" class="doc-heading"><code class="inline-code">if(ishor)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcompanchorotherside" class="doc-heading"><code class="inline-code">if(comp.anchorotherside)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcompanchorotherside" class="doc-heading"><code class="inline-code">if(comp.anchorotherside)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifishor" class="doc-heading"><code class="inline-code">if(ishor)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstartmost" class="doc-heading"><code class="inline-code">if(startmost)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifendmost" class="doc-heading"><code class="inline-code">if(endmost)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifendmost" class="doc-heading"><code class="inline-code">if(endmost)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifstartmost" class="doc-heading"><code class="inline-code">if(startmost)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifendmost" class="doc-heading"><code class="inline-code">if(endmost)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifendmost" class="doc-heading"><code class="inline-code">if(endmost)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifparentsizewidth--0" class="doc-heading"><code class="inline-code">if(parent.size.Width == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forallcomponentscomponent-comp-const-componenttemplate--const-stdarrayfloat-4--int-int" class="doc-heading"><code class="inline-code">forallcomponents(<a href="Component &comp, const ComponentTemplate &, const std::array<float, 4> &, int, int">&</a></code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifparentsizeheight--0" class="doc-heading"><code class="inline-code">if(parent.size.Height == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forallcomponentscomponent-comp-const-componenttemplate--const-stdarrayfloat-4--int-int" class="doc-heading"><code class="inline-code">forallcomponents(<a href="Component &comp, const ComponentTemplate &, const std::array<float, 4> &, int, int">&</a></code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifh--b" class="doc-heading"><code class="inline-code">if(h < b)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forallcomponentscomponent-comp-const-componenttemplate-temp-const-stdarrayfloat-4-val-int-int-index" class="doc-heading"><code class="inline-code">forallcomponents(<a href="Component &comp, const ComponentTemplate &temp, const std::array<float, 4> &val, int, int index">&</a></code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="updatecomp-val-index" class="doc-heading"><code class="inline-code">update(comp, val, index)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstlayer" class="doc-heading"><code class="inline-code">if(st.layer)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstprimary" class="doc-heading"><code class="inline-code">if(st.primary)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-icontgetcount" class="doc-heading"><code class="inline-code">for(int i=0; i<cont.GetCount()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstacksizesconti" class="doc-heading"><code class="inline-code">if(stacksizes[cont[i]])</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="rendercompparent-target-offset-val-color" class="doc-heading"><code class="inline-code">render(compparent, *target, offset, val, color)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="renderrepeatedtempind-target-offset-val-color-ind" class="doc-heading"><code class="inline-code">render(repeated[&temp][ind], *target, offset, val, color, ind)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="renderr-target-offset-val-color-index" class="doc-heading"><code class="inline-code">render(r, *target, offset, val, color, index++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstsecondary" class="doc-heading"><code class="inline-code">if(st.secondary)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifimg" class="doc-heading"><code class="inline-code">if(img)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-r--regions" class="doc-heading"><code class="inline-code">for(auto &r : regions)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifrectangular" class="doc-heading"><code class="inline-code">if(rectangular)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

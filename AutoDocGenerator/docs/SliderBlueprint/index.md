@@ -1,6 +1,6 @@
 # SliderBlueprint
 
-> Auto-generated documentation for the **SliderBlueprint** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **SliderBlueprint** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

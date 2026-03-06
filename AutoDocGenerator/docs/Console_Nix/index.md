@@ -1,6 +1,6 @@
 # Console_Nix
 
-> Auto-generated documentation for the **Console_Nix** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **Console_Nix** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

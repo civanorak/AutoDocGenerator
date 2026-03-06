@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>FreeType — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="../getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Base.html">Base</a></li>
+    <li><a href="Basic.html">Basic</a></li>
+    <li><a href="Common.html">Common</a></li>
+    <li><a href="Config.html">Config</a></li>
+    <li><a href="Definitions.html">Definitions</a></li>
+    <li><a href="Environment.html">Environment</a></li>
+    <li><a href="OS.html">OS</a></li>
+    <li><a href="Runtime.html">Runtime</a></li>
+    <li><a href="Types.html">Types</a></li>
+    <li><a href="Utils.html">Utils</a></li>
+    <li><a href="UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Bitmap.html">Bitmap</a></li>
+    <li><a href="BitmapFont.html">BitmapFont</a></li>
+    <li><a href="BlankImage.html">BlankImage</a></li>
+    <li><a href="Color.html">Color</a></li>
+    <li><a href="ColorPicker.html">ColorPicker</a></li>
+    <li><a href="ColorPlane.html">ColorPlane</a></li>
+    <li><a href="ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="Drawables.html">Drawables</a></li>
+    <li><a href="EmptyImage.html">EmptyImage</a></li>
+    <li><a href="Filters.html">Filters</a></li>
+    <li><a href="Flip.html">Flip</a></li>
+    <li><a href="Font.html">Font</a></li>
+    <li><a href="FontTheme.html">FontTheme</a></li>
+    <li><a href="FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="FreeType.html" class="active">FreeType</a></li>
+    <li><a href="GID.html">GID</a></li>
+    <li><a href="GL.html">GL</a></li>
+    <li><a href="Graphics.html">Graphics</a></li>
+    <li><a href="HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="IL.html">IL</a></li>
+    <li><a href="Image.html">Image</a></li>
+    <li><a href="JPEG.html">JPEG</a></li>
+    <li><a href="OpenGL.html">OpenGL</a></li>
+    <li><a href="PNG.html">PNG</a></li>
+    <li><a href="Renderer.html">Renderer</a></li>
+    <li><a href="ScalableObject.html">ScalableObject</a></li>
+    <li><a href="Shader.html">Shader</a></li>
+    <li><a href="Shaders.html">Shaders</a></li>
+    <li><a href="Texture.html">Texture</a></li>
+    <li><a href="TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="TextureTargets.html">TextureTargets</a></li>
+    <li><a href="TintedObject.html">TintedObject</a></li>
+    <li><a href="Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="AnimationServices.html">AnimationServices</a></li>
+    <li><a href="AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="Animations.html">Animations</a></li>
+    <li><a href="ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="DnD.html">DnD</a></li>
+    <li><a href="Input.html">Input</a></li>
+    <li><a href="KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="Keyboard.html">Keyboard</a></li>
+    <li><a href="Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Button.html">Button</a></li>
+    <li><a href="Checkbox.html">Checkbox</a></li>
+    <li><a href="CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="Combobox.html">Combobox</a></li>
+    <li><a href="ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="CountingText.html">CountingText</a></li>
+    <li><a href="Dialog.html">Dialog</a></li>
+    <li><a href="DialogWindow.html">DialogWindow</a></li>
+    <li><a href="Dropdown.html">Dropdown</a></li>
+    <li><a href="Filler.html">Filler</a></li>
+    <li><a href="IButton.html">IButton</a></li>
+    <li><a href="ICheckbox.html">ICheckbox</a></li>
+    <li><a href="ILabel.html">ILabel</a></li>
+    <li><a href="IListItem.html">IListItem</a></li>
+    <li><a href="INumberbox.html">INumberbox</a></li>
+    <li><a href="IOption.html">IOption</a></li>
+    <li><a href="IProgressor.html">IProgressor</a></li>
+    <li><a href="IScroller.html">IScroller</a></li>
+    <li><a href="ISlider.html">ISlider</a></li>
+    <li><a href="ITextbox.html">ITextbox</a></li>
+    <li><a href="Inputbox.html">Inputbox</a></li>
+    <li><a href="Label.html">Label</a></li>
+    <li><a href="Listbox.html">Listbox</a></li>
+    <li><a href="ListboxBase.html">ListboxBase</a></li>
+    <li><a href="ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="NumberInput.html">NumberInput</a></li>
+    <li><a href="Numberbox.html">Numberbox</a></li>
+    <li><a href="Panel.html">Panel</a></li>
+    <li><a href="PanelBase.html">PanelBase</a></li>
+    <li><a href="PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="Percentbar.html">Percentbar</a></li>
+    <li><a href="PetContainer.html">PetContainer</a></li>
+    <li><a href="PetTextbox.html">PetTextbox</a></li>
+    <li><a href="Placeholder.html">Placeholder</a></li>
+    <li><a href="Progressbar.html">Progressbar</a></li>
+    <li><a href="RadioButton.html">RadioButton</a></li>
+    <li><a href="RadioButtons.html">RadioButtons</a></li>
+    <li><a href="RadioControl.html">RadioControl</a></li>
+    <li><a href="Scrollbar.html">Scrollbar</a></li>
+    <li><a href="ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="Slider.html">Slider</a></li>
+    <li><a href="SliderBase.html">SliderBase</a></li>
+    <li><a href="SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="Spinner.html">Spinner</a></li>
+    <li><a href="StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="Tabpanel.html">Tabpanel</a></li>
+    <li><a href="TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="TextInput.html">TextInput</a></li>
+    <li><a href="Textarea.html">Textarea</a></li>
+    <li><a href="Textbox.html">Textbox</a></li>
+    <li><a href="TextboxBase.html">TextboxBase</a></li>
+    <li><a href="TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="TooltipManager.html">TooltipManager</a></li>
+    <li><a href="TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="UI.html">UI</a></li>
+    <li><a href="Widget.html">Widget</a></li>
+    <li><a href="WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Alignment.html">Alignment</a></li>
+    <li><a href="Bezier.html">Bezier</a></li>
+    <li><a href="Bounds.html">Bounds</a></li>
+    <li><a href="Circle.html">Circle</a></li>
+    <li><a href="Dimension.html">Dimension</a></li>
+    <li><a href="Geometry.html">Geometry</a></li>
+    <li><a href="GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="Line.html">Line</a></li>
+    <li><a href="Margin.html">Margin</a></li>
+    <li><a href="Point.html">Point</a></li>
+    <li><a href="Point3D.html">Point3D</a></li>
+    <li><a href="PointList.html">PointList</a></li>
+    <li><a href="PointProperty.html">PointProperty</a></li>
+    <li><a href="Polygon.html">Polygon</a></li>
+    <li><a href="Rectangle.html">Rectangle</a></li>
+    <li><a href="Region.html">Region</a></li>
+    <li><a href="Size.html">Size</a></li>
+    <li><a href="SizeProperty.html">SizeProperty</a></li>
+    <li><a href="Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Audio.html">Audio</a></li>
+    <li><a href="AudioStream.html">AudioStream</a></li>
+    <li><a href="FLAC.html">FLAC</a></li>
+    <li><a href="Multimedia.html">Multimedia</a></li>
+    <li><a href="PulseAudio.html">PulseAudio</a></li>
+    <li><a href="PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="Sound.html">Sound</a></li>
+    <li><a href="Source.html">Source</a></li>
+    <li><a href="Vorbis.html">Vorbis</a></li>
+    <li><a href="WASAPI.html">WASAPI</a></li>
+    <li><a href="WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Blob.html">Blob</a></li>
+    <li><a href="CGI.html">CGI</a></li>
+    <li><a href="Clipboard.html">Clipboard</a></li>
+    <li><a href="Data.html">Data</a></li>
+    <li><a href="DataExchange.html">DataExchange</a></li>
+    <li><a href="DataItems.html">DataItems</a></li>
+    <li><a href="File.html">File</a></li>
+    <li><a href="FileDialog.html">FileDialog</a></li>
+    <li><a href="Filesystem.html">Filesystem</a></li>
+    <li><a href="Folder.html">Folder</a></li>
+    <li><a href="HTTP.html">HTTP</a></li>
+    <li><a href="LZMA.html">LZMA</a></li>
+    <li><a href="Markdown.html">Markdown</a></li>
+    <li><a href="MemoryStream.html">MemoryStream</a></li>
+    <li><a href="Parse.html">Parse</a></li>
+    <li><a href="Query.html">Query</a></li>
+    <li><a href="Reader.html">Reader</a></li>
+    <li><a href="Storage.html">Storage</a></li>
+    <li><a href="Stream.html">Stream</a></li>
+    <li><a href="Tokenizer.html">Tokenizer</a></li>
+    <li><a href="URI.html">URI</a></li>
+    <li><a href="Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Array.html">Array</a></li>
+    <li><a href="Collection.html">Collection</a></li>
+    <li><a href="Container.html">Container</a></li>
+    <li><a href="Hashmap.html">Hashmap</a></li>
+    <li><a href="Iterator.html">Iterator</a></li>
+    <li><a href="LinkNode.html">LinkNode</a></li>
+    <li><a href="List.html">List</a></li>
+    <li><a href="ListItem.html">ListItem</a></li>
+    <li><a href="Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BorderData.html">BorderData</a></li>
+    <li><a href="ComponentStack.html">ComponentStack</a></li>
+    <li><a href="ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="CustomLayer.html">CustomLayer</a></li>
+    <li><a href="DWM.html">DWM</a></li>
+    <li><a href="ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="Flow.html">Flow</a></li>
+    <li><a href="FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="InlinePanel.html">InlinePanel</a></li>
+    <li><a href="Layer.html">Layer</a></li>
+    <li><a href="LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="LayerMover.html">LayerMover</a></li>
+    <li><a href="LayerResizer.html">LayerResizer</a></li>
+    <li><a href="LayerWidget.html">LayerWidget</a></li>
+    <li><a href="Layerbox.html">Layerbox</a></li>
+    <li><a href="LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="MaskedObject.html">MaskedObject</a></li>
+    <li><a href="Monitor.html">Monitor</a></li>
+    <li><a href="MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="Organizer.html">Organizer</a></li>
+    <li><a href="StackedObject.html">StackedObject</a></li>
+    <li><a href="VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="Window.html">Window</a></li>
+    <li><a href="WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Assert.html">Assert</a></li>
+    <li><a href="Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="CaptionValue.html">CaptionValue</a></li>
+    <li><a href="Console.html">Console</a></li>
+    <li><a href="Console_Nix.html">Console_Nix</a></li>
+    <li><a href="Console_Win32.html">Console_Win32</a></li>
+    <li><a href="ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="Event.html">Event</a></li>
+    <li><a href="Exception.html">Exception</a></li>
+    <li><a href="Exceptions.html">Exceptions</a></li>
+    <li><a href="GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="Logging.html">Logging</a></li>
+    <li><a href="Null.html">Null</a></li>
+    <li><a href="Nullable.html">Nullable</a></li>
+    <li><a href="Pointer.html">Pointer</a></li>
+    <li><a href="Property.html">Property</a></li>
+    <li><a href="Random.html">Random</a></li>
+    <li><a href="RefCounter.html">RefCounter</a></li>
+    <li><a href="Registry.html">Registry</a></li>
+    <li><a href="SGuid.html">SGuid</a></li>
+    <li><a href="Scope.html">Scope</a></li>
+    <li><a href="ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="Threading.html">Threading</a></li>
+    <li><a href="Time.html">Time</a></li>
+    <li><a href="Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AST.html">AST</a></li>
+    <li><a href="AStar.html">AStar</a></li>
+    <li><a href="Blueprint.html">Blueprint</a></li>
+    <li><a href="Compiler.html">Compiler</a></li>
+    <li><a href="Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="Compilers.html">Compilers</a></li>
+    <li><a href="Component.html">Component</a></li>
+    <li><a href="Composer.html">Composer</a></li>
+    <li><a href="Discrete.html">Discrete</a></li>
+    <li><a href="Embedding.html">Embedding</a></li>
+    <li><a href="Enum.html">Enum</a></li>
+    <li><a href="Generator.html">Generator</a></li>
+    <li><a href="Instruction.html">Instruction</a></li>
+    <li><a href="Language.html">Language</a></li>
+    <li><a href="Message.html">Message</a></li>
+    <li><a href="Pathfinders.html">Pathfinders</a></li>
+    <li><a href="Reflection.html">Reflection</a></li>
+    <li><a href="RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="Scene.html">Scene</a></li>
+    <li><a href="Scripting.html">Scripting</a></li>
+    <li><a href="Simple.html">Simple</a></li>
+    <li><a href="String.html">String</a></li>
+    <li><a href="Struct.html">Struct</a></li>
+    <li><a href="TMP.html">TMP</a></li>
+    <li><a href="Template.html">Template</a></li>
+    <li><a href="TiledMap.html">TiledMap</a></li>
+    <li><a href="Validators.html">Validators</a></li>
+    <li><a href="VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Linux.html">Linux</a></li>
+    <li><a href="Win32.html">Win32</a></li>
+    <li><a href="Windows.html">Windows</a></li>
+    <li><a href="X11.html">X11</a></li>
+    <li><a href="X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Any.html">Any</a></li>
+    <li><a href="Builtin.html">Builtin</a></li>
+    <li><a href="FindObject.html">FindObject</a></li>
+    <li><a href="Helpers.html">Helpers</a></li>
+    <li><a href="Instance.html">Instance</a></li>
+    <li><a href="ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="PD.html">PD</a></li>
+    <li><a href="ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BasicMath.html">BasicMath</a></li>
+    <li><a href="Kernel.html">Kernel</a></li>
+    <li><a href="main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">FreeType</span>
+    </nav>
+    
+        <h1 id="freetype" class="doc-heading">FreeType</h1>
+<p class="doc-paragraph">> Auto-generated documentation for the <strong>FreeType</strong> module of the Gorgon C++ Game Engine.</p>
+<h2 id="contents" class="doc-heading">Contents</h2>
+<ul class="md-list">
+<li><a href="#classes">Classes</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="classes" class="doc-heading">Classes</h2>
+<h3 id="ftlib" class="doc-heading"><code class="inline-code">ftlib</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="ftlib" class="doc-heading"><code class="inline-code">ftlib(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ftinitfreetypelibrary" class="doc-heading"><code class="inline-code">FT_Init_FreeType(&library)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="destroyface" class="doc-heading"><code class="inline-code">destroyface(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="ftdonefaceface" class="doc-heading"><code class="inline-code">FT_Done_Face(face)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="ftdonefreetypelibrary" class="doc-heading"><code class="inline-code">FT_Done_FreeType(library)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="freetype" class="doc-heading"><code class="inline-code">FreeType</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">@cond internal @endcond</p>
+<h3 id="glyphdescriptor" class="doc-heading"><code class="inline-code">GlyphDescriptor</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">to be used internally.</p>
+<h3 id="images" class="doc-heading"><code class="inline-code">Images</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<hr class="doc-divider">
+<h2 id="functions" class="doc-heading">Functions</h2>
+<h3 id="ftsettransformface-matrix-delta" class="doc-heading"><code class="inline-code">FT_Set_Transform(face, matrix, delta)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifftbmppitch--0" class="doc-heading"><code class="inline-code">if(ftbmp.pitch < 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifftbmppixelmode--ftpixelmodemono" class="doc-heading"><code class="inline-code">if(ftbmp.pixel_mode == FT_PIXEL_MODE_MONO)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forunsigned-y0-yftbmprows-y" class="doc-heading"><code class="inline-code">for(unsigned y=0; y<ftbmp.rows; y++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forunsigned-x0-xftbmpwidth-x" class="doc-heading"><code class="inline-code">for(unsigned x=0; x<ftbmp.width; x++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifb0" class="doc-heading"><code class="inline-code">if(b<0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forunsigned-y0-yftbmprows-y" class="doc-heading"><code class="inline-code">for(unsigned y=0; y<ftbmp.rows; y++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forunsigned-x0-xftbmpwidth-x" class="doc-heading"><code class="inline-code">for(unsigned x=0; x<ftbmp.width; x++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifftbmppixelmode--ftpixelmodemono" class="doc-heading"><code class="inline-code">if(ftbmp.pixel_mode == FT_PIXEL_MODE_MONO)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forunsigned-y0-yftbmprows-y" class="doc-heading"><code class="inline-code">for(unsigned y=0; y<ftbmp.rows; y++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forunsigned-x0-xftbmpwidth-x" class="doc-heading"><code class="inline-code">for(unsigned x=0; x<ftbmp.width; x++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifb0" class="doc-heading"><code class="inline-code">if(b<0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forunsigned-y0-yftbmprows-y" class="doc-heading"><code class="inline-code">for(unsigned y=0; y<ftbmp.rows; y++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forunsigned-x0-xftbmpwidth-x" class="doc-heading"><code class="inline-code">for(unsigned x=0; x<ftbmp.width; x++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iflib-face-charmap--nullptr" class="doc-heading"><code class="inline-code">if(lib->face->charmap == nullptr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iferror--fterrok" class="doc-heading"><code class="inline-code">if(error == FT_Err_Ok)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iferror--fterrok" class="doc-heading"><code class="inline-code">if(error == FT_Err_Ok)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iflib-face-numcharmaps--0" class="doc-heading"><code class="inline-code">if(lib->face->num_charmaps > 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iferror--fterrok" class="doc-heading"><code class="inline-code">if(error != FT_Err_Ok)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="loadglyphs0-0x20-0x7f" class="doc-heading"><code class="inline-code">LoadGlyphs({0, {0x20, 0x7f}})</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="filefilename-stdiosbinary" class="doc-heading"><code class="inline-code">file(filename, std::ios::binary)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::ifstream</code></p>
+<h3 id="forint-i0-ilib-face-numfixedsizes-i" class="doc-heading"><code class="inline-code">for(int i=0; i<lib->face->num_fixed_sizes; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdiff--mindiff" class="doc-heading"><code class="inline-code">if(diff < mindiff)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forglyph-g--rangestart-g--rangeend-g" class="doc-heading"><code class="inline-code">for(Glyph g = range.Start; g <= range.End; g++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifindex--0" class="doc-heading"><code class="inline-code">if(index == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-ilib-face-numcharmaps-i" class="doc-heading"><code class="inline-code">for(int i=0; i<lib->face->num_charmaps; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ftsetcharmaplib-face-lib-face-charmapsi" class="doc-heading"><code class="inline-code">FT_Set_Charmap(lib->face, lib->face->charmaps[i])</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbmp--withoffset" class="doc-heading"><code class="inline-code">if(!bmp || !withoffset)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifprepare" class="doc-heading"><code class="inline-code">if(prepare)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i0-ilib-face-numfixedsizes-i" class="doc-heading"><code class="inline-code">for(int i=0; i<lib->face->num_fixed_sizes; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="floatheight--4" class="doc-heading"><code class="inline-code">float(height / 4)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="loadglyphschr" class="doc-heading"><code class="inline-code">LoadGlyphs(chr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-ittextbegin" class="doc-heading"><code class="inline-code">for(auto it=text.begin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="loadglyphsrange-true" class="doc-heading"><code class="inline-code">loadglyphs(range, true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="pack" class="doc-heading"><code class="inline-code">pack()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifhaskerning" class="doc-heading"><code class="inline-code">if(haskerning)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-l--glyphmap" class="doc-heading"><code class="inline-code">for(auto &l : glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-r--glyphmap" class="doc-heading"><code class="inline-code">for(auto &r : glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifpx--0--py--0" class="doc-heading"><code class="inline-code">if(p.X != 0 || p.Y != 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-g--glyphmap" class="doc-heading"><code class="inline-code">for(auto &g : glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifhaskerning" class="doc-heading"><code class="inline-code">if(haskerning)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-l--glyphmap" class="doc-heading"><code class="inline-code">for(auto &l : glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-r--glyphmap" class="doc-heading"><code class="inline-code">for(auto &r : glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifpx--0--py--0" class="doc-heading"><code class="inline-code">if(p.X != 0 || p.Y != 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-g--glyphmap" class="doc-heading"><code class="inline-code">for(auto &g : glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-g--glyphmap" class="doc-heading"><code class="inline-code">for(auto &g : glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forconst-auto-i--destroylist" class="doc-heading"><code class="inline-code">for(const auto &i : destroylist)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="clear" class="doc-heading"><code class="inline-code">Clear()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="nuwh" class="doc-heading"><code class="inline-code">nu(w*h)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::vector<bool></code></p>
+<h3 id="forauto-g--glyphmap" class="doc-heading"><code class="inline-code">for(auto &g : glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="niw-h-colormodealpha" class="doc-heading"><code class="inline-code">ni({w, h}, ColorMode::Alpha)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Containers::Image</code></p>
+<h3 id="forauto-g--glyphmap" class="doc-heading"><code class="inline-code">for(auto &g : glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-i--images" class="doc-heading"><code class="inline-code">for(auto &i : images)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setatlassizecursize" class="doc-heading"><code class="inline-code">setatlassize(cursize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setatlassizecursize" class="doc-heading"><code class="inline-code">setatlassize(cursize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-b--images" class="doc-heading"><code class="inline-code">for(auto &b : images)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftightpack" class="doc-heading"><code class="inline-code">if(!tightpack)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="whilefound" class="doc-heading"><code class="inline-code">while(!found)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcurx--w--aw" class="doc-heading"><code class="inline-code">if(cur.X + w > aw)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcury--h--ah" class="doc-heading"><code class="inline-code">if(cur.Y + h > ah)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setatlassizecursize" class="doc-heading"><code class="inline-code">setatlassize(cursize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-img--replacements" class="doc-heading"><code class="inline-code">for(auto &img : replacements)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-xcurx-xcurxw-x" class="doc-heading"><code class="inline-code">for(int x=cur.X; x<cur.X+w; x++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifusedx--cury--aw" class="doc-heading"><code class="inline-code">if(used[x + cur.Y * aw])</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iffull" class="doc-heading"><code class="inline-code">if(full)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-ycury-ycuryh-y" class="doc-heading"><code class="inline-code">for(int y=cur.Y; y<cur.Y+h; y++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifusedcurx--y--aw" class="doc-heading"><code class="inline-code">if(used[cur.X + y * aw])</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iffull" class="doc-heading"><code class="inline-code">if(full)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-ycury-ycuryh-y" class="doc-heading"><code class="inline-code">for(int y=cur.Y; y<cur.Y+h; y++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-xcurx-xcurxw-x" class="doc-heading"><code class="inline-code">for(int x=cur.X; x<cur.X+w; x++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcpeach" class="doc-heading"><code class="inline-code">if(cpeach)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifcpeach" class="doc-heading"><code class="inline-code">if(!cpeach)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-g--glyphmap" class="doc-heading"><code class="inline-code">for(auto &g : glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-im--images" class="doc-heading"><code class="inline-code">for(auto &im : images)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-r--ranges" class="doc-heading"><code class="inline-code">for(auto r : ranges)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="pack" class="doc-heading"><code class="inline-code">pack()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="pack" class="doc-heading"><code class="inline-code">pack()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-g--glyphmap" class="doc-heading"><code class="inline-code">for(auto &g : glyphmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifasciionly" class="doc-heading"><code class="inline-code">if(asciionly)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="loadglyphsa-true" class="doc-heading"><code class="inline-code">loadglyphs('A', true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="loadglyphsf-true" class="doc-heading"><code class="inline-code">loadglyphs('f', true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="loadglyphsj-true" class="doc-heading"><code class="inline-code">loadglyphs('j', true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="loadglyphsa-true" class="doc-heading"><code class="inline-code">loadglyphs('A', true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="loadglyphs0xc2-true" class="doc-heading"><code class="inline-code">loadglyphs(0xc2, true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="loadglyphsf-true" class="doc-heading"><code class="inline-code">loadglyphs('f', true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="loadglyphsj-true" class="doc-heading"><code class="inline-code">loadglyphs('j', true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i--0-i3-i" class="doc-heading"><code class="inline-code">for(int i = 0; i<3; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forint-i--0-i3-i" class="doc-heading"><code class="inline-code">for(int i = 0; i<3; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="glyphdescriptor" class="doc-heading"><code class="inline-code">GlyphDescriptor()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="freetype" class="doc-heading"><code class="inline-code">FreeType()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">holds two bitmaps, a regular and one rendered with 0.5 pixel offset Initializes the class without loading any glyphs or files. Any calls to render or get size attempts will not perform any operation or returns 0. Use this constructor to font data from memory.</p>
+<h3 id="loadfilefilename" class="doc-heading"><code class="inline-code">LoadFile(filename)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Initializes the class by loading the given file. After this step only generic information about the font file will be provided. You may continue loading by LoadMetrics function.</p>
+<h3 id="loadfilefilename-size-loadascii" class="doc-heading"><code class="inline-code">LoadFile(filename, size, loadascii)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Initializes the class by loading the given file.</p>
+<h3 id="loadfileconst-stdstring-filename" class="doc-heading"><code class="inline-code">LoadFile(const std::string &filename)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">No copy constructor No copy assignment Destructor Loads the given file. Unloads the previous file, if it exists. This operation will not unload loaded glyphs. Use Clear function to unload already loaded glyphs. After this step only generic information about the font file will be provided. You may continue loading by LoadMetrics function.</p>
+<h3 id="loadfileconst-stdstring-filename-int-size-bool-loadascii--true" class="doc-heading"><code class="inline-code">LoadFile(const std::string &filename, int size, bool loadascii = true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Loads the given file. Unloads the previous file, if it exists. This operation will not unload loaded glyphs. Use Clear function to unload already loaded glyphs.</p>
+<h3 id="loadconst-stdvectorbyte-data" class="doc-heading"><code class="inline-code">Load(const std::vector<Byte> &data)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Loads the given data. Unloads the previous file, if it exists. This operation will not unload loaded glyphs. Use Clear function to unload already loaded glyphs. After this step only generic information about the font file will be provided. You may continue loading by LoadMetrics function. Data will be required for the life time of this object. See assume for transferring ownership of the data.</p>
+<h3 id="loadconst-byte-data-long-datasize" class="doc-heading"><code class="inline-code">Load(const Byte *data, long datasize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Loads the given data. Unloads the previous file, if it exists. This operation will not unload loaded glyphs. Use Clear function to unload already loaded glyphs. After this step only generic information about the font file will be provided. You may continue loading by LoadMetrics function.</p>
+<h3 id="assumestdvectorbyte-data" class="doc-heading"><code class="inline-code">Assume(std::vector<Byte> &data)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Loads the given data. Unloads the previous file, if it exists. This operation will not unload loaded glyphs. Use Clear function to unload already loaded glyphs. After this step only generic information about the font file will be provided. You may continue loading by LoadMetrics function. This function will keep the copy of the data for further operations. The data of the vector given to this function will be moved out of it.</p>
+<h3 id="assumeconst-byte-data-long-datasize" class="doc-heading"><code class="inline-code">Assume(const Byte *data, long datasize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Loads the given data. Unloads the previous file, if it exists. This operation will not unload loaded glyphs. Use Clear function to unload already loaded glyphs. After this step only generic information about the font file will be provided. You may continue loading by LoadMetrics function. After this object is done with the data, it will destroy it.</p>
+<h3 id="loadmetricsint-size" class="doc-heading"><code class="inline-code">LoadMetrics(int size)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Continues loading a file by setting font size and obtaining necessary information. If the given size is invalid, this function will return 0. Use GetPresetSizes function to get list of sizes that the font supports. You may also check IsScalable return to check whether using an arbitrary size is allowed.</p>
+<h3 id="loadglyphsglyphrange-range-bool-prepare--true" class="doc-heading"><code class="inline-code">LoadGlyphs(GlyphRange range, bool prepare = true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Loads the glyphs in the given range. It is possible to LoadGlyphs functions multiple times. If a glyph in the given range is already loaded, it will not be loaded again.</p>
+<h3 id="loadglyphsglyph-start-glyph-end-bool-prepare--true" class="doc-heading"><code class="inline-code">LoadGlyphs(Glyph start, Glyph end, bool prepare = true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Loads the glyphs in the given range. It is possible to LoadGlyphs functions multiple times. If a glyph in the given range is already loaded, it will not be loaded again.</p>
+<h3 id="loadglyphsconst-stdvectorglyphrange-ranges-bool-prepare--true" class="doc-heading"><code class="inline-code">LoadGlyphs(const std::vector<GlyphRange> &ranges, bool prepare = true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Loads the glyphs in the given range. It is possible to LoadGlyphs functions multiple times. If a glyph in the given range is already loaded, it will not be loaded again. This overload will load all ranges given in the vector. It terminates at first error.</p>
+<h3 id="isscalable" class="doc-heading"><code class="inline-code">IsScalable()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if the loaded font is scalable. This information is not very useful once the glyphs are loaded, however, you may check this information to ensure LoadMetrics function is presented with a valid size. Will return false if no file is loaded.</p>
+<h3 id="getpresetsizes" class="doc-heading"><code class="inline-code">GetPresetSizes()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::vector<int></code></p>
+<p class="doc-paragraph">Returns the preset sizes in the font file. If the font is not scalable, these are the only sizes that will work. Will return empty vector if no file is loaded.</p>
+<h3 id="isfileloaded" class="doc-heading"><code class="inline-code">IsFileLoaded()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns whether the file is loaded. Check IsReady</p>
+<h3 id="issymbolonly" class="doc-heading"><code class="inline-code">IsSymbolOnly()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns if the FreeType is ready to work. If the metrics are set and either the file is loaded or there are loaded glyphs this function will return true. Returns whether the font is a symbol only font</p>
+<h3 id="haskerning" class="doc-heading"><code class="inline-code">HasKerning()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns whether this font contains kerning table</p>
+<h3 id="disableantialiasing" class="doc-heading"><code class="inline-code">DisableAntiAliasing()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Disables anti aliasing. Does not affect already loaded glyphs. If necessary call Clear before calling this function.</p>
+<h3 id="enableantialiasing" class="doc-heading"><code class="inline-code">EnableAntiAliasing()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Enables anti aliasing. Does not affect already loaded glyphs. If necessary call Clear before calling this function.</p>
+<h3 id="getfamilyname" class="doc-heading"><code class="inline-code">GetFamilyName()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<p class="doc-paragraph">Returns the name of the font</p>
+<h3 id="getstylename" class="doc-heading"><code class="inline-code">GetStyleName()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::string</code></p>
+<p class="doc-paragraph">Returns the style name of the font</p>
+<h3 id="clear" class="doc-heading"><code class="inline-code">Clear()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Clears the glyphs that are loaded</p>
+<h3 id="copytobitmapbool-prepare--true" class="doc-heading"><code class="inline-code">CopyToBitmap(bool prepare = true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">BitmapFont</code></p>
+<p class="doc-paragraph">Copy the loaded glyphs into a new bitmap font. Only the glyphs that are already loaded will be copied into the bitmap font. This object will keep its loaded glyphs after a call to this function. Use MoveOutBitmap to convert this font to bitmap to move out bitmaps, avoiding copying. This function will automatically unpack glyphs if discard is not called.</p>
+<h3 id="moveoutbitmapbool-unpack--false-bool-prepare--true" class="doc-heading"><code class="inline-code">MoveOutBitmap(bool unpack = false, bool prepare = true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">BitmapFont</code></p>
+<p class="doc-paragraph">Moves the loaded glyphs into a new bitmap font. Only the glyphs that are already loaded will be copied into the bitmap font. This object will loose its glyphs but will be able to reload them if requested. Use CopyToBitmap to convert this font to bitmap with the copies of glyphs. If requested this function can unpack glyphs to create a bitmap font with bitmaps as glyphs, which then can be saved. However, this functionality will not work if discard is called. Prepare parameter is used if the font is unpacked.</p>
+<h3 id="packbool-keeppacked--true-bool-tight--true-float-extrasize--02" class="doc-heading"><code class="inline-code">Pack(bool keeppacked = true, bool tight = true, float extrasize = 0.2)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Packs current glyphs into a single atlas. If keeppacked is selected, any call to LoadGlyph function pack the loaded asset immediately.</p>
+<h3 id="packextrasize" class="doc-heading"><code class="inline-code">pack(extrasize)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="stoppacking" class="doc-heading"><code class="inline-code">StopPacking()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Stops packing new glyphs. This will not unpack already packed glyphs. Use Pack function to pack all glyphs and set packing for future glyphs.</p>
+<h3 id="availableglyph-g" class="doc-heading"><code class="inline-code">Available(Glyph g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">This function should render the given character to the target at the specified location and color. If chr does not exists, this function should perform no action. location and color can be modified as per the needs of renderer. If the kerning returns integers location will always be an integer. Additionally, text renderers will place glyphs on 0 y position from the top. It is glyph renderer's task to ensure baseline of glyphs to line up. This function will return the drawable that is used to render the given glyph. This function will load the glyph if necessary. If glyph is not found, this function will return nullptr or not found character. This function should return the size of the requested glyph. If it does not exists, 0x0 should be returned This function should return the number of pixels the cursor should advance after this glyph. This value will be added to kerning distance. Returns true if the glyph exists Returns true if the glyph is available in the font. Exists will return true if it is already loaded.</p>
+<h3 id="discard" class="doc-heading"><code class="inline-code">Discard()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">This function should return true if this font renderer supports only 7-bit ASCII This function should return true if this font is fixed width. This will suppress calls to GetSize function. This function should return the additional distance between given glyphs. Returned value could be (in most cases it is) negative. Returns the size of the EM dash Returns the advance the of widest glyph. Height of glyphs, actual size could be smaller but all glyphs should have the same virtual height. When drawn on the same y position, all glyphs should line up. Renderer can change actual draw location to compensate. Width of a digit, if digits do not have the same width, maximum should be returned. For practical reasons, this function is expected to consider arabic numerals. Baseline point of glyphs from the top. Returns the spacing between the lines. Should return the average thickness of a line. This information can be used to construct underline and strike through. The position of the underline, if it is to be drawn. Should return if the glyph renderer requires preparation regarding the text given. Notifies glyph renderer about a text to be rendered. If renderers require modification to their internal structures, they should mark them Discards intermediate files. Font will continue to work and will take less resources, however, new glyphs cannot be loaded and packed after this function is issued. Additionally, bitmap font copying and unpacking option in moving out will not work.</p>
+<h3 id="packfloat-extrasize--02" class="doc-heading"><code class="inline-code">pack(float extrasize = 0.2)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="loadglyphsglyphrange-range-bool-prepare" class="doc-heading"><code class="inline-code">loadglyphs(GlyphRange range, bool prepare)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="finalizeload" class="doc-heading"><code class="inline-code">finalizeload()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="savedatastdostream-stream" class="doc-heading"><code class="inline-code">savedata(std::ostream &stream)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="setatlassizeunsigned-size" class="doc-heading"><code class="inline-code">setatlassize(unsigned size)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

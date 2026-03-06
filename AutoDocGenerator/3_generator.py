@@ -23,6 +23,12 @@ def md_badge(text: str, color: str = "blue") -> str:
     return f"![{text}](https://img.shields.io/badge/{label}-{color})"
 
 
+def escape_html(text: str) -> str:
+    """Escapes < and > for VitePress Compatibility."""
+    if not isinstance(text, str): return text
+    return text.replace("<", "&lt;").replace(">", "&gt;")
+
+
 def md_code(code: str, lang: str = "cpp") -> str:
     if not code:
         return ""
@@ -75,14 +81,14 @@ def generate_module_md(module_name: str, files: list) -> str:
             if ns:
                 lines.append(f"**Namespace:** `{ns}`\n")
             if desc:
-                lines.append(f"{desc}\n")
+                lines.append(f"{escape_html(desc)}\n")
 
             if methods:
                 lines.append("#### Methods\n")
                 for m in methods:
                     m_desc  = m.get("description", "")
-                    m_params = ", ".join(m.get("params", [])) if m.get("params") else "—"
-                    m_ret   = m.get("return_type", "void")
+                    m_params = ", ".join(escape_html(p) for p in m.get("params", [])) if m.get("params") else "—"
+                    m_ret   = escape_html(m.get("return_type", "void"))
                     m_ex    = m.get("example", "")
 
                     markers = []
@@ -93,7 +99,7 @@ def generate_module_md(module_name: str, files: list) -> str:
                     lines.append(f"##### {marker_str}`{m['name']}({m_params})`\n")
                     lines.append(f"**Returns:** `{m_ret}`\n")
                     if m_desc:
-                        lines.append(f"{m_desc}\n")
+                        lines.append(f"{escape_html(m_desc)}\n")
                     if m_ex:
                         lines.append("**Example:**")
                         lines.append(md_code(m_ex))
@@ -111,10 +117,10 @@ def generate_module_md(module_name: str, files: list) -> str:
             if ns:
                 lines.append(f"**Namespace:** `{ns}`\n")
             if desc:
-                lines.append(f"{desc}\n")
+                lines.append(f"{escape_html(desc)}\n")
 
             if vals:
-                rows = [(v.get("name", ""), v.get("description", "")) for v in vals]
+                rows = [(escape_html(v.get("name", "")), escape_html(v.get("description", ""))) for v in vals]
                 lines.append(md_table(["Value", "Description"], rows))
             lines.append("")
 
@@ -134,7 +140,7 @@ def generate_module_md(module_name: str, files: list) -> str:
                 lines.append(f"  |  **Namespace:** `{ns}`")
             lines.append("\n")
             if desc:
-                lines.append(f"{desc}\n")
+                lines.append(f"{escape_html(desc)}\n")
             if ex:
                 lines.append("**Example:**")
                 lines.append(md_code(ex))
@@ -207,7 +213,7 @@ def run(input_file: str = None, output_dir: str = None):
         modules[mod].append(fd)
 
     # Cikti dizinlerini olustur
-    (out / ".vitepress").mkdir(parents=True, exist_ok=True)
+    out.mkdir(parents=True, exist_ok=True)
 
     # Her modul icin MD uret
     for mod_name, files in modules.items():
@@ -216,20 +222,12 @@ def run(input_file: str = None, output_dir: str = None):
         md = generate_module_md(mod_name, files)
         md_path = mod_dir / "index.md"
         md_path.write_text(md, encoding='utf-8')
-        print(f"  Yazildi: {md_path}")
 
     # Anasayfa index.md
     idx_md = generate_index_md(list(modules.keys()))
     (out / "index.md").write_text(idx_md, encoding='utf-8')
-    print(f"  Yazildi: {out}/index.md")
 
-    # VitePress config
-    cfg = generate_vitepress_config(list(modules.keys()))
-    cfg_path = out / ".vitepress" / "config.mjs"
-    cfg_path.write_text(cfg, encoding='utf-8')
-    print(f"  Yazildi: {cfg_path}")
-
-    print(f"\n[Generator] Tamamlandi! {len(modules)} modul icin dokuman uretildi.")
+    print(f"\n[Generator] Tamamlandi! {len(modules)} modul icin Markdown uretildi.")
     print(f"  Cikti dizini: {out.resolve()}")
     return str(out.resolve())
 

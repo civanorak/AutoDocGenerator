@@ -1,6 +1,6 @@
 # ConsumableEvent
 
-> Auto-generated documentation for the **ConsumableEvent** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **ConsumableEvent** module of the Gorgon C++ Game Engine.
 
 
 ## Contents
@@ -64,7 +64,7 @@
 
 **Namespace:** `consumableevent`
 
-This class provides event mechanism that can be consumed. Once an event is consumed by a handler rest of the handler will not receive it. Different function signatures are allowed to as event handlers. These are:  * <b>`bool fn()`</b> neither event source nor event parameters are supplied. * <b>`bool fn(Params_... params)`</b> parameters will be passed * <b>`bool fn(Source_ &source, Params_... params)`</b> the source and parameters will be passed  Class members or lambda functions can also be used as event handlers. An event handler can be registered using Register function.
+This class provides event mechanism that can be consumed. Once an event is consumed by a handler rest of the handler will not receive it. Different function signatures are allowed to as event handlers. These are:  * &lt;b&gt;`bool fn()`&lt;/b&gt; neither event source nor event parameters are supplied. * &lt;b&gt;`bool fn(Params_... params)`&lt;/b&gt; parameters will be passed * &lt;b&gt;`bool fn(Source_ &source, Params_... params)`&lt;/b&gt; the source and parameters will be passed  Class members or lambda functions can also be used as event handlers. An event handler can be registered using Register function.
 
 #### Methods
 

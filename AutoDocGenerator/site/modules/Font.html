@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>Font — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="../getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Base.html">Base</a></li>
+    <li><a href="Basic.html">Basic</a></li>
+    <li><a href="Common.html">Common</a></li>
+    <li><a href="Config.html">Config</a></li>
+    <li><a href="Definitions.html">Definitions</a></li>
+    <li><a href="Environment.html">Environment</a></li>
+    <li><a href="OS.html">OS</a></li>
+    <li><a href="Runtime.html">Runtime</a></li>
+    <li><a href="Types.html">Types</a></li>
+    <li><a href="Utils.html">Utils</a></li>
+    <li><a href="UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Bitmap.html">Bitmap</a></li>
+    <li><a href="BitmapFont.html">BitmapFont</a></li>
+    <li><a href="BlankImage.html">BlankImage</a></li>
+    <li><a href="Color.html">Color</a></li>
+    <li><a href="ColorPicker.html">ColorPicker</a></li>
+    <li><a href="ColorPlane.html">ColorPlane</a></li>
+    <li><a href="ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="Drawables.html">Drawables</a></li>
+    <li><a href="EmptyImage.html">EmptyImage</a></li>
+    <li><a href="Filters.html">Filters</a></li>
+    <li><a href="Flip.html">Flip</a></li>
+    <li><a href="Font.html" class="active">Font</a></li>
+    <li><a href="FontTheme.html">FontTheme</a></li>
+    <li><a href="FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="FreeType.html">FreeType</a></li>
+    <li><a href="GID.html">GID</a></li>
+    <li><a href="GL.html">GL</a></li>
+    <li><a href="Graphics.html">Graphics</a></li>
+    <li><a href="HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="IL.html">IL</a></li>
+    <li><a href="Image.html">Image</a></li>
+    <li><a href="JPEG.html">JPEG</a></li>
+    <li><a href="OpenGL.html">OpenGL</a></li>
+    <li><a href="PNG.html">PNG</a></li>
+    <li><a href="Renderer.html">Renderer</a></li>
+    <li><a href="ScalableObject.html">ScalableObject</a></li>
+    <li><a href="Shader.html">Shader</a></li>
+    <li><a href="Shaders.html">Shaders</a></li>
+    <li><a href="Texture.html">Texture</a></li>
+    <li><a href="TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="TextureTargets.html">TextureTargets</a></li>
+    <li><a href="TintedObject.html">TintedObject</a></li>
+    <li><a href="Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="AnimationServices.html">AnimationServices</a></li>
+    <li><a href="AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="Animations.html">Animations</a></li>
+    <li><a href="ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="DnD.html">DnD</a></li>
+    <li><a href="Input.html">Input</a></li>
+    <li><a href="KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="Keyboard.html">Keyboard</a></li>
+    <li><a href="Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Button.html">Button</a></li>
+    <li><a href="Checkbox.html">Checkbox</a></li>
+    <li><a href="CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="Combobox.html">Combobox</a></li>
+    <li><a href="ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="CountingText.html">CountingText</a></li>
+    <li><a href="Dialog.html">Dialog</a></li>
+    <li><a href="DialogWindow.html">DialogWindow</a></li>
+    <li><a href="Dropdown.html">Dropdown</a></li>
+    <li><a href="Filler.html">Filler</a></li>
+    <li><a href="IButton.html">IButton</a></li>
+    <li><a href="ICheckbox.html">ICheckbox</a></li>
+    <li><a href="ILabel.html">ILabel</a></li>
+    <li><a href="IListItem.html">IListItem</a></li>
+    <li><a href="INumberbox.html">INumberbox</a></li>
+    <li><a href="IOption.html">IOption</a></li>
+    <li><a href="IProgressor.html">IProgressor</a></li>
+    <li><a href="IScroller.html">IScroller</a></li>
+    <li><a href="ISlider.html">ISlider</a></li>
+    <li><a href="ITextbox.html">ITextbox</a></li>
+    <li><a href="Inputbox.html">Inputbox</a></li>
+    <li><a href="Label.html">Label</a></li>
+    <li><a href="Listbox.html">Listbox</a></li>
+    <li><a href="ListboxBase.html">ListboxBase</a></li>
+    <li><a href="ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="NumberInput.html">NumberInput</a></li>
+    <li><a href="Numberbox.html">Numberbox</a></li>
+    <li><a href="Panel.html">Panel</a></li>
+    <li><a href="PanelBase.html">PanelBase</a></li>
+    <li><a href="PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="Percentbar.html">Percentbar</a></li>
+    <li><a href="PetContainer.html">PetContainer</a></li>
+    <li><a href="PetTextbox.html">PetTextbox</a></li>
+    <li><a href="Placeholder.html">Placeholder</a></li>
+    <li><a href="Progressbar.html">Progressbar</a></li>
+    <li><a href="RadioButton.html">RadioButton</a></li>
+    <li><a href="RadioButtons.html">RadioButtons</a></li>
+    <li><a href="RadioControl.html">RadioControl</a></li>
+    <li><a href="Scrollbar.html">Scrollbar</a></li>
+    <li><a href="ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="Slider.html">Slider</a></li>
+    <li><a href="SliderBase.html">SliderBase</a></li>
+    <li><a href="SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="Spinner.html">Spinner</a></li>
+    <li><a href="StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="Tabpanel.html">Tabpanel</a></li>
+    <li><a href="TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="TextInput.html">TextInput</a></li>
+    <li><a href="Textarea.html">Textarea</a></li>
+    <li><a href="Textbox.html">Textbox</a></li>
+    <li><a href="TextboxBase.html">TextboxBase</a></li>
+    <li><a href="TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="TooltipManager.html">TooltipManager</a></li>
+    <li><a href="TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="UI.html">UI</a></li>
+    <li><a href="Widget.html">Widget</a></li>
+    <li><a href="WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Alignment.html">Alignment</a></li>
+    <li><a href="Bezier.html">Bezier</a></li>
+    <li><a href="Bounds.html">Bounds</a></li>
+    <li><a href="Circle.html">Circle</a></li>
+    <li><a href="Dimension.html">Dimension</a></li>
+    <li><a href="Geometry.html">Geometry</a></li>
+    <li><a href="GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="Line.html">Line</a></li>
+    <li><a href="Margin.html">Margin</a></li>
+    <li><a href="Point.html">Point</a></li>
+    <li><a href="Point3D.html">Point3D</a></li>
+    <li><a href="PointList.html">PointList</a></li>
+    <li><a href="PointProperty.html">PointProperty</a></li>
+    <li><a href="Polygon.html">Polygon</a></li>
+    <li><a href="Rectangle.html">Rectangle</a></li>
+    <li><a href="Region.html">Region</a></li>
+    <li><a href="Size.html">Size</a></li>
+    <li><a href="SizeProperty.html">SizeProperty</a></li>
+    <li><a href="Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Audio.html">Audio</a></li>
+    <li><a href="AudioStream.html">AudioStream</a></li>
+    <li><a href="FLAC.html">FLAC</a></li>
+    <li><a href="Multimedia.html">Multimedia</a></li>
+    <li><a href="PulseAudio.html">PulseAudio</a></li>
+    <li><a href="PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="Sound.html">Sound</a></li>
+    <li><a href="Source.html">Source</a></li>
+    <li><a href="Vorbis.html">Vorbis</a></li>
+    <li><a href="WASAPI.html">WASAPI</a></li>
+    <li><a href="WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Blob.html">Blob</a></li>
+    <li><a href="CGI.html">CGI</a></li>
+    <li><a href="Clipboard.html">Clipboard</a></li>
+    <li><a href="Data.html">Data</a></li>
+    <li><a href="DataExchange.html">DataExchange</a></li>
+    <li><a href="DataItems.html">DataItems</a></li>
+    <li><a href="File.html">File</a></li>
+    <li><a href="FileDialog.html">FileDialog</a></li>
+    <li><a href="Filesystem.html">Filesystem</a></li>
+    <li><a href="Folder.html">Folder</a></li>
+    <li><a href="HTTP.html">HTTP</a></li>
+    <li><a href="LZMA.html">LZMA</a></li>
+    <li><a href="Markdown.html">Markdown</a></li>
+    <li><a href="MemoryStream.html">MemoryStream</a></li>
+    <li><a href="Parse.html">Parse</a></li>
+    <li><a href="Query.html">Query</a></li>
+    <li><a href="Reader.html">Reader</a></li>
+    <li><a href="Storage.html">Storage</a></li>
+    <li><a href="Stream.html">Stream</a></li>
+    <li><a href="Tokenizer.html">Tokenizer</a></li>
+    <li><a href="URI.html">URI</a></li>
+    <li><a href="Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Array.html">Array</a></li>
+    <li><a href="Collection.html">Collection</a></li>
+    <li><a href="Container.html">Container</a></li>
+    <li><a href="Hashmap.html">Hashmap</a></li>
+    <li><a href="Iterator.html">Iterator</a></li>
+    <li><a href="LinkNode.html">LinkNode</a></li>
+    <li><a href="List.html">List</a></li>
+    <li><a href="ListItem.html">ListItem</a></li>
+    <li><a href="Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BorderData.html">BorderData</a></li>
+    <li><a href="ComponentStack.html">ComponentStack</a></li>
+    <li><a href="ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="CustomLayer.html">CustomLayer</a></li>
+    <li><a href="DWM.html">DWM</a></li>
+    <li><a href="ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="Flow.html">Flow</a></li>
+    <li><a href="FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="InlinePanel.html">InlinePanel</a></li>
+    <li><a href="Layer.html">Layer</a></li>
+    <li><a href="LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="LayerMover.html">LayerMover</a></li>
+    <li><a href="LayerResizer.html">LayerResizer</a></li>
+    <li><a href="LayerWidget.html">LayerWidget</a></li>
+    <li><a href="Layerbox.html">Layerbox</a></li>
+    <li><a href="LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="MaskedObject.html">MaskedObject</a></li>
+    <li><a href="Monitor.html">Monitor</a></li>
+    <li><a href="MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="Organizer.html">Organizer</a></li>
+    <li><a href="StackedObject.html">StackedObject</a></li>
+    <li><a href="VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="Window.html">Window</a></li>
+    <li><a href="WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Assert.html">Assert</a></li>
+    <li><a href="Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="CaptionValue.html">CaptionValue</a></li>
+    <li><a href="Console.html">Console</a></li>
+    <li><a href="Console_Nix.html">Console_Nix</a></li>
+    <li><a href="Console_Win32.html">Console_Win32</a></li>
+    <li><a href="ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="Event.html">Event</a></li>
+    <li><a href="Exception.html">Exception</a></li>
+    <li><a href="Exceptions.html">Exceptions</a></li>
+    <li><a href="GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="Logging.html">Logging</a></li>
+    <li><a href="Null.html">Null</a></li>
+    <li><a href="Nullable.html">Nullable</a></li>
+    <li><a href="Pointer.html">Pointer</a></li>
+    <li><a href="Property.html">Property</a></li>
+    <li><a href="Random.html">Random</a></li>
+    <li><a href="RefCounter.html">RefCounter</a></li>
+    <li><a href="Registry.html">Registry</a></li>
+    <li><a href="SGuid.html">SGuid</a></li>
+    <li><a href="Scope.html">Scope</a></li>
+    <li><a href="ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="Threading.html">Threading</a></li>
+    <li><a href="Time.html">Time</a></li>
+    <li><a href="Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AST.html">AST</a></li>
+    <li><a href="AStar.html">AStar</a></li>
+    <li><a href="Blueprint.html">Blueprint</a></li>
+    <li><a href="Compiler.html">Compiler</a></li>
+    <li><a href="Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="Compilers.html">Compilers</a></li>
+    <li><a href="Component.html">Component</a></li>
+    <li><a href="Composer.html">Composer</a></li>
+    <li><a href="Discrete.html">Discrete</a></li>
+    <li><a href="Embedding.html">Embedding</a></li>
+    <li><a href="Enum.html">Enum</a></li>
+    <li><a href="Generator.html">Generator</a></li>
+    <li><a href="Instruction.html">Instruction</a></li>
+    <li><a href="Language.html">Language</a></li>
+    <li><a href="Message.html">Message</a></li>
+    <li><a href="Pathfinders.html">Pathfinders</a></li>
+    <li><a href="Reflection.html">Reflection</a></li>
+    <li><a href="RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="Scene.html">Scene</a></li>
+    <li><a href="Scripting.html">Scripting</a></li>
+    <li><a href="Simple.html">Simple</a></li>
+    <li><a href="String.html">String</a></li>
+    <li><a href="Struct.html">Struct</a></li>
+    <li><a href="TMP.html">TMP</a></li>
+    <li><a href="Template.html">Template</a></li>
+    <li><a href="TiledMap.html">TiledMap</a></li>
+    <li><a href="Validators.html">Validators</a></li>
+    <li><a href="VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Linux.html">Linux</a></li>
+    <li><a href="Win32.html">Win32</a></li>
+    <li><a href="Windows.html">Windows</a></li>
+    <li><a href="X11.html">X11</a></li>
+    <li><a href="X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Any.html">Any</a></li>
+    <li><a href="Builtin.html">Builtin</a></li>
+    <li><a href="FindObject.html">FindObject</a></li>
+    <li><a href="Helpers.html">Helpers</a></li>
+    <li><a href="Instance.html">Instance</a></li>
+    <li><a href="ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="PD.html">PD</a></li>
+    <li><a href="ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BasicMath.html">BasicMath</a></li>
+    <li><a href="Kernel.html">Kernel</a></li>
+    <li><a href="main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">Font</span>
+    </nav>
+    
+        <h1 id="font" class="doc-heading">Font</h1>
+<p class="doc-paragraph">> Auto-generated documentation for the <strong>Font</strong> module of the Gorgon C++ Game Engine.</p>
+<h2 id="contents" class="doc-heading">Contents</h2>
+<ul class="md-list">
+<li><a href="#classes">Classes</a></li>
+<li><a href="#enums">Enums</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="classes" class="doc-heading">Classes</h2>
+<h3 id="glyphmark" class="doc-heading"><code class="inline-code">glyphmark</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<h3 id="glyphrange" class="doc-heading"><code class="inline-code">GlyphRange</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">This class represents a range of glyphs. Both start and end is included.</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="count" class="doc-heading"><code class="inline-code">Count(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Creates a range that includes a single item. Value 0 is not a valid code point Returns the number of the glyphs in the range</p>
+<h5 id="normalize" class="doc-heading"><code class="inline-code">Normalize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="glyphrenderer" class="doc-heading"><code class="inline-code">GlyphRenderer</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="virtual-renderglyph-chr-texturetarget-target-geometrypointf-location-rgbaf-color" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Render(Glyph chr, TextureTarget &target, Geometry::Pointf location, RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">This function should render the given character to the target at the specified location and color. If chr does not exists, this function should perform no action. location and color can be modified as per the needs of renderer. If the kerning returns integers location will always be an integer. Additionally, text renderers will place glyphs on 0 y position from the top. It is glyph renderer's task to ensure baseline of glyphs to line up.</p>
+<h5 id="virtual-getoffsetglyph-chr" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetOffset(Glyph chr)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual Geometry::Point</code></p>
+<p class="doc-paragraph">This function should return the render offset of the requested glyph. If it does not exists, 0, 0 should be returned</p>
+<h5 id="virtual-getsizeglyph-chr" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetSize(Glyph chr)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual Geometry::Size</code></p>
+<p class="doc-paragraph">This function should return the size of the requested glyph. If it does not exists, 0x0 should be returned</p>
+<h5 id="virtual-getcursoradvanceglyph-g" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetCursorAdvance(Glyph g)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual float</code></p>
+<p class="doc-paragraph">This function should return the number of pixels the cursor should advance after this glyph. This value will be added to kerning distance.</p>
+<h5 id="virtual-existsglyph-g" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Exists(Glyph g)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">Returns true if the glyph exists</p>
+<h5 id="virtual-isascii" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">IsASCII(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">This function should return true if this font renderer supports only 7-bit ASCII</p>
+<h5 id="virtual-isfixedwidth" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">IsFixedWidth(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">This function should return true if this font is fixed width. This will suppress calls to GetSize function.</p>
+<h5 id="virtual-kerningdistanceglyph-left-glyph-right" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">KerningDistance(Glyph left, Glyph right)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual Geometry::Pointf</code></p>
+<p class="doc-paragraph">This function should return the additional distance between given glyphs. Returned value could be (in most cases it is) negative. Left and right are visual locations, they will not be reverted for right to left rendering.</p>
+<h5 id="virtual-getemsize" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetEMSize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<p class="doc-paragraph">Returns the size of the EM dash</p>
+<h5 id="virtual-getmaxwidth" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetMaxWidth(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<p class="doc-paragraph">Returns the width of widest glyph.</p>
+<h5 id="virtual-getheight" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetHeight(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<p class="doc-paragraph">Height of glyphs, actual size could be smaller but all glyphs should have the same virtual height. When drawn on the same y position, all glyphs should line up. Renderer can change actual draw location to compensate.</p>
+<h5 id="virtual-getletterheightbool-asciionly--false" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetLetterHeight(bool asciionly = false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual std::pair<int, int></code></p>
+<p class="doc-paragraph">Returns the offset (first) and maximum height (second) that is used by letters. Offset is the distance of the letter with max height to the top. This function uses � and j to calculate letter height when ascii only is not set. If ascii only is set, it uses A, f, j. If � is not found, this function simply reverts to using A.</p>
+<h5 id="virtual-getdigitwidth" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetDigitWidth(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<p class="doc-paragraph">Width of a digit, if digits do not have the same width, maximum should be returned. For practical reasons, this function is expected to consider arabic numerals.</p>
+<h5 id="virtual-getbaseline" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetBaseLine(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual float</code></p>
+<p class="doc-paragraph">Baseline point of glyphs from the top.</p>
+<h5 id="virtual-getlinegap" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetLineGap(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual float</code></p>
+<p class="doc-paragraph">This is the default distance between two consecutive lines. This distance can be modified by text renderers</p>
+<h5 id="virtual-getlinethickness" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetLineThickness(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual float</code></p>
+<p class="doc-paragraph">Should return the average thickness of a line. This information can be used to construct underline and strike through.</p>
+<h5 id="virtual-getunderlineoffset" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetUnderlineOffset(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<p class="doc-paragraph">The position of the underline, if it is to be drawn.</p>
+<h5 id="virtual-needsprepare" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">NeedsPrepare(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">Should return if the glyph renderer requires preparation regarding the text given.</p>
+<h5 id="virtual-prepareconst-stdstring-" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Prepare(const std::string &)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Notifies glyph renderer about a text to be rendered. If renderers require modification to their internal structures, they should mark them</p>
+<h3 id="textprinter" class="doc-heading"><code class="inline-code">TextPrinter</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="printtexturetarget-target-const-stdstring-text-geometrypointf-location" class="doc-heading"><code class="inline-code">Print(TextureTarget &target, const std::string &text, Geometry::Pointf location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Prints the given text to the target. y coordinate is the top if the text. However, depending on the font, this value might exclude uppercase accents.</p>
+<h5 id="printtarget-text-location" class="doc-heading"><code class="inline-code">print(target, text, location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printtexturetarget-target-const-stdstring-text-geometrypoint-location" class="doc-heading"><code class="inline-code">Print(TextureTarget &target, const std::string &text, Geometry::Point location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printtarget-text-location" class="doc-heading"><code class="inline-code">print(target, text, location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printtexturetarget-target-const-stdstring-text-int-x-int-y" class="doc-heading"><code class="inline-code">Print(TextureTarget &target, const std::string &text, int x, int y)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printtarget-text-x-y" class="doc-heading"><code class="inline-code">print(target, text, {x, y})</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printtexturetarget-target-const-stdstring-text-geometrypoint-location-int-w-textalignment-alignoverride" class="doc-heading"><code class="inline-code">Print(TextureTarget &target, const std::string &text, Geometry::Point location, int w, TextAlignment align_override)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printtarget-text-location-w-0-alignoverride" class="doc-heading"><code class="inline-code">print(target, text, {location, w, 0}, align_override)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printtexturetarget-target-const-stdstring-text-geometrypoint-location-int-w" class="doc-heading"><code class="inline-code">Print(TextureTarget &target, const std::string &text, Geometry::Point location, int w)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printtarget-text-location-w-0" class="doc-heading"><code class="inline-code">print(target, text, {location, w, 0})</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printtexturetarget-target-const-stdstring-text-int-x-int-y-int-w-textalignment-alignoverride" class="doc-heading"><code class="inline-code">Print(TextureTarget &target, const std::string &text, int x, int y, int w, TextAlignment align_override)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printtarget-text-x-y-w-0-alignoverride" class="doc-heading"><code class="inline-code">print(target, text, {x, y, w, 0}, align_override)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printtexturetarget-target-const-stdstring-text-int-x-int-y-int-w" class="doc-heading"><code class="inline-code">Print(TextureTarget &target, const std::string &text, int x, int y, int w)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printtarget-text-x-y-w-0" class="doc-heading"><code class="inline-code">print(target, text, {x, y, w, 0})</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printnowraptexturetarget-target-const-stdstring-text-geometrypoint-location-int-w-textalignment-alignoverride" class="doc-heading"><code class="inline-code">PrintNoWrap(TextureTarget &target, const std::string &text, Geometry::Point location, int w, TextAlignment align_override)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printnowraptarget-text-location-w-0-alignoverride" class="doc-heading"><code class="inline-code">printnowrap(target, text, {location, w, 0}, align_override)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printnowraptexturetarget-target-const-stdstring-text-geometrypoint-location-int-w" class="doc-heading"><code class="inline-code">PrintNoWrap(TextureTarget &target, const std::string &text, Geometry::Point location, int w)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printnowraptarget-text-location-w-0" class="doc-heading"><code class="inline-code">printnowrap(target, text, {location, w, 0})</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printnowraptexturetarget-target-const-stdstring-text-int-x-int-y-int-w-textalignment-alignoverride" class="doc-heading"><code class="inline-code">PrintNoWrap(TextureTarget &target, const std::string &text, int x, int y, int w, TextAlignment align_override)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printnowraptarget-text-x-y-w-0-alignoverride" class="doc-heading"><code class="inline-code">printnowrap(target, text, {x, y, w, 0}, align_override)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printnowraptexturetarget-target-const-stdstring-text-int-x-int-y-int-w" class="doc-heading"><code class="inline-code">PrintNoWrap(TextureTarget &target, const std::string &text, int x, int y, int w)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printnowraptarget-text-x-y-w-0" class="doc-heading"><code class="inline-code">printnowrap(target, text, {x, y, w, 0})</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printtexturetarget-target-const-stdstring-text" class="doc-heading"><code class="inline-code">Print(TextureTarget &target, const std::string &text)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="virtual-isready" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">IsReady(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">Whether the render can render text</p>
+<h5 id="virtual-getemsize" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetEMSize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<p class="doc-paragraph">Returns the glyphrenderer that is used by this text renderer. It might be the text renderer itself. It is only safe to call this function if IsReady function has returned true. Returns the size of the EM dash</p>
+<h5 id="virtual-getbaseline" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetBaseLine(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual float</code></p>
+<p class="doc-paragraph">Get the distance of baseline from the top of the text</p>
+<h5 id="virtual-getheight" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetHeight(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<p class="doc-paragraph">Get the distance of baseline from the top of the text</p>
+<h5 id="virtual-getsizeconst-stdstring-text" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetSize(const std::string &text)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual Geometry::Size</code></p>
+<p class="doc-paragraph">Returns the size of the given text</p>
+<h5 id="virtual-getsizeconst-stdstring-text-int-width" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetSize(const std::string &text, int width)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual Geometry::Size</code></p>
+<p class="doc-paragraph">Returns the size of the given text</p>
+<h5 id="virtual-getcharacterindexconst-stdstring-text-geometrypoint-location" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetCharacterIndex(const std::string &text, Geometry::Point location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<p class="doc-paragraph">Returns the character index of glyph immediately after the given location. This function is Unicode aware.</p>
+<h5 id="virtual-getcharacterindexconst-stdstring-text-int-w-geometrypoint-location-bool-wrap--true" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetCharacterIndex(const std::string &text, int w, Geometry::Point location, bool wrap = true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<p class="doc-paragraph">Returns the character index of glyph immediately after the given location. This function is Unicode aware.</p>
+<h5 id="virtual-getpositionconst-stdstring-text-int-index" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetPosition(const std::string &text, int index)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual Geometry::Rectangle</code></p>
+<p class="doc-paragraph">Returns the position of the glyph at the character index. If the character is not found, this will return std::numeric_limit<int>::min for x and y position. Size could be 0 if it cannot be determined.</p>
+<h5 id="virtual-getpositionconst-stdstring-text-int-w-int-index-bool-wrap--true" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetPosition(const std::string &text, int w, int index, bool wrap = true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual Geometry::Rectangle</code></p>
+<p class="doc-paragraph">Returns the position of the glyph at the character index. If the character is not found, this will return std::numeric_limit<int>::min for x and y position. Size could be 0 if it cannot be determined.</p>
+<h5 id="virtual-printtexturetarget-target-const-stdstring-text-geometrypoint-location" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">print(TextureTarget &target, const std::string &text, Geometry::Point location)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h3 id="basicprinter" class="doc-heading"><code class="inline-code">BasicPrinter</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<p class="doc-paragraph">Should print the given text to the specified location and color. Width should be used to align the text. Unless width is 0, text should be wrapped. Even if width is 0, the alignment should be respected. For instance if width is 0 and align is right, text should end at the given location. Height of the rectangle can be left 0, thus unless explicitly requested, it should be ignored. Should print the given text to the specified location and color. Width should be used to align the text. Automatic wrapping should not be used. Should print the given text to the specified location and color. Width should be used to align the text. Automatic wrapping should not be used.</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="printtexturetarget-target-const-stdstring-text-rgbaf-color" class="doc-heading"><code class="inline-code">Print(TextureTarget &target, const std::string &text, RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printtexturetarget-target-const-stdstring-text-geometrypoint-location-rgbaf-color" class="doc-heading"><code class="inline-code">Print(TextureTarget &target, const std::string &text, Geometry::Point location, RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printtarget-text-location-color" class="doc-heading"><code class="inline-code">print(target, text, location, color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printtexturetarget-target-const-stdstring-text-int-x-int-y-rgbaf-color" class="doc-heading"><code class="inline-code">Print(TextureTarget &target, const std::string &text, int x, int y, RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printtarget-text-x-y-color" class="doc-heading"><code class="inline-code">print(target, text, {x, y}, color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printtexturetarget-target-const-stdstring-text-geometrypoint-location-int-w-textalignment-alignoverride-rgbaf-color" class="doc-heading"><code class="inline-code">Print(TextureTarget &target, const std::string &text, Geometry::Point location, int w, TextAlignment align_override, RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printtarget-text-location-w-0-alignoverride-color" class="doc-heading"><code class="inline-code">print(target, text, {location, w, 0}, align_override, color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printtexturetarget-target-const-stdstring-text-geometrypoint-location-int-w-rgbaf-color" class="doc-heading"><code class="inline-code">Print(TextureTarget &target, const std::string &text, Geometry::Point location, int w, RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printtarget-text-location-w-0-color" class="doc-heading"><code class="inline-code">print(target, text, {location, w, 0}, color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printtexturetarget-target-const-stdstring-text-int-x-int-y-int-w-textalignment-alignoverride-rgbaf-color" class="doc-heading"><code class="inline-code">Print(TextureTarget &target, const std::string &text, int x, int y, int w, TextAlignment align_override, RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printtarget-text-x-y-w-0-alignoverride-color" class="doc-heading"><code class="inline-code">print(target, text, {x, y, w, 0}, align_override, color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printtexturetarget-target-const-stdstring-text-int-x-int-y-int-w-rgbaf-color" class="doc-heading"><code class="inline-code">Print(TextureTarget &target, const std::string &text, int x, int y, int w, RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printtarget-text-x-y-w-0-color" class="doc-heading"><code class="inline-code">print(target, text, {x, y, w, 0}, color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printnowraptexturetarget-target-const-stdstring-text-geometrypoint-location-int-w-textalignment-alignoverride-rgbaf-color" class="doc-heading"><code class="inline-code">PrintNoWrap(TextureTarget &target, const std::string &text, Geometry::Point location, int w, TextAlignment align_override, RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printnowraptarget-text-location-w-0-alignoverride-color" class="doc-heading"><code class="inline-code">printnowrap(target, text, {location, w, 0}, align_override, color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printnowraptexturetarget-target-const-stdstring-text-geometrypoint-location-int-w-rgbaf-color" class="doc-heading"><code class="inline-code">PrintNoWrap(TextureTarget &target, const std::string &text, Geometry::Point location, int w, RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printnowraptarget-text-location-w-0-color" class="doc-heading"><code class="inline-code">printnowrap(target, text, {location, w, 0}, color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printnowraptexturetarget-target-const-stdstring-text-int-x-int-y-int-w-textalignment-alignoverride-rgbaf-color" class="doc-heading"><code class="inline-code">PrintNoWrap(TextureTarget &target, const std::string &text, int x, int y, int w, TextAlignment align_override, RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printnowraptarget-text-x-y-w-0-alignoverride-color" class="doc-heading"><code class="inline-code">printnowrap(target, text, {x, y, w, 0}, align_override, color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printnowraptexturetarget-target-const-stdstring-text-int-x-int-y-int-w-rgbaf-color" class="doc-heading"><code class="inline-code">PrintNoWrap(TextureTarget &target, const std::string &text, int x, int y, int w, RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printnowraptarget-text-x-y-w-0-color" class="doc-heading"><code class="inline-code">printnowrap(target, text, {x, y, w, 0}, color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setdefaultalignmenttextalignment-value" class="doc-heading"><code class="inline-code">SetDefaultAlignment(TextAlignment value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the default alignment. It is possible to override default alignment through TextRenderer interface.</p>
+<h5 id="getdefaultalignment" class="doc-heading"><code class="inline-code">GetDefaultAlignment(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">TextAlignment</code></p>
+<p class="doc-paragraph">Returns the current default alignment.</p>
+<h5 id="setcolorrgbaf-value" class="doc-heading"><code class="inline-code">SetColor(RGBAf value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the the color of the text. Color can only be overridden through BasicFont interface.</p>
+<h5 id="getcolor" class="doc-heading"><code class="inline-code">GetColor(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">RGBAf</code></p>
+<p class="doc-paragraph">Returns the current text color</p>
+<h5 id="printtarget-text-location-color" class="doc-heading"><code class="inline-code">print(target, text, location, color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printtarget-text-location-align-color" class="doc-heading"><code class="inline-code">print(target, text, location, align, color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-printtexturetarget-target-const-stdstring-text-geometrypoint-location-rgbaf-color" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">print(TextureTarget &target, const std::string &text, Geometry::Point location, RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="printnowraptarget-text-location-align-color" class="doc-heading"><code class="inline-code">printnowrap(target, text, location, align, color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printtarget-text-location-defaultalign" class="doc-heading"><code class="inline-code">print(target, text, location, defaultalign)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printtarget-text-location-defaultalign-color" class="doc-heading"><code class="inline-code">print(target, text, location, defaultalign, color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printnowraptarget-text-location-defaultalign" class="doc-heading"><code class="inline-code">printnowrap(target, text, location, defaultalign)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printnowraptarget-text-location-defaultalign-color" class="doc-heading"><code class="inline-code">printnowrap(target, text, location, defaultalign, color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="textshadow" class="doc-heading"><code class="inline-code">TextShadow</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<p class="doc-paragraph">Default alignment if none is specified Color of this renderer, can be overridden.</p>
+<h3 id="styledprinter" class="doc-heading"><code class="inline-code">StyledPrinter</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="setglyphrendererglyphrenderer-renderer" class="doc-heading"><code class="inline-code">SetGlyphRenderer(GlyphRenderer &renderer)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Renderer must be ready in order to calculate spacings correctly. If it will be initialized later, call ResetSpacing to reset all to defaults.</p>
+<h5 id="setcolorrgbaf-value" class="doc-heading"><code class="inline-code">SetColor(RGBAf value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the color of the text</p>
+<h5 id="getcolor" class="doc-heading"><code class="inline-code">GetColor(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">RGBAf</code></p>
+<p class="doc-paragraph">Returns color of the text</p>
+<h5 id="setshadowtextshadow-value" class="doc-heading"><code class="inline-code">SetShadow(TextShadow value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes text shadow</p>
+<h5 id="disableshadow" class="doc-heading"><code class="inline-code">DisableShadow(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Disables text shadow</p>
+<h5 id="useflatshadowrgbaf-color-geometrypointf-offset--1f-1f" class="doc-heading"><code class="inline-code">UseFlatShadow(RGBAf color, Geometry::Pointf offset = {1.f, 1.f})</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Uses flat shadow for text</p>
+<h5 id="getshadow" class="doc-heading"><code class="inline-code">GetShadow(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">TextShadow</code></p>
+<p class="doc-paragraph">Returns text shadow</p>
+<h5 id="setunderlinebool-value" class="doc-heading"><code class="inline-code">SetUnderline(bool value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets underlining for the text</p>
+<h5 id="underline" class="doc-heading"><code class="inline-code">Underline(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Underlines the text</p>
+<h5 id="underlinergbaf-color" class="doc-heading"><code class="inline-code">Underline(RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Underlines the text with the given color</p>
+<h5 id="getunderline" class="doc-heading"><code class="inline-code">GetUnderline(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns whether the text is underlined</p>
+<h5 id="setunderlinecolorrgbaf-value" class="doc-heading"><code class="inline-code">SetUnderlineColor(RGBAf value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the underline color of the text. By default underline color will be the same as text color. To get default value, use ResetUnderlineColor function</p>
+<h5 id="getunderlinecolor" class="doc-heading"><code class="inline-code">GetUnderlineColor(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">RGBAf</code></p>
+<p class="doc-paragraph">Returns the current underline color.</p>
+<h5 id="resetunderlinecolor" class="doc-heading"><code class="inline-code">ResetUnderlineColor(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets underline color to match with text color</p>
+<h5 id="setstrikebool-value" class="doc-heading"><code class="inline-code">SetStrike(bool value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets whether the text would be stroked</p>
+<h5 id="strike" class="doc-heading"><code class="inline-code">Strike(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Strikes the text</p>
+<h5 id="strikergbaf-color" class="doc-heading"><code class="inline-code">Strike(RGBAf color)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Strikes the text with the given color</p>
+<h5 id="getstrike" class="doc-heading"><code class="inline-code">GetStrike(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns whether the text would stroked</p>
+<h5 id="setstrikecolorrgbaf-value" class="doc-heading"><code class="inline-code">SetStrikeColor(RGBAf value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the strike color of the text. By default strike color will be the same as text color. To get default value, use ResetStrikeColor function</p>
+<h5 id="getstrikecolor" class="doc-heading"><code class="inline-code">GetStrikeColor(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">RGBAf</code></p>
+<p class="doc-paragraph">Returns the current strike color.</p>
+<h5 id="resetstrikecolor" class="doc-heading"><code class="inline-code">ResetStrikeColor(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets strike color to match with text color</p>
+<h5 id="setstrikepositionint-value" class="doc-heading"><code class="inline-code">SetStrikePosition(int value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the strike position to the given value. Default value for strike position is automatically calculated, use ResetStrikePosition to get back to the default</p>
+<h5 id="getstrikeposition" class="doc-heading"><code class="inline-code">GetStrikePosition(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns current strike position</p>
+<h5 id="setdefaultaligntextalignment-value" class="doc-heading"><code class="inline-code">SetDefaultAlign(TextAlignment value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the default alignment for the text</p>
+<h5 id="alignleft" class="doc-heading"><code class="inline-code">AlignLeft(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Aligns the text to the left, removes justify</p>
+<h5 id="alignright" class="doc-heading"><code class="inline-code">AlignRight(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Aligns the text to the right, removes justify</p>
+<h5 id="aligncenter" class="doc-heading"><code class="inline-code">AlignCenter(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Aligns the text to the center, removes justify</p>
+<h5 id="getdefaultalign" class="doc-heading"><code class="inline-code">GetDefaultAlign(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">TextAlignment</code></p>
+<p class="doc-paragraph">Returns the default alignment for the text</p>
+<h5 id="setjustifybool-value" class="doc-heading"><code class="inline-code">SetJustify(bool value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets whether the text would be justified. Justify will not affect single line text as well last line of a paragraph.</p>
+<h5 id="justifyleft" class="doc-heading"><code class="inline-code">JustifyLeft(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Aligns the text to the left, sets justify</p>
+<h5 id="justifyright" class="doc-heading"><code class="inline-code">JustifyRight(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Aligns the text to the right, sets justify</p>
+<h5 id="justifycenter" class="doc-heading"><code class="inline-code">JustifyCenter(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Aligns the text to the center, sets justify</p>
+<h5 id="getjustify" class="doc-heading"><code class="inline-code">GetJustify(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Returns whether the text would be justified</p>
+<h5 id="setlinespacingpixelsint-value" class="doc-heading"><code class="inline-code">SetLineSpacingPixels(int value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the line spacing in pixels, this spacing is the space between two lines, from the descender of the first line to the ascender of the second.</p>
+<h5 id="getlinespacingpixels" class="doc-heading"><code class="inline-code">GetLineSpacingPixels(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns the line spacing in pixels</p>
+<h5 id="setlinespacingfloat-value" class="doc-heading"><code class="inline-code">SetLineSpacing(float value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the line spacing as percentage of line gap. A value of one will use the default state by the font, where as a value of two will leave a large gap between two lines. This will round the final result to the nearest pixel.</p>
+<h5 id="getlinespacing" class="doc-heading"><code class="inline-code">GetLineSpacing(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">float</code></p>
+<p class="doc-paragraph">Returns the line spacing as percentage of line gap</p>
+<h5 id="setletterspacingint-value" class="doc-heading"><code class="inline-code">SetLetterSpacing(int value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Spacing between letters of the text, in pixels. This is in addition to the regular character spacing.</p>
+<h5 id="getletterspacing" class="doc-heading"><code class="inline-code">GetLetterSpacing(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns the spacing between the letters in pixels</p>
+<h5 id="settabwidthint-value" class="doc-heading"><code class="inline-code">SetTabWidth(int value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Distance between tab stops. This value is in pixels. Default value is 8 * A width. Tabbing is only fully effective when text is left aligned.</p>
+<h5 id="settabwidthinlettersfloat-value" class="doc-heading"><code class="inline-code">SetTabWidthInLetters(float value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Sets the tab width in digit widths.</p>
+<h5 id="gettabwidth" class="doc-heading"><code class="inline-code">GetTabWidth(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Returns tab width in pixels.</p>
+<h5 id="setparagraphspacingint-value" class="doc-heading"><code class="inline-code">SetParagraphSpacing(int value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the additional space between paragraphs. A paragraph is stared by a manual line break. This distance is in pixels.</p>
+<h5 id="getparagraphspacing" class="doc-heading"><code class="inline-code">GetParagraphSpacing(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">int</code></p>
+<p class="doc-paragraph">Get the space between paragraphs in pixels.</p>
+<h5 id="printtarget-text-location-defaultalign" class="doc-heading"><code class="inline-code">print(target, text, location, defaultalign)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printnowraptarget-text-location-defaultalign" class="doc-heading"><code class="inline-code">printnowrap(target, text, location, defaultalign)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="printtexturetarget-target-const-stdstring-text-geometrypointf-location-rgbaf-color-rgbaf-strikecolor-rgbaf-underlinecolor" class="doc-heading"><code class="inline-code">print(TextureTarget &target, const std::string &text, Geometry::Pointf location, RGBAf color, RGBAf strikecolor, RGBAf underlinecolor)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h5 id="printtexturetarget-target-const-stdstring-text-geometryrectanglef-location-textalignment-align-rgbaf-color-rgbaf-strikecolor-rgbaf-underlinecolor" class="doc-heading"><code class="inline-code">print(TextureTarget &target, const std::string &text, Geometry::Rectanglef location, TextAlignment align, RGBAf color, RGBAf strikecolor, RGBAf underlinecolor)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="font" class="doc-heading"><code class="inline-code">Font</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="font" class="doc-heading"><code class="inline-code">Font(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="fontgraphicsglyphrenderer-renderer" class="doc-heading"><code class="inline-code">Font(Graphics::GlyphRenderer &renderer)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Filling constructor, for now can only hold Graphics::BitmapFont. All images in the renderer should be bitmaps or their derivatives with data buffers still attached.</p>
+<h5 id="hasrenderer" class="doc-heading"><code class="inline-code">HasRenderer(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">This function will only prepare images loaded from a resource, does not work for images loaded later. Returns true if the resource has renderer.</p>
+<h5 id="assertdata-renderer-is-not-set" class="doc-heading"><code class="inline-code">ASSERT(data, "Renderer is not set")</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Returns the renderer stored in this resource.</p>
+<h5 id="removerenderer" class="doc-heading"><code class="inline-code">RemoveRenderer(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes the renderer from this resource.</p>
+<h5 id="setrenderergraphicsglyphrenderer-renderer" class="doc-heading"><code class="inline-code">SetRenderer(Graphics::GlyphRenderer &renderer)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the renderer to the given renderer</p>
+<h5 id="assumerenderergraphicsglyphrenderer-renderer" class="doc-heading"><code class="inline-code">AssumeRenderer(Graphics::GlyphRenderer &renderer)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the renderer to the given renderer and assumes ownership</p>
+<h5 id="setrendererrenderer" class="doc-heading"><code class="inline-code">SetRenderer(renderer)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<hr class="doc-divider">
+<h2 id="enums" class="doc-heading">Enums</h2>
+<h3 id="namedfont" class="doc-heading"><code class="inline-code">NamedFont</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">Glyph is a symbol for a character. In Gorgon, glyphs are UTF32 chars. Constants for fonts.</p>
+<h3 id="headerlevel" class="doc-heading"><code class="inline-code">HeaderLevel</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">Default font Default font Bold font First level heading Second level heading Third level heading Fourth level heading Italic font Smaller font, usually 75% of full size Bold and italic font Font style used to display information, usually smaller and uses different colors. Font style used to display information, usually smaller and uses different colors. Font style used to display information, usually smaller and uses different colors. Font style used to display information, usually smaller and uses different colors. A large font, usually 125% of the original size Small font that will be used in super and subscripts. Could also be used for other purposes. Small font that will be used in super and subscripts for fonts that is known to be bold. Could also be used for other purposes. Small font that will be used in super and subscripts. Could also be used for other purposes. This script font will be used for small, info and script fonts Fixed width font to be used in programming Fixed width font to be used in programming Fixed width font to be used in programming Fixed width font to be used in programming Constants for headings</p>
+<h3 id="shadowtype" class="doc-heading"><code class="inline-code">ShadowType</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">internal</code></p>
+<hr class="doc-divider">
+<h2 id="functions" class="doc-heading">Functions</h2>
+<h3 id="decodestdstringconstiterator-it-stdstringconstiterator-end-bool-skipcmd" class="doc-heading"><code class="inline-code">decode(std::string::const_iterator &it, std::string::const_iterator end, bool skipcmd)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Glyph</code></p>
+<h3 id="ifit--end" class="doc-heading"><code class="inline-code">if(it == end)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifg--0x9a" class="doc-heading"><code class="inline-code">if(g == 0x9a)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="decodeimplit-end" class="doc-heading"><code class="inline-code">decode_impl(it, end)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifit--end" class="doc-heading"><code class="inline-code">if(it == end)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="dodefaulttabt-s-t-x-t-w" class="doc-heading"><code class="inline-code">dodefaulttab(T_ s, T_ &x, T_ w)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="forauto-itbegin-itend-it" class="doc-heading"><code class="inline-code">for(auto it=begin; it!=end; ++it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">helps with the simple layouts, decodes and executes unicode instructions. Offset parameter in render function is the offset that must be used after rendering the character. If g is 0, only offset should be processed</p>
+<h3 id="ifprev" class="doc-heading"><code class="inline-code">if(prev)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifg--t" class="doc-heading"><code class="inline-code">if(g == '\t')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifprev" class="doc-heading"><code class="inline-code">if(prev)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="dotab" class="doc-heading"><code class="inline-code">dotab()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="donewlineg" class="doc-heading"><code class="inline-code">donewline(g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifg--32" class="doc-heading"><code class="inline-code">if(g > 32)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifprev" class="doc-heading"><code class="inline-code">if(prev)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifind--0" class="doc-heading"><code class="inline-code">if(ind != 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="donewline0" class="doc-heading"><code class="inline-code">donewline(0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-itbegin-itend-it" class="doc-heading"><code class="inline-code">for(auto it=begin; it!=end; ++it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">helps with the simple layouts, decodes and executes unicode instructions. Offset parameter in render function is the offset that must be used after rendering the character. If g is 0, only offset should be processed. This overload calls process function even for glyphs that are not normally rendered, and allows return value from the layout function to stop processing further.</p>
+<h3 id="ifprev" class="doc-heading"><code class="inline-code">if(prev)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifg--t" class="doc-heading"><code class="inline-code">if(g == '\t')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifprev" class="doc-heading"><code class="inline-code">if(prev)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="dotab" class="doc-heading"><code class="inline-code">dotab()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="donewlineg" class="doc-heading"><code class="inline-code">donewline(g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifg--32" class="doc-heading"><code class="inline-code">if(g > 32)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifprev" class="doc-heading"><code class="inline-code">if(prev)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifind--0" class="doc-heading"><code class="inline-code">if(ind != 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="donewline0" class="doc-heading"><code class="inline-code">donewline(0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-itbegin-itend-it" class="doc-heading"><code class="inline-code">for(auto it=begin; it!=end; ++it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifg--t" class="doc-heading"><code class="inline-code">if(g == '\t')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="dotabx" class="doc-heading"><code class="inline-code">dotab(x)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifprev" class="doc-heading"><code class="inline-code">if(prev)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifg--32" class="doc-heading"><code class="inline-code">if(g > 32)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifprev" class="doc-heading"><code class="inline-code">if(prev)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifwidth--0--x--curspacing--prevgw--width" class="doc-heading"><code class="inline-code">if(width > 0 && x + cur_spacing + prev_gw > width)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iflastbreak--0" class="doc-heading"><code class="inline-code">if(lastbreak == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifind--0" class="doc-heading"><code class="inline-code">if(ind == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-itbegin-itend-it" class="doc-heading"><code class="inline-code">for(auto it=begin; it!=end; ++it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifg--t" class="doc-heading"><code class="inline-code">if(g == '\t')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="dotabx" class="doc-heading"><code class="inline-code">dotab(x)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifprev" class="doc-heading"><code class="inline-code">if(prev)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifg--32" class="doc-heading"><code class="inline-code">if(g > 32)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifprev" class="doc-heading"><code class="inline-code">if(prev)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifwidth--x--curspacing--prevgw--width" class="doc-heading"><code class="inline-code">if(width && x + cur_spacing + prev_gw > width)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iflastbreak--0" class="doc-heading"><code class="inline-code">if(lastbreak == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifind--0" class="doc-heading"><code class="inline-code">if(ind == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifautobreak" class="doc-heading"><code class="inline-code">if(autobreak)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdefaultalign--textalignmentcenter" class="doc-heading"><code class="inline-code">if(defaultalign == TextAlignment::Center)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdefaultalign--textalignmentright" class="doc-heading"><code class="inline-code">if(defaultalign == TextAlignment::Right)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iflocationx--off--begin--end" class="doc-heading"><code class="inline-code">if(location.X <= off || begin == end)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-it--begin-it--end-it" class="doc-heading"><code class="inline-code">for(auto it = begin; it != end; ++it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ify--locationy" class="doc-heading"><code class="inline-code">if(y > location.Y)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifindex--0" class="doc-heading"><code class="inline-code">if(index == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifindex--0" class="doc-heading"><code class="inline-code">if(index == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdefaultalign--textalignmentcenter" class="doc-heading"><code class="inline-code">if(defaultalign == TextAlignment::Center)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdefaultalign--textalignmentright" class="doc-heading"><code class="inline-code">if(defaultalign == TextAlignment::Right)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="forauto-it--begin-it--end-it" class="doc-heading"><code class="inline-code">for(auto it = begin; it != end; ++it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifindex--0" class="doc-heading"><code class="inline-code">if(index == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifindex--0" class="doc-heading"><code class="inline-code">if(index == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifalign--textalignmentcenter" class="doc-heading"><code class="inline-code">if(align == TextAlignment::Center)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifalign--textalignmentright" class="doc-heading"><code class="inline-code">if(align == TextAlignment::Right)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="forauto-it--begin-it--end-it" class="doc-heading"><code class="inline-code">for(auto it = begin; it != end; ++it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifshadowtype--textshadowflat" class="doc-heading"><code class="inline-code">if(shadow.type == TextShadow::Flat)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="printtarget-text-location-color-strikecolor-underlinecolor" class="doc-heading"><code class="inline-code">print(target, text, location, color, strikecolor, underlinecolor)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstrike" class="doc-heading"><code class="inline-code">if(strike)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifunderline" class="doc-heading"><code class="inline-code">if(underline)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifjustify--eol--0" class="doc-heading"><code class="inline-code">if(justify && eol == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifindex--0" class="doc-heading"><code class="inline-code">if(index == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifindex--0" class="doc-heading"><code class="inline-code">if(index == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifjustify--g--0" class="doc-heading"><code class="inline-code">if(justify && g == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-itbegin-itend-it" class="doc-heading"><code class="inline-code">for(auto it=begin; it!=end; ++it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifit-g--t" class="doc-heading"><code class="inline-code">if(it->g == '\t')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifletters--targetletters--1" class="doc-heading"><code class="inline-code">if(letters && target/letters >= 1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifsps--0" class="doc-heading"><code class="inline-code">if(sps > 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftarget--0" class="doc-heading"><code class="inline-code">if(target == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-itbegin-itend-it" class="doc-heading"><code class="inline-code">for(auto it=begin; it!=end; ++it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdefaultalign--textalignmentcenter" class="doc-heading"><code class="inline-code">if(defaultalign == TextAlignment::Center)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdefaultalign--textalignmentright" class="doc-heading"><code class="inline-code">if(defaultalign == TextAlignment::Right)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iflocationx--off--begin--end" class="doc-heading"><code class="inline-code">if(location.X <= off || begin == end)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-itbegin-itend-it" class="doc-heading"><code class="inline-code">for(auto it=begin; it!=end; ++it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ify--locationy" class="doc-heading"><code class="inline-code">if(y > location.Y)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifjustify--g--0" class="doc-heading"><code class="inline-code">if(justify && g == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-itbegin-itend-it" class="doc-heading"><code class="inline-code">for(auto it=begin; it!=end; ++it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifit-g--t" class="doc-heading"><code class="inline-code">if(it->g == '\t')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifletters--targetletters--1" class="doc-heading"><code class="inline-code">if(letters && target/letters >= 1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifsps--0" class="doc-heading"><code class="inline-code">if(sps > 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftarget--0" class="doc-heading"><code class="inline-code">if(target == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-itbegin-itend-it" class="doc-heading"><code class="inline-code">for(auto it=begin; it!=end; ++it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdefaultalign--textalignmentcenter" class="doc-heading"><code class="inline-code">if(defaultalign == TextAlignment::Center)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifdefaultalign--textalignmentright" class="doc-heading"><code class="inline-code">if(defaultalign == TextAlignment::Right)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="forauto-it--begin-it--end-it" class="doc-heading"><code class="inline-code">for(auto it = begin; it != end; ++it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifindex--0" class="doc-heading"><code class="inline-code">if(index == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifindex--0" class="doc-heading"><code class="inline-code">if(index == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifshadowtype--textshadowflat" class="doc-heading"><code class="inline-code">if(shadow.type == TextShadow::Flat)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="printtarget-text-location-alignoverride-color-strikecolor-underlinecolor" class="doc-heading"><code class="inline-code">print(target, text, location, align_override, color, strikecolor, underlinecolor)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifjustify--g--0" class="doc-heading"><code class="inline-code">if(justify && g == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-itbegin-itend-it" class="doc-heading"><code class="inline-code">for(auto it=begin; it!=end; ++it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifit-g--t" class="doc-heading"><code class="inline-code">if(it->g == '\t')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifletters--targetletters--1" class="doc-heading"><code class="inline-code">if(letters && target/letters >= 1)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifsps--0" class="doc-heading"><code class="inline-code">if(sps > 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftarget--0" class="doc-heading"><code class="inline-code">if(target == 0)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-itbegin-itend-it" class="doc-heading"><code class="inline-code">for(auto it=begin; it!=end; ++it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifalign--textalignmentcenter" class="doc-heading"><code class="inline-code">if(align == TextAlignment::Center)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifalign--textalignmentright" class="doc-heading"><code class="inline-code">if(align == TextAlignment::Right)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="forauto-itbegin-itend-it" class="doc-heading"><code class="inline-code">for(auto it=begin; it!=end; ++it)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifstrike" class="doc-heading"><code class="inline-code">if(strike)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifunderline" class="doc-heading"><code class="inline-code">if(underline)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchalign" class="doc-heading"><code class="inline-code">switch(align)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="printtarget-text-locationx--locationwidth--2-locationy-0-locationheight-align-color" class="doc-heading"><code class="inline-code">print(target, text, {location.X + location.Width / 2, location.Y, 0, location.Height}, align, color)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="printtarget-text-locationx--locationwidth-locationy-0-locationheight-align-color" class="doc-heading"><code class="inline-code">print(target, text, {location.X + location.Width, location.Y, 0, location.Height}, align, color)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="switchalign" class="doc-heading"><code class="inline-code">switch(align)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="printtarget-text-locationx--locationwidth--2-locationy-0-locationheight-align" class="doc-heading"><code class="inline-code">print(target, text, {location.X + location.Width / 2, location.Y, 0, location.Height}, align)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="printtarget-text-locationx--locationwidth-locationy-0-locationheight-align" class="doc-heading"><code class="inline-code">print(target, text, {location.X + location.Width, location.Y, 0, location.Height}, align)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="decodeimplstdstringconstiterator-it-stdstringconstiterator-end" class="doc-heading"><code class="inline-code">decode_impl(std::string::const_iterator &it, std::string::const_iterator end)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline Glyph</code></p>
+<h3 id="ifb--127" class="doc-heading"><code class="inline-code">if(b <= 127)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifb--r" class="doc-heading"><code class="inline-code">if(b == '\r')</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifb--255" class="doc-heading"><code class="inline-code">if(b == 255)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="decodestdstringconstiterator-it-stdstringconstiterator-end-bool-skipcmd--true" class="doc-heading"><code class="inline-code">decode(std::string::const_iterator &it, std::string::const_iterator end, bool skipcmd = true)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">Glyph</code></p>
+<p class="doc-paragraph">Decodes a utf-8 character from the given iterator. If char is not valid 0xfffd is returned. \\r\\n is mapped to \\n, if skipcmd is true, this will skip advanced renderer commands</p>
+<h3 id="isnewlineglyph-g" class="doc-heading"><code class="inline-code">isnewline(Glyph g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="isspacedglyph-g" class="doc-heading"><code class="inline-code">isspaced(Glyph g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="isspaceglyph-g" class="doc-heading"><code class="inline-code">isspace(Glyph g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="isadjustablespaceglyph-g" class="doc-heading"><code class="inline-code">isadjustablespace(Glyph g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="isbreakingglyph-g" class="doc-heading"><code class="inline-code">isbreaking(Glyph g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<h3 id="ceildivint-v-float-f" class="doc-heading"><code class="inline-code">ceildiv(int v, float f)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline int</code></p>
+<h3 id="rounddivint-v-float-f" class="doc-heading"><code class="inline-code">rounddiv(int v, float f)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline int</code></p>
+<h3 id="isspacedglyph-g" class="doc-heading"><code class="inline-code">isspaced(Glyph g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline bool</code></p>
+<h3 id="isnewlineglyph-g" class="doc-heading"><code class="inline-code">isnewline(Glyph g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline bool</code></p>
+<h3 id="switchg" class="doc-heading"><code class="inline-code">switch(g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="isspaceglyph-g" class="doc-heading"><code class="inline-code">isspace(Glyph g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline bool</code></p>
+<h3 id="switchg" class="doc-heading"><code class="inline-code">switch(g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="isadjustablespaceglyph-g" class="doc-heading"><code class="inline-code">isadjustablespace(Glyph g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline bool</code></p>
+<h3 id="switchg" class="doc-heading"><code class="inline-code">switch(g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="isbreakingglyph-g" class="doc-heading"><code class="inline-code">isbreaking(Glyph g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline bool</code></p>
+<h3 id="switchg" class="doc-heading"><code class="inline-code">switch(g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="defaultspaceglyph-g-const-glyphrenderer-renderer" class="doc-heading"><code class="inline-code">defaultspace(Glyph g, const GlyphRenderer &renderer)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline float</code></p>
+<h3 id="switchg" class="doc-heading"><code class="inline-code">switch(g)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setrendererrenderer" class="doc-heading"><code class="inline-code">SetRenderer(renderer)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="assertok-font-resource-can-only-be-a-bitmapfont-or-freetype-font" class="doc-heading"><code class="inline-code">ASSERT(ok, "Font resource can only be a bitmapfont or freetype font")</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbr" class="doc-heading"><code class="inline-code">if(br)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-p--br" class="doc-heading"><code class="inline-code">for(auto &p : *br)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbf" class="doc-heading"><code class="inline-code">if(bf)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-k--bf-kerning" class="doc-heading"><code class="inline-code">for(auto &k : bf->kerning)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-p--bf" class="doc-heading"><code class="inline-code">for(auto &p : *bf)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-p--bf" class="doc-heading"><code class="inline-code">for(auto &p : *bf)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-i--bmps" class="doc-heading"><code class="inline-code">for(auto &i : bmps)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifft" class="doc-heading"><code class="inline-code">if(ft)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifdata" class="doc-heading"><code class="inline-code">if(data)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="whiletarget" class="doc-heading"><code class="inline-code">while(!target)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifgid--gidfontprops" class="doc-heading"><code class="inline-code">if(gid == GID::Font_Props)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifgid--gidfontfreetypedata" class="doc-heading"><code class="inline-code">if(gid == GID::Font_FreeTypeData)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifsz" class="doc-heading"><code class="inline-code">if(sz)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifgid--gidfontfreetypeprops" class="doc-heading"><code class="inline-code">if(gid == GID::Font_FreeTypeProps)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifgid--gidfontbitmapprops" class="doc-heading"><code class="inline-code">if(gid == GID::Font_BitmapProps)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifgid--gidfontbitmapkerning" class="doc-heading"><code class="inline-code">if(gid == GID::Font_BitmapKerning)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="whilekerntarget" class="doc-heading"><code class="inline-code">while(!kerntarget)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifgid--gidfontcharmap" class="doc-heading"><code class="inline-code">if(gid == GID::Font_Charmap)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="forint-i0-i256-i" class="doc-heading"><code class="inline-code">for(int i=0; i<256; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifgid--gidfontcharmapii" class="doc-heading"><code class="inline-code">if(gid == GID::Font_Charmap_II)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="forunsigned-i0-isize20-i" class="doc-heading"><code class="inline-code">for(unsigned i=0; i<size/20; i++)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifgid--gidfontimage--gid--gidimage" class="doc-heading"><code class="inline-code">if(gid == GID::Font_Image || gid == GID::Image)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="forauto-p--descs" class="doc-heading"><code class="inline-code">for(auto &p : descs)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifbf" class="doc-heading"><code class="inline-code">if(bf)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

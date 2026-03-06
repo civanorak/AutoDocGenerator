@@ -1,6 +1,6 @@
 # StatefulLabel
 
-> Auto-generated documentation for the **StatefulLabel** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **StatefulLabel** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

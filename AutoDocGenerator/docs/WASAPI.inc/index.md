@@ -1,6 +1,6 @@
 # WASAPI.inc
 
-> Auto-generated documentation for the **WASAPI.inc** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **WASAPI.inc** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

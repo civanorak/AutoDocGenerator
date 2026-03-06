@@ -1,6 +1,6 @@
 # AdvancedPrinter
 
-> Auto-generated documentation for the **AdvancedPrinter** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **AdvancedPrinter** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

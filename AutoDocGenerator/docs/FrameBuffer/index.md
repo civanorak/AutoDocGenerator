@@ -1,6 +1,6 @@
 # FrameBuffer
 
-> Auto-generated documentation for the **FrameBuffer** module of the Gorgon C++ Game Engine.
+&gt; Auto-generated documentation for the **FrameBuffer** module of the Gorgon C++ Game Engine.
 
 
 ## Contents

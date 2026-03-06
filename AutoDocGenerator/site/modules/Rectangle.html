@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ Game Library Documentation">
+    <title>Rectangle — Gorgon Game Engine</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="header-brand">
+            <div class="header-logo">G</div>
+            <span class="header-title">Gorgon Game Engine</span>
+        </a>
+        <span class="header-subtitle">&nbsp;Documentation</span>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../getting-started.html">Getting Started</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search"><input type="text" id="sidebar-search" placeholder="Search modules..."></div>
+<div class="sidebar-group">
+  <div class="sidebar-group-title">🚀 Guide <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="../getting-started.html">Getting Started</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎮 Core <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Base.html">Base</a></li>
+    <li><a href="Basic.html">Basic</a></li>
+    <li><a href="Common.html">Common</a></li>
+    <li><a href="Config.html">Config</a></li>
+    <li><a href="Definitions.html">Definitions</a></li>
+    <li><a href="Environment.html">Environment</a></li>
+    <li><a href="OS.html">OS</a></li>
+    <li><a href="Runtime.html">Runtime</a></li>
+    <li><a href="Types.html">Types</a></li>
+    <li><a href="Utils.html">Utils</a></li>
+    <li><a href="UtilsBase.html">UtilsBase</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖼️ Graphics <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Bitmap.html">Bitmap</a></li>
+    <li><a href="BitmapFont.html">BitmapFont</a></li>
+    <li><a href="BlankImage.html">BlankImage</a></li>
+    <li><a href="Color.html">Color</a></li>
+    <li><a href="ColorPicker.html">ColorPicker</a></li>
+    <li><a href="ColorPlane.html">ColorPlane</a></li>
+    <li><a href="ColorSpaces.html">ColorSpaces</a></li>
+    <li><a href="Drawables.html">Drawables</a></li>
+    <li><a href="EmptyImage.html">EmptyImage</a></li>
+    <li><a href="Filters.html">Filters</a></li>
+    <li><a href="Flip.html">Flip</a></li>
+    <li><a href="Font.html">Font</a></li>
+    <li><a href="FontTheme.html">FontTheme</a></li>
+    <li><a href="FrameBuffer.html">FrameBuffer</a></li>
+    <li><a href="FreeType.html">FreeType</a></li>
+    <li><a href="GID.html">GID</a></li>
+    <li><a href="GL.html">GL</a></li>
+    <li><a href="Graphics.html">Graphics</a></li>
+    <li><a href="HTMLRenderer.html">HTMLRenderer</a></li>
+    <li><a href="IL.html">IL</a></li>
+    <li><a href="Image.html">Image</a></li>
+    <li><a href="JPEG.html">JPEG</a></li>
+    <li><a href="OpenGL.html">OpenGL</a></li>
+    <li><a href="PNG.html">PNG</a></li>
+    <li><a href="Renderer.html">Renderer</a></li>
+    <li><a href="ScalableObject.html">ScalableObject</a></li>
+    <li><a href="Shader.html">Shader</a></li>
+    <li><a href="Shaders.html">Shaders</a></li>
+    <li><a href="Texture.html">Texture</a></li>
+    <li><a href="TextureAnimation.html">TextureAnimation</a></li>
+    <li><a href="TextureTargets.html">TextureTargets</a></li>
+    <li><a href="TintedObject.html">TintedObject</a></li>
+    <li><a href="Tinting.html">Tinting</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🎬 Animation <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Animation.html">Animation</a></li>
+    <li><a href="AnimationServices.html">AnimationServices</a></li>
+    <li><a href="AnimationStorage.html">AnimationStorage</a></li>
+    <li><a href="Animations.html">Animations</a></li>
+    <li><a href="ControlledTimer.html">ControlledTimer</a></li>
+    <li><a href="Controllers.html">Controllers</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🖱️ Input <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="DnD.html">DnD</a></li>
+    <li><a href="Input.html">Input</a></li>
+    <li><a href="KeyRepeater.html">KeyRepeater</a></li>
+    <li><a href="Keyboard.html">Keyboard</a></li>
+    <li><a href="Mouse.html">Mouse</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 UI & Widgets <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Button.html">Button</a></li>
+    <li><a href="Checkbox.html">Checkbox</a></li>
+    <li><a href="CheckboxBase.html">CheckboxBase</a></li>
+    <li><a href="CheckboxBlueprint.html">CheckboxBlueprint</a></li>
+    <li><a href="Combobox.html">Combobox</a></li>
+    <li><a href="ComboboxBase.html">ComboboxBase</a></li>
+    <li><a href="ComboboxBlueprint.html">ComboboxBlueprint</a></li>
+    <li><a href="CountingText.html">CountingText</a></li>
+    <li><a href="Dialog.html">Dialog</a></li>
+    <li><a href="DialogWindow.html">DialogWindow</a></li>
+    <li><a href="Dropdown.html">Dropdown</a></li>
+    <li><a href="Filler.html">Filler</a></li>
+    <li><a href="IButton.html">IButton</a></li>
+    <li><a href="ICheckbox.html">ICheckbox</a></li>
+    <li><a href="ILabel.html">ILabel</a></li>
+    <li><a href="IListItem.html">IListItem</a></li>
+    <li><a href="INumberbox.html">INumberbox</a></li>
+    <li><a href="IOption.html">IOption</a></li>
+    <li><a href="IProgressor.html">IProgressor</a></li>
+    <li><a href="IScroller.html">IScroller</a></li>
+    <li><a href="ISlider.html">ISlider</a></li>
+    <li><a href="ITextbox.html">ITextbox</a></li>
+    <li><a href="Inputbox.html">Inputbox</a></li>
+    <li><a href="Label.html">Label</a></li>
+    <li><a href="Listbox.html">Listbox</a></li>
+    <li><a href="ListboxBase.html">ListboxBase</a></li>
+    <li><a href="ListboxBlueprint.html">ListboxBlueprint</a></li>
+    <li><a href="NumberInput.html">NumberInput</a></li>
+    <li><a href="Numberbox.html">Numberbox</a></li>
+    <li><a href="Panel.html">Panel</a></li>
+    <li><a href="PanelBase.html">PanelBase</a></li>
+    <li><a href="PanelBlueprint.html">PanelBlueprint</a></li>
+    <li><a href="Percentbar.html">Percentbar</a></li>
+    <li><a href="PetContainer.html">PetContainer</a></li>
+    <li><a href="PetTextbox.html">PetTextbox</a></li>
+    <li><a href="Placeholder.html">Placeholder</a></li>
+    <li><a href="Progressbar.html">Progressbar</a></li>
+    <li><a href="RadioButton.html">RadioButton</a></li>
+    <li><a href="RadioButtons.html">RadioButtons</a></li>
+    <li><a href="RadioControl.html">RadioControl</a></li>
+    <li><a href="Scrollbar.html">Scrollbar</a></li>
+    <li><a href="ScrollingWidget.html">ScrollingWidget</a></li>
+    <li><a href="Slider.html">Slider</a></li>
+    <li><a href="SliderBase.html">SliderBase</a></li>
+    <li><a href="SliderBlueprint.html">SliderBlueprint</a></li>
+    <li><a href="Spinner.html">Spinner</a></li>
+    <li><a href="StatefulLabel.html">StatefulLabel</a></li>
+    <li><a href="TabPanelPanel.html">TabPanelPanel</a></li>
+    <li><a href="Tabpanel.html">Tabpanel</a></li>
+    <li><a href="TabpanelBlueprint.html">TabpanelBlueprint</a></li>
+    <li><a href="TextInput.html">TextInput</a></li>
+    <li><a href="Textarea.html">Textarea</a></li>
+    <li><a href="Textbox.html">Textbox</a></li>
+    <li><a href="TextboxBase.html">TextboxBase</a></li>
+    <li><a href="TextboxBlueprint.html">TextboxBlueprint</a></li>
+    <li><a href="TooltipManager.html">TooltipManager</a></li>
+    <li><a href="TwoStateControl.html">TwoStateControl</a></li>
+    <li><a href="UI.html">UI</a></li>
+    <li><a href="Widget.html">Widget</a></li>
+    <li><a href="WidgetContainer.html">WidgetContainer</a></li>
+    <li><a href="WidgetLayer.html">WidgetLayer</a></li>
+    <li><a href="WidgetRegistry.html">WidgetRegistry</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📐 Geometry <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Alignment.html">Alignment</a></li>
+    <li><a href="Bezier.html">Bezier</a></li>
+    <li><a href="Bounds.html">Bounds</a></li>
+    <li><a href="Circle.html">Circle</a></li>
+    <li><a href="Dimension.html">Dimension</a></li>
+    <li><a href="Geometry.html">Geometry</a></li>
+    <li><a href="GeometryBoxes.html">GeometryBoxes</a></li>
+    <li><a href="Line.html">Line</a></li>
+    <li><a href="Margin.html">Margin</a></li>
+    <li><a href="Point.html">Point</a></li>
+    <li><a href="Point3D.html">Point3D</a></li>
+    <li><a href="PointList.html">PointList</a></li>
+    <li><a href="PointProperty.html">PointProperty</a></li>
+    <li><a href="Polygon.html">Polygon</a></li>
+    <li><a href="Rectangle.html" class="active">Rectangle</a></li>
+    <li><a href="Region.html">Region</a></li>
+    <li><a href="Size.html">Size</a></li>
+    <li><a href="SizeProperty.html">SizeProperty</a></li>
+    <li><a href="Transform3D.html">Transform3D</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔊 Audio <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Audio.html">Audio</a></li>
+    <li><a href="AudioStream.html">AudioStream</a></li>
+    <li><a href="FLAC.html">FLAC</a></li>
+    <li><a href="Multimedia.html">Multimedia</a></li>
+    <li><a href="PulseAudio.html">PulseAudio</a></li>
+    <li><a href="PulseAudio.inc.html">PulseAudio.inc</a></li>
+    <li><a href="Sound.html">Sound</a></li>
+    <li><a href="Source.html">Source</a></li>
+    <li><a href="Vorbis.html">Vorbis</a></li>
+    <li><a href="WASAPI.html">WASAPI</a></li>
+    <li><a href="WASAPI.inc.html">WASAPI.inc</a></li>
+    <li><a href="Wave.html">Wave</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📁 IO & Data <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Blob.html">Blob</a></li>
+    <li><a href="CGI.html">CGI</a></li>
+    <li><a href="Clipboard.html">Clipboard</a></li>
+    <li><a href="Data.html">Data</a></li>
+    <li><a href="DataExchange.html">DataExchange</a></li>
+    <li><a href="DataItems.html">DataItems</a></li>
+    <li><a href="File.html">File</a></li>
+    <li><a href="FileDialog.html">FileDialog</a></li>
+    <li><a href="Filesystem.html">Filesystem</a></li>
+    <li><a href="Folder.html">Folder</a></li>
+    <li><a href="HTTP.html">HTTP</a></li>
+    <li><a href="LZMA.html">LZMA</a></li>
+    <li><a href="Markdown.html">Markdown</a></li>
+    <li><a href="MemoryStream.html">MemoryStream</a></li>
+    <li><a href="Parse.html">Parse</a></li>
+    <li><a href="Query.html">Query</a></li>
+    <li><a href="Reader.html">Reader</a></li>
+    <li><a href="Storage.html">Storage</a></li>
+    <li><a href="Stream.html">Stream</a></li>
+    <li><a href="Tokenizer.html">Tokenizer</a></li>
+    <li><a href="URI.html">URI</a></li>
+    <li><a href="Writer.html">Writer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧩 Containers <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Array.html">Array</a></li>
+    <li><a href="Collection.html">Collection</a></li>
+    <li><a href="Container.html">Container</a></li>
+    <li><a href="Hashmap.html">Hashmap</a></li>
+    <li><a href="Iterator.html">Iterator</a></li>
+    <li><a href="LinkNode.html">LinkNode</a></li>
+    <li><a href="List.html">List</a></li>
+    <li><a href="ListItem.html">ListItem</a></li>
+    <li><a href="Vector.html">Vector</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🪟 Window & Layout <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BorderData.html">BorderData</a></li>
+    <li><a href="ComponentStack.html">ComponentStack</a></li>
+    <li><a href="ComponentStackWidget.html">ComponentStackWidget</a></li>
+    <li><a href="ControlledPanel.html">ControlledPanel</a></li>
+    <li><a href="CustomLayer.html">CustomLayer</a></li>
+    <li><a href="DWM.html">DWM</a></li>
+    <li><a href="ExtenderLayer.html">ExtenderLayer</a></li>
+    <li><a href="Flow.html">Flow</a></li>
+    <li><a href="FullscreenPanel.html">FullscreenPanel</a></li>
+    <li><a href="InlinePanel.html">InlinePanel</a></li>
+    <li><a href="Layer.html">Layer</a></li>
+    <li><a href="LayerAdapter.html">LayerAdapter</a></li>
+    <li><a href="LayerMover.html">LayerMover</a></li>
+    <li><a href="LayerResizer.html">LayerResizer</a></li>
+    <li><a href="LayerWidget.html">LayerWidget</a></li>
+    <li><a href="Layerbox.html">Layerbox</a></li>
+    <li><a href="LinearOrganizer.html">LinearOrganizer</a></li>
+    <li><a href="ListOrganizer.html">ListOrganizer</a></li>
+    <li><a href="MaskedObject.html">MaskedObject</a></li>
+    <li><a href="Monitor.html">Monitor</a></li>
+    <li><a href="MovingListOrganizer.html">MovingListOrganizer</a></li>
+    <li><a href="Organizer.html">Organizer</a></li>
+    <li><a href="StackedObject.html">StackedObject</a></li>
+    <li><a href="VirtualPanel.html">VirtualPanel</a></li>
+    <li><a href="Window.html">Window</a></li>
+    <li><a href="WindowManager.html">WindowManager</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">⚙️ System <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Assert.html">Assert</a></li>
+    <li><a href="Assert_Linux.html">Assert_Linux</a></li>
+    <li><a href="Assert_Win32.html">Assert_Win32</a></li>
+    <li><a href="CaptionValue.html">CaptionValue</a></li>
+    <li><a href="Console.html">Console</a></li>
+    <li><a href="Console_Nix.html">Console_Nix</a></li>
+    <li><a href="Console_Win32.html">Console_Win32</a></li>
+    <li><a href="ConsumableEvent.html">ConsumableEvent</a></li>
+    <li><a href="Event.html">Event</a></li>
+    <li><a href="Exception.html">Exception</a></li>
+    <li><a href="Exceptions.html">Exceptions</a></li>
+    <li><a href="GarbageCollection.html">GarbageCollection</a></li>
+    <li><a href="Logging.html">Logging</a></li>
+    <li><a href="Null.html">Null</a></li>
+    <li><a href="Nullable.html">Nullable</a></li>
+    <li><a href="Pointer.html">Pointer</a></li>
+    <li><a href="Property.html">Property</a></li>
+    <li><a href="Random.html">Random</a></li>
+    <li><a href="RefCounter.html">RefCounter</a></li>
+    <li><a href="Registry.html">Registry</a></li>
+    <li><a href="SGuid.html">SGuid</a></li>
+    <li><a href="Scope.html">Scope</a></li>
+    <li><a href="ScopeGuard.html">ScopeGuard</a></li>
+    <li><a href="Threading.html">Threading</a></li>
+    <li><a href="Time.html">Time</a></li>
+    <li><a href="Timer.html">Timer</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🔧 Advanced <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AST.html">AST</a></li>
+    <li><a href="AStar.html">AStar</a></li>
+    <li><a href="Blueprint.html">Blueprint</a></li>
+    <li><a href="Compiler.html">Compiler</a></li>
+    <li><a href="Compiler_GCC.html">Compiler_GCC</a></li>
+    <li><a href="Compiler_MSVC.html">Compiler_MSVC</a></li>
+    <li><a href="Compilers.html">Compilers</a></li>
+    <li><a href="Component.html">Component</a></li>
+    <li><a href="Composer.html">Composer</a></li>
+    <li><a href="Discrete.html">Discrete</a></li>
+    <li><a href="Embedding.html">Embedding</a></li>
+    <li><a href="Enum.html">Enum</a></li>
+    <li><a href="Generator.html">Generator</a></li>
+    <li><a href="Instruction.html">Instruction</a></li>
+    <li><a href="Language.html">Language</a></li>
+    <li><a href="Message.html">Message</a></li>
+    <li><a href="Pathfinders.html">Pathfinders</a></li>
+    <li><a href="Reflection.html">Reflection</a></li>
+    <li><a href="RuntimeFunction.html">RuntimeFunction</a></li>
+    <li><a href="Scene.html">Scene</a></li>
+    <li><a href="Scripting.html">Scripting</a></li>
+    <li><a href="Simple.html">Simple</a></li>
+    <li><a href="String.html">String</a></li>
+    <li><a href="Struct.html">Struct</a></li>
+    <li><a href="TMP.html">TMP</a></li>
+    <li><a href="Template.html">Template</a></li>
+    <li><a href="TiledMap.html">TiledMap</a></li>
+    <li><a href="Validators.html">Validators</a></li>
+    <li><a href="VirtualMachine.html">VirtualMachine</a></li>
+    <li><a href="World.html">World</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🗔 Platform <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Linux.html">Linux</a></li>
+    <li><a href="Win32.html">Win32</a></li>
+    <li><a href="Windows.html">Windows</a></li>
+    <li><a href="X11.html">X11</a></li>
+    <li><a href="X11Keysym.html">X11Keysym</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📝 Text <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="AdvancedPrinter.html">AdvancedPrinter</a></li>
+    <li><a href="AdvancedPrinterConstants.html">AdvancedPrinterConstants</a></li>
+    <li><a href="AdvancedPrinterImpl.html">AdvancedPrinterImpl</a></li>
+    <li><a href="AdvancedTextBuilder.html">AdvancedTextBuilder</a></li>
+    <li><a href="CastableManagedBuffer.html">CastableManagedBuffer</a></li>
+    <li><a href="Marking.html">Marking</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">🧱 Resources <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="Any.html">Any</a></li>
+    <li><a href="Builtin.html">Builtin</a></li>
+    <li><a href="FindObject.html">FindObject</a></li>
+    <li><a href="Helpers.html">Helpers</a></li>
+    <li><a href="Instance.html">Instance</a></li>
+    <li><a href="ObjectFinding.html">ObjectFinding</a></li>
+    <li><a href="PD.html">PD</a></li>
+    <li><a href="ResizableObjectResource.html">ResizableObjectResource</a></li>
+    <li><a href="Resource.html">Resource</a></li>
+  </ul>
+</div>
+<div class="sidebar-group collapsed">
+  <div class="sidebar-group-title">📦 Other <span class="chevron">▼</span></div>
+  <ul class="sidebar-links">
+    <li><a href="BasicMath.html">BasicMath</a></li>
+    <li><a href="Kernel.html">Kernel</a></li>
+    <li><a href="main.html">main</a></li>
+  </ul>
+</div>
+
+    </aside>
+
+    <main class="main-content">
+        
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">Rectangle</span>
+    </nav>
+    
+        <h1 id="rectangle" class="doc-heading">Rectangle</h1>
+<p class="doc-paragraph">> Auto-generated documentation for the <strong>Rectangle</strong> module of the Gorgon C++ Game Engine.</p>
+<h2 id="contents" class="doc-heading">Contents</h2>
+<ul class="md-list">
+<li><a href="#classes">Classes</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<hr class="doc-divider">
+<h2 id="classes" class="doc-heading">Classes</h2>
+<h3 id="basicrectangle" class="doc-heading"><code class="inline-code">basic_Rectangle</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">Represents a rectangle in a 2D space. Top left corner and the size is stored.</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="basicrectangle" class="doc-heading"><code class="inline-code">basic_Rectangle(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Base type of the rectangle elements. Default constructor, does not initialize stored values</p>
+<h5 id="basicrectangleconst-stdstring-str" class="doc-heading"><code class="inline-code">basic_Rectangle(const std::string &str)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">explicit</code></p>
+<p class="doc-paragraph">Filling constructor using values for top left corner and size Filling constructor using values for top left corner and size Filling constructor using values for top left corner and size Filling constructor using values for top left corner and size Filling constructor using values for top left and bottom right corners Converting constructor from a different typed rectangle Converting constructor from bounds Conversion from string</p>
+<h5 id="static-parsestdstring-s" class="doc-heading"><code class="inline-code">static</code> <code class="inline-code">Parse(std::string s)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static basic_Rectangle</code></p>
+<p class="doc-paragraph">Properly parses a rectangle, throwing errors when necessary.</p>
+<h5 id="iss" class="doc-heading"><code class="inline-code">is(s)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">std::istringstream</code></p>
+<h5 id="right" class="doc-heading"><code class="inline-code">Right(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">T_</code></p>
+<p class="doc-paragraph">Conversion to bounds Conversion to string Calculates and returns the rightmost coordinate</p>
+<h5 id="bottom" class="doc-heading"><code class="inline-code">Bottom(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">T_</code></p>
+<p class="doc-paragraph">Calculates and returns the bottommost coordinate</p>
+<h5 id="setrightconst-t-right" class="doc-heading"><code class="inline-code">SetRight(const T_ &right)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Moves the rectangle by changing its rightmost coordinate</p>
+<h5 id="setbottomconst-t-bottom" class="doc-heading"><code class="inline-code">SetBottom(const T_ &bottom)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Moves the rectangle by changing its bottommost coordinate</p>
+<h5 id="resizeconst-t-w-const-t-h" class="doc-heading"><code class="inline-code">Resize(const T_ &w, const T_ &h)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Resizes the rectangle</p>
+<h5 id="resizeconst-basicsizet-s" class="doc-heading"><code class="inline-code">Resize(const basic_Size<T_> &s)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Resizes the rectangle</p>
+<h5 id="moveconst-basicpointt-p" class="doc-heading"><code class="inline-code">Move(const basic_Point<T_> &p)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the position of the rectangle</p>
+<h5 id="moveconst-t-x-const-t-y" class="doc-heading"><code class="inline-code">Move(const T_ &x, const T_ &y)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the position of the rectangle</p>
+<h5 id="center" class="doc-heading"><code class="inline-code">Center(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Point<T_></code></p>
+<p class="doc-paragraph">Returns the center point of the rectangle</p>
+<h5 id="topleft" class="doc-heading"><code class="inline-code">TopLeft(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Point<T_></code></p>
+<p class="doc-paragraph">Returns the top left coordinates of the rectangle</p>
+<h5 id="topright" class="doc-heading"><code class="inline-code">TopRight(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Point<T_></code></p>
+<p class="doc-paragraph">Returns the top right coordinates of the rectangle</p>
+<h5 id="bottomleft" class="doc-heading"><code class="inline-code">BottomLeft(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Point<T_></code></p>
+<p class="doc-paragraph">Returns the bottom left coordinates of the rectangle</p>
+<h5 id="bottomright" class="doc-heading"><code class="inline-code">BottomRight(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Point<T_></code></p>
+<p class="doc-paragraph">Returns the bottom right coordinates of the rectangle</p>
+<h5 id="getsize" class="doc-heading"><code class="inline-code">GetSize(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">basic_Size<T_></code></p>
+<p class="doc-paragraph">Returns the size of the rectangle</p>
+<h3 id="irectangleprovider" class="doc-heading"><code class="inline-code">IRectangleProvider</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<p class="doc-paragraph">Interface for RectangleProviders</p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="irectangleprovider" class="doc-heading"><code class="inline-code">IRectangleProvider(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-setcentertilingbool-value" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SetCenterTiling(bool value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Creates an animation without controller. This function should always return an animation Creates an animation without controller. This function should always return an animation Creates an animation without controller. This function should always return an animation Creates an animation without controller. This function should always return an animation Creates an animation without controller. This function should always return an animation Creates an animation without controller. This function should always return an animation Creates an animation without controller. This function should always return an animation Creates an animation without controller. This function should always return an animation Creates an animation without controller. This function should always return an animation Sets whether the middle part would be tiled. If set to false it will be stretched to fit the given area. Instances will require redrawing before this change is reflected. This effects both dimensions. Tiling is recommended for all applications.</p>
+<h5 id="virtual-getcentertiling" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetCenterTiling(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">Returns if the middle part will be tiled.</p>
+<h5 id="virtual-setsidetilingbool-value" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SetSideTiling(bool value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<p class="doc-paragraph">Sets whether the side parts (tm, ml, mr, bm) would be tiled. If set to false it will be stretched to fit the given area. Instances will require redrawing before this change is reflected. Tiling is recommended for all applications.</p>
+<h5 id="virtual-getsidetiling" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">GetSideTiling(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual bool</code></p>
+<p class="doc-paragraph">Returns if the middle part will be tiled.</p>
+<h3 id="rectangle" class="doc-heading"><code class="inline-code">Rectangle</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="rectangleconst-irectangleprovider-prov-gorgonanimationcontrollerbase-timer" class="doc-heading"><code class="inline-code">Rectangle(const IRectangleProvider &prov, Gorgon::Animation::ControllerBase &timer)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="rectangleconst-irectangleprovider-prov-bool-create--true" class="doc-heading"><code class="inline-code">Rectangle(const IRectangleProvider &prov, bool create = true)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="basicrectangleprovider" class="doc-heading"><code class="inline-code">basic_RectangleProvider</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="ifown" class="doc-heading"><code class="inline-code">if(own)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<p class="doc-paragraph">Empty constructor, rectangle can be instanced even if it is completely empty Filling constructor Filling constructor using move semantics, rectangle will create and own new objects. The given objects will be moved to these new objects. Filling constructor. The given object will be used for the borders. Center will be empty Filling constructor using move semantics, rectangle will create and own new object. The given object will be moved to this new object. The given object will be used for the borders Filling constructor. The first given object will be used for the borders. The second will be used for the center Filling constructor using move semantics, rectangle will create and own new objects. The given objects will be moved to these new objects. The first object will be used for the borders, the second will be used for center Filling constructor, nullptr is acceptable Move constructor</p>
+<h5 id="forauto-ptr--ptrs" class="doc-heading"><code class="inline-code">for(auto ptr : ptrs)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="rectanglethis-timer" class="doc-heading"><code class="inline-code">Rectangle(*this, timer)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return *new</code></p>
+<h5 id="rectanglethis-create" class="doc-heading"><code class="inline-code">Rectangle(*this, create)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return *new</code></p>
+<h5 id="settla-value" class="doc-heading"><code class="inline-code">SetTL(A_ *value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Returns TL provider, may return nullptr. Returns TM provider, may return nullptr. Returns TR provider, may return nullptr. Returns ML provider, may return nullptr. Returns MM provider, may return nullptr. Returns MR provider, may return nullptr. Returns BL provider, may return nullptr. Returns BM provider, may return nullptr. Returns BR provider, may return nullptr. Changes the TL animation, ownership semantics will not change</p>
+<h5 id="settma-value" class="doc-heading"><code class="inline-code">SetTM(A_ *value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the TM animation, ownership semantics will not change</p>
+<h5 id="settra-value" class="doc-heading"><code class="inline-code">SetTR(A_ *value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the TR animation, ownership semantics will not change</p>
+<h5 id="setmla-value" class="doc-heading"><code class="inline-code">SetML(A_ *value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the ML animation, ownership semantics will not change</p>
+<h5 id="setmma-value" class="doc-heading"><code class="inline-code">SetMM(A_ *value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the MM animation, ownership semantics will not change</p>
+<h5 id="setmra-value" class="doc-heading"><code class="inline-code">SetMR(A_ *value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the MR animation, ownership semantics will not change</p>
+<h5 id="setbla-value" class="doc-heading"><code class="inline-code">SetBL(A_ *value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the BL animation, ownership semantics will not change</p>
+<h5 id="setbma-value" class="doc-heading"><code class="inline-code">SetBM(A_ *value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the BM animation, ownership semantics will not change</p>
+<h5 id="setbra-value" class="doc-heading"><code class="inline-code">SetBR(A_ *value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the BR animation, ownership semantics will not change</p>
+<h5 id="prepare" class="doc-heading"><code class="inline-code">Prepare(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Prepares all animation providers if the they support Prepare function.</p>
+<h5 id="ownproviders" class="doc-heading"><code class="inline-code">OwnProviders(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Issuing this function will make this rectangle to own its providers, destroying them along with itself.</p>
+<h3 id="rectangle" class="doc-heading"><code class="inline-code">Rectangle</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">Gorgon</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="rectanglegraphicsbitmaprectangleprovider-prov" class="doc-heading"><code class="inline-code">Rectangle(Graphics::BitmapRectangleProvider &prov)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">explicit</code></p>
+<p class="doc-paragraph">Creates a new rectangle using another rectangle provider</p>
+<h5 id="rectanglegraphicsanimatedbitmaprectangleprovider-prov" class="doc-heading"><code class="inline-code">Rectangle(Graphics::AnimatedBitmapRectangleProvider &prov)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">explicit</code></p>
+<p class="doc-paragraph">Creates a new rectangle using another rectangle provider</p>
+<h5 id="rectanglegraphicsrectangleprovider-prov" class="doc-heading"><code class="inline-code">Rectangle(Graphics::RectangleProvider &prov)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">explicit</code></p>
+<p class="doc-paragraph">Creates a new rectangle using another rectangle provider</p>
+<h5 id="setprovidergraphicsbitmaprectangleprovider-value" class="doc-heading"><code class="inline-code">SetProvider(Graphics::BitmapRectangleProvider &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Creates a new rectangle using another rectangle provider Creates a new rectangle using another rectangle provider Creates a new rectangle using another rectangle provider Creates an empty rectangle Changes provider to the given provider, ownership will not be transferred</p>
+<h5 id="removeprovider" class="doc-heading"><code class="inline-code">RemoveProvider(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setprovidergraphicsanimatedbitmaprectangleprovider-value" class="doc-heading"><code class="inline-code">SetProvider(Graphics::AnimatedBitmapRectangleProvider &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes provider to the given provider, ownership will not be transferred</p>
+<h5 id="removeprovider" class="doc-heading"><code class="inline-code">RemoveProvider(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="setprovidergraphicsrectangleprovider-value" class="doc-heading"><code class="inline-code">SetProvider(Graphics::RectangleProvider &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes provider to the given provider, ownership will not be transferred</p>
+<h5 id="removeprovider" class="doc-heading"><code class="inline-code">RemoveProvider(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="assumeprovidergraphicsbitmaprectangleprovider-value" class="doc-heading"><code class="inline-code">AssumeProvider(Graphics::BitmapRectangleProvider &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the provider stored in this line, ownership will be transferred</p>
+<h5 id="removeprovider" class="doc-heading"><code class="inline-code">RemoveProvider(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="assumeprovidergraphicsanimatedbitmaprectangleprovider-value" class="doc-heading"><code class="inline-code">AssumeProvider(Graphics::AnimatedBitmapRectangleProvider &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the provider stored in this line, ownership will be transferred</p>
+<h5 id="removeprovider" class="doc-heading"><code class="inline-code">RemoveProvider(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="assumeprovidergraphicsrectangleprovider-value" class="doc-heading"><code class="inline-code">AssumeProvider(Graphics::RectangleProvider &value)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Changes the provider stored in this line, ownership will be transferred</p>
+<h5 id="removeprovider" class="doc-heading"><code class="inline-code">RemoveProvider(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="removeprovider" class="doc-heading"><code class="inline-code">RemoveProvider(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<p class="doc-paragraph">Removes the provider, if it is own by this resource it will be deleted.</p>
+<h5 id="static-savethiswriter-writer-const-graphicsirectangleprovider-provider" class="doc-heading"><code class="inline-code">static</code> <code class="inline-code">SaveThis(Writer &writer, const Graphics::IRectangleProvider &provider)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static void</code></p>
+<p class="doc-paragraph">This function loads a rectangle resource from the file</p>
+<h3 id="rectangle" class="doc-heading"><code class="inline-code">Rectangle</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">gge</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="rectanglerectangleresource-parent-animationtimer-controller-bool-ownerfalse" class="doc-heading"><code class="inline-code">Rectangle(RectangleResource &parent, animation::Timer &controller, bool owner=false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="rectanglerectangleresource-parent-bool-createfalse" class="doc-heading"><code class="inline-code">Rectangle(RectangleResource &parent, bool create=false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="borderwidth" class="doc-heading"><code class="inline-code">BorderWidth(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">utils::Margins</code></p>
+<h5 id="virtual-setcontrolleranimationtimer-controller-bool-ownerfalse" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">SetController(animation::Timer &controller, bool owner=false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-progress" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">Progress(—)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual animation::ProgressResult::Type</code></p>
+<h5 id="virtual-drawingraphicsimagetarget2d-target-int-x-int-y-int-w-int-h" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">drawin(graphics::ImageTarget2D& Target, int X, int Y, int W, int H)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-drawingraphicsimagetarget2d-target-const-graphicssizecontroller2d-controller-int-x-int-y-int-w-int-h" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">drawin(graphics::ImageTarget2D& Target, const graphics::SizeController2D &controller, int X, int Y, int W, int H)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-calculatewidthint-w-1" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">calculatewidth(int w=-1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<h5 id="virtual-calculateheightint-h-1" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">calculateheight(int h=-1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<h5 id="virtual-calculatewidthconst-graphicssizecontroller2d-controller-int-w-1" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">calculatewidth(const graphics::SizeController2D &controller, int w=-1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<h5 id="virtual-calculateheightconst-graphicssizecontroller2d-controller-int-h-1" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">calculateheight(const graphics::SizeController2D &controller, int h=-1)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<h3 id="maskedrectangle" class="doc-heading"><code class="inline-code">MaskedRectangle</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">gge</code></p>
+<h4 id="methods" class="doc-heading">Methods</h4>
+<h5 id="maskedrectanglerectangleresource-parent-animationtimer-controller-rectangleresource-mask-bool-ownerfalse" class="doc-heading"><code class="inline-code">MaskedRectangle(RectangleResource &parent, animation::Timer &controller, RectangleResource *mask, bool owner=false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="maskedrectanglerectangleresource-parent-rectangleresource-mask-bool-createfalse" class="doc-heading"><code class="inline-code">MaskedRectangle(RectangleResource &parent, RectangleResource *mask, bool create=false)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h5 id="virtual-drawingraphicsimagetarget2d-target-int-x-int-y-int-w-int-h" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">drawin(graphics::ImageTarget2D& Target, int X, int Y, int W, int H)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h5 id="virtual-drawingraphicsimagetarget2d-target-const-graphicssizecontroller2d-controller-int-x-int-y-int-w-int-h" class="doc-heading"><code class="inline-code">virtual</code> <code class="inline-code">drawin(graphics::ImageTarget2D& Target, const graphics::SizeController2D &controller, int X, int Y, int W, int H)</code></h5>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h3 id="tilinginfo" class="doc-heading"><code class="inline-code">TilingInfo</code></h3>
+<p class="doc-paragraph"><strong>Namespace:</strong> <code class="inline-code">gge</code></p>
+<hr class="doc-divider">
+<h2 id="functions" class="doc-heading">Functions</h2>
+<h3 id="isinsideconst-basicrectanglet-r-const-basicpointt-p" class="doc-heading"><code class="inline-code">IsInside(const basic_Rectangle<T_> &r, const basic_Point<T_> &p)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">bool</code></p>
+<p class="doc-paragraph">Compares two rectangles Compares two rectangles Adds a point to this rectangle, effectively translating it Adds a size to this rectangle, resizing it Subtracts a point from this rectangle, effectively translating it Subtracts a size from this rectangle, resizing it Scales this rectangle with the given size. Origin of this operation is top left point of the rectangle. Scales this rectangle with the given size. Origin of this operation is top left point of the rectangle. Scales this rectangle with the given value. Origin of this operation is top left point of the rectangle. Scales this rectangle with the given value. Origin of this operation is top left point of the rectangle. Adds a point to this rectangle, effectively translating it Adds a size to this rectangle, resizing it Subtracts a point to this rectangle, effectively translating it Subtracts a size from this rectangle, resizing it Scales this rectangle with the given size. Origin of this operation is top left point of the rectangle. Scales this rectangle with the given size. Origin of this operation is top left point of the rectangle. Scales this rectangle with the given value. Origin of this operation is top left point of the rectangle. Scales this rectangle with the given value. Origin of this operation is top left point of the rectangle. X coordinate of the top left corner of this rectangle Y coordinate of the top left corner of this rectangle Width of the rectangle Height of the rectangle Allows streaming of Rectangle Allows reading a rectangle from a stream TODO requires more work Checks whether a given point is inside the given rectangle.</p>
+<h3 id="ifrheight--maxtmaxb" class="doc-heading"><code class="inline-code">if(r.Height < maxt+maxb)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="drawintarget-newr-color" class="doc-heading"><code class="inline-code">drawin(target, newr, color)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="drawtarget-p1-p2-p3-p4-color" class="doc-heading"><code class="inline-code">draw(target, p1, p2, p3, p4, color)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="slicehorizontalconst-bitmap-source-int-t-int-b-int-tl-int-tr-int-l-int-r-int-bl-int-br" class="doc-heading"><code class="inline-code">SliceHorizontal(const Bitmap &source, int t, int b, int tl, int tr, int l, int r, int bl, int br)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">BitmapRectangleProvider</code></p>
+<h3 id="sliceverticalconst-bitmap-source-int-l-int-r-int-tl-int-bl-int-t-int-b-int-tr-int-br" class="doc-heading"><code class="inline-code">SliceVertical(const Bitmap &source, int l, int r, int tl, int bl, int t, int b, int tr, int br)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">BitmapRectangleProvider</code></p>
+<h3 id="slicehorizontalconst-bitmap-source-int-t-int-b-int-tl-int-tr-int-l-int-r-int-bl-int-br" class="doc-heading"><code class="inline-code">SliceHorizontal(const Bitmap &source, int t, int b, int tl, int tr, int l, int r, int bl, int br)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">BitmapRectangleProvider</code></p>
+<p class="doc-paragraph">Horizontally slices the given image. t and b slices the image to 3 parts then each part is further sliced by X offset pairs (tl, tr), (l, r), and (bl, br). Currently this works only with bitmaps. This function will create an atlas out of the given image, thus, the source should be kept alive. Currently atlas functionality does not work.</p>
+<h3 id="sliceverticalconst-bitmap-source-int-l-int-r-int-tl-int-bl-int-t-int-b-int-tr-int-br" class="doc-heading"><code class="inline-code">SliceVertical(const Bitmap &source, int l, int r, int tl, int bl, int t, int b, int tr, int br)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">BitmapRectangleProvider</code></p>
+<p class="doc-paragraph">Vertically slices the given image. l and r slices the image to 3 parts then each part is further sliced by Y offset pairs (tl, bl), (t, b), and (tr, br). Currently this works only with bitmaps. This function will create an atlas out of the given image, thus, the source should be kept alive. Currently atlas functionality does not work.</p>
+<h3 id="sliceconst-bitmap-source-geometrybounds-center" class="doc-heading"><code class="inline-code">Slice(const Bitmap &source, Geometry::Bounds center)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">inline BitmapRectangleProvider</code></p>
+<p class="doc-paragraph">Slices an image to create a rectangle. Imagine a pound sign (#) slicing the image, center parameter is the central region of the pound sign. Currently this works only with bitmaps. This function will create an atlas out of the given image, thus, the source should be kept alive. Currently atlas functionality does not work.</p>
+<h3 id="slicehorizontalsource-centertop-centerbottom-centerleft-centerright-centerleft-centerright-centerleft-centerright" class="doc-heading"><code class="inline-code">SliceHorizontal(source, center.Top, center.Bottom, center.Left, center.Right, center.Left, center.Right, center.Left, center.Right)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="whiletarget" class="doc-heading"><code class="inline-code">while(!target)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifgid--gidrectangleprops" class="doc-heading"><code class="inline-code">if(gid == GID::Rectangle_Props)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifgid--gidrectanglepropsii" class="doc-heading"><code class="inline-code">if(gid == GID::Rectangle_Props_II)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifresource" class="doc-heading"><code class="inline-code">if(resource)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifc--9" class="doc-heading"><code class="inline-code">if(++c > 9)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftype--anim" class="doc-heading"><code class="inline-code">if(type == anim)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftype--img" class="doc-heading"><code class="inline-code">if(type == img)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftype--mixed" class="doc-heading"><code class="inline-code">if(type == mixed)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="iftype--unknown" class="doc-heading"><code class="inline-code">if(type != unknown)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="savethiswriter-writer-const-graphicsbasicrectangleprovidert-provider" class="doc-heading"><code class="inline-code">savethis(Writer &writer, const Graphics::basic_RectangleProvider<T_> &provider)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static void</code></p>
+<h3 id="iftm--ml--mr--bm--tl--tr--bl--br" class="doc-heading"><code class="inline-code">if(tm && ml && mr && bm && !tl && !tr && !bl && !br)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-tm" class="doc-heading"><code class="inline-code">SaveAnimation(writer, tm)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-ml" class="doc-heading"><code class="inline-code">SaveAnimation(writer, ml)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-mm" class="doc-heading"><code class="inline-code">SaveAnimation(writer, mm)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-mr" class="doc-heading"><code class="inline-code">SaveAnimation(writer, mr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-bm" class="doc-heading"><code class="inline-code">SaveAnimation(writer, bm)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftm--ml--mr--bm--tl--tr--bl--br" class="doc-heading"><code class="inline-code">if(tm && ml && mr && bm && tl && tr && bl && br)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="saveanimationwriter-tl" class="doc-heading"><code class="inline-code">SaveAnimation(writer, tl)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-tm" class="doc-heading"><code class="inline-code">SaveAnimation(writer, tm)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-tr" class="doc-heading"><code class="inline-code">SaveAnimation(writer, tr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-ml" class="doc-heading"><code class="inline-code">SaveAnimation(writer, ml)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-mm" class="doc-heading"><code class="inline-code">SaveAnimation(writer, mm)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-mr" class="doc-heading"><code class="inline-code">SaveAnimation(writer, mr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-bl" class="doc-heading"><code class="inline-code">SaveAnimation(writer, bl)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-bm" class="doc-heading"><code class="inline-code">SaveAnimation(writer, bm)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-br" class="doc-heading"><code class="inline-code">SaveAnimation(writer, br)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="iftr--tm--tr--ml--mr--bl--bm--br" class="doc-heading"><code class="inline-code">if(!tr && !tm && !tr && !ml && !mr && !bl && !bm && !br)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="saveanimationwriter-mm" class="doc-heading"><code class="inline-code">SaveAnimation(writer, mm)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-tl" class="doc-heading"><code class="inline-code">SaveAnimation(writer, tl)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-tm" class="doc-heading"><code class="inline-code">SaveAnimation(writer, tm)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-tr" class="doc-heading"><code class="inline-code">SaveAnimation(writer, tr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-ml" class="doc-heading"><code class="inline-code">SaveAnimation(writer, ml)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-mm" class="doc-heading"><code class="inline-code">SaveAnimation(writer, mm)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-mr" class="doc-heading"><code class="inline-code">SaveAnimation(writer, mr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-bl" class="doc-heading"><code class="inline-code">SaveAnimation(writer, bl)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-bm" class="doc-heading"><code class="inline-code">SaveAnimation(writer, bm)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="saveanimationwriter-br" class="doc-heading"><code class="inline-code">SaveAnimation(writer, br)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifprov--nullptr" class="doc-heading"><code class="inline-code">if(prov != nullptr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="setthisf-graphicsbasicrectangleprovidert--t-" class="doc-heading"><code class="inline-code">setthis(F_, Graphics::basic_RectangleProvider<T_> <em>, T_ </em>)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static void</code></p>
+<h3 id="setthisf-f-graphicsbitmaprectangleprovider-provider-graphicsbitmap-o" class="doc-heading"><code class="inline-code">setthis(F_ f, Graphics::BitmapRectangleProvider <em>provider, Graphics::Bitmap </em>o)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static void</code></p>
+<h3 id="callbitmapanimationsetterf-provider-o" class="doc-heading"><code class="inline-code">CallBitmapAnimationSetter(f, provider, o)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setthisf-f-graphicsanimatedbitmaprectangleprovider-provider-graphicsbitmapanimationprovider-o" class="doc-heading"><code class="inline-code">setthis(F_ f, Graphics::AnimatedBitmapRectangleProvider <em>provider, Graphics::BitmapAnimationProvider </em>o)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static void</code></p>
+<h3 id="callbitmapanimationanimationsetterf-provider-o" class="doc-heading"><code class="inline-code">CallBitmapAnimationAnimationSetter(f, provider, o)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setthisf-f-graphicsrectangleprovider-provider-graphicsrectangularanimationprovider-o" class="doc-heading"><code class="inline-code">setthis(F_ f, Graphics::RectangleProvider <em>provider, Graphics::RectangularAnimationProvider </em>o)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static void</code></p>
+<h3 id="callgenericanimationsetterf-provider-o" class="doc-heading"><code class="inline-code">CallGenericAnimationSetter(f, provider, o)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="moveoutgraphicsbasicrectangleprovidert-provider-graphicsirectangleprovider-p" class="doc-heading"><code class="inline-code">moveout(Graphics::basic_RectangleProvider<T_> <em>provider, Graphics::IRectangleProvider </em>&p)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">static void</code></p>
+<h3 id="setthisgraphicsbasicrectangleprovidertsettl-bp-tl" class="doc-heading"><code class="inline-code">setthis(&Graphics::basic_RectangleProvider<T_>::SetTL, bp, tl)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setthisgraphicsbasicrectangleprovidertsettm-bp-tm" class="doc-heading"><code class="inline-code">setthis(&Graphics::basic_RectangleProvider<T_>::SetTM, bp, tm)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setthisgraphicsbasicrectangleprovidertsettr-bp-tr" class="doc-heading"><code class="inline-code">setthis(&Graphics::basic_RectangleProvider<T_>::SetTR, bp, tr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setthisgraphicsbasicrectangleprovidertsetml-bp-ml" class="doc-heading"><code class="inline-code">setthis(&Graphics::basic_RectangleProvider<T_>::SetML, bp, ml)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setthisgraphicsbasicrectangleprovidertsetmm-bp-mm" class="doc-heading"><code class="inline-code">setthis(&Graphics::basic_RectangleProvider<T_>::SetMM, bp, mm)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setthisgraphicsbasicrectangleprovidertsetmr-bp-mr" class="doc-heading"><code class="inline-code">setthis(&Graphics::basic_RectangleProvider<T_>::SetMR, bp, mr)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setthisgraphicsbasicrectangleprovidertsetbl-bp-bl" class="doc-heading"><code class="inline-code">setthis(&Graphics::basic_RectangleProvider<T_>::SetBL, bp, bl)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setthisgraphicsbasicrectangleprovidertsetbm-bp-bm" class="doc-heading"><code class="inline-code">setthis(&Graphics::basic_RectangleProvider<T_>::SetBM, bp, bm)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setthisgraphicsbasicrectangleprovidertsetbr-bp-br" class="doc-heading"><code class="inline-code">setthis(&Graphics::basic_RectangleProvider<T_>::SetBR, bp, br)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="moveoutprovider-p" class="doc-heading"><code class="inline-code">moveout(provider, p)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="moveoutprovider-p" class="doc-heading"><code class="inline-code">moveout(provider, p)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="moveoutprovider-p" class="doc-heading"><code class="inline-code">moveout(provider, p)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-child--children" class="doc-heading"><code class="inline-code">for(auto &child : children)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="setrectangleprovidervectoranimation--anims-rectangulargraphic2dsequenceprovider-obj-int-id" class="doc-heading"><code class="inline-code">setrectangleprovider(vector<Animation <em>> &anims, RectangularGraphic2DSequenceProvider </em>&obj, int id)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">void</code></p>
+<h3 id="readfromdata-gid" class="doc-heading"><code class="inline-code">ReadFrom(Data, gid)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="readfromdata-size" class="doc-heading"><code class="inline-code">ReadFrom(Data, size)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifgidresourcegidguid" class="doc-heading"><code class="inline-code">if(gid==resource::GID::Guid)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifgidresourcegidsguid" class="doc-heading"><code class="inline-code">if(gid==resource::GID::SGuid)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="ifgidgidrectangleprops" class="doc-heading"><code class="inline-code">if(gid==GID::Rectangle_Props)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="eatchunkdata-size-32" class="doc-heading"><code class="inline-code">EatChunk(Data, size-32)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifgidresourcegidanimation" class="doc-heading"><code class="inline-code">if(gid==resource::GID::Animation)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">else</code></p>
+<h3 id="eatchunkdata-size" class="doc-heading"><code class="inline-code">EatChunk(Data, size)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="forauto-ianimsbegin" class="doc-heading"><code class="inline-code">for(auto i=anims.begin()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="ifmask-c" class="doc-heading"><code class="inline-code">if(Mask->c)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="drawintarget-x-y-w-h" class="doc-heading"><code class="inline-code">drawin(Target, X, Y, W, H)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+<h3 id="getgid" class="doc-heading"><code class="inline-code">GetGID()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual GID::Type</code></p>
+<h3 id="createresizableobjectcontroller-owner" class="doc-heading"><code class="inline-code">CreateResizableObject(controller, owner)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="createresizableobjectcreate" class="doc-heading"><code class="inline-code">CreateResizableObject(create)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return</code></p>
+<h3 id="rectanglethis-controller-owner" class="doc-heading"><code class="inline-code">Rectangle(*this, controller, owner)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return *new</code></p>
+<h3 id="maskedrectanglethis-controller-mask-owner" class="doc-heading"><code class="inline-code">MaskedRectangle(*this, controller, Mask, owner)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return *new</code></p>
+<h3 id="rectanglethis-create" class="doc-heading"><code class="inline-code">Rectangle(*this, create)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return *new</code></p>
+<h3 id="maskedrectanglethis-mask-create" class="doc-heading"><code class="inline-code">MaskedRectangle(*this, Mask, create)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">return *new</code></p>
+<h3 id="borderwidth" class="doc-heading"><code class="inline-code">BorderWidth()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">utils::Margins</code></p>
+<h3 id="getduration" class="doc-heading"><code class="inline-code">GetDuration()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<h3 id="getdurationunsigned-frame" class="doc-heading"><code class="inline-code">GetDuration(unsigned Frame)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<h3 id="getnumberofframes" class="doc-heading"><code class="inline-code">GetNumberofFrames()</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<h3 id="frameatunsigned-time" class="doc-heading"><code class="inline-code">FrameAt(unsigned Time)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<h3 id="startofunsigned-frame" class="doc-heading"><code class="inline-code">StartOf(unsigned Frame)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<h3 id="endofunsigned-frame" class="doc-heading"><code class="inline-code">EndOf(unsigned Frame)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual int</code></p>
+<h3 id="prepareggemain-main-resourcefile-file" class="doc-heading"><code class="inline-code">Prepare(GGEMain &main, resource::File &file)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> <code class="inline-code">virtual void</code></p>
+<h3 id="ifcontroller" class="doc-heading"><code class="inline-code">if(Controller)</code></h3>
+<p class="doc-paragraph"><strong>Returns:</strong> ``</p>
+    </main>
+
+    <footer class="site-footer">
+        <p>Gorgon Game Engine Documentation &mdash; Auto-generated with ❤️</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
